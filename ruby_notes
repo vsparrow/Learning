@@ -13,6 +13,8 @@ puts adds a newline to the end of the output. print does not.
 "string".reverse #get reverse of string, ie: gnirts
 "string".upcase #convert string to upper case ie: STRING
 "String".downcase #convert to lowercase, ie: "string"
+"strinG".capitalize #Uppercase first char, lowercase other chars ie: "String"
+"strinG".captitalize! # ! modifies variable so that its permanantly set
 
 comments:
 # for single line comments
@@ -21,5 +23,6 @@ for multiline comments see below: anything inbetween commented out. open and clo
 =end
 
 variables:
-convention, these variables should start with a lowercase letter and words should be separated by underscores, 
-like counter and masterful_method
+convention #variables start with lowercase letter and words should be separated by underscores, like counter and masterful_method
+variable_y = gets.chomp #assign variable to user input, Ruby adds newline after each bit of input; chomp removes that extra line. 
+#{variable_y}  #use variable in print : print "Your input of #{variable_y} is cool" 
