@@ -4,3 +4,5 @@ Multiplication (*)
 Division (/)
 Exponentiation (**)
 Modulo (%)
+
+puts adds a newline to the end of the output. print does not.  
