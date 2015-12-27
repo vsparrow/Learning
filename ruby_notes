@@ -26,3 +26,23 @@ variables:
 convention #variables start with lowercase letter and words should be separated by underscores, like counter and masterful_method
 variable_y = gets.chomp #assign variable to user input, Ruby adds newline after each bit of input; chomp removes that extra line. 
 #{variable_y}  #use variable in print : print "Your input of #{variable_y} is cool" 
+variable_y =Integer(user.chomp) # the variable HAS to be an int
+
+if expression   # if statments always finsih with an "end" statement
+  dosomething #The block of code following an if should be indented two spaces. formatting a should not a must
+elsif expression2
+  dosomething2
+else
+  dosomething3
+end
+
+unless  some_false_variable    #continue if not true expression; its like "if not true" ; same syntax as if
+  doexpression
+end
+
+problem = false
+print "Good to go!" unless problem
+Remember, this is basically a short hand if statement. It will do whatever you ask unless the condition is true. 
+In our example, problem is false, so we don't have a problem. We print Good to go!
+
+boolean: # 3 operators && ||  !
