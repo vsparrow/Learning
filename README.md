@@ -1,6 +1,10 @@
 # Learning
 Repository of resources I am using for learning.
 
+Codeacademy: Learn Ruby  
+Started Dec 27 2015  
+https://www.codecademy.com/learn/ruby  
+
 Codeacademy: Learn Git  
 Started Dec 26 2015  
 Finished Dec 26 2015  
