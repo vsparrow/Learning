@@ -1,3 +1,5 @@
+ruby .rb files
+
 Addition (+)
 Subtraction (-)
 Multiplication (*)
@@ -6,3 +8,18 @@ Exponentiation (**)
 Modulo (%)
 
 puts adds a newline to the end of the output. print does not.  
+
+"string".length #get length of string ie: 5
+"string".reverse #get reverse of string, ie: gnirts
+"string".upcase #convert string to upper case ie: STRING
+"String".downcase #convert to lowercase, ie: "string"
+
+comments:
+# for single line comments
+for multiline comments see below: anything inbetween commented out. open and close must be in all on own, nothing else can be added
+=begin
+=end
+
+variables:
+convention, these variables should start with a lowercase letter and words should be separated by underscores, 
+like counter and masterful_method
