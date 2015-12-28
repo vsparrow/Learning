@@ -35,6 +35,8 @@ variable_y = gets.chomp #assign variable to user input, Ruby adds newline after 
 #{variable_y}  #use variable in print : print "Your input of #{variable_y} is cool" 
 variable_y =Integer(user.chomp) # the variable HAS to be an int
 
+my_array=[1,2,3,4,5]  # Array
+
 #Expression #Expression #Expression #Expression #Expression #Expression #Expression #Expression #Expression #Expression #Expression 
 #--------------------------------------------------------------------------------
 
@@ -64,3 +66,10 @@ boolean: # 3 operators && ||  !
 until some_statement_is_true
   do this
 end
+
+loop do
+    something
+end
+
+break if i > 5 # when in loop will break if i > 5
+next if i % 2 == 0  #in loop skip to next iteration if state true, ie: if even number go to next iteration
