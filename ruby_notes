@@ -9,12 +9,18 @@ Modulo (%)
 
 puts adds a newline to the end of the output. print does not.  
 
+###STRING ###STRING ###STRING ###STRING ###STRING ###STRING ###STRING ###STRING 
+#---------------------------------------------------------------------------------------
 "string".length #get length of string ie: 5
 "string".reverse #get reverse of string, ie: gnirts
 "string".upcase #convert string to upper case ie: STRING
 "String".downcase #convert to lowercase, ie: "string"
 "strinG".capitalize #Uppercase first char, lowercase other chars ie: "String"
 "strinG".captitalize! # ! modifies variable so that its permanantly set
+if user_input.include? "s"   # finds char "s" and replaces it with "th"
+    user_input.gsub!(/s/,"th")
+string.include? "s" #evaluates to true if it finds "s" and false otherwise.
+string.gsub!(/s/,"th") # global substitution method, here substitute all "s" for "th"
 
 comments:
 # for single line comments
@@ -22,11 +28,15 @@ for multiline comments see below: anything inbetween commented out. open and clo
 =begin
 =end
 
-variables:
+#variables  #variables #variables #variables #variables #variables #variables #variables #variables #variables 
+#------------------------------------------------------------------------------------------------------------
 convention #variables start with lowercase letter and words should be separated by underscores, like counter and masterful_method
 variable_y = gets.chomp #assign variable to user input, Ruby adds newline after each bit of input; chomp removes that extra line. 
 #{variable_y}  #use variable in print : print "Your input of #{variable_y} is cool" 
 variable_y =Integer(user.chomp) # the variable HAS to be an int
+
+#Expression #Expression #Expression #Expression #Expression #Expression #Expression #Expression #Expression #Expression #Expression 
+#--------------------------------------------------------------------------------
 
 if expression   # if statments always finsih with an "end" statement
   dosomething #The block of code following an if should be indented two spaces. formatting a should not a must
@@ -46,3 +56,11 @@ Remember, this is basically a short hand if statement. It will do whatever you a
 In our example, problem is false, so we don't have a problem. We print Good to go!
 
 boolean: # 3 operators && ||  !
+
+
+# LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS 
+# ---------------------------------------------------------------------------------------------------------
+
+until some_statement_is_true
+  do this
+end
