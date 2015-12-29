@@ -23,6 +23,8 @@ if user_input.include? "s"   # finds char "s" and replaces it with "th"
     user_input.gsub!(/s/,"th")
 string.include? "s" #evaluates to true if it finds "s" and false otherwise.
 string.gsub!(/s/,"th") # global substitution method, here substitute all "s" for "th"
+string.split(",") #  takes string returns array. use text in parentheses as  delimiter
+number.to_s # takes number converts to string
 
 comments:
 # for single line comments
@@ -37,7 +39,30 @@ variable_y = gets.chomp #assign variable to user input, Ruby adds newline after 
 #{variable_y}  #use variable in print : print "Your input of #{variable_y} is cool" 
 variable_y =Integer(user.chomp) # the variable HAS to be an int
 
+#arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays 
+#-----------------------------------------------------------------------------
 my_array=[1,2,3,4,5]  # Array
+s.each { |x|  x.each {|y| puts "#{y}" }}   #print out each item of multi-demensional array
+
+#hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash 
+#---------------------------------------------------------------------------------
+my_hash=Hash.new            # same as my_hash={}
+my_has["Stevie"] = "cat"    # add a hash : if print my_hash["Stevie"] output is "cat"
+
+colors = colors.sort_by do |color, count| # sort from smallest to largest by count. sort_by function returns an array of arrays
+    count
+end
+colors = colors.sort_by { |color, count| count} #same as above
+
+
+my_hash = { "name" => "Eric",  #hash is a collection of key-value pairs. 
+  "age" => 26,
+  "hungry?" => false
+} 
+my_hash.each {|x,y| "puts #{x}:#{y}" }  # will print name:Eric  age:26  hungry:false
+frequencies=Hash.new(0) # The first time we find the word, it will have a default value of 0 
+
+
 
 #Expression #Expression #Expression #Expression #Expression #Expression #Expression #Expression #Expression #Expression #Expression 
 #--------------------------------------------------------------------------------
@@ -81,9 +106,21 @@ end
     print "Ruby!"
 end
 
+letters = ['a', 'b', 'c', 'd']
+letters.each do |letter|
+  print letter
+end
+
+
 object.each { |item| # Do something } # between | |  anything, placeholder for each element of the object "each" used on.
 object.each do |item| # Do something end 
 2.times {puts "COOL"} # .times method compact for loop:  perform  task on each item in an object a specified number of times.
 
 break if i > 5 # when in loop will break if i > 5
 next if i % 2 == 0  #in loop skip to next iteration if state true, ie: if even number go to next iteration
+
+
+#function #function #function #function #function #function #function #function #function #function #function #function #function #function 
+#----------------------------------------------------------------------------------------------------------------------
+#argument: piece of code you actually put between the method's parentheses when you call it  Here its 12
+#parameter: parameter is the name you put between the method's parentheses when you define it. parameter here is n 
