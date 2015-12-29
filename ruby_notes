@@ -9,6 +9,8 @@ Modulo (%)
 
 puts adds a newline to the end of the output. print does not.  
 
+.. vs ... # ..creates an inclusive range, while ... creates a range that excludes the specified high value.
+
 ###STRING ###STRING ###STRING ###STRING ###STRING ###STRING ###STRING ###STRING 
 #---------------------------------------------------------------------------------------
 "string".length #get length of string ie: 5
@@ -70,6 +72,18 @@ end
 loop do
     something
 end
+
+for i in 1..3
+    print i
+end
+
+30.times do |x|
+    print "Ruby!"
+end
+
+object.each { |item| # Do something } # between | |  anything, placeholder for each element of the object "each" used on.
+object.each do |item| # Do something end 
+2.times {puts "COOL"} # .times method compact for loop:  perform  task on each item in an object a specified number of times.
 
 break if i > 5 # when in loop will break if i > 5
 next if i % 2 == 0  #in loop skip to next iteration if state true, ie: if even number go to next iteration
