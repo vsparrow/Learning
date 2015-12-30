@@ -11,6 +11,9 @@ puts adds a newline to the end of the output. print does not.
 
 .. vs ... # ..creates an inclusive range, while ... creates a range that excludes the specified high value.
 
+
+ CRUD, for create, read, update, and delete (respectively). These are the actions you take when you update an entry in a database, ask a website for information, or write a blog post. 
+
 ###STRING ###STRING ###STRING ###STRING ###STRING ###STRING ###STRING ###STRING 
 #---------------------------------------------------------------------------------------
 "string".length #get length of string ie: 5
@@ -39,6 +42,7 @@ variable_y = gets.chomp #assign variable to user input, Ruby adds newline after 
 #{variable_y}  #use variable in print : print "Your input of #{variable_y} is cool" 
 variable_y =Integer(user.chomp) # the variable HAS to be an int
 item1 <=> item 2 # combined comparison operator  compare two Ruby objects.  returns 0 if the first operand (item to be compared) equals the second, 1 if first operand is greater than the second, and -1 if the first operand is less than the second
+puts "string".object_id #  .object_id method gets the ID of an object—it's how Ruby knows whether two objects are the exact same object
 
 #arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays 
 #-----------------------------------------------------------------------------
@@ -58,6 +62,8 @@ s.each { |x|  x.each {|y| puts "#{y}" }}   #print out each item of multi-demensi
 # create hash : hash constructor notation   :   new_hash = Hash.new
 my_hash=Hash.new            # same as my_hash={}
 my_has["Stevie"] = "cat"    # add a hash : if print my_hash["Stevie"] output is "cat"
+no_nil_hash=Hash.new(0) # The first time we find the word, it will have a default value of 0 rather than default of nil
+
 
 colors = colors.sort_by do |color, count| # sort from smallest to largest by count. sort_by function returns an array of arrays
     count
@@ -70,7 +76,6 @@ my_hash = { "name" => "Eric",  #hash is a collection of key-value pairs.
   "hungry?" => false
 } 
 my_hash.each {|x,y| "puts #{x}:#{y}" }  # will print name:Eric  age:26  hungry:false
-frequencies=Hash.new(0) # The first time we find the word, it will have a default value of 0 
 
 
 
@@ -141,3 +146,27 @@ next if i % 2 == 0  #in loop skip to next iteration if state true, ie: if even n
   puts "I'm a code block!"
 end
 1.times { puts "As am I!" }
+
+
+#symbols #symbols #symbols #symbols #symbols #symbols #symbols #symbols #symbols #symbols #symbols #symbols 
+#--------------------------------------------------------------------------------------------------------
+primarily used either as hash keys or for referencing method names. 
+Symbols make good hash keys for a few reasons:
+    They're immutable, meaning they can't be changed once they're created;
+    Only one copy of any symbol exists at a given time, so they save memory;
+    Symbol-as-keys are faster than strings-as-keys because of the above two reasons.
+.to_s #convert between strings and symbols The .to_s and .to_sym methods are what you're looking for!
+.to_sym # to symbol
+.to_i #to integer
+.intern #This will internalize the string into a symbol and works just like .to_sym:
+.to_a  # takes range of objects and turns it into array of objects
+good_movies = movie_ratings.select {|movie,rating| rating > 3} # select function
+.each_key #my_hash.each_key { |k| print k, " " }
+.each_value # my_hash.each_value { |v| print v, " " }
+
+add values:
+movies.store(title,rating) 
+movies[title]=rating
+
+delete values:
+movies.delete(title)
