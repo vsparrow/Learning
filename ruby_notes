@@ -38,14 +38,24 @@ convention #variables start with lowercase letter and words should be separated 
 variable_y = gets.chomp #assign variable to user input, Ruby adds newline after each bit of input; chomp removes that extra line. 
 #{variable_y}  #use variable in print : print "Your input of #{variable_y} is cool" 
 variable_y =Integer(user.chomp) # the variable HAS to be an int
+item1 <=> item 2 # combined comparison operator  compare two Ruby objects.  returns 0 if the first operand (item to be compared) equals the second, 1 if first operand is greater than the second, and -1 if the first operand is less than the second
 
 #arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays 
 #-----------------------------------------------------------------------------
-my_array=[1,2,3,4,5]  # Array
+my_array=[1,2,3,4,5]    # Array
+my_array.sort           # will sort array
+books.sort! { |firstBook, secondBook| firstBook <=> secondBook } ## To sort our books in ascending order, in-place , default
+books.sort! {|book1,book2| book2 <=> book1} ## Sort your books in descending order, in-place below
+my_array.reverse!       #reverse sort
 s.each { |x|  x.each {|y| puts "#{y}" }}   #print out each item of multi-demensional array
+
 
 #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash 
 #---------------------------------------------------------------------------------
+# hashes are just collections of key-value pairs, where a unique key is associated with some value.
+# keys must be unique, but values can repeat. (That's why we can have more than one key share the value "cat."
+# create hash : hash literal notation       :   new_hash = { "one" => 1 }
+# create hash : hash constructor notation   :   new_hash = Hash.new
 my_hash=Hash.new            # same as my_hash={}
 my_has["Stevie"] = "cat"    # add a hash : if print my_hash["Stevie"] output is "cat"
 
@@ -124,3 +134,10 @@ next if i % 2 == 0  #in loop skip to next iteration if state true, ie: if even n
 #----------------------------------------------------------------------------------------------------------------------
 #argument: piece of code you actually put between the method's parentheses when you call it  Here its 12
 #parameter: parameter is the name you put between the method's parentheses when you define it. parameter here is n 
+#splat arguments. Splat arguments are arguments preceded by a *, which signals to Ruby: "Hey Ruby, I don't know how many arguments there are about to be, but it could be more than one."
+#blocks think of blocks as a way of creating methods that don't have a name. (These are similar to anonymous functions in JavaScript or lambdas in Python.)
+
+1.times do
+  puts "I'm a code block!"
+end
+1.times { puts "As am I!" }
