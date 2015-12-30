@@ -14,6 +14,9 @@ puts adds a newline to the end of the output. print does not.
 
  CRUD, for create, read, update, and delete (respectively). These are the actions you take when you update an entry in a database, ask a website for information, or write a blog post. 
 
+returns: Ruby's methods will return the result of the last evaluated expression if return not defined
+
+
 ###STRING ###STRING ###STRING ###STRING ###STRING ###STRING ###STRING ###STRING 
 #---------------------------------------------------------------------------------------
 "string".length #get length of string ie: 5
@@ -90,6 +93,13 @@ else
   dosomething3
 end
 
+#one line if
+puts "It's true!" if true # BUT CANNOT DO THIS -> if true puts "It's true!"
+
+#ternary conditional expression
+boolean ? Do this if true: Do this if false #example: puts 3 < 4 ? "3 is less than 4!" : "3 is not less than 4."
+
+
 unless  some_false_variable    #continue if not true expression; its like "if not true" ; same syntax as if
   doexpression
 end
@@ -100,6 +110,32 @@ Remember, this is basically a short hand if statement. It will do whatever you a
 In our example, problem is false, so we don't have a problem. We print Good to go!
 
 boolean: # 3 operators && ||  !
+
+
+#CASE
+case language
+when "JS"
+  puts "Websites!"
+else
+  puts "I don't know!"
+end
+
+#CASE ALTERNATE
+case language
+  when "JS" then puts "Websites!"
+  else puts "I don't know!"
+end
+
+#conditional assignment operator: ||=    only want to assign a variable if it hasn't already been assigned? 
+favorite_book = nil
+favorite_book ||= "Cat's Cradle" #now cats cradle because was before nil
+favorite_book ||= "Why's (Poignant) Guide to Ruby" # still cats cradle because favbook NOT nil
+favorite_book = "Why's (Poignant) Guide to Ruby" # now wpgtr because of assignment operator
+
+
+
+
+
 
 
 # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS # LOOPS 
