@@ -7,6 +7,9 @@ Division (/)
 Exponentiation (**)
 Modulo (%)
 
+assignment operators +=, -=, *=, and /=  # example: counter +=1 same as counter = counter + 1
+
+
 puts adds a newline to the end of the output. print does not.  
 
 ###STRING ###STRING ###STRING ###STRING ###STRING ###STRING ###STRING ###STRING 
@@ -63,4 +66,11 @@ boolean: # 3 operators && ||  !
 
 until some_statement_is_true
   do this
+end
+
+#FOR
+# three dots in the range; exclude the final number in the count: for num in 1...10 means "go up to but don't include 10."
+#If we use two dots, this tells Ruby to include the highest number in the range.
+for num in 1...10  # from 1 up to 9
+  puts num
 end
