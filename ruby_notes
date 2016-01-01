@@ -6,6 +6,8 @@ Multiplication (*)
 Division (/)
 Exponentiation (**)
 Modulo (%)
+[1.2,2.2].floor # [1,2] method rounds a float (a number with a decimal) down to the nearest integer. 
+
 
 puts adds a newline to the end of the output. print does not.  
 
@@ -31,6 +33,9 @@ string.include? "s" #evaluates to true if it finds "s" and false otherwise.
 string.gsub!(/s/,"th") # global substitution method, here substitute all "s" for "th"
 string.split(",") #  takes string returns array. use text in parentheses as  delimiter
 number.to_s # takes number converts to string
+"I love " + "drink" # becomes " I love drink"
+"I love " << drink # same as above, here if drink is variable = chai, "I love chai"
+
 
 comments:
 # for single line comments
@@ -55,7 +60,7 @@ books.sort! { |firstBook, secondBook| firstBook <=> secondBook } ## To sort our 
 books.sort! {|book1,book2| book2 <=> book1} ## Sort your books in descending order, in-place below
 my_array.reverse!       #reverse sort
 s.each { |x|  x.each {|y| puts "#{y}" }}   #print out each item of multi-demensional array
-
+my_array.collect { |num| num ** 2 } # return 2 4 9 16 25 : takes code block and applies the expression in the block to every element in an array. 
 
 #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash 
 #---------------------------------------------------------------------------------
@@ -206,3 +211,10 @@ movies[title]=rating
 
 delete values:
 movies.delete(title)
+
+#calls #calls  #calls #calls #calls #calls #calls #calls #calls #calls #calls #calls #calls #calls #calls #calls 
+#------------------------------------------------------------------------------------------------------------
+
+strings = ["1", "2", "3"]
+nums = strings.map(&:to_i)
+# ==> [1, 2, 3]
