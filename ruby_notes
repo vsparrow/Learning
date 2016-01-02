@@ -272,3 +272,28 @@ nums = strings.map(&:to_i)
 #By convention, class names start with a capital letter and use CamelCase instead of relyingonunderscores.
 # started ourclass definition off with a method called initialize. You can think of initialize as the function that "boots up" each object the class creates.
 # @ before a variable to signify that it's an instance variable. This means that the variable is attached to the instance of the class.
+#public Public methods allow for an interface with the rest of the program; they say, "Hey! Ask me if you need to know something about my class or its instances."
+#private Private methods, on the other hand, are for your classes to do their own work undisturbed. They don't want anyone asking them anything, so they make themselves unreachable!
+
+
+
+
+class Creature  #ParentClass
+    @@creature_count=0 #global variable 
+    def initialize(name)  #all class need to intialize
+        @name=name
+        @@creature_count +=1  #adds to global count
+    end
+    def fight             #method of class Creature
+        return "Punch to the chops!"
+    end
+end #end class Creature
+
+
+#Any given Ruby class can have only one superclass.(Parent)
+class Dragon < Creature  #start ChildClass < ParentClass #Inherhit : child inherit all methods from parent
+    def fight            #OVERRIDE PARENT"S method
+        return "Breathes fire!"
+    end
+end
+
