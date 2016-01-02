@@ -52,6 +52,13 @@ variable_y =Integer(user.chomp) # the variable HAS to be an int
 item1 <=> item 2 # combined comparison operator  compare two Ruby objects.  returns 0 if the first operand (item to be compared) equals the second, 1 if first operand is greater than the second, and -1 if the first operand is less than the second
 puts "string".object_id #  .object_id method gets the ID of an object—it's how Ruby knows whether two objects are the exact same object
 
+ #variable types
+ you can have variables that are available everywhere (global variables), $
+ ones that are only available certain methods (local variables), 
+ others that are members of a certain class (class variables), @@
+ and variables that are only available to particular instances of a class (instance variables). @
+
+some variables start with $, @, or @@? This helps mark them as global, instance, and class variables (respectivel
 #arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays 
 #-----------------------------------------------------------------------------
 my_array=[1,2,3,4,5]    # Array
@@ -188,6 +195,45 @@ next if i % 2 == 0  #in loop skip to next iteration if state true, ie: if even n
 end
 1.times { puts "As am I!" }
 
+#LAMBDAS AND PROCS #LAMBDAS AND PROCS #LAMBDAS AND PROCS #LAMBDAS AND PROCS #LAMBDAS AND PROCS #LAMBDAS AND PROCS #LAMBDAS AND PROCS 
+#-----------------------------------------------------------------------------------------------------------
+
+# lambda vs proc: a lambda checks the number of arguments passed to it, while a proc does not. 
+# lambda will throw an error if you pass it the wrong number of arguments, whereas a proc will ignore unexpected arguments and assign nil to any that are missing.
+# Second, when a lambda returns, it passes control back to the calling method; when a proc returns, it does so immediately, without going back to the calling method.
+
+#LAMBDA    defined as lambda { |param| block }
+def lambda_demo(a_lambda)     #example
+  puts "I'm the method!"
+  a_lambda.call          #prints "I'm the lambda"
+end
+lambda_demo(lambda { puts "I'm the lambda!" }) #almost same as lambda_demo(Proc.new {puts "I'm the lambda"})
+
+#lambda2 example
+strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
+symbolize =lambda {|x| x.to_sym}
+symbols = strings.collect(&symbolize) # get [:leonardo, :donatello, :raphael, :michaelangelo] can use map instead of collect
+
+#lambda vs proc example:
+
+def batman_ironman_proc
+  victor = Proc.new { return "Batman will win!" } #returns to caller
+  victor.call
+  "Iron Man will win!"
+end
+#batman will win
+puts batman_ironman_proc
+#the proc says Batman will win? This is because it returns immediately, without going back to the batman_ironman_proc method.
+
+def batman_ironman_lambda
+  victor = lambda { return "Batman will win!" } #returns to method
+  victor.call
+  "Iron Man will win!"
+end
+#ironman will win
+puts batman_ironman_lambda
+#lambda, however, goes back into the method after being called, so the method returns the last code it evaluates: "Iron Man will win!"
+
 
 #symbols #symbols #symbols #symbols #symbols #symbols #symbols #symbols #symbols #symbols #symbols #symbols 
 #--------------------------------------------------------------------------------------------------------
@@ -218,3 +264,11 @@ movies.delete(title)
 strings = ["1", "2", "3"]
 nums = strings.map(&:to_i)
 # ==> [1, 2, 3]
+
+#class 
+#-----------------------------------------------------------------
+
+#A class is just a way of organizing and producing objects with similar attributes and methods.
+#By convention, class names start with a capital letter and use CamelCase instead of relyingonunderscores.
+# started ourclass definition off with a method called initialize. You can think of initialize as the function that "boots up" each object the class creates.
+# @ before a variable to signify that it's an instance variable. This means that the variable is attached to the instance of the class.
