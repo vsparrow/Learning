@@ -297,3 +297,51 @@ class Dragon < Creature  #start ChildClass < ParentClass #Inherhit : child inher
     end
 end
 
+
+class Person
+  attr_reader :name  #now we can access and read @name using :name
+  attr_writer :name   #now we can access and write @name using :name
+  attr_accessor :job   # like read and write in one
+  def initialize(name,job)
+    @name = name
+    @job=job
+  end
+end
+
+
+#modules #modules #modules #modules #modules #modules #modules #modules #modules #modules #modules #modules #modules #modules #modules #modules 
+#-----------------------------------------------------------------------------------------
+
+#module  a toolbox that contains a set methods and constants.
+#You can think of modules as being very much like classes, only modules can't create instances and can't have subclasses.
+#They're just used to store things!
+#Like class names, module names are written in CapitalizedCamelCase, rather than lowercasewithunderscores.
+#. Ruby constants are written in ALL_CAPS and are separated with underscores if there's more than one word.
+
+Math::PI and Circle::PI
+#scope resolution operator, which is a fancy way of saying it tells Ruby where you're looking for a specific bit of code. 
+#If we say Math::PI, Ruby knows to look inside the Math module to get that PI, not any other PI (such as the one we created in Circle).
+
+puts Math::PI  #print constant PI from module Math
+require "Module_name" #bring in modules that are not installed with interpretor
+include "Module_name" #you no longer have to prepend your constants and methods with the module nam write PI instead of Math::PI
+
+Mixin #When module is used to mix additional behavior/info into a class,  called a mixin. customize a class without having to rewrite code!
+module Action; def jump; puts "I jumped" end;end
+class Cat; include Action; end
+peter=Cat.new
+peter.jump   # see how class cat, peter, inherited jump from Action
+
+extend #keyword mixes a module's methods at the class level. 
+#This means that class itself can use the methods, as opposed to instances of the class
+
+# ThePresent has a .now method that we'll extend to TheHereAnd
+module ThePresent
+  def now
+    puts "It's #{Time.new.hour > 12 ? Time.new.hour - 12 : Time.new.hour}:#{Time.new.min} #{Time.new.hour > 12 ? 'PM' : 'AM'} (GMT)."
+  end
+end
+class TheHereAnd
+  extend ThePresent
+end
+TheHereAnd.now  #see how we called class not a varialbe p=TheHereAnd.new ; p.now
