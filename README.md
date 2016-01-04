@@ -3,7 +3,10 @@ Repository of resources I am using for learning.
 
 Codeschool: try ruby  
 Started Jan 03 2016  
+Finished Jan 04 2016
 https://www.codeschool.com/paths/ruby  
+Review: Mixed opinion. Not a very good course, not much explanation compared to codeacedemy, reviews from others say codeschool is no good, this reinforces  that opinion for myself. This wasn't even a review of material it was jsut a handful of excercies. However if I look at it in the context of, this is "try ruby", not "learn ruby", the the course does exactly that. Appears greared towards those already familiar with coding, who want to try a small part of the language without any investment in installing anything.  
+Wouldn't recommend.  
 
 Codeacademy: Learn Ruby  
 Started Dec 27 2015
