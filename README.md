@@ -1,6 +1,10 @@
 # Learning
 Repository of resources I am using for learning.
 
+Codeschool: Ruby Bits
+Started Jan 04 2016
+https://www.codeschool.com/courses/ruby-bits
+
 Codeschool: try ruby  
 Started Jan 03 2016  
 Finished Jan 04 2016
