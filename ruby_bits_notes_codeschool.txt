@@ -1,1 +1,38 @@
+#so far course is good, but it's definitly NOT a beginners course
+#30-60mph not a 0-20mph
 
+nil # treated as false when it comes to conditionals
+""  # empty string treated as true
+0   # treated as true
+[]  # empty array treated as true
+
+
+#conditionals 
+#-------------------------------------------------------------------------------------------------
+fail "Password length too short" if password.length < 8 #example good coode
+
+if password.length < 8                                  #example "bad" code
+  fail "Password length too short"
+end
+
+if user && user.signed_in?                              #example good code, "short circuit", if one is bad, no need to continue
+  #somecode
+end
+
+if user                                                 #bad code
+  if user.signed_in?
+    #somecode
+  end
+end
+
+def sign_in
+  current_session || user_sign_in                       #user_sign_in NOT evaluated UNLESS current_session is false(not there)
+end
+
+
+i_was_set=1       # 1
+i_was_set ||=2    # 1 , its "or = 2", but since "i_was_set" has been set it doesnt evaluate
+i_was_not_set=2   # 2 , it evaluates to 2 since "i_was_not_set" was not defined
+
+options[:country] ||= "us"
+options[:privacy] ||= true
