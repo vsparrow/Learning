@@ -1,6 +1,10 @@
 # Learning
 Repository of resources I am using for learning.
 
+Chris Pine : Learn to Program  
+Started Jan 13 2016  
+https://pine.fm/LearnToProgram  
+  
 Codeschool: Ruby Bits : Incomplete
 Started Jan 04 2016
 Cancelled Jan 13 2016
