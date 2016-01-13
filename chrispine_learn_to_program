@@ -1,2 +1,8 @@
 When you write something in a human language, what is written is called text. 
 When you write something in a computer language, what is written is called code.
+
+To make the code easier to read, 
+colored parts of the code different colors. 
+(For example, numbers are always green.)
+Anything you are supposed to type in will be in a dotted box, 
+anything a program prints out will be in a grey box
