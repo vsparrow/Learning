@@ -1,9 +1,11 @@
 # Learning
 Repository of resources I am using for learning.
 
-Codeschool: Ruby Bits
+Codeschool: Ruby Bits : Incomplete
 Started Jan 04 2016
+Cancelled Jan 13 2016
 https://www.codeschool.com/courses/ruby-bits
+Review: This is not really an intro course to Ruby or Ruby on Rails. It is better designed for a more experianced rubist. The examples were very good and I feel I should come back to it. There is a lot of value to take from the course, but I am not at the level to gain the best info I can from the course. This is more of a Rails course than ruby. Well, its actually a code ruby practices type course so far, but many of hte examples assumes rails familiarity.
 
 Codeschool: try ruby  
 Started Jan 03 2016  
