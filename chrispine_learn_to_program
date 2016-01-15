@@ -6,3 +6,6 @@ colored parts of the code different colors.
 (For example, numbers are always green.)
 Anything you are supposed to type in will be in a dotted box, 
 anything a program prints out will be in a grey box
+
+puts means PUT STRING
+gets means GET STRING 
