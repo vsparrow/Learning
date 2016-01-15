@@ -9,3 +9,10 @@ anything a program prints out will be in a grey box
 
 puts means PUT STRING
 gets means GET STRING 
+
+chomp of gets.chomp takes of eneter enterS at end of String
+chomp also works for other variables too! no only gets
+
+what is self? It's a special variable which points to whatever object you are in.
+
+5 + 5 is really just a shortcut way of writing 5.+ 5.
