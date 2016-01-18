@@ -16,3 +16,11 @@ chomp also works for other variables too! no only gets
 what is self? It's a special variable which points to whatever object you are in.
 
 5 + 5 is really just a shortcut way of writing 5.+ 5.
+
+Captials come BEFORE lowercase!
+
+ The comparison methods aren't giving us the strings 'true' and 'false'; they are giving us the special objects true and false
+ 
+  A computer, on the other hand, uses or to mean "one or the other, or both."
+  
+  
