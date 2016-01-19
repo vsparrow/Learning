@@ -24,3 +24,27 @@ Captials come BEFORE lowercase!
   A computer, on the other hand, uses or to mean "one or the other, or both."
   
   
+ nil: Ruby's way of saying "nothing". nil is a special object which basically means "not any other object." 
+ And when you puts nil, it prints out nothing. (Just a new line.) 
+ 
+ 
+ 
+a=[89.9,flavor,[true,false]]	#but this is
+a.each {|x| puts x}
+flavor='berry'
+a.each {|x| puts x}
+# Remember, variables aren't objects, so our last array is really pointing to float, a string, and an array. 
+# Even if we were to set flavor to point to something else, that wouldn't change the array. 
+# in print 2 of array it still outputs vanilla
+
+array.each
+each is just another array method. Methods like each which "act like" loops are often called iterators. 
+
+join works much like to_s does, except that it adds a string in between the array's objects. Let's take a look: 
+
+200.times do
+  puts []
+end
+puts treats arrays differently from other objects: it just calls puts on each of the objects in the array. 
+That's why putsing an empty array 200 times doesn't do anything; the array doesn't point to anything, 
+so there's nothing to puts. (Doing nothing 200 times is still doing nothing.) 
