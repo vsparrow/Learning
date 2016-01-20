@@ -71,6 +71,8 @@ puts "string".object_id #  .object_id method gets the ID of an object—it's how
  and variables that are only available to particular instances of a class (instance variables). @
 
 some variables start with $, @, or @@? This helps mark them as global, instance, and class variables (respectivel
+
+
 #arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays #arrays 
 #-----------------------------------------------------------------------------
 my_array=[1,2,3,4,5]    # Array
@@ -80,6 +82,11 @@ books.sort! {|book1,book2| book2 <=> book1} ## Sort your books in descending ord
 my_array.reverse!       #reverse sort
 s.each { |x|  x.each {|y| puts "#{y}" }}   #print out each item of multi-demensional array
 my_array.collect { |num| num ** 2 } # return 2 4 9 16 25 : takes code block and applies the expression in the block to every element in an array. 
+array.last  #get the last item in array
+array.length # get length
+array.push 'cool'  # adds new item cool to the end of array
+array.pop #pops the last item of array and tell you what it is
+
 
 #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash #hash 
 #---------------------------------------------------------------------------------
