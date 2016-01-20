@@ -45,6 +45,14 @@ join works much like to_s does, except that it adds a string in between the arra
 200.times do
   puts []
 end
+
+
 puts treats arrays differently from other objects: it just calls puts on each of the objects in the array. 
 That's why putsing an empty array 200 times doesn't do anything; the array doesn't point to anything, 
 so there's nothing to puts. (Doing nothing 200 times is still doing nothing.) 
+
+
+ The methods push and pop are sort of opposites, like + and - are. 
+ push adds an object to the end of your array, 
+ pop removes the last object from the array (and tell you what it was).
+ last is similar to pop in that it tells you what's at the end of the array, except that it leaves the array alone.
