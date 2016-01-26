@@ -56,3 +56,20 @@ so there's nothing to puts. (Doing nothing 200 times is still doing nothing.)
  push adds an object to the end of your array, 
  pop removes the last object from the array (and tell you what it was).
  last is similar to pop in that it tells you what's at the end of the array, except that it leaves the array alone.
+
+Every method returns something even if its just nil
+*******the value returned from a method is simply the last line of the method. 
+look below, even though we dont explicity say return 'yellow submarine' that is what is returned. weird!
+
+
+def sayMoo numberOfMoos
+  puts 'mooooooo...'*numberOfMoos
+  'yellow submarine'
+end
+
+x = sayMoo 2
+puts x
+
+mooooooo...mooooooo...
+yellow submarine
+
