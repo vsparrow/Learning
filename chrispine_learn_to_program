@@ -73,3 +73,64 @@ puts x
 mooooooo...mooooooo...
 yellow submarine
 
+make time:
+puts Time.mktime(1976, 8, 3, 10, 11)  # When I was born.
+time  = Time.new   # The moment I generated this web page.
+time2 = time + 60  # One minute later.
+
+
+ You can compare times using the comparison methods 
+ (an earlier time is less than a later time), 
+ if you subtract one time from another, you'll get the number of seconds between them. 
+ 
+ 
+ 
+ Hashes are a lot like arrays: they have a bunch of slots which can point to various objects.
+ However, in an array, the slots are lined up in a row, and each one is numbered (starting from zero). 
+ In a hash, the slots aren't in a row (they are just sort of jumbled together), 
+ you can use any object to refer to a slot,  not just a number. 
+ It's good to use hashes when you have a bunch of things you want to keep track of, 
+ but they don't really fit into an ordered list.
+ 
+ 
+ 
+ classes:
+ you can extend a class, such as integer with a new def to make a new method, or you can create a new class entirly.
+ inside that method we use self to refer to the object (the integer) using the method. 
+ 
+class Die
+  def initialize#(numberShowing)
+    roll
+  end
+  def roll
+    @numberShowing = 1 + rand(6)
+  end #def roll
+
+  def showing
+    @numberShowing
+  end #def showing  
+
+  def update (input)
+    if input >0 and input < 7
+      @numberShowing = input
+    else
+      puts 'ERROR only 1 to 6 !!!'
+    end
+  end
+end #class
+
+dice=[Die.new,Die.new]  # make some dice
+dice.each do |die|
+  puts die.roll
+end
+puts dice[0].showing 
+puts dice[1].showing
+x=Die.new
+puts "Now SHowing: #{x.showing}"
+x.update(5)
+puts x.showing
+
+An instance of a class is just an object of that class. 
+A method's local variables last until the method is finished. 
+An object's instance variables, on the other hand, will last as long as the object does. 
+To tell instance variables from local variables, they have @ in front of their names: 
