@@ -2,8 +2,10 @@
 Repository of resources I am using for learning.
 
 Chris Pine : Learn to Program  
-Started Jan 13 2016  
+Started Jan 13 2016 
+Finished Feb 01 2016
 https://pine.fm/LearnToProgram  
+Review: Very good book, friendly to use with tons of examples in the book a well as assignments. THe last few chapters realy brought it together, making it feel like I am a programmer rather than someone copy and pasting some text, which is helpful to for a beginner like myself. It came highly recommnded and I would recomend to others.  
   
 Codeschool: Ruby Bits : Incomplete
 Started Jan 04 2016
