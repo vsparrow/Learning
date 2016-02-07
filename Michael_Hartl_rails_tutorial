@@ -1,0 +1,14 @@
+Notation
+
+the >= notation always installs the latest gem
+ the ~> 4.0.0 notation only installs updated gems representing minor point releases (e.g., from 4.0.0 to 4.0.1), 
+ but not major point releases (e.g., from 4.0 to 4.1). 
+ 
+ Unfortunately, experience shows that even minor point releases can break things,
+
+When interacting with a Rails application, a browser sends a request, which is received by a web server and passed on 
+to a Rails controller, which is in charge of what to do next. In some cases, the controller will immediately render a view, 
+which is a template that gets converted to HTML and sent back to the browser. More commonly for dynamic sites, the controller
+interacts with a model, which is a Ruby object that represents an element of the site (such as a user) and is in charge of 
+communicating with the database. After invoking the model, the controller then renders the view and returns the complete web page 
+to the browser as HTML.
