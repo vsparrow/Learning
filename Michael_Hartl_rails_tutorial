@@ -12,3 +12,20 @@ which is a template that gets converted to HTML and sent back to the browser. Mo
 interacts with a model, which is a Ruby object that represents an element of the site (such as a user) and is in charge of 
 communicating with the database. After invoking the model, the controller then renders the view and returns the complete web page 
 to the browser as HTML.
+
+$ git config --global alias.co checkout # Alias for checkout if system doesnt have it
+
+$ git add -A # This command adds all the files in the current directory apart from those that match the patterns in a special file called .gitignore.
+
+
+$ git branch -D topic-branch
+Unlike the -d flag, the -D flag will delete the branch even though we haven’t merged in the changes.
+
+To prepare the system for deployment to production, we run bundle install with a special flag to prevent the local installation
+of any production gems (which in this case consists of pg and rails_12factor):
+$ bundle install --without production
+
+
+**
+add app, edit controllers/application_controller.rb
+edit routes: edit config/routes.rb
