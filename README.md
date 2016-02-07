@@ -1,6 +1,10 @@
 # Learning
 Repository of resources I am using for learning.
 
+Michael Hartl: Tutorial  
+Started Feb 06 2016  
+https://www.railstutorial.org/book/beginning  
+
 Chris Pine : Learn to Program  
 Started Jan 13 2016 
 Finished Feb 01 2016
