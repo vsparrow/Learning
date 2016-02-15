@@ -40,3 +40,82 @@ in the context of Rails applications REST means that most application components
  the CRUD operations of relational databases and to the four fundamental HTTP request methods: POST, GET, PATCH, and DELETE
  
 Variables that start with the @ sign, called instance variables, are automatically available in the views
+
+
+If double-quoted strings can do everything that single-quoted strings can do, and interpolate to boot, 
+what’s the point of single-quoted strings? They are often useful because they are truly literal, and contain exactly the 
+characters you type. For example, the “backslash” character is special on most systems, as in the literal newline \n. 
+If you want a variable to contain a literal backslash, single quotes make it easier:
+>> '\n'       # A literal 'backslash n' combination
+=> "\\n"
+
+As with the #{ combination in our previous example, Ruby needs to escape the backslash with an additional backslash; inside double-quoted strings, a literal backslash is represented with two backslashes. For a small example like this, there’s not much savings, but if there are lots of things to escape it can be a real help:
+
+>> 'Newlines (\n) and tabs (\t) both use the backslash character \.'
+=> "Newlines (\\n) and tabs (\\t) both use the backslash character \\."
+
+
+It’s worth noting that the nil object is special, in that it is the only Ruby object that is false in a boolean context,
+apart from false itself. We can see this using !! (read “bang bang”), which negates an object twice, thereby coercing it to its boolean value:
+>> !!nil
+=> false
+
+Note that Ruby functions have an implicit return, meaning they return the last statement evaluated—
+
+>> a                  # Just a reminder of what 'a' is
+=> [42, 8, 17]
+>> a.first
+=> 42
+>> a.second
+=> 8
+>> a.last
+=> 17
+>> a.last == a[-1]    # Comparison using ==
+=> true
+
+You can also add to arrays with the push method or its equivalent operator, <<:
+>> a.push(6)                  # Pushing 6 onto an array
+=> [42, 8, 17, 6]
+>> a << 7                     # Pushing 7 onto an array
+=> [42, 8, 17, 6, 7]
+>> a << "foo" << "bar"        # Chaining array pushes
+=> [42, 8, 17, 6, 7, "foo", "bar"]
+
+Although hashes resemble arrays, difference is that hashes don’t  guarantee keeping their elements in a particular order
+If order matters, use an array
+
+inspect method, which returns a string with a literal representation of the object it’s called on:
+>> puts "It worked!", "It worked!".inspect  THE OUTPUT IS    It worked!  vs "It worked!"
+
+
+parentheses? In Ruby, they are optional, so these two are equivalent:
+# Parentheses on function calls are optional.
+stylesheet_link_tag('application', media: 'all',
+                                   'data-turbolinks-track' => true)
+stylesheet_link_tag 'application', media: 'all',
+                                   'data-turbolinks-track' => true
+
+When hashes are the last argument in a function call, the curly braces are optional, so these two are equivalent:
+# Curly braces on final hash arguments are optional.
+stylesheet_link_tag 'application', { media: 'all',
+                                     'data-turbolinks-track' => true }
+stylesheet_link_tag 'application', media: 'all',
+                                   'data-turbolinks-track' => true
+
+
+why does the data-turbolinks-track key-value pair use the old-style hashrocket syntax? This is because using the newer syntax to write
+data-turbolinks-track: true
+is invalid because of the hyphens. (Recall from Section 4.3.3 that hyphens can’t be used in symbols.) This forces us to use the older syntax, yielding
+'data-turbolinks-track' => true
+
+
+ Hash.new can take  a default value for the hash, which is the value of the hash for a nonexistent key:
+>> h = Hash.new
+=> {}
+>> h[:foo]            # Try to access the value for the nonexistent key :foo.
+=> nil
+>> h = Hash.new(0)    # Arrange for nonexistent keys to return 0 instead of nil.
+=> {}
+>> h[:foo]
+=> 0
+
