@@ -119,3 +119,17 @@ is invalid because of the hyphens. (Recall from Section 4.3.3 that hyphens canâ€
 >> h[:foo]
 => 0
 
+When a method gets called on the class itself, as in the case of new, itâ€™s called a class method. 
+The result of calling new on a class is an object of that class, also called an instance of the class.
+A method called on an instance, such as length, is called an instance method.
+
+
+ In Rails, the principal importance of instance variables is that they are automatically available in the views,
+ but in general they are used for variables that need to be available throughout a Ruby class. 
+ Instance variables always begin with an @ sign, and are nil when undefined.
+ 
+ 
+  In general, CSS rules refer either to a class, an id, an HTML tag, or some combination thereof, followed by a list of styling commands.
+  
+  the dot . in .center indicates that the rule styles a class. 
+  This means that elements inside any tag (such as a div) with class center will be centered on the page.
