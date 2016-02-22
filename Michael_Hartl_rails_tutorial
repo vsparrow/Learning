@@ -133,3 +133,7 @@ A method called on an instance, such as length, is called an instance method.
   
   the dot . in .center indicates that the rule styles a class. 
   This means that elements inside any tag (such as a div) with class center will be centered on the page.
+
+
+While assert_select is flexible and powerful (having many more options than the ones shown here), experience shows that it’s wise to take a lightweight approach by testing only HTML elements (such as site layout links) that are unlikely to change much over time.
+
