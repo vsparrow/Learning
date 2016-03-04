@@ -1,0 +1,3 @@
+Webrick web host that comes with ruby, good for dev, bad for prod, single processor.
+Use puma for prod, or other
+
