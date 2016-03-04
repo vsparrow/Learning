@@ -3,7 +3,11 @@ Repository of resources I am using for learning.
 
 Michael Hartl: Tutorial  
 Started Feb 06 2016  
+Cancelled March 4 2016
 https://www.railstutorial.org/book/beginning  
+Review: It is actually a very helpful book, everything is laid out A-Z, and is easy to follow along. I got up to chapter 8, and midway through I was having some difficulty diagnosing a problem. Previous issues I was able to resolve as error messages would point me in the right direction. This error with the Logged in upper menu bar was giving a problem because there was no actual "error" coming up but it was wrong. Then I realzied that I really didnt know what to look for. I have a 101 introduction to Rails now thanks to the book, but I should also try some beginner Rails courses before I come back. 
+I think that second time around I should have a clear understanding of what I am doing rather than immitating what MHartl is writing.  
+I did get a taste of Gemfiles, app, config folders bundling, heroku, cloud ide, etc so it has been productive.  
 
 Chris Pine : Learn to Program  
 Started Jan 13 2016 
