@@ -22,3 +22,7 @@ rails new app_or_folder_name #create new folder with mvc frameworkinside
 rails server # start the server
 rails generate home index # home is the controller, index is the view : goes to app\controllers and app\views\{controllername}
 
+RUBY:
+$variable #global variable
+variables need to start with a letter
+defined?x # see if variable x is defined
