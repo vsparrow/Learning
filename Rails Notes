@@ -5,11 +5,23 @@ digital ocean has a good isntall guide for rails for ubuntu
 
 FOLDERS:
 apps folder: where the mvc structure is 
-app/models: database functions  
-app/views: display  
-public folder: have site images for our templates, stylesheets/css
+app/controller : hold all controller classes, handles http requests,
+app/helpers : keeps controller folder tidy, random functions methods go here
+app/models: database functions, classes  
+app/views: displa, html files dsplayed to user
+app/views/layouts : template files,where your header footer goes
+componenets : small self contrlled apps where mvc bundled together
+config : all config files, routes.rb , database.yml : which db need for dev/test/prod,
 db folder: for database migrations, create tables 
-test: unit testing
+doc : for documentation for your code
+lib : library classes
+logs: for error logs
+public folder:  avaialble to web::have site images for our templates, stylesheets/css, javasscript, static html
+scripts: holds your scrips, generate, etc
+test: unit testing, 
+tmp: all temp files held for processings
+vendor : 3rd party libs
+Rakefile : helps with building packagins, like makefile
 
 FILES;
 nameofcontroller_controller # this is the convention
@@ -26,3 +38,6 @@ RUBY:
 $variable #global variable
 variables need to start with a letter
 defined?x # see if variable x is defined
+"any string.methods #shows all methods availible to use on string  if in irb, example 7.method gets all int methods., can also do 7.method.srt
+all object belong to a class 
+classes have properties and actions (methods) : classes are capitalized ;example class Car
