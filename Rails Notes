@@ -35,6 +35,8 @@ rails new app_or_folder_name #create new folder with mvc frameworkinside
 rails server # start the server
 rails generate home index # home is the controller, index is the view : goes to app\controllers and app\views\{controllername}
 rake routes #show routes in site : create each action in perspective controller ie: posts#create needed defined in app/controllers/posts_controllers.rb
+rails generate model category name:string body:text something:tosomething #create model
+rake db:migrate #creates the categories from command above
 
 RAILS: other
 controllers are plural, model is singular : 
@@ -50,5 +52,5 @@ defined?x # see if variable x is defined
 "any string.methods #shows all methods availible to use on string  if in irb, example 7.method gets all int methods., can also do 7.method.srt
 all object belong to a class 
 classes have properties and actions (methods) : classes are capitalized ;example class Car
-
+@variable : instance variable # bound to an instance of a class and together forms what we call the state of an object.
 
