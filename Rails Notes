@@ -26,6 +26,7 @@ Rakefile : helps with building packagins, like makefile
 FILES;
 nameofcontroller_controller # this is the convention
 config/routes.rb # edit/add  route using: root 'controller#view'  example root 'home#index'
+.erb : embedded ruby file
 
 COMMANDS:
 rails -v
@@ -34,6 +35,12 @@ rails new app_or_folder_name #create new folder with mvc frameworkinside
 rails server # start the server
 rails generate home index # home is the controller, index is the view : goes to app\controllers and app\views\{controllername}
 
+RAILS: other
+controllers are plural, model is singular : 
+index action (definition) inside controller.
+add `resource :resourcename` to routes.rb file to add path to controller on webpage, example: routes: posts allows for localhost:3000/posts
+
+
 RUBY:
 $variable #global variable
 variables need to start with a letter
@@ -41,3 +48,5 @@ defined?x # see if variable x is defined
 "any string.methods #shows all methods availible to use on string  if in irb, example 7.method gets all int methods., can also do 7.method.srt
 all object belong to a class 
 classes have properties and actions (methods) : classes are capitalized ;example class Car
+
+
