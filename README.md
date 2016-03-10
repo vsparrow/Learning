@@ -1,6 +1,11 @@
 # Learning
 Repository of resources I am using for learning.
 
+Learn Ruby on Rails from scratch  
+Started: March 4 2016  
+https://www.udemy.com/learn-ruby-on-rails-from-scratch/  
+Review: Windows oriented, some good explanations.
+
 Michael Hartl: Tutorial  
 Started Feb 06 2016  
 Cancelled March 4 2016
