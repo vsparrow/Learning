@@ -3,7 +3,7 @@ Use puma for prod, or other
 digital ocean has a good isntall guide for rails for ubuntu  
 
 
-FOLDERS:
+FOLDERS and FILES:
 apps folder: where the mvc structure is 
 app/controller : hold all controller classes, handles http requests,
 app/helpers : keeps controller folder tidy, random functions methods go here
@@ -27,27 +27,41 @@ Gemfile : specify what gem dependencies are needed for your Rails app.
 Gemfile.lock:  Bundler records exact versions of gems that are installed (never edit directly)  
 Rakefile : helps with building packagins, like makefile  
 README.rdoc  instruction manual for your app
+routes.rb : app's routing file, contails DSL, domain-specific-language, 
+  tells Rails how to connect incoming requests to controllers and actions
 
-
-FILES;
+FILES-convention;
 nameofcontroller_controller # this is the convention
-config/routes.rb # edit/add  route using: root 'controller#view'  example root 'home#index'
 .erb : embedded ruby file
+config/routes.rb # edit/add  route using: root 'controller#view'  example root 'home#index'
+
+FILE-configuration
+routes.rb:  
+  get 'welcome/index' : tells Rails map requests to http://localhost:3000/welcome/index to the welcome controller's index action.  
+  root 'welcome#index' : tells Rails to map requests to the root of the application to the welcome controller's index action 
+
 
 COMMANDS:
 rails -v
 ruby -v  # Get version numbers
 rails new app_or_folder_name #create new folder with mvc frameworkinside
-rails server # start the server
-rails generate home index # home is the controller, index is the view : goes to app\controllers and app\views\{controllername}
+rails server # start the server (WEBrick). default http://localhost:3000  
+rails generate controller home index # home is the controller, index is the view : goes to app\controllers and app\views\{controllername}
+  railsguides: home is the controller / index is the action
 rake routes #show routes in site : create each action in perspective controller ie: posts#create needed defined in app/controllers/posts_controllers.rb
 rails generate model category name:string body:text something:tosomething #create model
 rake db:migrate #creates the categories from command above
 
 RAILS: other
+Actions: Often, more than one route to each controller, and different routes can be served by different actions.
 controllers are plural, model is singular : 
+Controller's purpose : to receive specific requests for the application.
 index action (definition) inside controller.
 add `resource :resourcename` to routes.rb file to add path to controller on webpage, example: routes: posts allows for localhost:3000/posts
+Routing : decides which controller receives which requests.
+View: purpose is to display this Controller information in a human readable format. 
+  the controller, not the view, where information is collected. The view should just display that information.
+  view templates are written in a language called eRuby (Embedded Ruby)
 <%  ruby code submergerd in html text
 <%=   if you wnat to display something on a page, need this rather than <%
 
