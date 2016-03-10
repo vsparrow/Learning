@@ -34,12 +34,17 @@ FILES-convention;
 nameofcontroller_controller # this is the convention
 .erb : embedded ruby file
 config/routes.rb # edit/add  route using: root 'controller#view'  example root 'home#index'
+CRUD operations. You can create, read, update and destroy items for a resource
+resource : term used for a collection of similar objects, such as articles, people or animals.  
+
 
 FILE-configuration
-routes.rb:  
-  get 'welcome/index' : tells Rails map requests to http://localhost:3000/welcome/index to the welcome controller's index action.  
-  root 'welcome#index' : tells Rails to map requests to the root of the application to the welcome controller's index action 
-
+config/routes.rb:  
+  get 'welcome/index' # tells Rails map requests to http://localhost:3000/welcome/index to the welcome controller's index action.  
+  root 'welcome#index' # tells Rails to map requests to the root of the application to the welcome controller's index action 
+  resources :articles  # provide a resource method to declare a REST resource for articles
+someAction_controller.rb # To define an action inside a controller, define a new method inside the controller.
+app/views/someAction/new.html.erb # when create controller, to have a REST action, need to make approproate view
 
 COMMANDS:
 rails -v
@@ -48,6 +53,7 @@ rails new app_or_folder_name #create new folder with mvc frameworkinside
 rails server # start the server (WEBrick). default http://localhost:3000  
 rails generate controller home index # home is the controller, index is the view : goes to app\controllers and app\views\{controllername}
   railsguides: home is the controller / index is the action
+rails generate controller articles # create a controller for articles: would make app/controllers/articles_controller.rb
 rake routes #show routes in site : create each action in perspective controller ie: posts#create needed defined in app/controllers/posts_controllers.rb
 rails generate model category name:string body:text something:tosomething #create model
 rake db:migrate #creates the categories from command above
