@@ -10,18 +10,24 @@ app/helpers : keeps controller folder tidy, random functions methods go here
 app/models: database functions, classes  
 app/views: displa, html files dsplayed to user
 app/views/layouts : template files,where your header footer goes
+bin : Contains the rails script that starts your app / can contain other scripts you use to setup, deploy or run your app
 componenets : small self contrlled apps where mvc bundled together
 config : all config files, routes.rb , database.yml : which db need for dev/test/prod,
 db folder: for database migrations, create tables 
 doc : for documentation for your code
 lib : library classes
 logs: for error logs
-public folder:  avaialble to web::have site images for our templates, stylesheets/css, javasscript, static html
+public folder:  avaialble to web::have site images for our templates, stylesheets/css, javasscript, static html. static files seen as-is by world
 scripts: holds your scrips, generate, etc
 test: unit testing, 
 tmp: all temp files held for processings
 vendor : 3rd party libs
-Rakefile : helps with building packagins, like makefile
+config.ru  : Rack configuration for Rack based servers used to start the application. (Rack model not Rack server)  
+Gemfile : specify what gem dependencies are needed for your Rails app.  
+Gemfile.lock:  Bundler records exact versions of gems that are installed (never edit directly)  
+Rakefile : helps with building packagins, like makefile  
+README.rdoc  instruction manual for your app
+
 
 FILES;
 nameofcontroller_controller # this is the convention
