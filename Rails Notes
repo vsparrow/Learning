@@ -29,6 +29,8 @@ Rakefile : helps with building packagins, like makefile
 README.rdoc  instruction manual for your app
 routes.rb : app's routing file, contails DSL, domain-specific-language, 
   tells Rails how to connect incoming requests to controllers and actions
+db/migrate/SOMETHING.rb # database migration file 
+  Migrations are Ruby classes that are designed to make it simple to create and modify database tables. 
 
 FILES-convention;
 nameofcontroller_controller # this is the convention
@@ -44,7 +46,9 @@ config/routes.rb:
   root 'welcome#index' # tells Rails to map requests to the root of the application to the welcome controller's index action 
   resources :articles  # provide a resource method to declare a REST resource for articles
 someAction_controller.rb # To define an action inside a controller, define a new method inside the controller.
+    render plain: params[:article].inspect  #with in a function, it will render the parameters of an ection, here article
 app/views/someAction/new.html.erb # when create controller, to have a REST action, need to make approproate view
+
 
 COMMANDS:
 rails -v
@@ -56,14 +60,21 @@ rails generate controller home index # home is the controller, index is the view
 rails generate controller articles # create a controller for articles: would make app/controllers/articles_controller.rb
 rake routes #show routes in site : create each action in perspective controller ie: posts#create needed defined in app/controllers/posts_controllers.rb
 rails generate model category name:string body:text something:tosomething #create model
+  rails generate model Article title:string text:text # we want a Article model, together with a title attribute of type string, 
+  and a text attribute of type text. Those attributes are automatically added to the articles table in the database and mapped to the Article model
 rake db:migrate #creates the categories from command above
+  rake db:migrate RAILS_ENV=production #default is dev environment, must pass env explicitly if working on prod or test 
 
 RAILS: other
 Actions: Often, more than one route to each controller, and different routes can be served by different actions.
+  remember: step1: add action inside controller step2: add VIEW inside views
+  ex: new method  index in Atricles_controller.rb then touch app/views/articles/index.html.erb
 controllers are plural, model is singular : 
-Controller's purpose : to receive specific requests for the application.
-index action (definition) inside controller.
-add `resource :resourcename` to routes.rb file to add path to controller on webpage, example: routes: posts allows for localhost:3000/posts
+  Controller's purpose : to receive specific requests for the application.
+  index action (definition) inside controller.
+  add `resource :resourcename` to routes.rb file to add path to controller on webpage, example: routes: posts allows for localhost:3000/posts
+Parameters:
+   "strong parameters", requires us to tell Rails exactly which parameters are allowed into our controller actions
 Routing : decides which controller receives which requests.
 View: purpose is to display this Controller information in a human readable format. 
   the controller, not the view, where information is collected. The view should just display that information.
