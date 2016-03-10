@@ -1,6 +1,11 @@
 # Learning
 Repository of resources I am using for learning.
 
+Getting Started with Rails
+http://guides.rubyonrails.org/getting_started.html
+Started March 10 2016
+Starting this at same time as Udemy course below, when offsite, video via RDP is no good.
+
 Learn Ruby on Rails from scratch  
 Started: March 4 2016  
 https://www.udemy.com/learn-ruby-on-rails-from-scratch/  
