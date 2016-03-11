@@ -75,8 +75,14 @@ controllers are plural, model is singular :
   add `resource :resourcename` to routes.rb file to add path to controller on webpage, example: routes: posts allows for localhost:3000/posts
 link_to # one of Rails' built-in view helpers. It creates a hyperlink based on text to display and where to go 
   <%= link_to 'My Blog', controller: 'articles' %> #create link labled My Blog and redirects to controller articles
+  If link to an action in the same controller, you don't need to specify the :controller option,  Rails will use the current controller by default.
 Parameters:
    "strong parameters", requires us to tell Rails exactly which parameters are allowed into our controller actions
+Pluralize # railshelper takes number+string as its arguments. If num is greater than one, the string will be automatically pluralized.
+Render vs Redirect
+  create action : use render instead of redirect_to when save returns false. 
+  The render method is used so that the @someInstance object is passed back to the new template when it is rendered. 
+  This rendering is done within the same request as the form submission, whereas the redirect_to will tell the browser to issue another request.
 Routing : decides which controller receives which requests.
 View: purpose is to display this Controller information in a human readable format. 
   the controller, not the view, where information is collected. The view should just display that information.
