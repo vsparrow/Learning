@@ -4,7 +4,9 @@ Repository of resources I am using for learning.
 Getting Started with Rails
 http://guides.rubyonrails.org/getting_started.html
 Started March 10 2016
+Finished March 14 2016
 Starting this at same time as Udemy course below, when offsite, video via RDP is no good.
+Nice little intro guide, most errors were all fatfingers. Troubleshooting the fatfingers, with having the rails guide as a "cheet sheet" was helpful in getting to learn the app folder structure. Nothing like hands on troublshooting.  
 
 Learn Ruby on Rails from scratch  
 Started: March 4 2016  
