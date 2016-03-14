@@ -78,6 +78,8 @@ link_to # one of Rails' built-in view helpers. It creates a hyperlink based on t
   If link to an action in the same controller, you don't need to specify the :controller option,  Rails will use the current controller by default.
 Parameters:
    "strong parameters", requires us to tell Rails exactly which parameters are allowed into our controller actions
+Partials:
+     share code among different html.erb templates to make them cleaner, and not have redudent code. use example _footer.html.erb
 Pluralize # railshelper takes number+string as its arguments. If num is greater than one, the string will be automatically pluralized.
 Render vs Redirect
   create action : use render instead of redirect_to when save returns false. 
