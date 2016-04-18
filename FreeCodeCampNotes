@@ -1,0 +1,3 @@
+HTML  
+<!-- -->  #are for comments
+<h2 style="color: red"></h2> #changes everything in the h2 element red.
