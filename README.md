@@ -1,6 +1,11 @@
 # Learning
 Repository of resources I am using for learning.
 
+FreeCodeCamp    
+Started 4/18/16    
+Starting free code camp, it appears to be the best prospect of path to employeability. While I think I have a good understanding of rails I don't feel like I have a good understanding of hte font-end, which may or may not be useful. So far the interactive site and community seems interesting. Just scratched the surface. Keep reading on cscareerquestions it's not what language you know but how you problem solve. There seem to be a lot of problems to solve here.
+
+
 Getting Started with Rails
 http://guides.rubyonrails.org/getting_started.html  
 Started March 10 2016  
