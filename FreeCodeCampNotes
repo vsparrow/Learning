@@ -1,3 +1,16 @@
 HTML  
 <!-- -->  #are for comments
-<h2 style="color: red"></h2> #changes everything in the h2 element red.
+
+inline
+<h2 style="color: red"></h2> #changes everything in the h2 element red.  #this is inline style
+
+
+css
+<style>  h2 {color: blue;} </style>   #everything with the label h2 will be blue
+<h2>CatPhotoApp</h2>
+
+#CSS Classes are reusable styles that can be added to HTML elements.
+#Note that in your CSS style element, classes should start with a period. 
+#In your HTML elements' class declarations, classes shouldn't start with a period.
+<style> .red-text {color: red;} </style>
+<h2 class="red-text">CatPhotoApp</h2>
