@@ -1,9 +1,20 @@
 HTML  
 <!-- -->  #are for comments
+Nesting just means putting one element inside of another element.
+<a href=#> Replace the value of your a element's href attribute with a #, also known as a hash symbol, to turn it into a dead link.
+<ul></ul>               #unordered lists
+
+Style:
+font-family: Sans-serif,Monospace;    #use certain fonts. if sans isnt available degrade to use Monospace.
+.red-text {color: red;}     #anything with red-textlabe red,
+font-size: 16px;            #font sizing
+externalfonts: <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+width: 500px;               #image width 500px
+border-radius: 10px;        #round out those corners
+border-radius: 50%;         #create circle of the image
 
 inline
 <h2 style="color: red"></h2> #changes everything in the h2 element red.  #this is inline style
-
 
 css
 <style>  h2 {color: blue;} </style>   #everything with the label h2 will be blue
@@ -12,5 +23,12 @@ css
 #CSS Classes are reusable styles that can be added to HTML elements.
 #Note that in your CSS style element, classes should start with a period. 
 #In your HTML elements' class declarations, classes shouldn't start with a period.
-<style> .red-text {color: red;} </style>
+<style> 
+ .red-text {color: red;}    ##anything with red-textlabe red,
+  p {font-size: 16px;}      #anything in p is 16px
+</style>  
 <h2 class="red-text">CatPhotoApp</h2>
+
+Remember that you can apply multiple classes to an element by separating each class with a space within its class attribute. 
+<img class="class1 class2">
+
