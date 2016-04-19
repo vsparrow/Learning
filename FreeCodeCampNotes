@@ -3,8 +3,22 @@ HTML
 Nesting just means putting one element inside of another element.
 <a href=#> Replace the value of your a element's href attribute with a #, also known as a hash symbol, to turn it into a dead link.
 <ul></ul>               #unordered lists
+<ol></ol>               #ordered lists
+<input type="text" placeholder="cat photo URL">  #input with placeholder texxt
+<form action="/submit-cat-photo">
+  <input type="text" placeholder="cat photo URL">
+  <button type="submit">Submit</button>
+</form>
+The div element, also known as a division element, is a general purpose container for other elements.
+The div element is probably the most commonly used HTML element of all. It's useful for passing the CSS of its own class declarations down to all the elements that it contains.
+<id>  each HTML element can also have an id attribut # <h2 id="cat-photo-app">
+
+
+
 
 Style:
+#Note that inside your style element, you always reference classes by putting a . in front of their names. 
+#You always reference ids by putting a # in front of their names.
 font-family: Sans-serif,Monospace;    #use certain fonts. if sans isnt available degrade to use Monospace.
 .red-text {color: red;}     #anything with red-textlabe red,
 font-size: 16px;            #font sizing
