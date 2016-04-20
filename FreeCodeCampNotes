@@ -11,7 +11,15 @@ Nesting just means putting one element inside of another element.
 </form>
 The div element, also known as a division element, is a general purpose container for other elements.
 The div element is probably the most commonly used HTML element of all. It's useful for passing the CSS of its own class declarations down to all the elements that it contains.
-<id>  each HTML element can also have an id attribut # <h2 id="cat-photo-app">
+<id>  each HTML element can also have an id attribut # <h2 id="cat-photo-app"> 
+                        #decleare in style    #cat-photo-app {color: green;}     we use # for id, and . for class
+                        id attribute will always take precedence of class
+padding # UPDOWN An element's padding controls the amount of space between the element and its border.
+padding: 10px 20px 10px 20px; #These four values work like a clock: top, right, bottom, left, Instead of specifying an element's padding-top, padding-right, padding-bottom, and padding-left
+margin # LEFTRIGHTUPDOWN An element's margin controls the amount of space between an element's border and surrounding elements.
+      #If you set an element's margin to a negative value, the element will grow larger.
+margin: 10px 20px 10px 20px;
+Every HTML page has a body element. you can style your body element just like any other HTML element, and all your other elements  inherit your body element's styles.
 
 
 
@@ -26,9 +34,15 @@ externalfonts: <link href="https://fonts.googleapis.com/css?family=Lobster" rel=
 width: 500px;               #image width 500px
 border-radius: 10px;        #round out those corners
 border-radius: 50%;         #create circle of the image
+class="class1 class2" # It doesn't matter which order the classes are listed in the HTML element. see example to left
+                        #However, the order of the class declarations in the <style> section are what is important. 
+                        #The second declaration will always take precedence over the first.. 
+                        #ie if class1 comes after class2 in style declaration, class1 will take precedence, even if class2 applied after in html element
+                        #, in the event of a conflict, the browser will use whichever CSS declaration came last.
+inline    <h2 style="color: red"></h2> #changes everything in the h2 element red.  #this is inline style
 
-inline
-<h2 style="color: red"></h2> #changes everything in the h2 element red.  #this is inline style
+
+
 
 css
 <style>  h2 {color: blue;} </style>   #everything with the label h2 will be blue
