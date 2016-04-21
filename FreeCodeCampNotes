@@ -1,3 +1,7 @@
+Skills:
+HTML, CSS and Bootstrap skills.
+
+
 HTML  
 <!-- -->  #are for comments
 Nesting just means putting one element inside of another element.
@@ -11,6 +15,7 @@ Nesting just means putting one element inside of another element.
 </form>
 The div element, also known as a division element, is a general purpose container for other elements.
 The div element is probably the most commonly used HTML element of all. It's useful for passing the CSS of its own class declarations down to all the elements that it contains.
+  <div class="row">  all elements within are to be in 1 row
 <id>  each HTML element can also have an id attribut # <h2 id="cat-photo-app"> 
                         #decleare in style    #cat-photo-app {color: green;}     we use # for id, and . for class
                         id attribute will always take precedence of class
@@ -22,6 +27,12 @@ margin: 10px 20px 10px 20px;
 Every HTML page has a body element. you can style your body element just like any other HTML element, and all your other elements  inherit your body element's styles.
 COLOR HEX: Hex code follows the red-green-blue, or rgb format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.
 rgb(255, 255, 255) Another way you can represent colors in CSS. specify the brightness of each color with a number between 0 and 255. instead of using hex
+FONTandICONS
+  Font Awesome is a convenient library of icons. <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+               <i class="fa fa-info-circle"></i>  
+               i element was originally used to make other elements italic, but is now commonly used for icons. 
+               You add the Font Awesome classes to the i element to turn it into an icon, 
+                                    
 
 
 
@@ -65,6 +76,7 @@ css
 <h2 class="red-text">CatPhotoApp</h2>
 Remember that you can apply multiple classes to an element by separating each class with a space within its class attribute. 
 <img class="class1 class2">
+span element, you can put several elements together, and even style different parts of the same element differently.
 Bootstrap   #responsive CSS framework. Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - 
             #hence the name Responsive Design. no need to design a mobile version of your website. It will look good on devices with screens of any width.
             add bootstrap: <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
@@ -76,4 +88,28 @@ Bootstrap   #responsive CSS framework. Bootstrap will figure out how wide your s
               Button Primary: <button class="btn btn-block btn-primary">Like</button>  useful for highlighting actions you want your user to take.
               Button Info : btn-info class is used to call attention to optional actions that the user can take
               Button Danger: btn-danger class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.
+            Grid: Put the Like, Info and Delete buttons side-by-side by nesting all three of them within one <div class="row"> element, then each of them within a <div class="col-xs-4"> element.
+              ex  <div class="row"><div class="col-xs-4">each items gets its own inner div</div></div>
+              col can be col-xs-* for phones col-med-* for laptops etc.
+              12-column grid layout,  * is a number specifying how many columns wide the element should be
+              You can use Bootstrap's col-xs-* classes on form elements, too! 
+                "well" class that can create a visual sense of depth for your columns.
+                  <div class="col-xs-6"><div class="well"></div></div>
+            image : img-responsive
             Text: Center text: <h2 class="text-center">CatPhotoApp</h2>
+
+
+ jQuery, the most popular JavaScript tool of all time.
+    #Your browser will run any JavaScript inside a script element, including jQuery.
+    All jQuery functions start with a $
+    Elements
+      Class just like with CSS declarations, you type a . before the class's name.
+      ID Note that, just like with CSS declarations, you type a # before the id's name.
+      Now you know three ways of targeting elements: by type: $("button"), by class: $(".btn"), and by id $("#target1").
+        
+    <script>$(document).ready(function(){$("button").addClass("animated");});</script>
+              #without your document ready function, your code may run before your HTML is rendered, which would cause bugs.
+    selector  #jQuery often selects an HTML element with a selector, then does something to that element.
+    Bounce:  $("button").addClass("animated bounce"); #select button, add class bounce to element button
+    Shake addClass("animated Shake");
+    fadeout addClass("animated fadeOut");
