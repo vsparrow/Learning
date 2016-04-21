@@ -99,9 +99,11 @@ Bootstrap   #responsive CSS framework. Bootstrap will figure out how wide your s
             Text: Center text: <h2 class="text-center">CatPhotoApp</h2>
 
 
- jQuery, the most popular JavaScript tool of all time.
+jQuery, the most popular JavaScript tool of all time.
     #Your browser will run any JavaScript inside a script element, including jQuery.
     All jQuery functions start with a $
+    function chaining  involves sticking two jQuery functions together 
+    Note that jQuery is zero-indexed, meaning that, counter-intuitively, :odd selects the second element, fourth element, and so on.
     Elements
       Class just like with CSS declarations, you type a . before the class's name.
       ID Note that, just like with CSS declarations, you type a # before the id's name.
@@ -113,3 +115,37 @@ Bootstrap   #responsive CSS framework. Bootstrap will figure out how wide your s
     Bounce:  $("button").addClass("animated bounce"); #select button, add class bounce to element button
     Shake addClass("animated Shake");
     fadeout addClass("animated fadeOut");
+  Class
+    addClass $(".btn").addClass("shake");; you can add classes to an element with jQuery's addClass() function, 
+    removeClass $("#target2").removeClass("btn-default") you can remove them with jQuery's removeClass() function.
+  CSS
+    change css of a target:   $("#target1").css("color","red");
+  Element
+    .prop() change the non-CSS properties of HTML elements.  allows you to adjust the properties of elements.
+      $("button").prop("disabled", true); Here's how you would disable all buttons:
+    .html()  change the text between the start and end tags of an element. You can even change HTML markup.
+      ex: $("h3").html("<em>jQuery Playground</em>"); rewrite h3
+    .text   like .html but that only alters text without adding tags.
+    .remove remove an HTML element entirely      $("#target4").remove()
+    .appendTo llows you to select HTML elements and append them to another element.
+          ex  $("#target4").appendTo("#left-well");  move target4 from our right well to our left well, 
+    .clone() that makes a copy of an element. $("#target2").clone().appendTo("#right-well");  copy target2 from our left-well to our right-well, 
+    .parent() that allows you to access the parent of whichever element you've selected.
+      ex $("#left-well").parent().css("background-color", "blue")  give parent element of the left-well element a background color blue:
+    .children() that allows you to access the children of whichever element you've selected.
+      ex $("#left-well").children().css("color", "blue")  give the children of your left-well element the color of blue:
+    target:nth-child(n) css selector allows you to select all the nth elements with the target class or element type.
+      ex $(".target:nth-child(3)").addClass("animated bounce"); give the third element in each well the bounce class:
+      ex $(".target:odd").addClass("animated shake"); target all the odd-numbered elements with class target and give them classes
+
+
+  
+
+
+
+
+ 
+
+
+
+
