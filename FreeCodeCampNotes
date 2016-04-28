@@ -88,6 +88,11 @@ Bootstrap   #responsive CSS framework. Bootstrap will figure out how wide your s
               Button Primary: <button class="btn btn-block btn-primary">Like</button>  useful for highlighting actions you want your user to take.
               Button Info : btn-info class is used to call attention to optional actions that the user can take
               Button Danger: btn-danger class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.
+            Containers : Bootstrap requires a containing element to wrap site contents and house our grid system. You may choose one of two containers to use in your projects. 
+              Note that, due to padding and more, neither container is nestable
+              Use .container for a responsive fixed width container. <div class="container">
+              Use .container-fluid for a full width container, spanning the entire width of your viewport. <div class="container-fluid">
+              
             Grid: Put the Like, Info and Delete buttons side-by-side by nesting all three of them within one <div class="row"> element, then each of them within a <div class="col-xs-4"> element.
               ex  <div class="row"><div class="col-xs-4">each items gets its own inner div</div></div>
               col can be col-xs-* for phones col-med-* for laptops etc.
