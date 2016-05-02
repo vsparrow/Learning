@@ -16,3 +16,23 @@ Bootstrap 3 is mobile-first
     <meta name="viewport" content="width=device-width, initial-scale=1">
       width=device-width sets width of page to follow screen-width of the device (which will vary depending on the device).
       The initial-scale=1 sets initial zoom level when the page is first loaded by the browser.
+Containers
+  Bootstrap requires a containing element to wrap site contents.
+    two container classes
+      .container class responsive FIXED WIDTH container
+      .container-fluid class FULL WIDTH container, spanning the entire width of the viewport
+        Note: Containers are not nestable (you cannot put a container inside another container).
+Grid System
+  <div class="row">  <div class="col-*-*"></div> </div>
+  up to 12 columns across the page. use all 12 column individually, or group the columns together to create wider columns:
+  classes: xs (for phones) sm (for tablets) md (for desktops) lg (for larger desktops)
+Text
+  default settings:
+    font 14px   line-height of 1.428. <p> half of line-height (10px by default).
+  heading
+    <small> element is used to create a lighter, secondary text in any heading:
+  highlight <mark>
+  double underline <abbr>
+  blockquote <blockquote>
+   .blockquote-reverse To show the quote on the right
+  
