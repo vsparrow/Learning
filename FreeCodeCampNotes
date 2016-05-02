@@ -40,7 +40,9 @@ FONTandICONS
                You add the Font Awesome classes to the i element to turn it into an icon,
 table
   The <caption> tag defines a table caption.The <caption> tag must be inserted immediately after the <table> tag. class="caption"
-                                    
+
+image:
+    make image fit some size : <img src="logo.png" width="27px">
 
 
 
