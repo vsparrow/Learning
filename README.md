@@ -1,6 +1,11 @@
 # Learning
 Repository of resources I am using for learning.
 
+w3schools: bootcamp  
+http://www.w3schools.com/bootstrap/bootstrap_get_started.asp  
+Started 5/1/2016  
+Realize FreeCodeCamp is VERY bootstrap dependent. THe philosophy of FCC to have a future dev search out for answers to problems rather than handing it out is applaudable, as that is how actual dev jobs are, you acquire knowledge that you don't have. Here i think a small course on bootstrap will allow me to get frther faster. Will return to FCC.  
+
 FreeCodeCamp    
 Started 4/18/16    
 Starting free code camp, it appears to be the best prospect of path to employeability. While I think I have a good understanding of rails I don't feel like I have a good understanding of hte font-end, which may or may not be useful. So far the interactive site and community seems interesting. Just scratched the surface. Keep reading on cscareerquestions it's not what language you know but how you problem solve. There seem to be a lot of problems to solve here.
