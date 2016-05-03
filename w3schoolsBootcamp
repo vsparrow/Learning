@@ -26,8 +26,25 @@ Alerts:
     <strong>Info!</strong> This alert box could indicate a neutral informative change or action.  </div>
   Animated Alerts   The .fade and .in classes adds a fading effect when closing the alert message:
 
-
-
+Buttons:
+  For <button> elements, you must wrap each button in a .btn-group class:
+  seven styles of buttons:  .btn-default .btn-primary .btn-success .btn-info .btn-warning  .btn-danger  .btn-link
+  four button sizes: .btn-lg .btn-md .btn-sm .btn-xs
+  block level button spans the entire width of the parent element. .btn-block
+  Active/Disabled Buttons  A button can be set to an active (appear pressed) or a disabled (unclickable) state:
+    .active makes a button appear pressed, and the class .disabled makes a button unclickable:
+  Button Groups   group a series of buttons together (on a single line) in a button group:
+    Use a <div> element with class .btn-group to create a button group:
+  Vertical Button Groups Use the class .btn-group-vertical to create a vertical button group:
+  Justified Button Groups To span the entire width of the screen, use the .btn-group-justified class:
+  Nesting Button Groups & Dropdown Menus
+     <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Sony <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu"> <li><a href="#">Tablet</a></li> <li><a href="#">Smartphone</a></li> </ul>
+    Split Button Dropdowns also exist
+       Split Button is a composite control with which the user can select a default value bound to a primary button, or select from a list of mutually exclusive values displayed in a drop-down list bound to a secondary button.
+  
 Containers
   Bootstrap requires a containing element to wrap site contents.
     two container classes
@@ -44,6 +61,10 @@ Grid System
   up to 12 columns across the page. use all 12 column individually, or group the columns together to create wider columns:
   classes: xs (for phones) sm (for tablets) md (for desktops) lg (for larger desktops)
 
+Glyphicons
+  Bootstrap provides 260 glyphicons from the Glyphicons Halflings set. can be used in text, buttons, toolbars, navigation, forms, etc
+  <span class="glyphicon glyphicon-name"></span>
+  
 IMAGES/media
     .img-rounded class adds rounded corners to an image (IE8 does not support rounded corners):
     .img-circle class shapes the image to a circle (IE8 does not support rounded corners):
