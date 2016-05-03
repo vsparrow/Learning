@@ -70,4 +70,18 @@ Text
   .text-lowercase 	Indicates lowercased text 	
   .text-uppercase 	Indicates uppercased text 	
   .text-capitalize 	Indicates capitalized text
-
+TABLE
+  .table class adds basic styling to a table:
+  .table-striped class adds zebra-stripes to a table:  alertnate gray white
+  .table-bordered class adds borders on all sides of the table and cells: 
+  .table-hover class enables a hover state on table rows: Column gray when you hover over it
+  .table-condensed class makes a table more compact by cutting cell padding in half:  Smaller table, save white spce
+  Colors
+    Contextual classes can be used to color table rows (<tr>) or table cells (<td>):
+      .active 	Applies the hover color to the table row or table cell
+      .success 	Indicates a successful or positive action
+      .info 	Indicates a neutral informative change or action
+      .warning 	Indicates a warning that might need attention
+      .danger 	Indicates a dangerous or potentially negative action
+  .table-responsive class creates a responsive table. The table will then scroll horizontally on small devices (under 768px).
+    When viewing on anything larger than 768px wide, there is no difference:
