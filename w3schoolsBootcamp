@@ -26,6 +26,18 @@ Grid System
   <div class="row">  <div class="col-*-*"></div> </div>
   up to 12 columns across the page. use all 12 column individually, or group the columns together to create wider columns:
   classes: xs (for phones) sm (for tablets) md (for desktops) lg (for larger desktops)
+
+IMAGES/media
+    .img-rounded class adds rounded corners to an image (IE8 does not support rounded corners):
+    .img-circle class shapes the image to a circle (IE8 does not support rounded corners):
+    .img-thumbnail class shapes the image to a thumbnail:
+    .img-responsive images comes in all sizes. So do screens. Responsive images automatically adjust to fit the size of the screen.
+        The image will then scale nicely to the parent element.The .img-responsive class applies display: block; and max-width: 100%; and height: auto; to the image:
+     image gallery:  use Bootstrap's grid system in conjunction with the .thumbnail class to create an image gallery:   
+     Responsive Embeds  let videos or slideshows scale properly on any device.
+      applied directly to <iframe>, <embed>, <video>, and <object> elements.  The containing <div> defines the aspect ratio of the video:
+        <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="..."></iframe></div>
+        
 Text
   default settings:
     font 14px   line-height of 1.428. <p> half of line-height (10px by default).
