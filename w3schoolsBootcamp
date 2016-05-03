@@ -29,11 +29,19 @@ Grid System
 Text
   default settings:
     font 14px   line-height of 1.428. <p> half of line-height (10px by default).
+  abbriviate:
+    <abbr> tag defines an abbreviation or an acronym, like "Mr.", "Dec.", "ASAP", "ATM".
+      <abbr title="World Health Organization" >WHO</abbr>
+      Tip: An abbreviation and an acronym are both shortened versions of something else. 
+      Marking up abbreviations can give useful information to browsers, translation systems and search-engines.
+    .initialism 	Displays the text inside an <abbr> element in a slightly smaller font size
+      <abbr title="World Health Organization" class="initialism">WHO</abbr>
   blockquote <blockquote>
    .blockquote-reverse To show the quote on the right
   code  <code>Place CODE HERE</code> shows code on page
-    For multiple lines of code, use the pre element:<pre>multiple code lines here </pre>
+    <pre>For multiple lines of code, use the pre element:<pre>multiple code lines here </pre>
       Text in a pre elementis displayed in a fixed-width font, and it preservesboth spaces andline breaks.
+    .pre-scrollable 	Makes a <pre> element scrollable  
   Colors: 
       Text colors: some contextual classes that can be used to provide "meaning through colors".
         .text-muted gray , .text-primary  blue, .text-success  green 
@@ -45,5 +53,21 @@ Text
     <small> element is used to create a lighter, secondary text in any heading:
   highlight <mark>
   kbd : keyboard inputs  <kbd>ctrl + p</kbd>  To indicate input that is typically entered via the keyboard, use the kbd element:
-
+  list:
+    .list-unstyled 	Removes the default list-style and left margin on list items (works on both <ul> and <ol>). 
+      This class only applies to immediate children list items (to remove the default list-style from any nested lists, 
+      apply this class to any nested lists as well)
+    .list-inline 	Places all list items on a single line
+    .dl-horizontal 	Lines up the terms (<dt>) and descriptions (<dd>) in <dl> elements side-by-side. 
+      Starts off like default <dl>s, but when the browser window expands, it will line up side-by-side
+  .lead 	Makes a paragraph stand out
+  .small 	Indicates smaller text (set to 85% of the size of the parent)
+  .text-left 	Indicates left-aligned text 	
+  .text-center 	Indicates center-aligned text 	
+  .text-right 	Indicates right-aligned text 	
+  .text-justify 	Indicates justified text 	(start at next line if needed)
+  .text-nowrap 	Indicates no wrap text  (will force sccroll bar if needed)
+  .text-lowercase 	Indicates lowercased text 	
+  .text-uppercase 	Indicates uppercased text 	
+  .text-capitalize 	Indicates capitalized text
 
