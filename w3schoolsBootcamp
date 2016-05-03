@@ -29,10 +29,21 @@ Grid System
 Text
   default settings:
     font 14px   line-height of 1.428. <p> half of line-height (10px by default).
+  blockquote <blockquote>
+   .blockquote-reverse To show the quote on the right
+  code  <code>Place CODE HERE</code> shows code on page
+    For multiple lines of code, use the pre element:<pre>multiple code lines here </pre>
+      Text in a pre elementis displayed in a fixed-width font, and it preservesboth spaces andline breaks.
+  Colors: 
+      Text colors: some contextual classes that can be used to provide "meaning through colors".
+        .text-muted gray , .text-primary  blue, .text-success  green 
+        .text-info  bluegreen .text-warning  yellow, and .text-danger  red
+      Text background colors (HIGHLIGHTING)
+        .bg-primary  blue, .bg-success green , bg-info  light blue , bg-warning  yellow , and .bg-danger  red
+  double underline <abbr>
   heading
     <small> element is used to create a lighter, secondary text in any heading:
   highlight <mark>
-  double underline <abbr>
-  blockquote <blockquote>
-   .blockquote-reverse To show the quote on the right
-  
+  kbd : keyboard inputs  <kbd>ctrl + p</kbd>  To indicate input that is typically entered via the keyboard, use the kbd element:
+
+
