@@ -93,6 +93,9 @@ Pagination
     .disabled if a link for some reason is disabled:
     .pagination-lg for larger blocks or .pagination-sm for smaller blocks:
     Breadcrumbs  Another form for pagination  :      Home Private Pictures Vacation   rather than 1 2 3 4
+  Pager is also a form of pagination 
+    Pager provides previous and next buttons (links).   To create previous/next buttons, add the .pager class to an <ul> element
+    Use .previous and .next classes to align each button to the sides of the page:
 
 progress bar can be used to show a user how far along he/she is in a process.
   .progress class to a <div> element:
