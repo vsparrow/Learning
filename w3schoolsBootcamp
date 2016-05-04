@@ -26,6 +26,11 @@ Alerts:
     <strong>Info!</strong> This alert box could indicate a neutral informative change or action.  </div>
   Animated Alerts   The .fade and .in classes adds a fading effect when closing the alert message:
 
+Badges are numerical indicators of how many items are associated with a link: 
+  Use the .badge class within <span> elements to create badges:
+  Badges can also be used inside other elements, such as buttons:
+    <a href="#">News <span class="badge">5</span></a><br>
+
 Buttons:
   For <button> elements, you must wrap each button in a .btn-group class:
   seven styles of buttons:  .btn-default .btn-primary .btn-success .btn-info .btn-warning  .btn-danger  .btn-link
@@ -76,6 +81,28 @@ IMAGES/media
       applied directly to <iframe>, <embed>, <video>, and <object> elements.  The containing <div> defines the aspect ratio of the video:
         <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="..."></iframe></div>
         
+Labels are used to provide additional information about something:
+  label class,  followed by one of the six contextual classes .label-default, .label-primary, .label-success, 
+  .label-info, .label-warning or .label-danger, within a <span> element to create a label:
+     <h1>Example <span class="label label-default">New</span></h1>
+
+Pagination
+  If you have a web site with lots of pages, you may wish to add some sort of pagination to each page.
+    .pagination class add to an <ul> element:
+    .active add to let the user know which page he/she is on:
+    .disabled if a link for some reason is disabled:
+    .pagination-lg for larger blocks or .pagination-sm for smaller blocks:
+    Breadcrumbs  Another form for pagination  :      Home Private Pictures Vacation   rather than 1 2 3 4
+
+progress bar can be used to show a user how far along he/she is in a process.
+  .progress class to a <div> element:
+  Progress Bar With Label 
+    Remove the .sr-only class from the progress bar to show a visible percentage:
+  Colored      .progress-bar-success     .progress-bar-info     .progress-bar-warning     .progress-bar-danger
+  .progress-bar-striped to add stripes to the progress bars:
+  .active to animate the progress bar:
+   stacked progress bar by placing multiple bars into the same <div class="progress">
+     
 Text
   default settings:
     font 14px   line-height of 1.428. <p> half of line-height (10px by default).
