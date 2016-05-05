@@ -135,7 +135,7 @@ List Groups
   Custom Content You can add nearly any HTML inside a list group item.
     Bootstrap provides the classes .list-group-item-heading and .list-group-item-text   
 
-Menus,Tabs, and Pills
+Menus,Tabs, and Pills: for navigation see Navigation
   Most web pages have some kind of a menu  menu is often defined in an unordered list <ul>
     horizontal menu 
       .list-inline class If you want to create a horizontal menu of the list above, add the to <ul>:
@@ -153,6 +153,20 @@ Menus,Tabs, and Pills
     Then add a .tab-pane class with a unique ID for every tab and wrap them inside a <div> element with class .tab-content.
     data-toggle="pill":  for pills
   Fade If you want the tabs to fade in and out when clicking on them, add the .fade class to .tab-pane:
+
+ Navigation Bar : a navigation header that is placed at the top of the page:
+  With Bootstrap, a navigation bar can extend or collapse, depending on the screen size.
+  <nav class="navbar navbar-default">.  A standard navigation bar is created
+  .navbar-inverse: alternative, black navbar:   Just change the .navbar-default class into .navbar-inverse:
+  Fixed Navigation fixed at the top or at the bottom of the page.
+    stays visible in a fixed position (top or bottom) independent of the page scroll.
+      .navbar-fixed-top class makes the navigation bar fixed at the top:
+      .navbar-fixed-bottom class makes the navigation bar stay at the bottom:
+  dropdown menu: Navigation bars can also hold dropdown menus.
+  alignment: .navbar-right class is used to right-align navigation bar buttons. 
+  Collapsable:  The navigation bar takes up too much space on a small screen.hide the navigation bar; only show it when it is needed.
+  
+
 
 Pagination
   If you have a web site with lots of pages, you may wish to add some sort of pagination to each page.
