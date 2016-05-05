@@ -135,6 +135,25 @@ List Groups
   Custom Content You can add nearly any HTML inside a list group item.
     Bootstrap provides the classes .list-group-item-heading and .list-group-item-text   
 
+Menus,Tabs, and Pills
+  Most web pages have some kind of a menu  menu is often defined in an unordered list <ul>
+    horizontal menu 
+      .list-inline class If you want to create a horizontal menu of the list above, add the to <ul>:
+      OR use Bootstraps' Tabs and Pills
+        Tabs are created with <ul class="nav nav-tabs">:Tip: Also mark the current page with <li class="active">.
+          Tabs can also hold dropdown menus. See dropdown
+          Tabs are like paper tabs
+        Pills are created with <ul class="nav nav-pills">. Also mark the current page with <li class="active">:
+          pills are like buttons
+          pills can also be displayed vertically. Just add the .nav-stacked class:
+          Pills can also hold dropdown menus.
+  center/justify tabs and pills, use the .nav-justified class.
+  Toggleable / Dynamic Tabs
+    To make the tabs toggleable, add the data-toggle="tab" attribute to each link. 
+    Then add a .tab-pane class with a unique ID for every tab and wrap them inside a <div> element with class .tab-content.
+    data-toggle="pill":  for pills
+  Fade If you want the tabs to fade in and out when clicking on them, add the .fade class to .tab-pane:
+
 Pagination
   If you have a web site with lots of pages, you may wish to add some sort of pagination to each page.
     .pagination class add to an <ul> element:
