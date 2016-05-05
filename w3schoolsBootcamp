@@ -86,6 +86,23 @@ Labels are used to provide additional information about something:
   .label-info, .label-warning or .label-danger, within a <span> element to create a label:
      <h1>Example <span class="label label-default">New</span></h1>
 
+List Groups
+  The most basic list group is an unordered list with list items:
+    use an <ul> element with class .list-group, and <li> elements with class .list-group-item:
+  List Group With Badges badges will automatically be positioned on the right:
+    To create a badge, create a <span> element with class .badge inside the list item:
+      <ul class="list-group">  <li class="list-group-item"><span class="badge">12</span> New</li></ul>
+  List Group With Linked Items This will add a grey background color on hover:
+    To create a list group with linked items, use <div> instead of <ul> and <a> instead of <li>:
+      <div class="list-group">  <a href="#" class="list-group-item">First item</a> </div>
+  Active State (make highlighted blue)
+    add .active class to highlight the current item:
+  disable item  add the .disabled class:
+  Contextual classes can be used to color list items:
+     .list-group-item-success, list-group-item-info, list-group-item-warning, and .list-group-item-danger:
+  Custom Content You can add nearly any HTML inside a list group item.
+    Bootstrap provides the classes .list-group-item-heading and .list-group-item-text   
+
 Pagination
   If you have a web site with lots of pages, you may wish to add some sort of pagination to each page.
     .pagination class add to an <ul> element:
@@ -97,6 +114,16 @@ Pagination
     Pager provides previous and next buttons (links).   To create previous/next buttons, add the .pager class to an <ul> element
     Use .previous and .next classes to align each button to the sides of the page:
 
+Panels
+  A panel is a bordered box with some padding around its content: created with the .panel class, and content inside the panel has a .panel-body class:
+    <div class="panel panel-default">   <div class="panel-body">A Basic Panel</div> </div>
+  .panel-heading class adds a heading to the panel:
+  .panel-footer class adds a footer to the panel:
+  Panel Group To group many panels together, wrap a <div> with class .panel-group around them.
+    The .panel-group class clears the bottom-margin of each panel:
+  Panels with Contextual Classes : To color the panel
+    use contextual classes (.panel-default, .panel-primary, .panel-success, .panel-info, .panel-warning, or .panel-danger  
+  
 progress bar can be used to show a user how far along he/she is in a process.
   .progress class to a <div> element:
   Progress Bar With Label 
