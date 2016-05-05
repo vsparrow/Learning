@@ -49,7 +49,20 @@ Buttons:
         <ul class="dropdown-menu" role="menu"> <li><a href="#">Tablet</a></li> <li><a href="#">Smartphone</a></li> </ul>
     Split Button Dropdowns also exist
        Split Button is a composite control with which the user can select a default value bound to a primary button, or select from a list of mutually exclusive values displayed in a drop-down list bound to a secondary button.
-  
+
+Collapsible    useful when you want to hide and show large amount of content:
+   Explained 
+    The .collapse class indicates a collapsible element (a <div> in our example); 
+      this is the content that will be shown or hidden with a click of a button.
+      To control (show/hide) the collapsible content, add the data-toggle="collapse" attribute to an <a> or a <button> element. 
+        Then add the data-target="#id" attribute to connect the button with the collapsible content (<div id="demo">).
+        Note: For <a> elements, you can use the href attribute instead of the data-target attribute:
+    <button data-toggle="collapse" data-target="#demo">Collapsible</button><div id="demo" class="collapse">Lorem ipsum dolor text....</div>
+  .in class to show the content by default: By default, the collapsible content is hidden. 
+  Accordions are useful when you want to toggle between hiding and showing large amount of content:
+  data-parent attribute use to make sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.
+    reference: http://www.w3schools.com/bootstrap/bootstrap_ref_js_collapse.asp
+
 Containers
   Bootstrap requires a containing element to wrap site contents.
     two container classes
