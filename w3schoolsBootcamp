@@ -104,6 +104,11 @@ Elements: misc
       data-slide-to attribute specifies which slide to go to, when clicking on the specific dot.
     captions: Add <div class="carousel-caption"> within each <div class="item"> to create a caption for each slide:  
     see also http://www.w3schools.com/bootstrap/bootstrap_carousel.asp
+  Affix Plugin
+    allows an element to become affixed (locked) to an area on the page. 
+       often used with navigation menus or social icon buttons, to make them "stick" at a specific area while scrolling up and down the page.
+      can:toggles this behavior on and off (changes the value of CSS position from static to fixed), depending on scroll position.
+    
 Grid System
   <div class="row">  <div class="col-*-*"></div> </div>
   up to 12 columns across the page. use all 12 column individually, or group the columns together to create wider columns:
@@ -212,8 +217,9 @@ Modal: see popup
   dropdown menu: Navigation bars can also hold dropdown menus.
   alignment: .navbar-right class is used to right-align navigation bar buttons. 
   Collapsable:  The navigation bar takes up too much space on a small screen.hide the navigation bar; only show it when it is needed.
-  
-
+  Scrollspy Plugin : see also http://www.w3schools.com/bootstrap/bootstrap_scrollspy.asp
+     automatically update links in a navigation list based on scroll position.
+    Vertical use Bootstrap's vertical navigation pills as menu:
 
 Pagination
   If you have a web site with lots of pages, you may wish to add some sort of pagination to each page.
@@ -280,6 +286,9 @@ progress bar can be used to show a user how far along he/she is in a process.
   .progress-bar-striped to add stripes to the progress bars:
   .active to animate the progress bar:
    stacked progress bar by placing multiple bars into the same <div class="progress">
+
+scrolling:  
+  scrollspy: automatically update links in a navigation list based on scroll position. : see navigation
 
 slideshow: see elements
      
