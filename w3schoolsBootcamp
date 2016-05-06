@@ -152,6 +152,26 @@ Glyphicons
   Bootstrap provides 260 glyphicons from the Glyphicons Halflings set. can be used in text, buttons, toolbars, navigation, forms, etc
   <span class="glyphicon glyphicon-name"></span>
   
+ GRID :grid system allows up to 12 columns across the page.  see also http://www.w3schools.com/bootstrap/bootstrap_grid_system.asp      
+    use individually, or group the columns together to create wider columns: 12 colums of 1, or 3 colums of 4, etc
+    grid system is responsive, and the columns will re-arrange depending on the screen size
+    four classes:    xs (for phones)    sm (for tablets)    md (for desktops)    lg (for larger desktops)
+      The classes above can be combined to create more dynamic and flexible layouts.
+      Each class scales up, so if you wish to set the same widths for xs and sm, you only need to specify xs. 
+    rules
+      Proper alignment and padding: Rows must be placed within a .container (fixed-width) or .container-fluid (full-width) 
+      Use rows to create horizontal groups of columns
+      Content should be placed within columns, and only columns may be immediate children of rows
+      Columns create gutters (gaps between column content) via padding. That padding is offset in rows for the first and last column via negative margin on .rows
+    "stacked-to-horizontal" two-column layout, 50%/50% split on all screens, except extra small screens, which it will automatically stack (100%):
+    <div class="col-sm-3 col-md-6">....</div>
+      Bootstrap is going to say "at  small size, look at classes with -sm- At the medium size, look at classes with -md- 
+    CLEAR: Clear floats (with the .clearfix class) at specific breakpoints to prevent strange wrapping with uneven content:
+        <!-- Add clearfix for only the required viewport --> example:     <div class="clearfix visible-xs">
+    Offsetting " Move columns to the right using .col-md-offset-* classes.  increase the left margin of a column by * columns:
+    Push And Pull - Change Column OrderingChange the order of the grid columns with .col-md-push-* and .col-md-pull-* classes:        
+    
+    
 IMAGES/media
     .img-rounded class adds rounded corners to an image (IE8 does not support rounded corners):
     .img-circle class shapes the image to a circle (IE8 does not support rounded corners):
