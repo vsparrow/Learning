@@ -92,7 +92,18 @@ Dropdown
 Elements: misc
   .well class adds a rounded border around an element with a gray background color and some padding: By default, wells are medium in size.
     .well-sm class for small wells or  .well-lg class for large wells:
-
+  The Carousel plugin : component for cycling through elements, like a carousel (slideshow).  
+    Carousels are not supported properly in Internet Explorer 9 and earlier 
+    Div Carousels require the use of an id (ex id="myCarousel") for carousel controls to function properly.  (use in div)
+      The class="carousel" specifies that this <div> contains a carousel.
+      .slide class adds a CSS transition and animation effect, which makes the items slide when showing a new item. 
+      data-ride="carousel" attribute tells Bootstrap to begin animating the carousel immediately when the page loads.
+    Indicators: 
+      indicators are the little dots at the bottom of each slide ( indicates how many slides and which slide the user are currently viewing)
+      .carousel-indicators.: indicators are specified in an ordered list 
+      data-slide-to attribute specifies which slide to go to, when clicking on the specific dot.
+    captions: Add <div class="carousel-caption"> within each <div class="item"> to create a caption for each slide:  
+    see also http://www.w3schools.com/bootstrap/bootstrap_carousel.asp
 Grid System
   <div class="row">  <div class="col-*-*"></div> </div>
   up to 12 columns across the page. use all 12 column individually, or group the columns together to create wider columns:
@@ -188,6 +199,8 @@ Menus,Tabs, and Pills: for navigation see Navigation
     data-toggle="pill":  for pills
   Fade If you want the tabs to fade in and out when clicking on them, add the .fade class to .tab-pane:
 
+Modal: see popup
+
  Navigation Bar : a navigation header that is placed at the top of the page:
   With Bootstrap, a navigation bar can extend or collapse, depending on the screen size.
   <nav class="navbar navbar-default">.  A standard navigation bar is created
@@ -222,7 +235,43 @@ Panels
     The .panel-group class clears the bottom-margin of each panel:
   Panels with Contextual Classes : To color the panel
     use contextual classes (.panel-default, .panel-primary, .panel-success, .panel-info, .panel-warning, or .panel-danger  
-  
+
+popup
+  Modal : box that popus up when link or button engaged
+    The Modal plugin is a dialog box/popup window that is displayed on top of the current page:
+    Plugins can be included individually (using Bootstrap's individual "modal.js" file), or all at once (using "bootstrap.js" or "bootstrap.min.js").
+    To trigger the modal window, you need to use a button or a link.
+      button or a link.     data-toggle="modal" opens the modal window    data-target="#myModal" points to the id of the modal
+    .modal class identifies the content of <div> as a modal and brings focus to it.  
+    The parent <div> of the modal must have an ID that is the same as the value of the data-target attribute used to trigger the modal ("myModal").
+    .fade class adds a transition effect which fades the modal in and out.
+    size: .modal-sm class for small modals or  .modal-lg class for large modals.  	By default, modals are medium in size.
+    see also: http://www.w3schools.com/bootstrap/bootstrap_modal.asp
+  Tooltip plugin is small pop-up box that appears when the user moves the mouse pointer over an element:  
+    .data-toggle="tooltip" add attribute to an element. To create a tooltip, 
+    Tooltips must be initialized with jQuery: select the specified element and call the tooltip() method.  
+      The following code will enable all tooltips in the document:
+        <script> $(document).ready(function(){ $('[data-toggle="tooltip"]').tooltip();});</script>
+    Positioning : By default, the tooltip will appear on top of the element.
+      data-placement attribute to set the position of the tooltip on top, bottom, left or the right side of the element:
+        auto will let the browser decide the position of the tooltip. 
+         example, if the value is "auto left", the tooltip will display on the left side when possible, otherwise on the right.
+  Popover plugin 
+    similar to tooltips;  pop-up box that appears when the user clicks on an element. difference popover can contain  more content.    
+    To create a popover, add the data-toggle="popover" attribute to an element.
+    title attribute to specify the header text of the popover, 
+    data-content attribute to specify the text that should be displayed inside the popover's body:
+    must initialize with jquery
+      <script>$(document).ready(function(){    $('[data-toggle="popover"]').popover();});</script>
+    Positioning default:  right side of the element  
+      data-placement attribute to set the position of the popover on top, bottom, left or the right side of the element:
+      You can also use the data-placement attribute with a value of "auto"
+    Closing Popovers
+      default, the popover is closed when you click on the element again.
+      data-trigger="focus" attribute which will close the popover when clicking outside the element:
+    Autopopover: 
+      data-trigger attribute with a value of "hover":  If you want the popover to be displayed when you move the mouse pointer over the elemen
+      
 progress bar can be used to show a user how far along he/she is in a process.
   .progress class to a <div> element:
   Progress Bar With Label 
@@ -231,6 +280,8 @@ progress bar can be used to show a user how far along he/she is in a process.
   .progress-bar-striped to add stripes to the progress bars:
   .active to animate the progress bar:
    stacked progress bar by placing multiple bars into the same <div class="progress">
+
+slideshow: see elements
      
 Text
   default settings:
