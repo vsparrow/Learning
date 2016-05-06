@@ -98,6 +98,40 @@ Grid System
   up to 12 columns across the page. use all 12 column individually, or group the columns together to create wider columns:
   classes: xs (for phones) sm (for tablets) md (for desktops) lg (for larger desktops)
 
+Forms All textual <input>, <textarea>, and <select> elements with class .form-control have a width of 100%
+    three types of form layouts:    Vertical form (this is default)    Horizontal form    Inline form
+    Standard rules for all three form layouts:
+      Always use <form role="form"> (helps improve accessibility for people using screen readers)
+      Wrap labels and form controls in <div class="form-group"> (needed for optimum spacing)
+      Add class .form-control to all textual <input>, <textarea>, and <select> elements
+    Inline:all of the elements are inline, left-aligned, and the labels are alongside. * only applies to forms within viewports minimum 768px wide!
+      Additional rule for an inline form: Add class .form-inline to the <form> element
+      you can hide the labels for all devices, except screen readers, by using the .sr-only class:
+    Horizontal:  rules for a horizontal form:
+      Add class .form-horizontal to the <form> element  Add class .control-label to all <label> elements
+      Tip: Use Bootstrap's predefined grid classes to align labels and groups of form controls in a horizontal layout.
+  Inputs
+    Bootstrap supports the following form controls: input textarea checkbox radio select
+      Input: Bootstrap supports all the HTML5 input types: Note: Inputs will NOT be fully styled if their type is not properly declared!
+        text, password, datetime, datetime-local, date, month, time, week, number, email, url, search, tel, and color.
+        Checkboxes Use the .checkbox-inline class if you want the checkboxes to appear on the same line:
+        Radio buttons are used if you want to limit the user to just one selection from a list of preset options.
+          Use the .radio-inline class if you want the radio buttons to appear on the same line:
+        Select lists are used if you want to allow the user to pick from multiple options.
+    Control States
+      Static Control If you need to insert plain text next to a form label within a horizontal form, use the .form-control-static class on a <p> element:
+      INPUT FOCUS - The outline of the input is removed and a box-shadow is applied on focus
+      DISABLED INPUTS - Add a disabled attribute to disable an input field
+      DISABLED FIELDSETS - Add a disabled attribute to a fieldset to disable all controls within
+      READONLY INPUTS - Add a readonly attribute to an input to prevent user input
+      VALIDATION STATES - Bootstrap includes validation styles for error, warning, and success messages. To use, add .has-warning, .has-error, or .has-success to the parent element
+      ICONS - You can add feedback icons with the .has-feedback class and an icon
+      HIDDEN LABELS - Add a .sr-only class on non-visible labels
+    Sizing :Input Sizing in Forms
+        Set the heights of input elements using classes like .input-lg and .input-sm.
+        Set the widths of elements using grid column classes like .col-lg-*and .col-sm-*.
+    Help: (end user) Use the .help-block class to add a block level help text in forms:
+        
 Glyphicons
   Bootstrap provides 260 glyphicons from the Glyphicons Halflings set. can be used in text, buttons, toolbars, navigation, forms, etc
   <span class="glyphicon glyphicon-name"></span>
