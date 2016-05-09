@@ -310,6 +310,11 @@ progress bar can be used to show a user how far along he/she is in a process.
   .active to animate the progress bar:
    stacked progress bar by placing multiple bars into the same <div class="progress">
 
+screen:
+   @media rule is used to define different style rules for different media types/devices.
+   <style>@media screen and (min-width: 480px) {body {background-color: lightgreen;}}   </style>
+    Change the background-color if the viewport is 480 pixels wide or wider:
+
 scrolling:  
   scrollspy: automatically update links in a navigation list based on scroll position. : see navigation
 
