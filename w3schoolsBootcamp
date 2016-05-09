@@ -178,6 +178,9 @@ IMAGES/media
     .img-thumbnail class shapes the image to a thumbnail:
     .img-responsive images comes in all sizes. So do screens. Responsive images automatically adjust to fit the size of the screen.
         The image will then scale nicely to the parent element.The .img-responsive class applies display: block; and max-width: 100%; and height: auto; to the image:
+        style="display:inline"  add inside <img> if img-responsive.
+          this will force the imange to center, else it would alighn to left by default.
+            .img-responsive class adds display:block to the image, which makes it jump to the left of the screen
      image gallery:  use Bootstrap's grid system in conjunction with the .thumbnail class to create an image gallery:   
      Responsive Embeds  let videos or slideshows scale properly on any device.
       applied directly to <iframe>, <embed>, <video>, and <object> elements.  The containing <div> defines the aspect ratio of the video:
