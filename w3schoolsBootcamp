@@ -108,6 +108,7 @@ Elements: misc
     allows an element to become affixed (locked) to an area on the page. 
        often used with navigation menus or social icon buttons, to make them "stick" at a specific area while scrolling up and down the page.
       can:toggles this behavior on and off (changes the value of CSS position from static to fixed), depending on scroll position.
+  RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color.    
     
 Grid System
   <div class="row">  <div class="col-*-*"></div> </div>
