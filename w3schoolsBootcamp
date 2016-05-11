@@ -127,6 +127,7 @@ Forms All textual <input>, <textarea>, and <select> elements with class .form-co
     Horizontal:  rules for a horizontal form:
       Add class .form-horizontal to the <form> element  Add class .control-label to all <label> elements
       Tip: Use Bootstrap's predefined grid classes to align labels and groups of form controls in a horizontal layout.
+  
   Inputs
     Bootstrap supports the following form controls: input textarea checkbox radio select
       Input: Bootstrap supports all the HTML5 input types: Note: Inputs will NOT be fully styled if their type is not properly declared!
@@ -148,7 +149,9 @@ Forms All textual <input>, <textarea>, and <select> elements with class .form-co
         Set the heights of input elements using classes like .input-lg and .input-sm.
         Set the widths of elements using grid column classes like .col-lg-*and .col-sm-*.
     Help: (end user) Use the .help-block class to add a block level help text in forms:
-        
+    class input vs textarea    
+       multi-line text input control. A text area can hold an unlimited number of characters 
+       input is single line for a single item example email or name
 Glyphicons
   Bootstrap provides 260 glyphicons from the Glyphicons Halflings set. can be used in text, buttons, toolbars, navigation, forms, etc
   <span class="glyphicon glyphicon-name"></span>
