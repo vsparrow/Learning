@@ -54,12 +54,17 @@ Style:
 #Note that inside your style element, you always reference classes by putting a . in front of their names. 
 #You always reference ids by putting a # in front of their names.
 font-family: Sans-serif,Monospace;    #use certain fonts. if sans isnt available degrade to use Monospace.
+  #there are 3 fonts in all browser:  Monospace, Serif and Sans-Serif
 .red-text {color: red;}     #anything with red-textlabe red,
 font-size: 16px;            #font sizing
 externalfonts: <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 width: 500px;               #image width 500px
 border-radius: 10px;        #round out those corners
 border-radius: 50%;         #create circle of the image
+box around image          
+  border-color: red;  
+  border-width: 5px;
+  border-style: solid;
 class="class1 class2" # It doesn't matter which order the classes are listed in the HTML element. see example to left
                         #However, the order of the class declarations in the <style> section are what is important. 
                         #The second declaration will always take precedence over the first.. 
@@ -75,6 +80,7 @@ inline    <h2 style="color: red"></h2> #changes everything in the h2 element red
 
 css
 <style>  h2 {color: blue;} </style>   #everything with the label h2 will be blue
+inline    <h2 style="color: red"></h2>  #see also style above
 <h2>CatPhotoApp</h2>
 #CSS Classes are reusable styles that can be added to HTML elements.
 #Note that in your CSS style element, classes should start with a period. 
