@@ -4,3 +4,11 @@ This is be in descending order: newest to oldest.
 Tribute Page: Dr. Norman Borlaug : retype source by hand :  [http://codepen.io/vsparrow/pen/RaexxO](http://codepen.io/vsparrow/pen/RaexxO)  
 Tribute Page: Jay Cutler:                                   [http://codepen.io/vsparrow/pen/PNyPdx](http://codepen.io/vsparrow/pen/PNyPdx)  
 Tribute Page: Dr. Norman Borlaug : self-made :              [http://codepen.io/vsparrow/pen/yOqexE](http://codepen.io/vsparrow/pen/yOqexE)  
+
+
+
+
+
+add this to your catphotoapp code when done:  
+font awesome <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>  
+bootstrap: (go add link here)  
