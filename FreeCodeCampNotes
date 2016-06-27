@@ -108,7 +108,9 @@ Bootstrap   #responsive CSS framework. Bootstrap will figure out how wide your s
               Note that, due to padding and more, neither container is nestable
               Use .container for a responsive fixed width container. <div class="container">
               Use .container-fluid for a full width container, spanning the entire width of your viewport. <div class="container-fluid">
-              
+            Forms:
+              form-control class:
+                All textual <input>, <textarea>, and <select> elements with class .form-control have a width of 100%.
             Grid: Put the Like, Info and Delete buttons side-by-side by nesting all three of them within one <div class="row"> element, then each of them within a <div class="col-xs-4"> element.
               ex  <div class="row"><div class="col-xs-4">each items gets its own inner div</div></div>
               col can be col-xs-* for phones col-med-* for laptops etc.
