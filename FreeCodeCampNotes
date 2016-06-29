@@ -144,6 +144,10 @@ jQuery, the most popular JavaScript tool of all time.
     Bounce:  $("button").addClass("animated bounce"); #select button, add class bounce to element button
     Shake addClass("animated Shake");
     fadeout addClass("animated fadeOut");
+      // $("button").addClass("animated bounce");  target button 
+      // $(".well").addClass("animated shake");   target class well
+      // $("#target3").addClass("animated fadeOut");  target id named target3
+
   Class
     addClass $(".btn").addClass("shake");; you can add classes to an element with jQuery's addClass() function, 
     removeClass $("#target2").removeClass("btn-default") you can remove them with jQuery's removeClass() function.
