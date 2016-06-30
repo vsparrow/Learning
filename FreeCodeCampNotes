@@ -169,9 +169,11 @@ jQuery, the most popular JavaScript tool of all time.
       ex $("#left-well").children().css("color", "blue")  give the children of your left-well element the color of blue:
     target:nth-child(n) css selector allows you to select all the nth elements with the target class or element type.
       ex $(".target:nth-child(3)").addClass("animated bounce"); give the third element in each well the bounce class:
-      ex $(".target:odd").addClass("animated shake"); target all the odd-numbered elements with class target and give them classes
-
-
+      ODD/EVEN 
+        ex $(".target:odd").addClass("animated shake"); target all the odd-numbered elements with class target and give them classes
+          Note that jQuery is zero-indexed, meaning that, counter-intuitively, :odd selects the second element, fourth element, and so on.
+      $(".well :nth-child(2)").addClass("animated bounce");  add space betweek .well and : if not working
+        https://github.com/FreeCodeCamp/FreeCodeCamp/issues/1927#issuecomment-132369084
   
 
 
