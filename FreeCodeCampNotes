@@ -189,7 +189,21 @@ string literal. a series of zero or more characters enclosed in single or double
 when you need a literal quote: " or '  you can escape a quote from considering it as an end of string quote by placing a backslash (\) in front of the quote.
   var sampleStr = "Alan said, \"Peter is learning JavaScript\".";
 "" ''  single and double quotes are functionally identical in JavaScript.  
-
+  in JS if you start with one type of quote you dont need to escape the other type of quote
+    ex 'This string has "double quotes" in it. And "probably" lots of them.'
+        var myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
+String
+  String values are immutable, which means that they cannot be altered once created. 
+    the only way to change is assign the var a new string
+  .length  find the length of a String value 
+array
+  Multi-dimensional Array   nest arrays within other arrays, like this: [["Bulls", 23], ["White Sox", 45]].
+  push: An easy way to append data to the end of an array is via the push()   arr.push(4);  myArray.push(["dog",3]);
+  .pop() is used to "pop" a value off of the end of an array.   ex var oneDown = [1, 4, 6].pop();  array1.pop();
+  .shift() comes in. It works just like .pop(), except it removes the first element instead of the last.
+  .unshift() works exactly like .push(), but instead unshift() adds the element at the beginning of the array.
+Function
+  function reusableFunction(){ console.log("Hi World");}
 
 
 
