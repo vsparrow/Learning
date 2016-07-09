@@ -204,6 +204,7 @@ array
   .unshift() works exactly like .push(), but instead unshift() adds the element at the beginning of the array.
 Function
   function reusableFunction(){ console.log("Hi World");}
-
-
-
+  scope refers to the visibility of variables. 
+    Global:Variables defined outside of a function block have Global scope. means, they can be seen everywhere in your JavaScript code.
+      Variables which are used without the var keyword are automatically created in the global scope.
+    Local: Variables declared within a function, as well as the function parameters have local scope. That means, they are only visible within that function.
