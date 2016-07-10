@@ -214,3 +214,8 @@ Comparison Operator
   === Strict equality is the counterpart to the equality operator (==). 
     Unlike the equality operator, strict equality tests both the data type and value of the compared elements.  
       3 === 3   // true   3 === '3' // false
+  != inequality operator "Not Equal" and returns false where equality would return true and vice versa. 
+    Like the equality operator, the inequality operator will convert data types of values while comparing.
+      1 != 2      // true    1 != "1"    // false
+  !==   means "Strictly Not Equal" Strict inequality will not convert data types.    
+    3 !== 3   // false  3 !== '3' // true
