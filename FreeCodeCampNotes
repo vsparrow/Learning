@@ -208,3 +208,9 @@ Function
     Global:Variables defined outside of a function block have Global scope. means, they can be seen everywhere in your JavaScript code.
       Variables which are used without the var keyword are automatically created in the global scope.
     Local: Variables declared within a function, as well as the function parameters have local scope. That means, they are only visible within that function.
+Comparison Operator
+  == equality operator compares two values and returns true if they're equivalent or false if they are not
+    JavaScript can compare two different data types 1   == '1'   // true     "3"  ==  3    // true
+  === Strict equality is the counterpart to the equality operator (==). 
+    Unlike the equality operator, strict equality tests both the data type and value of the compared elements.  
+      3 === 3   // true   3 === '3' // false
