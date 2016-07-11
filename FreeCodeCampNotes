@@ -214,6 +214,7 @@ Comparison Operator
   === Strict equality is the counterpart to the equality operator (==). 
     Unlike the equality operator, strict equality tests both the data type and value of the compared elements.  
       3 === 3   // true   3 === '3' // false
+      === returns true or false, we can return the result of the comparison
   != inequality operator "Not Equal" and returns false where equality would return true and vice versa. 
     Like the equality operator, the inequality operator will convert data types of values while comparing.
       1 != 2      // true    1 != "1"    // false
@@ -225,5 +226,8 @@ Comparison Operator
     case values are tested with strict equality (===).
      tests a value and can have many case statements which defines various possible value
      default statement which will be executed if no matching case statements are found.
-      switch (num) {  case value1:    statement1;    break;  case value2:    statement2;    break; default: defaultstatement;}
+      ex switch (num) {  case value1:    statement1;    break;  case value2:    statement2;    break; default: defaultstatement;}
         see also: http://www.tutorialspoint.com/javascript/javascript_switch_case.htm
+    multiple case
+      If you have multiple inputs with the same output, you can combine them as such 
+      ex switch(val) { case 1: case 2: case 3:  result = "1, 2, or 3"; break;  case 4:result = "4 alone"; }
