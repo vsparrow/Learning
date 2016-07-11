@@ -252,4 +252,15 @@ Comparison Operator
       add a "bark" property to ourDog:  ourDog.bark = "bow-wow"; or ourDog["bark"] = "bow-wow";
     Property update:
       ourDog.name = "Happy Camper"; or  ourDog["name"] = "Happy Camper";
+    complex data structure:
+      var ourMusic = [{"artist": "Daft Punk","title": "Homework","release_year": 1997,"formats": ["CD","Cassette","LP" ],"gold": true}];
+        This is an array which contains one object inside. 
+        The object has various pieces of metadata about an album
+        It also has a nested "formats" array. 
+        Objects hold data in a property, which has a key-value format. 
+        In the example above, "artist": "Daft Punk" is a property that has a key of "artist" and a value of "Daft Punk".
+    JavaScript Object Notation or JSON is a related data interchange format used to store data.
+      it would be everything in between the {} in varMusic above.
+    
+    flexible Data Structure. arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.  
       
