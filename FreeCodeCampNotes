@@ -264,11 +264,17 @@ Comparison Operator
     constructor function: think of a constructor as a description for the object it will create.
       is given a capitalized name to make it clear that it is a constructor.
       To use a constructor function we call it with the "new" keyword in front of it //var myCar = new Car();
-      ex: var Car = function() {this.wheels = 4;this.engines = 1; this.seats = 5;}; var myCar = new Car();
-      once the myCar instance is created it can be used like any other object / can have its properties accessed and modified the same way you would usually.
-      ex: myCar.turboType = "twin";  Our myCar variable now has a property turboType with a value of "twin"
-
-    
+        ex: var Car = function() {this.wheels = 4;this.engines = 1; this.seats = 5;}; var myCar = new Car();
+        once the myCar instance is created it can be used like any other object / can have its properties accessed and modified the same way you would usually.
+        ex: myCar.turboType = "twin";  Our myCar variable now has a property turboType with a value of "twin"
+      parameters with constructor
+        ex: var Car = function(wheels, seats, engines) {this.wheels = wheels; this.seats = seats; this.engines = engines;};
+            var myCar = new Car(6, 3, 1); //Now we can pass in arguments when we call our constructor.
+    private properties
+       create the variable inside the constructor using the var keyword instead of creating it as a property of this.
+       ex  var Car = function() { var speed = 10; //private variable
+            this.accelerate = function(change) {speed += change;};//public method
+            this.decelerate = function() {speed -= 5;};  this.getSpeed = function() {return speed;};     };
     flexible Data Structure. arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.  
     for loop : runs "for" a specific number of times.    for ([initialization]; [condition]; [final-expression])
       ex  var ourArray = []; for (var i = 0; i < 5; i++) {  ourArray.push(i);}
