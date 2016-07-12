@@ -261,6 +261,13 @@ Comparison Operator
         In the example above, "artist": "Daft Punk" is a property that has a key of "artist" and a value of "Daft Punk".
     JavaScript Object Notation or JSON is a related data interchange format used to store data.
       it would be everything in between the {} in varMusic above.
+    constructor function: think of a constructor as a description for the object it will create.
+      is given a capitalized name to make it clear that it is a constructor.
+      To use a constructor function we call it with the "new" keyword in front of it //var myCar = new Car();
+      ex: var Car = function() {this.wheels = 4;this.engines = 1; this.seats = 5;}; var myCar = new Car();
+      once the myCar instance is created it can be used like any other object / can have its properties accessed and modified the same way you would usually.
+      ex: myCar.turboType = "twin";  Our myCar variable now has a property turboType with a value of "twin"
+
     
     flexible Data Structure. arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.  
     for loop : runs "for" a specific number of times.    for ([initialization]; [condition]; [final-expression])
@@ -270,3 +277,19 @@ Comparison Operator
         for (var i=0; i < arr.length; i++) {for (var j=0; j < arr[i].length; j++) { console.log(arr[i][j]); }}
     while loop  runs "while" a specified condition is true and stops once that condition is no longer true.  
       ex  var ourArray = []; var i = 0; while(i < 5) {  ourArray.push(i);  i++;}
+    Random  Math.random() function that generates a random decimal number between 0 (inclusive) and not quite up to 1 (exclusive)
+      ex: Math.floor(Math.random()*10); //get number between 0-10 by creating random decimal, multiply by 10; floor to get whole#
+      generate a random number that falls within a range of two specific numbers. 
+        Math.floor(Math.random() * (max - min + 1)) + min
+    Regular Expressions   used to find certain words or patterns inside of strings.
+      ex /the/gi     find the word the in the string "The dog chased the cat"
+        ->/ is the start of the regular expression    ->the is the pattern we want to match  ->/ the end of the regular expression.
+        ->g means global, which causes the pattern to return all matches in the string, not just the first one.
+        ->i means that we want to ignore the case (uppercase or lowercase) when searching for the pattern.
+      special selectors : select a particular type of value.
+        digit selector \d which is used to retrieve one digit (e.g. numbers 0 to 9) in a string.
+          /\d/g  appending a plus sign (+) after the selector, e.g. /\d+/g, allows this regular expression to match one or more digits.
+        whitespace selector \s  /\s+/g
+          find " " (space), \r (the carriage return), \n (newline), \t (tab), and \f (the form feed).  
+        Invert Matches    :: using the uppercase version of the regular expression selector.
+          example, \s will match any whitespace, and \S will match anything that isn't whitespace.
