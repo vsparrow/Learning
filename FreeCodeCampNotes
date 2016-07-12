@@ -263,4 +263,10 @@ Comparison Operator
       it would be everything in between the {} in varMusic above.
     
     flexible Data Structure. arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.  
-      
+    for loop : runs "for" a specific number of times.    for ([initialization]; [condition]; [final-expression])
+      ex  var ourArray = []; for (var i = 0; i < 5; i++) {  ourArray.push(i);}
+      Nested Loops:
+        var arr = [ [1,2], [3,4], [5,6]];
+        for (var i=0; i < arr.length; i++) {for (var j=0; j < arr[i].length; j++) { console.log(arr[i][j]); }}
+    while loop  runs "while" a specified condition is true and stops once that condition is no longer true.  
+      ex  var ourArray = []; var i = 0; while(i < 5) {  ourArray.push(i);  i++;}
