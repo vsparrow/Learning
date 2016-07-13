@@ -276,18 +276,18 @@ Comparison Operator
             this.accelerate = function(change) {speed += change;};//public method
             this.decelerate = function() {speed -= 5;};  this.getSpeed = function() {return speed;};     };
     flexible Data Structure. arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.  
-    for loop : runs "for" a specific number of times.    for ([initialization]; [condition]; [final-expression])
+  for loop : runs "for" a specific number of times.    for ([initialization]; [condition]; [final-expression])
       ex  var ourArray = []; for (var i = 0; i < 5; i++) {  ourArray.push(i);}
       Nested Loops:
         var arr = [ [1,2], [3,4], [5,6]];
         for (var i=0; i < arr.length; i++) {for (var j=0; j < arr[i].length; j++) { console.log(arr[i][j]); }}
-    while loop  runs "while" a specified condition is true and stops once that condition is no longer true.  
+  while loop  runs "while" a specified condition is true and stops once that condition is no longer true.  
       ex  var ourArray = []; var i = 0; while(i < 5) {  ourArray.push(i);  i++;}
-    Random  Math.random() function that generates a random decimal number between 0 (inclusive) and not quite up to 1 (exclusive)
+  Random  Math.random() function that generates a random decimal number between 0 (inclusive) and not quite up to 1 (exclusive)
       ex: Math.floor(Math.random()*10); //get number between 0-10 by creating random decimal, multiply by 10; floor to get whole#
       generate a random number that falls within a range of two specific numbers. 
         Math.floor(Math.random() * (max - min + 1)) + min
-    Regular Expressions   used to find certain words or patterns inside of strings.
+  Regular Expressions   used to find certain words or patterns inside of strings.
       ex /the/gi     find the word the in the string "The dog chased the cat"
         ->/ is the start of the regular expression    ->the is the pattern we want to match  ->/ the end of the regular expression.
         ->g means global, which causes the pattern to return all matches in the string, not just the first one.
@@ -299,3 +299,21 @@ Comparison Operator
           find " " (space), \r (the carriage return), \n (newline), \t (tab), and \f (the form feed).  
         Invert Matches    :: using the uppercase version of the regular expression selector.
           example, \s will match any whitespace, and \S will match anything that isn't whitespace.
+  map convenient way to iterate through arrays. 
+      iterate through every element of the array, creating a new array with values that have been modified by the 
+      callback function, and return it. Note that it does not modify the original array.
+      ex: var oldArray = [1, 2, 3]; var timesFour = oldArray.map(function(val){return val * 4;});
+          console.log(timesFour); // returns [4, 8, 12]   console.log(oldArray);  // returns [1, 2, 3]
+  reduce is used to iterate through an array and condense it into one value
+    pass in a callback whose arguments are an accumulator (ex previousVal) and the current value (currentVal).
+    The accumulator is like a total that reduce keeps track of after each operation. 
+    The current value is just the next element in the array you're iterating through.
+    optional second argument to set the initial value of the accumulator. If no initial value it will be the first array element and currentVal will start with the second array element.
+  filter method is used to iterate through an array and filter out elements where a given condition is not true.
+    array = array.filter(function(val) {return val !== 5;}); // using filter to remove array elements that are equal to five:
+  sort : sort the values in an array alphabetically or numerically.  :: actually alters the array in place
+    If no compare (callback) function is passed in, it will convert the values to strings and sort alphabetically.
+    if passed a compare function as a callback. The compare function should return a negative number if a should be before b, 
+      a positive number if a should be after b, or 0 if they are equal.
+    ex var array = [1, 12, 21, 2]; array.sort(function(a, b) {return a - b;});
+  reverse method to reverse the elements of an array. alters the array in place   myArray.reverse();    
