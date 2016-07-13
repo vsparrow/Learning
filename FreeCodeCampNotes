@@ -317,3 +317,11 @@ Comparison Operator
       a positive number if a should be after b, or 0 if they are equal.
     ex var array = [1, 12, 21, 2]; array.sort(function(a, b) {return a - b;});
   reverse method to reverse the elements of an array. alters the array in place   myArray.reverse();    
+  concat :merge two arrays into one. takes array an argument/returns new array with elements of this array concatenated onto the end.
+    newArray = oldArray.concat(otherArray);
+  split :split a string into an array. uses the argument you pass in as a delimiter to determine which points the string should be split at.
+    ex var array = string.split('s'); //split being used to split a string at every s character:
+  join method to join each element of an array into a string separated by whatever delimiter you provide as an argument.
+    ex var veggies = ["Celery", "Radish", "Carrot", "Potato"];var salad = veggies.join(" and ");
+      console.log(salad); // "Celery and Radish and Carrot and Potato"  //join all elements with " and "
+  
