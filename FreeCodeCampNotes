@@ -328,3 +328,13 @@ Comparison Operator
     ex 'ABC'.charCodeAt(0); // returns 65 aka A
   String.fromCharCode() method returns a string created by using the specified sequence of Unicode values.
     ex String.fromCharCode(65, 66, 67);  // "ABC"
+  $(document).ready() function function runs such that all of the code inside of it executes only once page has finished loading.
+  click event handler $("#getMessage").on("click", function(){});
+  APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another.
+    JSON Most web APIs transfer data in a format called JSON. JSON stands for JavaScript Object Notation
+      JSON is nothing more than object properties and their current values, sandwiched between a { and a }
+      properties and their values are often referred to as "key-value pairs".
+      .forEach() method to loop through our data and modify our HTML elements.
+      html variable declare with var html = "";.
+      pre-filter the json json = json.filter(function(val) {  return (val.id !== 1);});
+  Geolocation every browser has a built in navigator that can give us user's current longitude and latitude.    
