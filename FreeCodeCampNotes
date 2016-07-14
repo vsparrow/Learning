@@ -324,4 +324,7 @@ Comparison Operator
   join method to join each element of an array into a string separated by whatever delimiter you provide as an argument.
     ex var veggies = ["Celery", "Radish", "Carrot", "Potato"];var salad = veggies.join(" and ");
       console.log(salad); // "Celery and Radish and Carrot and Potato"  //join all elements with " and "
-  
+  charCodeAt() method returns an integer between 0 and 65535
+    ex 'ABC'.charCodeAt(0); // returns 65 aka A
+  String.fromCharCode() method returns a string created by using the specified sequence of Unicode values.
+    ex String.fromCharCode(65, 66, 67);  // "ABC"
