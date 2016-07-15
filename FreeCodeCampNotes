@@ -338,3 +338,8 @@ Comparison Operator
       html variable declare with var html = "";.
       pre-filter the json json = json.filter(function(val) {  return (val.id !== 1);});
   Geolocation every browser has a built in navigator that can give us user's current longitude and latitude.    
+  confirm('This is an example of using JS to create some interaction on a website. Click OK to continue!');
+    creates popup on website
+  prompt("whats gooood");  prompt to enter text
+  console.log() will take whatever is inside the parentheses and log it to the console 
+  substring: "some word".substring(x, y) where x is where you start chopping and y is where you finish chopping original string.
