@@ -278,6 +278,7 @@ Comparison Operator
     flexible Data Structure. arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.
     hasOwnProperty. This lets us know if an object has a particular property. returns true or false
       var myObj = {name: "cool"}; console.log( myObj.hasOwnProperty('name') ); // should print true
+    Print all elements in an object: for(var property in dogObject) {  console.log(property);}  
   for loop : runs "for" a specific number of times.    for ([initialization]; [condition]; [final-expression])
       ex  var ourArray = []; for (var i = 0; i < 5; i++) {  ourArray.push(i);}
       Nested Loops:
