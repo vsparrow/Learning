@@ -350,3 +350,5 @@ Comparison Operator
     isNaN('berry'); // => true isNaN(NaN); // => true isNaN(undefined); // => true  isNaN(42);  // => false
     isNaN("42");  // => false because javascript converts the string  to a number first
     if unicorns is not defined cant do isNaN(unicorns);
+  typeof:  Say we have a variable thing and we don't know what type thing is. We can call typeof thing to figure this out.
+    var someObject = {someProperty: someValue}; console.log( typeof someObject );  //get object printed to console
