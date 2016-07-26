@@ -275,7 +275,9 @@ Comparison Operator
        ex  var Car = function() { var speed = 10; //private variable
             this.accelerate = function(change) {speed += change;};//public method
             this.decelerate = function() {speed -= 5;};  this.getSpeed = function() {return speed;};     };
-    flexible Data Structure. arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.  
+    flexible Data Structure. arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.
+    hasOwnProperty. This lets us know if an object has a particular property. returns true or false
+      var myObj = {name: "cool"}; console.log( myObj.hasOwnProperty('name') ); // should print true
   for loop : runs "for" a specific number of times.    for ([initialization]; [condition]; [final-expression])
       ex  var ourArray = []; for (var i = 0; i < 5; i++) {  ourArray.push(i);}
       Nested Loops:
@@ -350,5 +352,5 @@ Comparison Operator
     isNaN('berry'); // => true isNaN(NaN); // => true isNaN(undefined); // => true  isNaN(42);  // => false
     isNaN("42");  // => false because javascript converts the string  to a number first
     if unicorns is not defined cant do isNaN(unicorns);
-  typeof:  Say we have a variable thing and we don't know what type thing is. We can call typeof thing to figure this out.
-    var someObject = {someProperty: someValue}; console.log( typeof someObject );  //get object printed to console
+typeof:  Say we have a variable thing and we don't know what type thing is. We can call typeof thing to figure this out.
+      var someObject = {someProperty: someValue}; console.log( typeof someObject );  //get object printed to console
