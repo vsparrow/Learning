@@ -279,6 +279,8 @@ Comparison Operator
     hasOwnProperty. This lets us know if an object has a particular property. returns true or false
       var myObj = {name: "cool"}; console.log( myObj.hasOwnProperty('name') ); // should print true
     Print all elements in an object: for(var property in dogObject) {  console.log(property);}  
+      (prints out property names not what they associate too,   breed: "dalmation"  you will get "breed"
+      for printing out associations use: for(var property in dog) console.log(dog[property]);
   for loop : runs "for" a specific number of times.    for ([initialization]; [condition]; [final-expression])
       ex  var ourArray = []; for (var i = 0; i < 5; i++) {  ourArray.push(i);}
       Nested Loops:
