@@ -1,6 +1,12 @@
 # Learning
 Repository of resources I am using for learning.
 
+Codeacademy: JavaScript
+Started Jul 15 2016
+Finished Jul 28 2016
+https://www.codecademy.com/learn/javascript
+Review: Good reivew on the basics. After completing FCC javascript, I was having some problems with FCC random quote generator. While this hasn't directly helped me solve the problem, it has helped me cement some fundamentals.
+
 w3schools: bootcamp  
 http://www.w3schools.com/bootstrap/bootstrap_get_started.asp  
 Started 5/1/2016  
