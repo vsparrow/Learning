@@ -250,6 +250,9 @@ Comparison Operator
       returns true or false if the property is found or not.
     Property New: add new properties to existing JavaScript objects the same way you would modify them.
       add a "bark" property to ourDog:  ourDog.bark = "bow-wow"; or ourDog["bark"] = "bow-wow";
+    Property new to Constructor
+      function Dog (breed) {this.breed = breed;};// add the sayHello method to the Dog class 
+      Dog.prototype.sayHello=function(){console.log("Hello this is a " +this.breed + " dog");};  //the Dog.prototype is important!
     Property update:
       ourDog.name = "Happy Camper"; or  ourDog["name"] = "Happy Camper";
     inherit: one constructor inherit from another: Penguin.prototype = new Animal();  //both Penguin and Animal are constructors
