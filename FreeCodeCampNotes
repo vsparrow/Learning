@@ -285,7 +285,12 @@ Comparison Operator
     Private variables : information you do not want to publicly share,  only directly accessed from within the class.  
       function Person(first,last,age) { this.firstname = first;  this.lastname = last; this.age = age; var bankBalance = 7500;}
       bankBalance is private. console.log(personx.bankBalance) will  log undefined
-
+    return a function in an object
+      function Person(age) {this.age = age; var bankBalance = 7500;  var returnBalance = function() {return bankBalance;};
+        this.askTeller=function(){return returnBalance;}}
+        var myBalanceMethod = john.askTeller(); //will be able to use var returnBalance directly
+        var myBalance = myBalanceMethod();  //now can return balance directly
+    
   for loop : runs "for" a specific number of times.    for ([initialization]; [condition]; [final-expression])
       ex  var ourArray = []; for (var i = 0; i < 5; i++) {  ourArray.push(i);}
       Nested Loops:
