@@ -282,6 +282,10 @@ Comparison Operator
     Print all elements in an object: for(var property in dogObject) {  console.log(property);}  
       (prints out property names not what they associate too,   breed: "dalmation"  you will get "breed"
       for printing out associations use: for(var property in dog) console.log(dog[property]);
+    Private variables : information you do not want to publicly share,  only directly accessed from within the class.  
+      function Person(first,last,age) { this.firstname = first;  this.lastname = last; this.age = age; var bankBalance = 7500;}
+      bankBalance is private. console.log(personx.bankBalance) will  log undefined
+
   for loop : runs "for" a specific number of times.    for ([initialization]; [condition]; [final-expression])
       ex  var ourArray = []; for (var i = 0; i < 5; i++) {  ourArray.push(i);}
       Nested Loops:
