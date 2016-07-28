@@ -252,6 +252,7 @@ Comparison Operator
       add a "bark" property to ourDog:  ourDog.bark = "bow-wow"; or ourDog["bark"] = "bow-wow";
     Property update:
       ourDog.name = "Happy Camper"; or  ourDog["name"] = "Happy Camper";
+    inherit: one constructor inherit from another: Penguin.prototype = new Animal();  //both Penguin and Animal are constructors
     complex data structure:
       var ourMusic = [{"artist": "Daft Punk","title": "Homework","release_year": 1997,"formats": ["CD","Cassette","LP" ],"gold": true}];
         This is an array which contains one object inside. 
