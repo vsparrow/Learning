@@ -1,6 +1,10 @@
 # Learning
 Repository of resources I am using for learning.
 
+Eloquent Javascript 2nd Edition   
+http://eloquentjavascript.net/01_values.html
+Started Feb 25 2017
+
 w3schools: JavaScript Tutorial  
 http://www.w3schools.com/js/default.asp  
 Started Aug 01 2016  
