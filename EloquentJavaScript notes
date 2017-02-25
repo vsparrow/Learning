@@ -7,10 +7,21 @@ NaN stands for “not a number”
   You’ll get this when, for example, (0/ 0), or any number of other numeric operations that don’t yield a  meaningful result.
   There is only one value in JavaScript that is not equal to itself, and that is NaN, which stands for “not a number”.
     console.log(NaN == NaN)  // → false
+    if you find yourself getting one of those in an unexpected place, look for accidental type conversions.
 typeof operator, which produces a string value naming the type of the value you give it.  
   typeof 4.5 => number   typeof "x" => string
-binary operators: operators that take 2 values, example minus
-  9-2
 unary operators operators that take one value example minus 
   -10
-*minus can be binary or unary operator
+binary operators: operators that take 2 values, example minus
+  9-2
+  *minus can be binary or unary operator
+ternary, operating on three values.
+  console.log(true ? 1 : 2); // → 1   console.log(false ? 1 : 2); // → 2  This one is called the conditional operator
+undefined vs null is an accident of JavaScript’s design, and it doesn’t matter most of the time. 
+false
+  0, NaN, and the empty string ("") count as false, while all the other values count as true. 
+  Because of this, expressions like 0 == false and "" == false are also true. 
+Type conversions  
+  For cases where you do not want any automatic type conversions to happen, there are two extra operators: === and !==.
+  
+Chapter2:
