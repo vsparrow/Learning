@@ -1,3 +1,16 @@
 Chapter1: 
 There are six basic types of values in JavaScript: numbers, strings, Booleans, objects, functions, and undefined values.
-
+2.998e8 means 2.998 * 10^8 = 299,900,00  
+Infinity and -Infinity, which represent the positive and negative infinities. Infinity - 1 is still Infinity, and so on. 
+  Don’t put too much trust in infinity-based computation. It isn’t mathematically solid,  
+NaN stands for “not a number”
+  You’ll get this when, for example, (0/ 0), or any number of other numeric operations that don’t yield a  meaningful result.
+  There is only one value in JavaScript that is not equal to itself, and that is NaN, which stands for “not a number”.
+    console.log(NaN == NaN)  // → false
+typeof operator, which produces a string value naming the type of the value you give it.  
+  typeof 4.5 => number   typeof "x" => string
+binary operators: operators that take 2 values, example minus
+  9-2
+unary operators operators that take one value example minus 
+  -10
+*minus can be binary or unary operator
