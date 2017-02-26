@@ -46,3 +46,24 @@ function
     ie: console.log(root(4)); root(x){return something}  :  even though root decalred after console, still useable
   “var square = function(){}  is the name as function square(){}
   standards: dont put function inside an if block
+call stack The place where the computer stores call context 
+  function has to jump back to the place of the call when it returns, 
+  the computer must remember the context from which the function was called. 
+  Every time a function is called, the current context is put on top of this “stack”. 
+  When the function returns, it removes the top context from the stack and uses it to continue execution.
+  stack requires space in the computer’s memory. When the stack grows too big,
+    the computer will fail with a message like “out of stack space” or “too much recursion”.
+arguments:
+  JavaScript is extremely broad-minded about the number of arguments you pass to a function.
+  If you pass too many, the extra ones are ignored.
+  If you pass too few, the missing parameters simply get assigned the value undefined.
+    The upside is that this behavior can be used to have a function take “optional” arguments.
+closure
+  being able to reference a specific instance of local variables in an enclosing function—is called closure.
+  A function that “closes over” some local variables is called A closure. (ie: it is A closure) 
+recursions
+  in typical JavaScript implementations, it’s about 10 times slower than the looping version. 
+  Running through a simple loop is a lot cheaper than calling a function multiple times.
+  why recursion?
+    Often, a program deals with such complex concepts that giving up some efficiencyto make the program straightforward is attractive
+    
