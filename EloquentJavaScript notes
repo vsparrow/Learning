@@ -35,3 +35,14 @@ constructor  the first letter of a variable is capitalized. This was done to mar
   ie: Number()
   
 Chapter3:
+lexical scoping. approach to variable visibility  
+  each local scope can also see all the local scopes that contain it.  
+scope   in JavaScript, functions are the only things that create a new scope.
+  People who have experience with other languages might expect that any block of code between braces produces a new local environment.
+  EXAMPLE: the something inside the block refers to the same variable as the one outside the block. 
+    var something = 1; {  var something = 2;}
+function 
+  conceptually moved to the top of their scope and can be used by all the code in that scope
+    ie: console.log(root(4)); root(x){return something}  :  even though root decalred after console, still useable
+  “var square = function(){}  is the name as function square(){}
+  standards: dont put function inside an if block
