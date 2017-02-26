@@ -25,3 +25,13 @@ Type conversions
   For cases where you do not want any automatic type conversions to happen, there are two extra operators: === and !==.
   
 Chapter2:
+variables   imagine variables as tentacles, rather than boxes. They do not contain values; they grasp them
+environment The collection of variables and their values that exist at a given time 
+  When a program starts up, this environment is not empty. It always contains variables that are part of the language standard,
+function  piece of program wrapped in a value. Such values can be applied in order to run the wrapped program. 
+  example, in a browser environment, the variable alert holds a function that shows a little dialog box with a message.
+block: A sequence of statements wrapped in braces.  
+constructor  the first letter of a variable is capitalized. This was done to mark this function as a constructor 
+  ie: Number()
+  
+Chapter3:
