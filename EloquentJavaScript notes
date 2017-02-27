@@ -44,8 +44,21 @@ scope   in JavaScript, functions are the only things that create a new scope.
 function 
   conceptually moved to the top of their scope and can be used by all the code in that scope
     ie: console.log(root(4)); root(x){return something}  :  even though root decalred after console, still useable
-  “var square = function(){}  is the name as function square(){}
+  var square = function(){}  is the same as function square(){}
   standards: dont put function inside an if block
+  naming:
+     name printZeroPaddedWithLabel(), is a little awkward
+       try to pick out a single concept. 
+       A function with a nice, obvious name like zeroPad() makes it easier for someone who reads the code to figure out what it does.
+  side-effects vs return values ::
+    Functions can be roughly divided into those that are called for their side effects and those that are called for their return value.
+      (though functions can have both)
+      return value functions more valuable than side effect functions since can be versitile, combined different ways
+      printZeroPaddedWithLabel, is called for its side effect: it prints a line. console.log(num + label)
+      The second version, zeroPad, is called for its return value. return (num + label)
+  pure function 
+    value-producing function thathas no side effects but also doesn’t rely on side effects from other code 
+     it doesn’t read global variables 
 call stack The place where the computer stores call context 
   function has to jump back to the place of the call when it returns, 
   the computer must remember the context from which the function was called. 
