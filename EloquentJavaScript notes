@@ -88,23 +88,36 @@ JavaScript values all have properties. The exceptions are null and undefined
     Whereas value.x fetches the property of value named “x”, 
     value[x] tries to evaluate the expression x and uses the result as the property name.  
       array.length is easier to write than array["length"]
-
-
-
-function function0305(){ console.log(countBs("QueenB"))}
-function countChars0305(string1,char1){
-  var count=0;  
-  for(i=0;i<string1.length;i++){
-    if (string1.charAt(i)==char1){count++}
-  }    
-  return count;
-}
-function countBs(myString){ //return myString  return count uppercase Bs
-  return(countChars0305("QueenBBee","B"));
-  //alert(myString.charAt(0))         
-  /*var count=0;  
-  for(i=0;i<myString.length;i++){
-    if (myString.charAt(i)=="B"){count++}
-  }    
-  return count;*/
-}
+object arbitrary collections of properties
+  One way to create an object is by using a curly brace notation.
+    var day1 = {  squirrel: false,  events: ["work", "touched tree", "pizza", "running","television"]};
+  Reading a property that doesn’t exist will produce the value undefined
+  = operator. This will replace the property’s value if it already existed or create a new property on the object if it didn’t.
+  property bindings grasp values, but other variables and properties might be holding onto those same values. 
+  delete operator :remove the named property from the object.
+  in operator, when applied to a string and an object, returns a Boolean value that indicates whether that object has that property.
+    console.log("left" in anObject); // → false
+  objects are mutable:  content of a value can be modified by changing its properties.
+  there is a difference between having two references to the same object and having two different objects have the same properties.
+    references: object2 = object1; console.log(object2==object1) //true    
+    properties: object3 = {value:10}; object1 ={value:10}; console.log(object1==object3) //false
+      omparing different objects will return false, even if they have identical contents. 
+    loop construct specifically for going over the properties of an object  
+      for (var event in map)
+array
+  push pop shift unshift indexOf method 
+  lastIndexOf, which starts searching for the given element at the end of the array instead of the front.
+    console.log([1, 2, 3, 2, 1].indexOf(2));// → 1  console.log([1, 2, 3, 2, 1].lastIndexOf(2));// → 3
+      both take an optional second argument that indicates where to start searching from.
+  slice, which takes a start index and an end index and returns an array that has only the elements between those indices. 
+    start index is inclusive, the end index exclusive.
+  concat method can be used to glue arrays together,
+String
+  properties
+    not objects, and though JS  doesn’t complain if you try to set new properties on them, it doesn’t actually store those properties.
+  slice and indexOf
+    One difference is that a string’s indexOf can take a string containing more than one character
+      console.log("one two three".indexOf("ee"));// → 11
+  trim removes whitespace (spaces, newlines, tabs, and similar characters) from the start and end of a string.
+    console.log("  okay \n ".trim()); // → okay    
+  charAt Accessing the individual characters in a string
