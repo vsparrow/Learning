@@ -81,9 +81,13 @@ recursions
     Often, a program deals with such complex concepts that giving up some efficiencyto make the program straightforward is attractive
     
 
-
-
-
+Chapter4:
+JavaScript values all have properties. The exceptions are null and undefined
+  two most common ways to access properties are dot and with square brackets. 
+  value.x and value[x] 
+    Whereas value.x fetches the property of value named “x”, 
+    value[x] tries to evaluate the expression x and uses the result as the property name.  
+      array.length is easier to write than array["length"]
 
 
 
