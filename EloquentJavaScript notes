@@ -121,3 +121,15 @@ String
   trim removes whitespace (spaces, newlines, tabs, and similar characters) from the start and end of a string.
     console.log("  okay \n ".trim()); // → okay    
   charAt Accessing the individual characters in a string
+Arguments object:
+  Whenever a function is called, a special variable named arguments is added to the environment
+  object holds all of the arguments passed to the function
+  in JS you are allowed to pass more (or fewer) arguments to a function than the number of parameters the function itself declares.
+  length property ::   that tells us the number of arguments that were really passed to the function. 
+  it is a lot like an array. But this object, unfortunately, does not have any array methods (like slice or indexOf)
+Math 
+  a grab-bag of number-related utility functions. used simply as a container to group a bunch of related functionality.  
+  makes global namespace clean
+    ex: you want to use the name max.  Since built-in max function inside the Math object, we don’t have to worry about overwriting it.
+  why? Many languages will stop you, when you are defining a variable with a name that is already taken. JavaScript does not!
+  
