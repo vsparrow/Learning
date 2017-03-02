@@ -132,4 +132,7 @@ Math
   makes global namespace clean
     ex: you want to use the name max.  Since built-in max function inside the Math object, we don’t have to worry about overwriting it.
   why? Many languages will stop you, when you are defining a variable with a name that is already taken. JavaScript does not!
-  
+List   (not to be confused with the array).
+  is a nested set of objects, with the first object holding a reference to the second, the second to the third, etc
+    ie: item1 points to item2 which points to item3 which points to item4, etc
+    var list = {  value: 1,  rest: {  value: 2,  rest: { value: 3, rest: null  } }};
