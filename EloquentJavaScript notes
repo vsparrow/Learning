@@ -163,3 +163,16 @@ JSON
     akes a JavaScript value and returns a JSON-encoded string. 
    JSON.parse, that convert data to and from this format. 
      takes such a string and converts it to the value it encodes.
+filter tandard method on arrays. 
+  console.log(ancestry.filter(function(person) {  return person.father == "Carel Haverbeke";}));  //anscestry json object
+map     also a standard method on arrays.
+  transforms an array by applying a function to all of its elements and building a new array from the returned values
+  The new array will have the same length as the input array,
+  console.log(map(overNinety, function(person) {  return person.name;})); //where overNinety is json object
+reduce   computing a single value from an array
+  think of it as folding up the array, one element at a time.
+  console.log(reduce([1,2,3,4],function(a,b){return a+b},0));  //where 0 is the number to start with  //answer 10
+    If your array contains at least one element, you are allowed to leave off the start argument. 
+    The method will take the first element of the array as its start value and start reducing at the second element.
+Abstractions add layers between the raw things the computer is doing and the concepts we are working with 
+  thus cause the machine to perform more work. 
