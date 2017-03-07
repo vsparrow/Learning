@@ -136,3 +136,30 @@ List   (not to be confused with the array).
   is a nested set of objects, with the first object holding a reference to the second, the second to the third, etc
     ie: item1 points to item2 which points to item3 which points to item4, etc
     var list = {  value: 1,  rest: {  value: 2,  rest: { value: 3, rest: null  } }};
+
+
+Chapter5:   **reread 5 **
+Abstracting
+  “doing something” can be represented as a function
+    functions are just values 
+      we can pass our action as a function value.
+  function forEach(array, action) { for (var i = 0; i < array.length; i++)   action(array[i]);}    
+  forEach(["Wampeter", "Foma", "Granfalloon"], console.log);    
+Higher-order functions
+  Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions.
+  allow us to abstract over actions, not just values.
+  come in several forms  
+    can have functions that create new functions.
+      function greaterThan(n) {return function(m) {return m>n);};
+        var greaterThan10=greaterThan(10);  console.log(greaterThanTen(11));
+    can have functions that change other functions.    
+    can have functions that provide new types of control flow.
+apply method 
+  pass it an array (or array-like object) of arguments, and it will call the function with those arguments.
+  function transparentWrapping(f){ return function() { return f.apply(null, arguments); }  }
+JSON   
+   which stands for JavaScript Object Notation. It is widely used as a data storage and communication format on the Web.
+   JSON.stringify
+    akes a JavaScript value and returns a JSON-encoded string. 
+   JSON.parse, that convert data to and from this format. 
+     takes such a string and converts it to the value it encodes.
