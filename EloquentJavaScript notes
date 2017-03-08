@@ -174,5 +174,16 @@ reduce   computing a single value from an array
   console.log(reduce([1,2,3,4],function(a,b){return a+b},0));  //where 0 is the number to start with  //answer 10
     If your array contains at least one element, you are allowed to leave off the start argument. 
     The method will take the first element of the array as its start value and start reducing at the second element.
+apply method:    
+  used to call them with an array specifying their arguments.
+  first argument is an owner object, next is array
+    function myFunction(a,b) {return a*b;} ; myArray = [10,2];
+    myObject = myFunction.apply(myObject/ array)  //returns 20    
 Abstractions add layers between the raw things the computer is doing and the concepts we are working with 
   thus cause the machine to perform more work. 
+Bind:
+  all functions have it, creates a new function that will call the original function but with some  the rguments already fixed.
+  isInSet.bind(null, theSet);  //theSet is an array
+    the first argument when isInset is called will be theSet
+    the first argument, null, is becuase its used for method calls
+  
