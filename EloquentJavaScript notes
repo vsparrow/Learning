@@ -186,4 +186,10 @@ Bind:
   isInSet.bind(null, theSet);  //theSet is an array
     the first argument when isInset is called will be theSet
     the first argument, null, is becuase its used for method calls
-  
+every take a predicate function that, when called with an array element as argument, returns true or false. 
+  Just like && returns a true value only when the expressions on both sides are true, 
+  every returns true only when the predicate returns true for all elements of the array. 
+some  take a predicate function that, when called with an array element as argument, returns true or false.
+  some returns true as soon as the predicate returns true for any of the elements. T
+  hey do not process more elements than necessary—
+    if some finds that the predicate holds for the first element of the array, it will not look at the values after that.  
