@@ -209,4 +209,30 @@ call: a amethod
   call can be passed a this value
   ex: speak.apply(fatRabbit,["Burp!"]); //fat rabbit says Burp!
       speak.call({type: "old"},"Oh my"); // old rabbit says oh my!   //type old was defined in this call!
-   
+prototype 
+  almost all objects also have a prototype       
+  A prototype is another object that is used as a fallback source of properties. 
+    When an object gets a request for a property it does not have, its prototype will be searched , then the prototype’s prototype, etc
+  Object.prototype : ancestor of all prototypes
+  Object.getPrototypeOf("hola") //String{}     Object.getPrototypeOf(Math.floor) //function(){...}
+    returns the protoype of an object 
+  Object.create to create an object with a specific prototype.
+    ex: var protoRabbit={speak: function(line){console.log(this.type +" rabbit says " +line)}}'
+        var matrixRabbit = Object.create(protoRabbit);  matrixRabbit.type="Matrix"
+        matrixRabbit.speak("I know KungFu"); //Matrix Rabbit says I know KungFu
+Constructor
+  convenient way to create objects that derive from some shared prototype is to use a constructor
+  calling a function with the new keyword in front of it causes it to be treated as a constructor. 
+  An object created with new is said to be an instance of its constructor.
+  convention to capitalize the names of constructors so that they are easily distinguished from other functions.
+    ex    function Rabbit(type){this.type=type;}
+          var blackRabbit = new Rabbit(black); console.log(blackRabbit.type) //black
+  all constructors get an objet named protoype
+    easy to add a method
+    
+  Rabbit.prototype.speak = function(line) {
+  console.log("The " + this.type + " rabbit says '" +
+              line + "'");
+};
+blackRabbit.speak("Doom...");
+// → The black rabbit says 'Doom...'
