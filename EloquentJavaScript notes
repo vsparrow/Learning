@@ -220,6 +220,11 @@ prototype
     ex: var protoRabbit={speak: function(line){console.log(this.type +" rabbit says " +line)}}'
         var matrixRabbit = Object.create(protoRabbit);  matrixRabbit.type="Matrix"
         matrixRabbit.speak("I know KungFu"); //Matrix Rabbit says I know KungFu
+  Object.create
+    **create object without prototype, pass null to create
+    ex: var map= Object.create(null); map["pizza"]=0.09; 
+      console.log("toString" in map) //false  console.log("pizza" in map)  //true
+
 Constructor
   convenient way to create objects that derive from some shared prototype is to use a constructor
   calling a function with the new keyword in front of it causes it to be treated as a constructor. 
@@ -242,3 +247,23 @@ Constructor
         Object.defineProperty(Object.prototype,"hiddenNonsense",{enumerable: false, value: "hi"})
         for(var name in map) {console.log(name)} // → pizza // → touched tree
         console.log(map.hiddentNonesense) //hi        
+          **so the property hiddenNonsense is there but it doesnt show up in loop, which is good, **
+   
+   hasOwnProperty : tells if object iteself has a property, tht is not inherited
+    console.log(map.hasOwnPorperty("toString")); //false
+    
+polymorphism
+  Polymorphic code can work with values of different shapes, as long as they support the interface it expects.    
+    
+    
+    
+    
+    
+    
+   
+   
+   
+   
+      
+      
+      
