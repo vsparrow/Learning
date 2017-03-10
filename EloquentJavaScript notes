@@ -228,11 +228,17 @@ Constructor
     ex    function Rabbit(type){this.type=type;}
           var blackRabbit = new Rabbit(black); console.log(blackRabbit.type) //black
   all constructors get an objet named protoype
-    easy to add a method
-    
-  Rabbit.prototype.speak = function(line) {
-  console.log("The " + this.type + " rabbit says '" +
-              line + "'");
-};
-blackRabbit.speak("Doom...");
-// → The black rabbit says 'Doom...'
+  Method add :  easy to add a method
+    ex: Rabbit.prototype.speak=function(line){console.log(this.type + " rabbit says " + speak)}
+  Property override:
+    if property inherited from prototype but new property with same name added to object, inherited prop not longer in use
+    Rabbit.prototype.teeth="small"; console.log(bugsRabbit.teeth)//small 
+      bugsRabbit.teeth="long"  console.log(bugsRabbit.teeth)//long
+  Property 
+    enumerable   All properties that we create by simply assigning to them are enumerable    
+    nonenumerable properties inheritied from Object.prototpye
+      **Object.defineProperty** possible to define our own nonenumerable properties by using the Object.defineProperty
+      ex:
+        Object.defineProperty(Object.prototype,"hiddenNonsense",{enumerable: false, value: "hi"})
+        for(var name in map) {console.log(name)} // → pizza // → touched tree
+        console.log(map.hiddentNonesense) //hi        
