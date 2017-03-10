@@ -193,3 +193,20 @@ some  take a predicate function that, when called with an array element as argum
   some returns true as soon as the predicate returns true for any of the elements. T
   hey do not process more elements than necessary—
     if some finds that the predicate holds for the first element of the array, it will not look at the values after that.  
+    
+CHapter6:    
+
+Methods : properties that hold function values
+  ex: var rabbit = {}; rabbit.speak=function(line){console.log("The rabbit says " + line)}  // speak is a method of rabbit
+this
+  method needs to do something with the object it was called on
+  variable this in its body will point to the object that it was called on. 
+  ex: function speak(line){console.log(this.type + " rabbit says " + line)}
+      var whiteRabbit = {type: "white", speak: speak} ;       var fatRabbit   = {type: "fat", speak: speak}
+      whiteRabbit.speak("I like carrots") // white rabbit says I like carrots
+call: a amethod
+  smilar to apply but takes arguments normally ather than as a array
+  call can be passed a this value
+  ex: speak.apply(fatRabbit,["Burp!"]); //fat rabbit says Burp!
+      speak.call({type: "old"},"Oh my"); // old rabbit says oh my!   //type old was defined in this call!
+   
