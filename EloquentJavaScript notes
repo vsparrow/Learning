@@ -254,16 +254,16 @@ Constructor
     
 polymorphism
   Polymorphic code can work with values of different shapes, as long as they support the interface it expects.    
-    
-    
-    
-    
-    
-    
-   
-   
-   
-   
-      
-      
-      
+*method properties* made up name
+  properties that, from the outside, look like normal properties but secretly have methods associated with them.    
+  ex: var pile= { elements: ["eggs","orange","fruitCake"],
+    get height(){return this.elements.length}, set height(value){console.log("Ignoting attept to set height")}
+    } 
+    console.log(pile.height) // 3       console.log(pile.height=5) // ignoring attept to set pile
+ get or set notation for properties allows you to specify a function to be run when the property is read or written.  
+  When a getter but no setter is defined, writing to the property is simply ignored.
+instanceOf
+   know whether an object was derived from a specific constructor. 
+   console.log([1] instanceof Array);  // → true
+  
+  
