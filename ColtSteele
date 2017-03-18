@@ -1,3 +1,12 @@
 Sublime :
-  type html, hit tab, the boilerplate appears.
-  comment , on line hit ctrl+/  will comment whole line
+  boilerplate:  type html, hit tab, the boilerplate appears.
+  comment       on line hit ctrl+/  will comment whole line
+  lorem         type lorem, hit tab, a lorem ipsum appears
+HTML
+  BOILERPLATE : what you use to start webpage
+    
+  REFERENCE
+    mdn html reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+  ELEMENTS : HTML5 needs to be meaning ful say something about the text
+    <b></b> depricated: 
+      <strong></strong>  use this instead.
