@@ -8,14 +8,19 @@ HTML
   FORMS: <form></form> a container where we put our inputs : useful if submit all inputs as package together
     action:  where the form submits data to : if not specified it ge to same place/page you are on
     method:  what http method (get/post) : if not specified it is a get request
-    validations: input must match a certain pattern
-    
+    validations: input must match a certain pattern 
+      required <input type=""  required> :: must be filled, a presencevalidation
+    INPUTS
+    dropdowns: <select name=""><option></option></select>
     inputs  <input type="" >   search mdn input for input types. 
     label  <label>Username: <input type=""></label>  used for screen readres and accessibility (nested)
       alternative: <label for="password"></label>  <input id="password">  for and id match (unnested)
     name  <input type="" name=""> give names to data so we can retrieve them later
     placeholder <input type="" placeholder="username">  light gray text that is a placeholder text in input
-    submit button can be input type or a button!
+    radio buttons: <input type="radio">   for choice, ie: pick 1 of 2, both input have the same name attribte
+      differentiate choice with value=""
+    submit button can be input type or a button!  if button last item in form it will submit form even if action not specified
+    textarea: inputs more than a line : see mdn textarea  <textarea name="paragraph" rows="10" cols="20">
   REFERENCE
     mdn html reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
   ELEMENTS : HTML5 needs to be meaning ful say something about the text
