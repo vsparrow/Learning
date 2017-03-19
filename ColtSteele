@@ -5,7 +5,17 @@ Sublime :
   multiedit     control+click multiple lines: same text written all over lines same time!
 HTML
   BOILERPLATE : what you use to start webpage
+  FORMS: <form></form> a container where we put our inputs : useful if submit all inputs as package together
+    action:  where the form submits data to : if not specified it ge to same place/page you are on
+    method:  what http method (get/post) : if not specified it is a get request
+    validations: input must match a certain pattern
     
+    inputs  <input type="" >   search mdn input for input types. 
+    label  <label>Username: <input type=""></label>  used for screen readres and accessibility (nested)
+      alternative: <label for="password"></label>  <input id="password">  for and id match (unnested)
+    name  <input type="" name=""> give names to data so we can retrieve them later
+    placeholder <input type="" placeholder="username">  light gray text that is a placeholder text in input
+    submit button can be input type or a button!
   REFERENCE
     mdn html reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
   ELEMENTS : HTML5 needs to be meaning ful say something about the text
