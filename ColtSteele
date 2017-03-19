@@ -2,6 +2,7 @@ Sublime :
   boilerplate:  type html, hit tab, the boilerplate appears.
   comment       on line hit ctrl+/  will comment whole line
   lorem         type lorem, hit tab, a lorem ipsum appears
+  multiedit     control+click multiple lines: same text written all over lines same time!
 HTML
   BOILERPLATE : what you use to start webpage
     
@@ -10,3 +11,5 @@ HTML
   ELEMENTS : HTML5 needs to be meaning ful say something about the text
     <b></b> depricated: 
       <strong></strong>  use this instead.
+    <table></table>
+      <thead> table head  <tbody> table body  <th> table head item <tr> table row <td> row item
