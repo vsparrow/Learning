@@ -30,3 +30,15 @@ HTML
     <table></table>
       <thead> table head  <tbody> table body  <th> table head item <tr> table row <td> row item
 CSS seperate documents that we then include in our HTML
+  in HTML  style: in <head> add <style type="text/css>selector {property: value;}</style>  (THIS IS NOT THE RIGHT WAY)
+    better way: linktag: <link rel="stylesheet" type="css/text" href="app.css"> in head
+  background imanges body {background: url(http://www.cool.com/123smooth.jpg)} 
+    strech image:  h1 {background-size: cover}
+    tiled is default
+    untiled:  h1{background-repeat: no-repeat}  //add to above
+  COLORS: 
+    hexadecimal : #ABC456 6 digit alphanumeric color pallete  0-9A-F   is rgb, but different syntax
+      _ _ | _ _ | _ _    <- how much red | green | blue  
+    named colors: only 147 named colors
+    RGB system  color: rgb(255,255,255)    red green blue amount
+    RGBA rgb but with an alpha(transparancy) signal   ex: h1 {color: rgba(255,255,255,.5)}  A is 0 to 1
