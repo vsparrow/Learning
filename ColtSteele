@@ -15,6 +15,7 @@ HTML
     inputs  <input type="" >   search mdn input for input types. 
     label  <label>Username: <input type=""></label>  used for screen readres and accessibility (nested)
       alternative: <label for="password"></label>  <input id="password">  for and id match (unnested)
+    length: minimum : use <input pattern=".{5,10}">  means must be 5 to 10 characters  
     name  <input type="" name=""> give names to data so we can retrieve them later
     placeholder <input type="" placeholder="username">  light gray text that is a placeholder text in input
     radio buttons: <input type="radio">   for choice, ie: pick 1 of 2, both input have the same name attribte
@@ -28,3 +29,4 @@ HTML
       <strong></strong>  use this instead.
     <table></table>
       <thead> table head  <tbody> table body  <th> table head item <tr> table row <td> row item
+CSS seperate documents that we then include in our HTML
