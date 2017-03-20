@@ -36,9 +36,19 @@ CSS seperate documents that we then include in our HTML
     strech image:  h1 {background-size: cover}
     tiled is default
     untiled:  h1{background-repeat: no-repeat}  //add to above
+  borders: 3 parts width , color, style(solid, dashed, dotted)  // need all three too see something
+    h1 {border: 10px dotted green;}//  can write seperate or combine as such
   COLORS: 
     hexadecimal : #ABC456 6 digit alphanumeric color pallete  0-9A-F   is rgb, but different syntax
       _ _ | _ _ | _ _    <- how much red | green | blue  
     named colors: only 147 named colors
     RGB system  color: rgb(255,255,255)    red green blue amount
     RGBA rgb but with an alpha(transparancy) signal   ex: h1 {color: rgba(255,255,255,.5)}  A is 0 to 1
+  SELECTOR:
+    select element by type, ie: <p> <div> body, etc  example div {background: purple;}
+  text-decoration  mdn text-decoration   //add underline, cross through etc  
+
+
+
+DEVTIPS:
+  Error driven development: we write something that we know wont work, then we fix it afterwards
