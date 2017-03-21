@@ -61,7 +61,14 @@ CSS seperate documents that we then include in our HTML
       nth of type: takes number and does every nth of that type, ie, every 3rd li li:nth-of-type(3){}
         note: the example would do every 3rd li of every ul, NOT every other 3:
           meaning: if ul1 has 3 li, and ul2 has 6li,  in ul2 li3 would be affected but NOT li6
-    list of selectors : https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048 
+    list of selectors : https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048
+  SPECIFICITY: a weight that is applied to a given CSS declaration
+    we can multiple styles targeting an element. whatever one is more specific wins. li wins over ul wins over body  
+      when weight is equal last decleration wins      type (h1) < class (.example)  < id (#example) < !important
+      :not exception // count as normal selectors  div:not(.outer) p { color: darkgreen} // div without class outer is darkgreen
+      inline styles highest specificity
+    see mdn specificty
+    
   text-decoration  mdn text-decoration   //add underline, cross through etc  
 
 
