@@ -50,6 +50,8 @@ CSS seperate documents that we then include in our HTML
     RGBA rgb but with an alpha(transparancy) signal   ex: h1 {color: rgba(255,255,255,.5)}  A is 0 to 1
   SELECTOR:
     select element by type, ie: <p> <div> body, etc  example div {background: purple;}
+    selectors are: element <li> {},<p>{}  , class .hello{}  , id  #div1 {}
+    list of selectors : https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048 
   text-decoration  mdn text-decoration   //add underline, cross through etc  
 
 
