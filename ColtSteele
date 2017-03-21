@@ -48,6 +48,14 @@ CSS seperate documents that we then include in our HTML
     named colors: only 147 named colors
     RGB system  color: rgb(255,255,255)    red green blue amount
     RGBA rgb but with an alpha(transparancy) signal   ex: h1 {color: rgba(255,255,255,.5)}  A is 0 to 1
+  FONTS
+    choose a font:  p { font-family: "Arial";}
+    cssfontstack.com : see what  percentage of computers has a particular font. (the system fonts)
+    font size:  px or em
+      em: it is dynamic :: em is equal to the size of the font that applies to the parent of the element
+        browser default,  often 16px.  by default 1em = 16px, and 2em = 32px. if parent 20px, em is 20px, 2em is 40px
+          can also use floats: 0.75em
+    
   SELECTOR:
     select element by type, ie: <p> <div> body, etc  example div {background: purple;}
     selectors are: 
