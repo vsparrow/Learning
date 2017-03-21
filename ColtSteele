@@ -59,6 +59,8 @@ CSS seperate documents that we then include in our HTML
       adjacent , select sibling elements: h4 + ul {}  :: ul that is adjacent to h4, without plus it would be li inside h4
       attribute , a[href="http://www.google.com"] {} or input[type="checkbox"]{} //  anchor tag, inside the attribute we look for
       nth of type: takes number and does every nth of that type, ie, every 3rd li li:nth-of-type(3){}
+        note: the example would do every 3rd li of every ul, NOT every other 3:
+          meaning: if ul1 has 3 li, and ul2 has 6li,  in ul2 li3 would be affected but NOT li6
     list of selectors : https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048 
   text-decoration  mdn text-decoration   //add underline, cross through etc  
 
