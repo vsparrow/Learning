@@ -67,6 +67,7 @@ CSS seperate documents that we then include in our HTML
       when weight is equal last decleration wins      type (h1) < class (.example)  < id (#example) < !important
       :not exception // count as normal selectors  div:not(.outer) p { color: darkgreen} // div without class outer is darkgreen
       inline styles highest specificity
+      2 elements more specific then 1.  // li + a{}  > li{}
     see mdn specificty
     
   text-decoration  mdn text-decoration   //add underline, cross through etc  
