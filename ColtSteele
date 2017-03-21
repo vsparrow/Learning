@@ -1,3 +1,7 @@
+Chrome:
+  inspector: make changes to webpage without affecting actual file. look at other people's code. 
+  magnifying glas: hover over things: upper left
+
 Sublime :
   boilerplate:  type html, hit tab, the boilerplate appears.
   comment       on line hit ctrl+/  will comment whole line
