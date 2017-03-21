@@ -42,6 +42,13 @@ CSS seperate documents that we then include in our HTML
     untiled:  h1{background-repeat: no-repeat}  //add to above
   borders: 3 parts width , color, style(solid, dashed, dotted)  // need all three too see something
     h1 {border: 10px dotted green;}//  can write seperate or combine as such
+  BOX MODEL:
+    content: margin(border(padding(element))))
+      padding: space between the element and its border
+      content: border: 
+      margin: add space in between elements
+        margin-auto: center an element for us.
+    
   COLORS: 
     hexadecimal : #ABC456 6 digit alphanumeric color pallete  0-9A-F   is rgb, but different syntax
       _ _ | _ _ | _ _    <- how much red | green | blue  
@@ -51,11 +58,17 @@ CSS seperate documents that we then include in our HTML
   FONTS
     choose a font:  p { font-family: "Arial";}
     cssfontstack.com : see what  percentage of computers has a particular font. (the system fonts)
+    custom fonts: palce in head.
+      for google fonts: Navigate to https://fonts.google.com/ :: request only weight needed to make it faster
+        family=Indie+Flower  use as h1 {font-family: Indie Flower;}
     font size:  px or em
       em: it is dynamic :: em is equal to the size of the font that applies to the parent of the element
         browser default,  often 16px.  by default 1em = 16px, and 2em = 32px. if parent 20px, em is 20px, 2em is 40px
           can also use floats: 0.75em
-    
+    font-weight: depending on fon can be 100-800, in 100 increments.      
+    line-height: line spacing, usually from .5 to 2
+    text-align: left right center
+    text-decoration: underline,striketrhough, overline
   SELECTOR:
     select element by type, ie: <p> <div> body, etc  example div {background: purple;}
     selectors are: 
