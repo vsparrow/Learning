@@ -69,6 +69,9 @@ CSS seperate documents that we then include in our HTML
     line-height: line spacing, usually from .5 to 2
     text-align: left right center
     text-decoration: underline,striketrhough, overline
+  IMAGES:
+    when added in html, automatically white space between two images.
+    float: img {float: left}  //removes the whitespace between items
   SELECTOR:
     select element by type, ie: <p> <div> body, etc  example div {background: purple;}
     selectors are: 
