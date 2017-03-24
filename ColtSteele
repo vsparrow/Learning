@@ -33,6 +33,13 @@ HTML
       <strong></strong>  use this instead.
     <table></table>
       <thead> table head  <tbody> table body  <th> table head item <tr> table row <td> row item
+BOOTSTRAP      
+  http://getbootstrap.com/css  //see sidebar for quick code
+  Download: bootstrap.css the important file
+  Override: override bootstrp styles by placing desired config in style in head after bootstrap called or style sheet called after bs 
+    <style>.btn-danger{color: orange}</style> //change button !
+       
+      
 CSS seperate documents that we then include in our HTML
   in HTML  style: in <head> add <style type="text/css>selector {property: value;}</style>  (THIS IS NOT THE RIGHT WAY)
     better way: linktag: <link rel="stylesheet" type="css/text" href="app.css"> in head
