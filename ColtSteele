@@ -38,7 +38,10 @@ BOOTSTRAP
   Download: bootstrap.css the important file
   Override: override bootstrp styles by placing desired config in style in head after bootstrap called or style sheet called after bs 
     <style>.btn-danger{color: orange}</style> //change button !
-       
+  
+  container: make a container with some spacing around it.
+  Jumbtron: mean to take up all space that it is inside of
+  
       
 CSS seperate documents that we then include in our HTML
   in HTML  style: in <head> add <style type="text/css>selector {property: value;}</style>  (THIS IS NOT THE RIGHT WAY)
