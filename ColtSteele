@@ -40,6 +40,11 @@ BOOTSTRAP
     <style>.btn-danger{color: orange}</style> //change button !
   
   container: make a container with some spacing around it.
+  forms: 
+    .form-control: make form look good.
+    .form-group: group labels and input that should go together
+    .help-block: for help text
+  
   Jumbtron: mean to take up all space that it is inside of
   
       
