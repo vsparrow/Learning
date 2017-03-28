@@ -54,6 +54,7 @@ BOOTSTRAP
     hamburger: div class="navbar-collapse collapse"  // hides items in mobile sizing
       then copyfrom getbootstrap :: button navbar-collapsed toggle, place in header 
         data target in button must match id of collapse element (div) 
+    Colt's work flow is he goes to getbootstrap or old project to get navbar code then edits it    
   
       
 CSS seperate documents that we then include in our HTML
