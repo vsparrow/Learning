@@ -51,6 +51,9 @@ BOOTSTRAP
     navbar-brand: usualy an anchor tag that takes you back to the company homepage
       inside navbar-header
     outside navbar-header: the content of navbar (nav navbar-nav)  
+    hamburger: div class="navbar-collapse collapse"  // hides items in mobile sizing
+      then copyfrom getbootstrap :: button navbar-collapsed toggle, place in header 
+        data target in button must match id of collapse element (div) 
   
       
 CSS seperate documents that we then include in our HTML
