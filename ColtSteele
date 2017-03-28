@@ -36,6 +36,7 @@ HTML
 BOOTSTRAP      
   http://getbootstrap.com/css  //see sidebar for quick code
   Download: bootstrap.css the important file
+    jquery CDN must come before bootstrap CDN
   Override: override bootstrp styles by placing desired config in style in head after bootstrap called or style sheet called after bs 
     <style>.btn-danger{color: orange}</style> //change button !
   
@@ -46,7 +47,7 @@ BOOTSTRAP
     .help-block: for help text
   
   Jumbtron: mean to take up all space that it is inside of
-  Navbar
+  Navbar : class="navbar navbar-default"
     navbar-brand: usualy an anchor tag that takes you back to the company homepage
       inside navbar-header
     outside navbar-header: the content of navbar (nav navbar-nav)  
