@@ -35,6 +35,8 @@ HTML
       <thead> table head  <tbody> table body  <th> table head item <tr> table row <td> row item
 BOOTSTRAP      
   http://getbootstrap.com/css  //see sidebar for quick code
+  COLORS:
+    if your CSS color isnt working, make sure that the style is included AFTER bootstrap.
   Download: bootstrap.css the important file
     jquery CDN must come before bootstrap CDN
   Override: override bootstrp styles by placing desired config in style in head after bootstrap called or style sheet called after bs 
