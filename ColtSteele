@@ -45,6 +45,11 @@ BOOTSTRAP
     .form-control: make form look good.
     .form-group: group labels and input that should go together
     .help-block: for help text
+  grid: dont have to make new rows when going beyond 12, it will start in next row
+    ex: can have 9 cols of col-lg-4 in 1 row, it will auto size to 3 rows. (automatic wrap)
+  
+  images:
+    wrap in a thumnail <div class="col-lg-6"><div class="thumbnail">>img src=""></div></div>
   
   Jumbtron: mean to take up all space that it is inside of
   Navbar : class="navbar navbar-default"
@@ -54,7 +59,8 @@ BOOTSTRAP
     hamburger: div class="navbar-collapse collapse"  // hides items in mobile sizing
       then copyfrom getbootstrap :: button navbar-collapsed toggle, place in header 
         data target in button must match id of collapse element (div) 
-    Colt's work flow is he goes to getbootstrap or old project to get navbar code then edits it    
+    Colt's work flow is he goes to getbootstrap or old project to get navbar code then edits it   
+    navbar-fixed-top to keep at top
   
       
 CSS seperate documents that we then include in our HTML
