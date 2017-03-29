@@ -137,3 +137,4 @@ CSS seperate documents that we then include in our HTML
 
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
+  images: unsplash for images
