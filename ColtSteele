@@ -107,6 +107,8 @@ CSS seperate documents that we then include in our HTML
   IMAGES:
     when added in html, automatically white space between two images.
     float: img {float: left}  //removes the whitespace between items
+    background imaages
+          body {background: url(http://imageurl); background-size: cover; background-position: center}
   SELECTOR:
     select element by type, ie: <p> <div> body, etc  example div {background: purple;}
     selectors are: 
