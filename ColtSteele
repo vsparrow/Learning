@@ -63,6 +63,8 @@ BOOTSTRAP
         data target in button must match id of collapse element (div) 
     Colt's work flow is he goes to getbootstrap or old project to get navbar code then edits it   
     navbar-fixed-top to keep at top
+    Items grouped closer vs taking up whole space
+      <nav class="navbar navbar-default">  <div class="container"> vs <div class="container-fluid">
   
       
 CSS seperate documents that we then include in our HTML
@@ -74,6 +76,8 @@ CSS seperate documents that we then include in our HTML
     untiled:  h1{background-repeat: no-repeat}  //add to above
   borders: 3 parts width , color, style(solid, dashed, dotted)  // need all three too see something
     h1 {border: 10px dotted green;}//  can write seperate or combine as such
+    shadow:  hr {width: 400px; border-top: 1px solid #f8f8f8;  border-bottom: 1px solid rgba(0,0,0,0.2);}
+      thats how to make a small shadow, very very small!
   BOX MODEL:
     content: margin(border(padding(element))))
       padding: space between the element and its border
@@ -100,7 +104,8 @@ CSS seperate documents that we then include in our HTML
       rem: relative to root element unlike em. 
         ie: if body is 2rem, and div is 2rem, they are same size
             if body is 2em and div is 2em, body is 2x as big relative to page, and div inside body is 4x as big relative to page
-    font-weight: depending on fon can be 100-800, in 100 increments.      
+    font-weight: depending on fon can be 100-800, in 100 increments.   
+      to bold should be high like font-weight: 700
     line-height: line spacing, usually from .5 to 2
     text-align: left right center
     text-decoration: underline,striketrhough, overline    
@@ -123,6 +128,7 @@ CSS seperate documents that we then include in our HTML
         note: the example would do every 3rd li of every ul, NOT every other 3:
           meaning: if ul1 has 3 li, and ul2 has 6li,  in ul2 li3 would be affected but NOT li6
     list of selectors : https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048
+    select two selectors : h1,h3 {color: green} //2 selectors selected. the comma seperates groups
   SPECIFICITY: a weight that is applied to a given CSS declaration
     we can multiple styles targeting an element. whatever one is more specific wins. li wins over ul wins over body  
       when weight is equal last decleration wins      type (h1) < class (.example)  < id (#example) < !important
@@ -130,8 +136,10 @@ CSS seperate documents that we then include in our HTML
       inline styles highest specificity
       2 elements more specific then 1.  // li + a{}  > li{}
     see mdn specificty
-    
-  text-decoration  mdn text-decoration   //add underline, cross through etc  
+  
+  TEXT: see also font
+    text-decoration  mdn text-decoration   //add underline, cross through etc  
+    text-shadow: shadow text
   
   width: 80% // can be pixel or percentage
     max-width: 700px: maximum something can be // see Colt059
