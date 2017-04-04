@@ -144,7 +144,12 @@ CSS seperate documents that we then include in our HTML
   
   width: 80% // can be pixel or percentage
     max-width: 700px: maximum something can be // see Colt059
-
+JAVASCRIPT
+  arrays: see array mdn
+    array.forEach : best way to loop through array, came out 2009
+  functions:
+    colors.forEach(printColor()); <- because of printColor() parenthisis , printColor executed BEFORE the forEach
+      the right way: colors.forEach(printColor);
 
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
