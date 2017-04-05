@@ -147,6 +147,8 @@ CSS seperate documents that we then include in our HTML
 JAVASCRIPT
   arrays: see array mdn
     array.forEach : best way to loop through array, came out 2009
+      return from forEach if in loop, only returns to outer scope, does not exit the outer function. 
+        better to use forloop for returns
   functions:
     colors.forEach(printColor()); <- because of printColor() parenthisis , printColor executed BEFORE the forEach
       the right way: colors.forEach(printColor);
