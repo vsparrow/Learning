@@ -149,6 +149,8 @@ JAVASCRIPT
     array.forEach : best way to loop through array, came out 2009
       return from forEach if in loop, only returns to outer scope, does not exit the outer function. 
         better to use forloop for returns
+  CSS: use js to change css for reasons. if for only initial load, write to CSS directly.
+    Seperation of Concerns : each part dfoes their own item, js->behavior, html ->structure, css ->style
   DOCUMENT
     selectors
       ex: document.head;document.body;document.links; document.URL;  ->get back info on the webpage
@@ -157,7 +159,14 @@ JAVASCRIPT
         document.getElementsByClassName()  //returns all items with class // not array but node list, array-like
         document.getElementsByTagsName() // like h1 , body , li , p , etc
         document.querySelector() // takes css style selector, repliacte above. (#highlight) (.makeGreen) ("li a.special") etc
+          only gives first result
         document.querySelectorAll() //like above but all elements that match
+        
+        tag.classList.add("some-class") // add a class to var tag which is some element
+        tag.classList.remove("another-class") // removea class to var tag which is some element
+        tag.classList.toggle("another-class") // if element not have class, add it. ELse if have it, remove it.
+        tag.classList //list classes the tag has  //not array
+          //var tag = document.getElementById("someTag");
   functions:
     colors.forEach(printColor()); <- because of printColor() parenthisis , printColor executed BEFORE the forEach
       the right way: colors.forEach(printColor);
