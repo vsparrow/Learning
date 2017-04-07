@@ -166,7 +166,20 @@ JAVASCRIPT
         tag.classList.remove("another-class") // removea class to var tag which is some element
         tag.classList.toggle("another-class") // if element not have class, add it. ELse if have it, remove it.
         tag.classList //list classes the tag has  //not array
-          //var tag = document.getElementById("someTag");
+          //var tag = document.getElementById("someTag"); 
+        tag.textContent // equals the text inside an element //example <p>COOL STUFF</p>   tag is "COOL STUFF"
+          tag.textContent = "NEW STUFF" //changes text
+          tag.innerHTML //get sets html inside element  // <p>Cats are <bold></bold> cute</p> //get::Cats are <bold></bold> cute
+          ex:  var links = document.getElementsByTagName("a"); for(i=0;i<links.length;i++){console.log(links[i].textContent)}
+                  get textcontent of all links
+       
+       Attributes:   <a href="www.google.com">A link!</a><img src="LOGO.jpg">; var link=document.querySelector("a");
+        link.getAttribute("href"); //www.google.com
+        link.setAttribute("href", "www.bing.com") //changes attribute //myimg.setAttribute("src","corgi.jph")  
+        
+       Style   logo = document.querySelector("#logo");
+        logo.style.width = "500px"  //  logo.style.border = "2px solid pink"
+
   functions:
     colors.forEach(printColor()); <- because of printColor() parenthisis , printColor executed BEFORE the forEach
       the right way: colors.forEach(printColor);
