@@ -149,6 +149,15 @@ JAVASCRIPT
     array.forEach : best way to loop through array, came out 2009
       return from forEach if in loop, only returns to outer scope, does not exit the outer function. 
         better to use forloop for returns
+  DOCUMENT
+    selectors
+      ex: document.head;document.body;document.links; document.URL;  ->get back info on the webpage
+      methods:
+        document.getElementById()
+        document.getElementsByClassName()  //returns all items with class // not array but node list, array-like
+        document.getElementsByTagsName() // like h1 , body , li , p , etc
+        document.querySelector() // takes css style selector, repliacte above. (#highlight) (.makeGreen) ("li a.special") etc
+        document.querySelectorAll() //like above but all elements that match
   functions:
     colors.forEach(printColor()); <- because of printColor() parenthisis , printColor executed BEFORE the forEach
       the right way: colors.forEach(printColor);
@@ -157,10 +166,11 @@ JAVASCRIPT
       ex: var obj1 = {name: "chuck", add: function(x,y){return x+y;} }  //obj.add(10,5) //15
       var comments = {}; comments.data = ["a","b","c"];
       comments.print = function(){this.data.forEach(function(el){console.log(el)})}  //comments.print() //get a b c
-
+  
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
   images: unsplash for images
   console commands
     console.dir(document) : see the Document object in object format,
+      ex:console.dir(console.log) -> returns function
     document, see the document object in html format.
