@@ -190,6 +190,8 @@ JAVASCRIPT
       comments.print = function(){this.data.forEach(function(el){console.log(el)})}  //comments.print() //get a b c
 JQUERY
   $ selector return a lsit even if it is a list of 1
+  css   $("").css.("","")
+    can be passed object instad; var styles = {background-color: "pink", font-weight: "gold"}; $("#specials").css(styles);
   
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
