@@ -189,6 +189,7 @@ JAVASCRIPT
       var comments = {}; comments.data = ["a","b","c"];
       comments.print = function(){this.data.forEach(function(el){console.log(el)})}  //comments.print() //get a b c
 JQUERY
+  API documentation: has all the methods :: http://api.jquery.com/
   $ selector return a lsit even if it is a list of 1
   css   $("").css.("","")
     can be passed object instad; var styles = {background-color: "pink", font-weight: "gold"}; $("#specials").css(styles);
