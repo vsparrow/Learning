@@ -206,7 +206,8 @@ JQUERY
   Events: most used
     click()
     keypress()
-    on()
+    on() -> can be used to make most other events
+      on.click vs click ::: click applies to current elements ::: on.click could apply to all future elemets as awell.
   
   
 DEVTIPS:
