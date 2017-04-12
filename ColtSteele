@@ -193,6 +193,19 @@ JQUERY
   $ selector return a lsit even if it is a list of 1
   css   $("").css.("","")
     can be passed object instad; var styles = {background-color: "pink", font-weight: "gold"}; $("#specials").css(styles);
+  HTML DOM: most used
+    val()
+    text()
+    attr()
+    html()
+    addClass()
+    removeClass()
+    toggleClass()
+  Events: most used
+    click()
+    press()
+    on()
+  
   
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
