@@ -139,6 +139,7 @@ CSS seperate documents that we then include in our HTML
     see mdn specificty
   
   TEXT: see also font
+    list-style: none; -> removes style like bullet points
     text-decoration  mdn text-decoration   //add underline, cross through etc  
     text-shadow: shadow text
   
