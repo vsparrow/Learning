@@ -151,6 +151,7 @@ JAVASCRIPT
         better to use forloop for returns
   CSS: use js to change css for reasons. if for only initial load, write to CSS directly.
     Seperation of Concerns : each part dfoes their own item, js->behavior, html ->structure, css ->style
+
   DOCUMENT
     selectors
       ex: document.head;document.body;document.links; document.URL;  ->get back info on the webpage
@@ -193,8 +194,10 @@ JQUERY
   $ selector return a lsit even if it is a list of 1
   $() -> the jQuery hug that wraps JS in jQuery
   $(this) == this in JS
-  css   $("").css.("","")
+  CSS   $("").css.("","")
     can be passed object instad; var styles = {background-color: "pink", font-weight: "gold"}; $("#specials").css(styles);
+      color comparison: cant use color name must use rgb
+        ex: if $(this).css("color")=== gray wont work, use $(this).css("color")=== "rgb(155, 155, 155)" <-space inside important
   HTML DOM: most used
     val()
     text()
@@ -210,9 +213,11 @@ JQUERY
     keypress()
     on() -> can be used to make most other events
       on.click vs click ::: click applies to current elements ::: on.click could apply to all future elemets as awell.
-  
   Effects:
     fadeOut(); //can be fadeOut(1000) ->miliseconds // fadeOut(1000, function(){//this is the callback post fadeout}) 
+  
+
+
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
   images: unsplash for images
