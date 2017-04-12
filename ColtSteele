@@ -213,6 +213,8 @@ JQUERY
     keypress()
     on() -> can be used to make most other events
       on.click vs click ::: click applies to current elements ::: on.click could apply to all future elemets as awell.
+        note: $("li").click() and $("li").on("click") are the same thing, not apply future elements
+          would need $("ul").on("click","li",function(){}) to apply to future elements
     stopPropagation: stop bubbling, the event from reaching parent elements of item
       ex $("span").on("click", function(event){  alert("Clicked on a span");    event.stopPropagation();});
   Effects:
