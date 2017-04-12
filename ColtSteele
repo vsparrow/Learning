@@ -85,6 +85,7 @@ CSS seperate documents that we then include in our HTML
       content: border: 
       margin: add space in between elements
         margin-auto: center an element for us.
+      box-sizing: border-box; fit an uncoopertaive box in a parent  
     
   COLORS: 
     hexadecimal : #ABC456 6 digit alphanumeric color pallete  0-9A-F   is rgb, but different syntax
