@@ -132,6 +132,8 @@ CSS seperate documents that we then include in our HTML
           meaning: if ul1 has 3 li, and ul2 has 6li,  in ul2 li3 would be affected but NOT li6
     list of selectors : https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048
     select two selectors : h1,h3 {color: green} //2 selectors selected. the comma seperates groups
+    select element inside other:
+      ex: li:hover span{}  select the span inside li when you hover over li
   SPECIFICITY: a weight that is applied to a given CSS declaration
     we can multiple styles targeting an element. whatever one is more specific wins. li wins over ul wins over body  
       when weight is equal last decleration wins      type (h1) < class (.example)  < id (#example) < !important
