@@ -191,6 +191,8 @@ JAVASCRIPT
 JQUERY
   API documentation: has all the methods :: http://api.jquery.com/
   $ selector return a lsit even if it is a list of 1
+  $() -> the jQuery hug that wraps JS in jQuery
+  $(this) == this in JS
   css   $("").css.("","")
     can be passed object instad; var styles = {background-color: "pink", font-weight: "gold"}; $("#specials").css(styles);
   HTML DOM: most used
