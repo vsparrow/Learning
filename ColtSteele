@@ -203,13 +203,16 @@ JQUERY
     addClass()
     removeClass()
     toggleClass()
+    
+    remove(): remove element
   Events: most used
     click()
     keypress()
     on() -> can be used to make most other events
       on.click vs click ::: click applies to current elements ::: on.click could apply to all future elemets as awell.
   
-  
+  Effects:
+    fadeOut(); //can be fadeOut(1000) ->miliseconds // fadeOut(1000, function(){//this is the callback post fadeout}) 
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
   images: unsplash for images
