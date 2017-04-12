@@ -203,7 +203,7 @@ JQUERY
     toggleClass()
   Events: most used
     click()
-    press()
+    keypress()
     on()
   
   
