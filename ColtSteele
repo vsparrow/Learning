@@ -225,7 +225,9 @@ JQUERY
   Effects:
     fadeOut(); //can be fadeOut(1000) ->miliseconds // fadeOut(1000, function(){//this is the callback post fadeout}) 
   
-
+NODE
+  npm install packagename
+    ex: var package = require("packagename"); console.log(package()); -> example usage
 
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
