@@ -229,6 +229,9 @@ NODE
   npm install packagename
     ex: var package = require("packagename"); console.log(package()); -> example usage
       var package = require("packagename"); //this is include all contetns ofr dir, like #include or scr src=
+  EXPRESS
+    var express=require("express"); var app = express ();  app.get("/", function(request,response){}); 
+      //req and res are object.  //req has all information about where req from //response: all info we respond with
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
   images: unsplash for images
