@@ -228,7 +228,7 @@ JQUERY
 NODE
   npm install packagename
     ex: var package = require("packagename"); console.log(package()); -> example usage
-
+      var package = require("packagename"); //this is include all contetns ofr dir, like #include or scr src=
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
   images: unsplash for images
