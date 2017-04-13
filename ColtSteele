@@ -229,6 +229,7 @@ NODE
   npm install packagename
     ex: var package = require("packagename"); console.log(package()); -> example usage
       var package = require("packagename"); //this is include all contetns ofr dir, like #include or scr src=
+    npm isntall packagename --save :: updates the package.json file dependencies key with new data of package just installed
   npm init : help create package.json file
   EXPRESS
     var express=require("express"); var app = express ();  app.get("/", function(request,response){}); 
