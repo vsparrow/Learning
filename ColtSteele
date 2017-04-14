@@ -231,6 +231,8 @@ NODE
     //at bottom page: app.listen // add routes: app.get("/",function(req,res){ res.send("something"); }); 
     // see also response.render("somthing.ejs") // mkdir views // touch views/something.ejs -> add html
     //npm install ejs --save // app.use(express.static("public")); ->add to app.js, dir for css,etc
+    //npm install body-parser --save -> for parsing posts
+    // at top: add body parser: var bodyParser = require("body-parser"); app.use(bodyParser.urlencoded({extended: true}));
 
   npm install packagename
     ex: var package = require("packagename"); console.log(package()); -> example usage
