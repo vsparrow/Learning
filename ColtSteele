@@ -260,7 +260,7 @@ NODE
       <%= %> -> value of the insides returned to the HTML
       <% %> -> js logic / control flow/if statements / means just run the code
       if app.set("view engine", "ejs"); in app.js -> you cn leave off ejs :: response.render("something")
-        passing data: response.render("something.ejs", {varInAppjs : varInSomethingJs});
+        passing data: response.render("something.ejs", {varInSomethingJs : varInAppjs});
       PARTIALS
         templates you include in other templaates. //ex: for html boilerplate
         /views/partials :: add header.ejs (doctype to body) and footer.ejs (comment, /body /html)
