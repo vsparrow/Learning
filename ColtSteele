@@ -243,7 +243,8 @@ NODE
     assets -> css js etc
       app.use(express.static("public")); // the name of our dir, tells express to server contents of dir// has css,js,etc
         when calling a file in public from an ejs
-          <link rel="stylesheet" href="app.css"> thats app.css not public/app.css like you may think!
+          <link rel="stylesheet" href="/app.css"> thats app.css not public/app.css like you may think!
+            the / is important else it may not always render correctly
     ROUTES
       app.get("*",function(request,response){ response.send("YOU ARE A SUPER STAR");});  //catch all route
       app.listen(process.env.PORT,process.env.IP,function(){console.log("Server has started")}); 
