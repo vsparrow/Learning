@@ -277,3 +277,4 @@ DEVTIPS:
     console.dir(document) : see the Document object in object format,
       ex:console.dir(console.log) -> returns function
     document, see the document object in html format.
+  Jsonview : good plugin for json viewing    
