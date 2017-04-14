@@ -238,6 +238,11 @@ NODE
       app.get("*",function(request,response){ response.send("YOU ARE A SUPER STAR");});  //catch all route
       app.listen(process.env.PORT,process.env.IP,function(){console.log("Server has started")}); 
         //p.e.P is a cloud 9 environment thing because cant assign port //listen to particular ip cloud 9 assigns
+      console.log(request) -> get all the info abut request. very handy!  
+      request.params -> contains route paramters and corresponding values
+        app.get("/r/:subredditName",function(request,response){  //get -> wwelcome to the X subreddit
+          var subreddit = request.params.subredditName;
+          response.send("WELCOME TO THE " + subreddit.toUpperCase() + " SUBREDDIT") });
       
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
