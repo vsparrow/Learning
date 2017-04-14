@@ -234,6 +234,10 @@ NODE
   EXPRESS
     var express=require("express"); var app = express ();  app.get("/", function(request,response){}); 
       //req and res are object.  //req has all information about where req from //response: all info we respond with
+    ROUTES
+      app.get("*",function(request,response){ response.send("YOU ARE A SUPER STAR");});  //catch all route
+      app.listen(process.env.PORT,process.env.IP,function(){console.log("Server has started")}); 
+        //p.e.P is a cloud 9 environment thing because cant assign port //listen to particular ip cloud 9 assigns
       
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
