@@ -230,7 +230,7 @@ NODE
   create dir // touch app.js // npm init // npm intall express --save // open app.js // var app = require("express")();
     //at bottom page: app.listen // add routes: app.get("/",function(req,res){ res.send("something"); }); 
     // see also response.render("somthing.ejs") // mkdir views // touch views/something.ejs -> add html
-    //npm install ejs --save
+    //npm install ejs --save // app.use(express.static("public")); ->add to app.js, dir for css,etc
 
   npm install packagename
     ex: var package = require("packagename"); console.log(package()); -> example usage
@@ -240,6 +240,10 @@ NODE
   EXPRESS
     var express=require("express"); var app = express ();  app.get("/", function(request,response){}); 
       //req and res are object.  //req has all information about where req from //response: all info we respond with
+    assets -> css js etc
+      app.use(express.static("public")); // the name of our dir, tells express to server contents of dir// has css,js,etc
+        when calling a file in public from an ejs
+          <link rel="stylesheet" href="app.css"> thats app.css not public/app.css like you may think!
     ROUTES
       app.get("*",function(request,response){ response.send("YOU ARE A SUPER STAR");});  //catch all route
       app.listen(process.env.PORT,process.env.IP,function(){console.log("Server has started")}); 
