@@ -226,6 +226,11 @@ JQUERY
     fadeOut(); //can be fadeOut(1000) ->miliseconds // fadeOut(1000, function(){//this is the callback post fadeout}) 
   
 NODE
+  QUICK START
+  create dir // touch app.js // npm init // npm intall express --save // open app.js // var app = require("express")();
+    //at bottom page: app.listen // add routes: app.get("/",function(req,res){ res.send("something"); }); 
+    // see also response.render
+
   npm install packagename
     ex: var package = require("packagename"); console.log(package()); -> example usage
       var package = require("packagename"); //this is include all contetns ofr dir, like #include or scr src=
@@ -243,6 +248,7 @@ NODE
         app.get("/r/:subredditName",function(request,response){  //get -> wwelcome to the X subreddit
           var subreddit = request.params.subredditName;
           response.send("WELCOME TO THE " + subreddit.toUpperCase() + " SUBREDDIT") });
+      response.render("somehtml.html") -> server some precreated html    
       
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
