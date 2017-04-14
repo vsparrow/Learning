@@ -252,6 +252,8 @@ NODE
       response.render("somehtml.html") -> server some precreated html or    response.render("something.ejs")::
      EJS
       inside ejs file <%= %> -> means this is treated as javascript
+      <%= %> -> value of the insides returned to the HTML
+      <% %> -> js logic / control flow/if statements / means just run the code
       
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
