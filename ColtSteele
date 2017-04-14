@@ -229,7 +229,8 @@ NODE
   QUICK START
   create dir // touch app.js // npm init // npm intall express --save // open app.js // var app = require("express")();
     //at bottom page: app.listen // add routes: app.get("/",function(req,res){ res.send("something"); }); 
-    // see also response.render
+    // see also response.render("somthing.ejs") // mkdir views // touch views/something.ejs -> add html
+    //npm install ejs --save
 
   npm install packagename
     ex: var package = require("packagename"); console.log(package()); -> example usage
@@ -248,7 +249,9 @@ NODE
         app.get("/r/:subredditName",function(request,response){  //get -> wwelcome to the X subreddit
           var subreddit = request.params.subredditName;
           response.send("WELCOME TO THE " + subreddit.toUpperCase() + " SUBREDDIT") });
-      response.render("somehtml.html") -> server some precreated html    
+      response.render("somehtml.html") -> server some precreated html or    response.render("something.ejs")::
+     EJS
+      inside ejs file <%= %> -> means this is treated as javascript
       
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
