@@ -240,7 +240,8 @@ NODE
   EXPRESS
     var express=require("express"); var app = express ();  app.get("/", function(request,response){}); 
       //req and res are object.  //req has all information about where req from //response: all info we respond with
-    assets -> css js etc
+    assets -> css js etc //npm install body-parser --save -> this is so you can use console.log(request.body)
+    
       app.use(express.static("public")); // the name of our dir, tells express to server contents of dir// has css,js,etc
         when calling a file in public from an ejs
           <link rel="stylesheet" href="/app.css"> thats app.css not public/app.css like you may think!
