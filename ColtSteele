@@ -282,7 +282,34 @@ MONGO
       //without set: db.demodb.update({somethingToSelectBy},{whatToUpdate}) ->overwrites ALL other data in somethingToselectBy 
     remove -> db.demodb.remove({name : "someoneToRemove"}) : // use .limit if you only one to remove a specific number
     show collections : shows collections in db
-      
+MONGOOSE: odm object data mapper
+  var mongoose = require("mongoose");
+  //conenct to db
+  mongoose.connect("mongodb://localhost/cat_app")  //makes db if one doesnt exist
+  var catSchema = new mongoose.Schema({    //tells mongoose cat defined as this
+    name : String,                      // not defining a table, but a pettern for our data
+    age : Number,                       // means you can still ass new stuff or leave things out. just a structure
+    temperament : String                // this is the "peer pattern"?
+  });
+  var Cat = mongoose.model("Cat", catSchema); // now we can do Cat.find() or Cat.remove(), etc. //the Cat object
+  //"Cat" is the singular version of your collection name //mongoose makes a COLLECTION then called "Cats"
+  //adding a new cat to the db
+  var george = new Cat({name: "George", age : 11, temperament: "Groucy"});
+  george.save(); //wont let us know if error on save
+  george.save(function(error,cat){ //error is error , cat is item that was saved,ie:refers to item that came back from db 
+     if(error){console.log("error saving")} else {console.log("success! :" + cat)}
+  });
+  //note: if console.log(george) ->this is what we trying to save to db | console.log(cat) ->what db returns
+
+  //CREATE same as above, except new and save all at once:
+  Cat.create({name: "SnowWhite", age: "15", temperament: "bland"},function(error,cat){console.log("INSERT IFELSE HERE")});
+
+  //retreive all cats from db and console.log
+  Cat.find({}, function(error,cats){  //cats could also be cat, up to you, make it anything
+    if(error){console.log("error " + error);}
+    else {console.log("The cats: " + cats)}
+  });
+
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
   images: unsplash for images
