@@ -270,6 +270,8 @@ NODE
   APIs
     node request : http request client // npm install request //see github page for usage
 MONGO
+  QUICKSTART:
+    show dbs // use db1 // show collections // db.collectionName.find()
   commands:
     mongod -> start daemon
     mongo ->start mongo app
@@ -277,7 +279,7 @@ MONGO
     show dbs ->show dbs
     use -> use demodb // now working on db demodb
     insert -> db.demodb.insert({name: "somename",{isCool : true}}) //insert new item
-    find -> db.demo.find() -> brings back all items  //db.demo.find({name : "someone"}) -> a more specific search
+    find -> db.demoCollection.find() -> brings back all items  //db.demoCollection.find({name : "someone"}) -> more specific
     update ->update existing value db.demodb.update({somethingToSelectBy},{$set: {whatToUpdate}})
       //without set: db.demodb.update({somethingToSelectBy},{whatToUpdate}) ->overwrites ALL other data in somethingToselectBy 
     remove -> db.demodb.remove({name : "someoneToRemove"}) : // use .limit if you only one to remove a specific number
