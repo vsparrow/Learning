@@ -269,6 +269,17 @@ NODE
         /views/partials :: add header.ejs (doctype to body) and footer.ejs (comment, /body /html)
   APIs
     node request : http request client // npm install request //see github page for usage
+MONGO
+  commands:
+    mongod
+    mongo
+    help
+    show dbs
+    use
+    insert
+    find
+    update
+    remove
       
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
