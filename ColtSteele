@@ -282,7 +282,8 @@ MONGO
       //without set: db.demodb.update({somethingToSelectBy},{whatToUpdate}) ->overwrites ALL other data in somethingToselectBy 
     remove -> db.demodb.remove({name : "someoneToRemove"}) : // use .limit if you only one to remove a specific number
     show collections : shows collections in db
-MONGOOSE: odm object data mapper
+MONGOOSE: odm object data mapper // a JS layer ontop of mongodb
+  SCHEMA: a plan to define data
   var mongoose = require("mongoose");
   //conenct to db
   mongoose.connect("mongodb://localhost/cat_app")  //makes db if one doesnt exist
