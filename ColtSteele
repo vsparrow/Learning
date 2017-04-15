@@ -271,15 +271,16 @@ NODE
     node request : http request client // npm install request //see github page for usage
 MONGO
   commands:
-    mongod
-    mongo
+    mongod -> start daemon
+    mongo ->start mongo app
     help
-    show dbs
-    use
-    insert
-    find
+    show dbs ->show dbs
+    use -> use demodb // now working on db demodb
+    insert -> db.demodb.insert({name: "somename",{isCool : true}}) //insert new item
+    find -> db.demo.find() -> brings back all items  //db.demo.find({name : "someone"}) -> a more specific search
     update
     remove
+    show collections : shows collections in db
       
 DEVTIPS:
   Error driven development: we write something that we know wont work, then we fix it afterwards
