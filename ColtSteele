@@ -249,7 +249,10 @@ NODE
           <link rel="stylesheet" href="/app.css"> thats app.css not public/app.css like you may think!
             the / is important else it may not always render correctly
     EXPRESS SANITIZER: removes scripts out of HTML to clean it up
-      npm install express-sanitizer
+      npm install express-sanitizer; var expressSanitizer = require("express-sanitizer");
+        app.use(expressSanitizer()); //must be after use bodyParser.     
+        in app.post before create:   req.body.blog.body = req.sanitize(req.body.blog.body); also ad to update route!!!
+
     ROUTES
       app.get("*",function(request,response){ response.send("YOU ARE A SUPER STAR");});  //catch all route
       app.listen(process.env.PORT,process.env.IP,function(){console.log("Server has started")}); 
