@@ -266,6 +266,11 @@ NODE
       
       **PUT routes and HTML forms: forms cant put nativily. need  a npm called method override
         in a "post" reque, in the action use ?_method=PUT after the end of route
+        
+        MIDDLEWARE: useage app.post(route, middleware, callback);
+          ex: //Handle login logic  //  DO LOGIN USING middleware -> passport.authenticate()
+          app.post("/login",passport.authenticate("local", { successRedirect : "/campgrounds", failureRedirect : "/login" }),
+            function(req, res) {res.send("LOGIN logic")  } )        
      EJS
       inside ejs file <%= %> -> means this is treated as javascript
       <%= %> -> value of the insides returned to the HTML
