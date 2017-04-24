@@ -282,6 +282,7 @@ NODE
         /views/partials :: add header.ejs (doctype to body) and footer.ejs (comment, /body /html)
   APIs
     node request : http request client // npm install request //see github page for usage
+  NODEMON :  npm install -g nodemon // nodemon app,js //   restarts app if it senses file change, not need start stop node app.js
 MONGO
   QUICKSTART:
     show dbs // use db1 // show collections // db.collectionName.find()
