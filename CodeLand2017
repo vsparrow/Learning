@@ -33,14 +33,29 @@ Talk - Javascrupt and the rise of the new virtual machine - Scott Hanselman
 * infrastructure as a service - rental - dont care about the maintenence
 * physical server - own a house - have to do everything
 
-
-
-
-
-
-
-
-
-
+DAY2
 Talk - Abacus: Shaping the future of education in Belize - Maurice Rogers
 * enage your users, talk to them for more info.
+
+WORKSHOP - Preparing for a technical interview - Iuliia Kotlenko
+(imho the work shops had a lot to offer as we were able to go over a topic for 3? hours. Can only do one)
+JS meetups in Chelsea recommended - they also do mock interviews from time to time
+Khanacademy algorithsm course recommnded
+Big 0 cheetsheet
+Hackerrank better than leetcode, but both are good. then see codality. Pramp  for mock interviews
+Use binary search if input sorted else use linear search.
+binary search log2n because we split in 2
+intervies test problem solving ability
+tech intreviews can be  on skype/google hangouts with coding over google docs
+good interviewer will try to help steer you to the correct answer
+ASK QUESTIONS, even if they seem obvious, they may not be. ask for spcific input/output, what is expected, is arrya sorted
+PRACTICE APPLYING data structures, not just knowing them, know performance
+hash,binary search tree, stack queue, sort bubble quick merge etc, serch linear and binary
+know big O, steps until target or worst case senario. think time AND space complexity
+know how to test a solution! not just code but make base tests
+dont be silent during interview
+
+
+
+
+
