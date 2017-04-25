@@ -1,21 +1,29 @@
 # Learning
 Repository of resources I am using for learning.
 
-Codeland 2017
-Started April 21 2017
-Finished April 22 2017
-An event and not a course, there was a some learning along the way. A great environment and friendly folks. Tte mock technical interview workshop helped show what a abck and forth between interviewer and intrvieee should look like. The workshop was helpful in makeing logarighm a little more clear. 
 
-The Web Developer Bootcamp - Colt Steele 
-https://www.udemy.com/the-web-developer-bootcamp/
-Started March 11, 2017
-Finsihed April 25 2017
-Review: Probably the best course on the internet for new devs. Well spoken, and course layed out in a clear manner. Even content that I found was review was still informative and learned some new things. A true full stack course that has introduced me to MongoDB, mongoose, and express. Some of the content was similar to what I did earlier in Ruby on Rails, but the RESTful routing is more clear now. 
+Intro to Git - Iam Schoonover  
+http://udemy.com
+Started April 25 2017  
+Finsihed April 25 2017  
+Review: Course was offered for free for Colt's students by Ian. A good review on git. Only a few minutes spent on github. The course can use polishing but the overall content was worth watching.
 
-Eloquent Javascript 2nd Edition   
-http://eloquentjavascript.net/01_values.html
-Started Feb 25 2017
-Cancelled 2017
+
+Codeland 2017  
+Started April 21 2017  
+Finished April 22 2017  
+An event and not a course, there was a some learning along the way. A great environment and friendly folks. Tte mock technical interview workshop helped show what a abck and forth between interviewer and intrvieee should look like. The workshop was helpful in makeing logarighm a little more clear.   
+
+The Web Developer Bootcamp - Colt Steele   
+https://www.udemy.com/the-web-developer-bootcamp/  
+Started March 11, 2017  
+Finsihed April 25 2017  
+Review: Probably the best course on the internet for new devs. Well spoken, and course layed out in a clear manner. Even content that I found was review was still informative and learned some new things. A true full stack course that has introduced me to MongoDB, mongoose, and express. Some of the content was similar to what I did earlier in Ruby on Rails, but the RESTful routing is more clear now.   
+
+Eloquent Javascript 2nd Edition     
+http://eloquentjavascript.net/01_values.html  
+Started Feb 25 2017  
+Cancelled 2017  
 Review: A good book that should be went over again. Gets deep into the nooks of JS, at the current level I am at, where I only had 1-2 hours a day to allocate, tiem was better spent reviewing basics. Will need to come back.
 
 w3schools: JavaScript Tutorial  
