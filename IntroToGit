@@ -1,0 +1,24 @@
+git init                //initialize dir
+.git                    //if you do ls -a and see .git , everything setup correctly
+git status              //see status of files
+git add <FILE>          //add file to staging area -> stage for commital //take a snapshot
+git add -A              //add all files and subfolders to staging, relative to dir you are in
+git commit -m "Message" //add to repo // message -> present tense verb + short description // "add README.md"
+git log                 //see the history of the snapshots created
+
+//removing from staging: both work in different ways
+git rm --cached <FILE>  //removes the file from the index. //removes a file from being tracked
+git reset HEAD <FILE>   //remove a file from staging //cannot use if no commits have been made
+                        //continues to keep tracking changes to the file, but will place it back into the 'unstaged' 
+
+.gitignore              //a file in repo root that has names of files ignored by git, when you do git status
+
+git branch              //see what branch you are on
+git checkout -b <branchname>//checkout new branch and go to it
+git checkout <branchname>   //got to existing branch    
+git merge <branch>          //merge branch
+git branch -d <branchname>  //remove branch //best not to remove branch unless needed
+
+git remote add origin <address> //add remote repo
+git remote -v           //see what remote repos are linked
+git push -u origin master       //push file to remote (origin)
