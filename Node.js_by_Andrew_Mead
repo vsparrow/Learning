@@ -30,3 +30,6 @@ NPM
 Packages - in js unless command line specified
   lodash //for common functions like is string filter etc
   nodemon filename.js // commandline - reruns filename.js everytime a change is made to filename.js
+  yargs //for getting arguments // npm app.js --title NewThing // in app: var yargs = require("yargs")
+    yargs.argv -> has key:value pair of args, ex {title : "NewThing"}
+      
