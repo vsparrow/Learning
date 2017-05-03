@@ -1,1 +1,6 @@
-global  like window command in console.log
+node a javascript runtime for the v8 engine, which takes js and makes it machine code
+
+commands and variables
+  global  like window command in console.log, every variable you create lives here
+  process shows current node process
+        
