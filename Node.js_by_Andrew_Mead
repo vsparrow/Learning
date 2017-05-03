@@ -10,7 +10,8 @@ commands and variables
   global  like window command in console.log, every variable you create lives here
   process shows current node process
   
-  ${} -> add text in strings with out breaking quote or using + -> 'Hello ${user.username}'
+  ${} template string ES6 -> add text in strings with out breaking quote or using + -> `Hello ${user.username}`
+    *** must use tickback *** the ` /same button as ~ /under Escape
   
   fs.appendFileSync("file","text to append to file") //Syncrounus - blocking
         
