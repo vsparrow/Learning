@@ -9,6 +9,7 @@ environment
 variables
   global  like window command in console.log, every variable you create lives here
   process shows current node process
+    process.argv //shows arguments // 1st is executable for node //2nd is js file // 3rd,etc is command line args
   
   ${} template string ES6 -> add text in strings with out breaking quote or using + -> `Hello ${user.username}`
     *** must use tickback *** the ` /same button as ~ /under Escape
