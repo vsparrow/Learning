@@ -1,6 +1,16 @@
 node a javascript runtime for the v8 engine, which takes js and makes it machine code
 
+environment
+  blocking : waits for return of x before proceeding, then does y
+  non-blocking: continues with y while waiting for x
+
+  module : unit of code to use
+
 commands and variables
   global  like window command in console.log, every variable you create lives here
   process shows current node process
+  
+  ${} -> add text in strings with out breaking quote or using + -> 'Hello ${user.username}'
+  
+  fs.appendFileSync("file","text to append to file") //Syncrounus - blocking
         
