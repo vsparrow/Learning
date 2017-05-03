@@ -6,12 +6,14 @@ environment
 
   module : unit of code to use
 
-commands and variables
+variables
   global  like window command in console.log, every variable you create lives here
   process shows current node process
   
   ${} template string ES6 -> add text in strings with out breaking quote or using + -> `Hello ${user.username}`
     *** must use tickback *** the ` /same button as ~ /under Escape
-  
+  FUNCTIONS: es5 vs es6  //  function(){}  // () => {}    
+    
+commands  
   fs.appendFileSync("file","text to append to file") //Syncrounus - blocking
-        
+  module.exports.age = 25; in notes.js // when required in another file can call on notes.age        
