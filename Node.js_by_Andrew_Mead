@@ -16,4 +16,16 @@ variables
     
 commands  
   fs.appendFileSync("file","text to append to file") //Syncrounus - blocking
-  module.exports.age = 25; in notes.js // when required in another file can call on notes.age        
+  module.exports.age = 25; in notes.js // when required in another file can call on notes.age
+  
+********************************************  
+NPM
+  npm init //init dir
+  npm intall packagename --save //install external package
+    npm install //if dir without node_modules dir but has package.json just run command, will install everything in p.j
+    npm install package -g // installs paackage as a global utility, ex nodemon
+
+*********************************************
+Packages - in js unless command line specified
+  lodash //for common functions like is string filter etc
+  nodemon filename.js // commandline - reruns filename.js everytime a change is made to filename.js
