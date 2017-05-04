@@ -28,9 +28,20 @@ commands
 ********************************************  
 NPM
   npm init //init dir
+  npm debug "rest of the normal arguments" //for debuggine errors
+    commands
+      n next
+      c constinue to end or next debugger keyword
+      repl : read evaluate print loop : brings you to a new area of debugger : its a console
+        you have access to the current program as it sits. 
+        ie: if was on line 7, the sstate of the program is as it would be before line 7 runs
+    variables
+      debugger;  when this is in the js file, the debugger will stop here on run     
   npm intall packagename --save //install external package
     npm install //if dir without node_modules dir but has package.json just run command, will install everything in p.j
     npm install package -g // installs paackage as a global utility, ex nodemon
+    
+    
 
 *********************************************
 Packages - in js unless command line specified
