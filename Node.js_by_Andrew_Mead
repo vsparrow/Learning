@@ -14,6 +14,8 @@ variables
   ${} template string ES6 -> add text in strings with out breaking quote or using + -> `Hello ${user.username}`
     *** must use tickback *** the ` /same button as ~ /under Escape
   FUNCTIONS: es5 vs es6  //  function(){}  // () => {}    
+    arrow functions // var square = x => x * x;  //if one input can leave off parentisis// return is implicit/implied 
+      this keyword : arrow functions DO NOT bind it, it wont work
   JSON uses double quotes inside itself. single quote valid in JS but NOT JSON
   try { some code} catch (error) { if error do this, or nothing if nothing in here!} //like an if/else kind of
   
