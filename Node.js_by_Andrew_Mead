@@ -15,8 +15,10 @@ variables
     *** must use tickback *** the ` /same button as ~ /under Escape
   FUNCTIONS: es5 vs es6  //  function(){}  // () => {}    
   JSON uses double quotes inside itself. single quote valid in JS but NOT JSON
+  try { some code} catch (error) { if error do this, or nothing if nothing in here!} //like an if/else kind of
   
 commands  
+  array.filter() -> create new array with all elements that pass the test// var arr=notes.filter((note) => note.title === title);  
   fs.appendFileSync("file","text to append to file") //Syncrounus - blocking
   fs.readFileSync("filename")    //read file -> var somevar = fs.readFileSync("filename")
   JSON.parse(personString); take string and convert to JSON object or array (depends on input string)
