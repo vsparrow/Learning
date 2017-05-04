@@ -54,4 +54,6 @@ Packages - in js unless command line specified
   nodemon filename.js // commandline - reruns filename.js everytime a change is made to filename.js
   yargs //for getting arguments // npm app.js --title NewThing // in app: var yargs = require("yargs")
     yargs.argv -> has key:value pair of args, ex {title : "NewThing"}
+    yargs.options({ a: {demand:true, alias: "address", describe: "some text on what this, a, does", string : true }  })
+      // require "a" when running app//can use address instead of a// string true forces  treating all input "a" as string
       
