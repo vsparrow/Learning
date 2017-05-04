@@ -18,7 +18,7 @@ variables
       this keyword : arrow functions DO NOT bind it, it wont work
       arguemnts array, arrow functions do not have one, if called will return global arguments function, not of method
       use regulr functions if you need this or arguments
-  JSON uses double quotes inside itself. single quote valid in JS but NOT JSON
+  JSON uses double quotes inside itself. single quote valid in JS but NOT JSON  
   try { some code} catch (error) { if error do this, or nothing if nothing in here!} //like an if/else kind of
   
 commands  
@@ -27,6 +27,7 @@ commands
   fs.readFileSync("filename")    //read file -> var somevar = fs.readFileSync("filename")
   JSON.parse(personString); take string and convert to JSON object or array (depends on input string)
   JSON.stringify(obj) //var stringObj =  JSON.stringify(obj); takes object,obj,  and returns JSON stringified version
+    Pretty: JSON.stringify(obj,undefined,2) //need 2nd arg to get to third // 2nd arg is for filtering //3rd is for indentation
   module.exports.age = 25; in notes.js // when required in another file can call on notes.age
   
 ********************************************  
