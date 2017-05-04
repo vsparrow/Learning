@@ -23,6 +23,8 @@ variables
   
 commands  
   array.filter() -> create new array with all elements that pass the test// var arr=notes.filter((note) => note.title === title);  
+  decodeURIComponents("github%20page") // github page ->makes human friendly string fom broser
+  encodeURICompnents('github page')// github%20page //makes browser friendly sting  //see decodeURI
   fs.appendFileSync("file","text to append to file") //Syncrounus - blocking
   fs.readFileSync("filename")    //read file -> var somevar = fs.readFileSync("filename")
   JSON.parse(personString); take string and convert to JSON object or array (depends on input string)
