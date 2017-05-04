@@ -16,6 +16,8 @@ variables
   FUNCTIONS: es5 vs es6  //  function(){}  // () => {}    
     arrow functions // var square = x => x * x;  //if one input can leave off parentisis// return is implicit/implied 
       this keyword : arrow functions DO NOT bind it, it wont work
+      arguemnts array, arrow functions do not have one, if called will return global arguments function, not of method
+      use regulr functions if you need this or arguments
   JSON uses double quotes inside itself. single quote valid in JS but NOT JSON
   try { some code} catch (error) { if error do this, or nothing if nothing in here!} //like an if/else kind of
   
