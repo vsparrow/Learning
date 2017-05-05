@@ -59,3 +59,25 @@ Packages - in js unless command line specified
     yargs.options({ a: {demand:true, alias: "address", describe: "some text on what this, a, does", string : true }  })
       // require "a" when running app//can use address instead of a// string true forces  treating all input "a" as string
       
+*********************************************
+PROMISE
+var somePromise = new Promise((resolve,reject) => {resolve('Hey, it worked'); reject('Unable to fulfill promise');});
+you can resolve one once, or reject one once, but cant do both, and cant do twice
+promise pending when waiting for data
+promise settled when it has resolved or rejected data //so either way "promise settled"
+
+to make a promise, use constructor  var somePromise = new Promise(someAnonymousFunction(){});
+used for async action like fetch website data
+resolve ->fulfill promise -> its done what you expected, ike DB request, http request, or something lese
+ inside resolve is actual data user wanted
+reject -> cant fullfil promise
+
+somePromise.then(function1(data1){},function2(data1){}) //call back for success and failure
+can only pass in 1 piece of data to both resolve and reject, so best to use object with multiple properties
+function1 only for success, call works as expected, gets value for resolve
+function2 is for error, but variable ssame as function1
+
+promise provide callbacks for both success and error cases
+in callback, one function fired no matter what, arguments let us know about status
+promises have 2 functions so that will let us know if things went as planned
+
