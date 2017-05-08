@@ -115,6 +115,16 @@ hbs.registerPartials(__dirname + "/views/partials")  //add support for partials
   takes dir that you wnt to use for handlebar partial files. needs absolute dir
 {{> footer}}  //to add a partial in hbs file, ex footer, use this syntax  {{> footer}}
   // the footer partial lives in views/partials/footer.hbs
+helpers:  in app.js or main file //handlebar helper -> ways to register functions to run to dynamically create output     
+  functions you can run inside your handlebar template
+  must register it //name of helper first arg, function to run as second arg
+  here if getCurrentYear is called example, in footer, return the year from the function
+    ex in app.js: hbs.registerHelper('getCurrentYear',()=>{return new Date().getFullYear()})  
+    ex in footer.hbs : {{getCurrentYear}}
+  helper that takes input from hbs file
+    access helper screamIt, pass in variable welcomeMessage, display returned data
+     ex: hbs.registerHelper('screamIt',(text)=>{    return text.toUpperCase();}) 
+      ex: in hsb:  <p>{{screamIt welcomeMessage}}</p>  
 nodemon server.js -e js,hbs // tells nodemon to watch js and hbs if it wont do it by default //same as node commands above
 
 
