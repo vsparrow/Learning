@@ -32,6 +32,8 @@ commands
     Pretty: JSON.stringify(obj,undefined,2) //need 2nd arg to get to third // 2nd arg is for filtering //3rd is for indentation
   module.exports.age = 25; in notes.js // when required in another file can call on notes.age
   
+  nodemon server.js -e js,hbs // tells nodemon to watch js and hbs if it wont do it by default
+
 ********************************************  
 NPM
   npm init //init dir
@@ -105,3 +107,14 @@ EXPRESS
   app.set allows set various express related config
     keyvalue pair {what you want set : what you want use}
   views dir (console):  mkdir views : default dir express uses to store files like ejs or hbs  
+
+****************************
+HANDLEBARS
+
+hbs.registerPartials(__dirname + "/views/partials")  //add support for partials 
+  takes dir that you wnt to use for handlebar partial files. needs absolute dir
+{{> footer}}  //to add a partial in hbs file, ex footer, use this syntax  {{> footer}}
+  // the footer partial lives in views/partials/footer.hbs
+nodemon server.js -e js,hbs // tells nodemon to watch js and hbs if it wont do it by default //same as node commands above
+
+
