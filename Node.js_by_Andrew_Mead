@@ -81,3 +81,16 @@ promise provide callbacks for both success and error cases
 in callback, one function fired no matter what, arguments let us know about status
 promises have 2 functions so that will let us know if things went as planned
 
+can chain multiple then and have one catch at the end   axios.get().then().then().then().catch() 
+one reason why people like promises over callbacks is instead of nesting, you chain // no crazy indentation
+
+TO THROW ERROR  our promise can catch // to create error from result that we know is erronus but promise doesnt
+throw new Error("error message here")
+console.log(error.message) to print error above, console should be in catch
+
+****************************
+AXIOS promise based http request
+//axios knows how to automatically parse json data
+//what get returns is actually a promise -> we can use  .then to run some code when a promise is fulfilled or rejected
+//success case: axios library recommends you calll it response
+//add catch after try to catch all the errors  axios.get(url).then((response)=>{}).catch((error)=>{})
