@@ -94,3 +94,14 @@ AXIOS promise based http request
 //what get returns is actually a promise -> we can use  .then to run some code when a promise is fulfilled or rejected
 //success case: axios library recommends you calll it response
 //add catch after try to catch all the errors  axios.get(url).then((response)=>{}).catch((error)=>{})
+
+****************************
+EXPRESS
+  app.use(express.static(__dirname + "/public")) //static takes the absolute path you want to serve up
+  __dirname gets passed to our file via a wrapper function  (double underscore dirname)
+    it stores the path to your projects dir
+    what this does is that you can now store static html pages in a folder called "public"
+    and those pages will be server without having to create routes.
+  app.set allows set various express related config
+    keyvalue pair {what you want set : what you want use}
+  views dir (console):  mkdir views : default dir express uses to store files like ejs or hbs  
