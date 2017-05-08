@@ -106,7 +106,13 @@ EXPRESS
     and those pages will be server without having to create routes.
   app.set allows set various express related config
     keyvalue pair {what you want set : what you want use}
-  views dir (console):  mkdir views : default dir express uses to store files like ejs or hbs  
+  app.use is how you use middleware, it takes a function
+    next() tells your express when middleware   is done // app.use((req,res,next) => { next(); });
+      if we do something asyncronus, middle ware does not move on, only when it sees next()
+      if you dont call next, your handlers for each request never fire, ie app freeze
+  next() -> see app.views
+  views dir (console):  mkdir views : default dir express uses to store files like ejs or hbs    
+  
 
 ****************************
 HANDLEBARS
