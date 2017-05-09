@@ -192,3 +192,10 @@ TESTS   Mocha and Expect used together
         .expect((res)=>{var hasName = false; res.body.forEach((user)=>{ if(user.name==="Andrew") {hasName=true} })
             expect(hasName).toBe(true); }).end(done);})
  
+ describe: comes from mocha
+   group tests together // if have several tests in describe , output is grouped
+   can nest describe under describe // ie: outter Group: web tests //inner group: database callback tests
+   ex describe('GroupNameHere',()=>{it('should something', ()=>{expect()}) }
+
+    
+    
