@@ -49,6 +49,8 @@ NPM
   npm intall packagename --save //install external package
     npm install //if dir without node_modules dir but has package.json just run command, will install everything in p.j
     npm install package -g // installs paackage as a global utility, ex nodemon
+    npm install package --save //saves page
+    npm install package --save-dev // saves package for dev use , will not upload to heroku etc
     
     
 
