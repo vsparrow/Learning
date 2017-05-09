@@ -33,6 +33,10 @@ commands
   module.exports.age = 25; in notes.js // when required in another file can call on notes.age
   
   nodemon server.js -e js,hbs // tells nodemon to watch js and hbs if it wont do it by default
+  nodemon --exec "npm test" ->run tests automatically everytime file chnages
+    we are going to specify a command to run and it might not nessearily be a node file
+    i can also: nside package.json, in scripts, place this     "test-watch": "nodemon --exec \"npm test\""
+        then in command we can run "npm run test-watch"    
 
 ********************************************  
 NPM
@@ -51,7 +55,6 @@ NPM
     npm install package -g // installs paackage as a global utility, ex nodemon
     npm install package --save //saves page
     npm install package --save-dev // saves package for dev use , will not upload to heroku etc
-    
     
 
 *********************************************
