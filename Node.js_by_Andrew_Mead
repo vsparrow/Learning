@@ -133,4 +133,6 @@ helpers:  in app.js or main file //handlebar helper -> ways to register function
       ex: in hsb:  <p>{{screamIt welcomeMessage}}</p>  
 nodemon server.js -e js,hbs // tells nodemon to watch js and hbs if it wont do it by default //same as node commands above
 
-
+****************************
+HEROKU
+  git push heroku
