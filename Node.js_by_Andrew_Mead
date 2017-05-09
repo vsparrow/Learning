@@ -136,3 +136,18 @@ nodemon server.js -e js,hbs // tells nodemon to watch js and hbs if it wont do i
 ****************************
 HEROKU
   git push heroku
+  
+****************************
+
+WORKFLOW to create app/ add to app
+  ex: add new projects page to website
+    register new url in server.js, /projects
+    -render handlebar template
+    -make view file
+    -render header and footer 
+    -content inside hbs/ejs page : portfolio page here
+    -inside partial - > new link for projects page
+      commit, push to git hub
+      push to heroku -> git push heroku
+      check app
+  
