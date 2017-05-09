@@ -155,4 +155,27 @@ WORKFLOW to create app/ add to app
       commit, push to git hub
       push to heroku -> git push heroku
       check app
+      
+**********************************
+TESTS   Mocha and Expect used together
   
+  Assert : make assertions about values, type , array contins element, etc // assertioans can be chained
+  Expect is what we are using , by mjackson
+    ex: expect assert: response is number9 and type is number //inside: utils.test.js //require expect//
+      it("should expect some values", ()=>{ expect(12).toNotBe(11);}) //non calling test 
+      it("should square", ()=>{var res = utils.square(3);   expect(res).toBe(9).toBeA("number");})  //calling test 
+  toNotBe works for numbers strings bool, not for objects
+  toEqual : use for objects expect({name: "vsparrow"}).toEqual({name: "vsparrow"}) //toNotEqual also obj use
+  toInclude : array or obj includes some things in array or properties in obj//toExclude opposite
+    ex:obj    expect({name: "Andrew", age: 25, location : "Phil"}).toInclude({age:25})
+  ASYNC::::
+  //callback is what makes function async // simulating calll to database etc
+  //***by default if tests take longer than 2 sec, Mocha will fail them
+  ex: //call callback with sum
+    in utils:: module.exports.asyncAdd = (a,b,callback) => {setTimeout(()=>{ callback(a+b);},1000)}; //simulation of delay
+    in test file:
+      it("should async add two numbers",(done)=>{
+        utils.asyncAdd(4,3,(sum)=>{ expect(sum).toBe(7).toBeA("number");   done(); }) })
+      **done** tells mocha this is a a sync function, else will complete without doing test on async
+        waits until done called // if done is not called, mocha will fail assertion
+
