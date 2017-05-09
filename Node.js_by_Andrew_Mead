@@ -179,3 +179,16 @@ TESTS   Mocha and Expect used together
       **done** tells mocha this is a a sync function, else will complete without doing test on async
         waits until done called // if done is not called, mocha will fail assertion
 
+  for express testing:
+    in server.js : module.exports.app = app; //at end after app.listen
+    in server.test.js : var app = require("./server.js").app; const request = require("supertest");
+
+  if need a test that isnt in supertest or expect, must create own function
+    example:
+    /server.js
+      app.get("/users",(req,res)=>{res.send([ {name: "Andrew", age: 25},{name: "Mike", age: 27}  ])})
+    //server.test.js
+      it("should return an array", (done)=>{ request(app).get("/users").expect(200)
+        .expect((res)=>{var hasName = false; res.body.forEach((user)=>{ if(user.name==="Andrew") {hasName=true} })
+            expect(hasName).toBe(true); }).end(done);})
+ 
