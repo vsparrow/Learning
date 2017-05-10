@@ -218,14 +218,30 @@ NOSQL
   Document    Row/Record      {}
   Field       Column          name: "User1"
 
-connect and insert
-  const MongoClient = require('mongodb').MongoClient;
-  // MongoClient.connect(urlofdb, callback after connection succed or fail);
-  MongoClient.connect("mongodb://localhost/TodoApp",(err, db)=>{if(err){ return console.log("Unable to connect")}
-    db.collection("Todos").insertOne({text: "Something to do", completed : false},(err,result)=>{
-        if(err){return console.log("Unable to insert todo", err)}
-        console.log(JSON.stringify(result.ops,undefined, 2)) //ops contains what was inserted
-    })    //takes name of collection that you want ot insert into
-    db.close();
-  });
+***********************************************
+MONGO
+DB create
+  you can create a new db by just connecting to it., no need to create it, but ust add data to it else mongo wont create
 
+Mongo shell: 
+  update field value in mongo shell
+    { "_id" : ObjectId("5912ac583d7f810be5eafcb1"), "text" : "Walk to dog", "completed" : false }
+    -> db.Todos.update({_id: ObjectId("5912ac583d7f810be5eafcb1")}, {$set: {completed: true}})
+Code
+  connect and insert
+    const MongoClient = require('mongodb').MongoClient;
+    // MongoClient.connect(urlofdb, callback after connection succed or fail);
+    MongoClient.connect("mongodb://localhost/TodoApp",(err, db)=>{if(err){ return console.log("Unable to connect")}
+      db.collection("Todos").insertOne({text: "Something to do", completed : false},(err,result)=>{
+          if(err){return console.log("Unable to insert todo", err)}
+          console.log(JSON.stringify(result.ops,undefined, 2)) //ops contains what was inserted
+      })    //takes name of collection that you want ot insert into
+      db.close();
+    });
+  findOneAndDelete //gets the doc before delete
+
+Mongoose
+  //mongoose will auto wait for db to connect before it saves // no need callback
+  
+  
+  
