@@ -197,5 +197,16 @@ TESTS   Mocha and Expect used together
    can nest describe under describe // ie: outter Group: web tests //inner group: database callback tests
    ex describe('GroupNameHere',()=>{it('should something', ()=>{expect()}) }
 
-    
+spies - built in with expect// just load  expect
+  spies allows you to swap out a real function for a testing utility
+  you can make sure function was called with certain argument, create various assertion about test function
+  ex var spy = expect.createSpy(); //returns a function that you swap out for the real one
+    spy("Andrew",25); //call spy
+    expect(spy).toHaveBeenCalled(); //was spy called? 
+    expect(spy).toHaveBeenCalledWith("Andrew",25); //was spy called with argument x,y? 
+
+rewire -> allows up to swap out variables for tests
+  use require instead of require when loading in the file you want to mock out
+  ex: var app = rewire("./app.js")
+  rewire loads require but adds 2 methods app.__set__ and app.__get__  //used to mock out data in app.js   
     
