@@ -141,7 +141,10 @@ nodemon server.js -e js,hbs // tells nodemon to watch js and hbs if it wont do i
 ****************************
 HEROKU
   git push heroku
-  
+  Upload
+    prepare package.json file
+        "engines" : { "node": "6.10.3"} //tell what node engine, default is 5, we use 6
+        "scripts": {"start": "node server/server.js"}  //scripts should already be there, add start and path to main file
 ****************************
 
 WORKFLOW to create app/ add to app
