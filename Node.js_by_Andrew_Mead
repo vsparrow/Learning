@@ -225,6 +225,8 @@ NOSQL
 MONGO
 DB create
   you can create a new db by just connecting to it., no need to create it, but ust add data to it else mongo wont create
+  model method    // called on User (capital)
+  instance method // called on user (lowercase)
 
 Mongo shell: 
   update field value in mongo shell
@@ -245,6 +247,10 @@ Code
 
 Mongoose
   //mongoose will auto wait for db to connect before it saves // no need callback
+  mongoose.Schema //stores schema for a user / 
+    stores properties //we cant add methods to user unless we swtich how we generate out model. thats why ise mongooseSchema
+    ex: var UserSchema = new mongoose.Schema()
+    UserSchema.method // an object and we can add on any function we like
   
 JWTWebtokens
   const jwt = require("jsonwebtoken");var data = {id: 10};var token = jwt.sign(data, "123abc") //object,secret //get big hash
@@ -256,5 +262,7 @@ JWTWebtokens
     eyJpZCI6MTAsImlhdCI6MTQ5NDYyMjE4MX0. // payload, our information
     blfNE3IdM12VNrM0Pa5u9dKk1IvFfxGOLpAM_w-DBD0 // hash, verify payload not changed
 
+HTTP
+  res.header('x-auth') //means we are using custom header
 
  
