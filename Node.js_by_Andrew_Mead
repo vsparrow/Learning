@@ -246,5 +246,9 @@ Code
 Mongoose
   //mongoose will auto wait for db to connect before it saves // no need callback
   
-  
-  
+JWTWebtokens
+  const jwt = require("jsonwebtoken");var data = {id: 10};var token = jwt.sign(data, "123abc") //object,secret //get big hash
+  jwt.sign     // takes, object, data with user id, signs it create hash , return token val
+  jwt.verify   // takes token + scret and makes sure data not manipulated
+
+ 
