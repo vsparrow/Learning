@@ -46,9 +46,17 @@ select data           SELECT [names of columns we are going to select] FROM [tab
   select on condition   SELECT * FROM [table name] WHERE [column name] = [some value];
                           SELECT * FROM cats WHERE name = "Maru";
                           SELECT * FROM cats WHERE age < 2;
-  select count          the number of records that meet certain condition      
-                        "SELECT COUNT([column name]) FROM [table name] WHERE [column name] = [value]"
-                        SELECT COUNT(owner_id) FROM cats WHERE owner_id = 1;
+  aggregate functions   functions perform a calculation on specified values, queried from a database table.                        
+    select count        the number of records that meet certain condition      
+                         "SELECT COUNT([column name]) FROM [table name] WHERE [column name] = [value]"
+                          SELECT COUNT(owner_id) FROM cats WHERE owner_id = 1;
+    select avverage     SELECT AVG(column_name) FROM table_name;
+                        SELECT AVG(net_worth) FROM cats;
+    select sum          SELECT SUM(column_name) FROM table_name;
+                        SELECT SUM(net_worth) FROM cats;
+    select minmax       SELECT MIN(column_name) FROM table_name;
+                        SELECT MAX(column_name) FROM table_name;
+                      
   select from 2 tables in db
                         SELECT cats.name, dogs.name FROM cats, dogs; must use tablename infront of column name
 
