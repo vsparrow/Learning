@@ -25,9 +25,12 @@ format output
                       .width auto      # adjusts and normalizes column width
                       # or
                       .width NUM1, NUM2 # customize column width
+  different colname   alias or AS
+                      SELECT AVG(net_worth) AS average_net_worth FROM cats;
   group_by            aggregate function GROUP BY
                         SELECT breed, COUNT(breed) FROM cats GROUP BY breed;
     multiple column     SELECT breed, owner_id, COUNT(breed) FROM cats GROUP BY breed, owner_id; 
+    
 
   order_by            ORDER BY. This modifier allows us to order the table rows returned by a certain SELECT statement.
                         SELECT column_name FROM table_name ORDER BY column_name ASC|DESC;
@@ -46,6 +49,8 @@ select data           SELECT [names of columns we are going to select] FROM [tab
   select on condition   SELECT * FROM [table name] WHERE [column name] = [some value];
                           SELECT * FROM cats WHERE name = "Maru";
                           SELECT * FROM cats WHERE age < 2;
+                          SELECT COUNT(*) FROM cats WHERE net_worth > 1000000;
+
   aggregate functions   functions perform a calculation on specified values, queried from a database table.                        
     select count        the number of records that meet certain condition      
                          "SELECT COUNT([column name]) FROM [table name] WHERE [column name] = [value]"
