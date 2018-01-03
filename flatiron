@@ -1,6 +1,7 @@
 SQL *****************************************************************
 SQL statements terminated with a ";"
 open db   sqlite3 test_sqlite.db
+datatypes: TEXT INTEGER REAL(is float/decimal) BLOB
 CREATE TABLE table_name;  
   create a database table called "Test Table" create table test_table(id);    
   CREATE TABLE cats (
@@ -8,7 +9,34 @@ CREATE TABLE table_name;
                 name TEXT, 
                 age INTEGER
             );
+  create from file:   sqlite3 pets_database.db < 01_create_cats_table.sql
+
 show tables   .tables
 show scema    .schema
+change table(schema)  ALTER TABLE cats ADD COLUMN breed TEXT;
+  change from file    sqlite3 pets_database.db < 02_add_column_to_cats.sql.
+change table(data)    INSERT INTO cats (name, age, breed) VALUES ('Maru', 3, 'Scottish Fold');
+                        we don't have to specify the id column values when we insert data. Primary Key columns are auto-incrementing. 
+  change data from file   sqlite3 pets_database.db < 01_insert_cats_into_cats_table.sql
+select data           SELECT [names of columns we are going to select] FROM [table we are selecting from];
+                        SELECT id, name, age, breed FROM cats;
+                        SELECT * FROM cats;
+  select unique data    SELECT DISTINCT name FROM cats;
+  select on condition   SELECT * FROM [table name] WHERE [column name] = [some value];
+                          SELECT * FROM cats WHERE name = "Maru";
+                          SELECT * FROM cats WHERE age < 2;
+update date           UPDATE [table name] SET [column name] = [new value] WHERE [column name] = [value];
+                        UPDATE cats SET name = "Hana" WHERE name = "Hannah";
+                          
+
+
+
+                      
+
+                        
+
+
+delete table  DROP TABLE cats;
+
 help  .help            
 quit  .quit
