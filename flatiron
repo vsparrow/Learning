@@ -1,1 +1,14 @@
 SQL *****************************************************************
+SQL statements terminated with a ";"
+open db   sqlite3 test_sqlite.db
+CREATE TABLE table_name;  
+  create a database table called "Test Table" create table test_table(id);    
+  CREATE TABLE cats (
+        id INTEGER PRIMARY KEY,
+                name TEXT, 
+                age INTEGER
+            );
+show tables   .tables
+show scema    .schema
+help  .help            
+quit  .quit
