@@ -1,3 +1,32 @@
+SHELL ***************************************************************
+commands    see https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html
+LS
+    ls -lah        h is a suffix on the l flag meaning "human readable formats." 
+                    a meaning "all information including permissions".
+    la -a          show jidden files                
+loop    for f in *.txt;do echo $f;done    
+open  it will trigger the default action associated with the file type. $ open hello_world.rb
+paths
+  absolute path 
+    points to the same location  regardless of the working directory. They start with / ("forward slash") 
+    because that is the root of your file system. This is an absolute path: /Users/avi.
+  relative path 
+    path relative to the working directory of the user or application, 
+    They start with the name of a directory or a file.This is a relative path: avi/Documents.
+$PATH  list of directories that BASH will look in for commands, scripts, and programs.  type into shell
+    edit .bash_profile to add/remove dirs
+pipe    | symbol named "pipe", will send the output of one command into the input of another command.    
+        $ ps aux | grep ruby
+ps aux  get all processes
+pwd   print working dir , get current dir
+~     go home dir  , tilda
+
+    
+
+
+
+
+
 SQL *****************************************************************
 SQL statements terminated with a ";"
 open db   sqlite3 test_sqlite.db
