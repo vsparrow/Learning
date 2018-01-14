@@ -26,26 +26,6 @@ DEBUGGING
                 When the interpreter hits that line, your program will actually freeze and your terminal 
                   will turn into a REPL(interpreter like irb)
   
-VARIABLES   variables   words or characters that hold values
-  constant    written in UPPERCASE or Capitalized. They have a global scope when defined globally, 
-                and local scope when defined within classes and modules. 
-                Constants cannot be defined within methods. When constants are initialized, they should not be reassigned.               
-                cannot start with a number, be a Ruby reserved word, or have punctuation or space characters.
-  Global variables  "global scope". accessed anywhere in a program and are declared with a dollar sign in front   
-                      $global_variable
-  Local variables   "local scope", meaning that their definitions remain where they are declared.
-                      If we define a variable within a method definition, only the method knows about that variable                
-  pass-by-value  A variable makes a copy of the value it holds and passes the copy over to something else that 
-                  alters or changes it.   
-                  ex "hello".upcase
-  pass-by-reference. changes to a variable would alter what is stored in the actual location it refers to.
-                After the process was complete the variable would be holding a new and different value.
-                ex x=5                
-  range       see RUBY->TYPES
-  type        the type of the value a var holds. Ruby is what is known as a dynamically typed language. 
-                means the value of a variable can change its type and does not need to be explicitly/permanently defined. 
-
-OPERATORS/OPERATIONS
 
 LOOPS
   for         for counter in 1..40 do   /n    puts "The current number is #{counter}."  /nend
@@ -69,6 +49,8 @@ METHODS
                     ex To run our program, we need to call several  methods. 
                     Instead of calling each of them in turn, we might place them inside a single method. 
                     Then, to enact our program, we only have to invoke our one wrapper, or runner method
+
+OPERATORS/OPERATIONS
 
 TYPES
   Array
@@ -115,6 +97,27 @@ TYPES
             symbol is a representation of a piece of data. Symbols look like this :my_symbol. 
             If I make a symbol, :my_symbol, and then use that symbol later on in my code,
                 my program will refer to the same area of memory in both cases.
+
+
+VARIABLES   variables   words or characters that hold values
+  constant    written in UPPERCASE or Capitalized. They have a global scope when defined globally, 
+                and local scope when defined within classes and modules. 
+                Constants cannot be defined within methods. When constants are initialized, they should not be reassigned.               
+                cannot start with a number, be a Ruby reserved word, or have punctuation or space characters.
+  Global variables  "global scope". accessed anywhere in a program and are declared with a dollar sign in front   
+                      $global_variable
+  Local variables   "local scope", meaning that their definitions remain where they are declared.
+                      If we define a variable within a method definition, only the method knows about that variable                
+  pass-by-value  A variable makes a copy of the value it holds and passes the copy over to something else that 
+                  alters or changes it.   
+                  ex "hello".upcase
+  pass-by-reference. changes to a variable would alter what is stored in the actual location it refers to.
+                After the process was complete the variable would be holding a new and different value.
+                ex x=5                
+  range       see RUBY->TYPES
+  type        the type of the value a var holds. Ruby is what is known as a dynamically typed language. 
+                means the value of a variable can change its type and does not need to be explicitly/permanently defined. 
+
 
 
 RSPEC ***************************************************************
