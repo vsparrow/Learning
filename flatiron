@@ -83,6 +83,7 @@ TYPES
   .class      get class of any item.    "hello".class
   .reverse    "hello".reverse    => "olleh"
   .size       "hello".size    => 5
+  .swapcase   "hELLO".swapcase  => "Hello"
   .upcase     "hello".upcase  => "HELLO"
 
   Symbol
