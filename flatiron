@@ -45,6 +45,9 @@ Symbol
 
 
 RSPEC ***************************************************************
+  A test is always going to be about setting up a state with a known result and 
+  comparing that known result or expectation to the behavior of your program, 
+  thus ensuring that your program behaves as you expected.  
 
 ERROR TYPES
   ARGUMENT ERRORS   occur when methods are passed either too few or too many arguments.
@@ -53,6 +56,16 @@ ERROR TYPES
                       will often occur when you have a variable set to nil
   Syntax errors     they're the result of incorrect syntax.
   TYPEERRORS        When you try and do a mathematical operation on two objects of a different type,
+
+
+Structure
+  require_relative '../a.rb'  #loads the code from our actual program file 
+  describe "something" do     #we use the describe RSpec method and strings to describe what we are testing. 
+                  This code is entirely for you, the programmer, and has very little meaning to RSpec or Ruby.
+  it "returns something" do   #to state an expectation or behavior of that method.       
+      "" is only there to provide you, the programmer, with a description of what behavior we're currently testing.
+      #what is inside the "it do end" block is what we actually test      
+  expect(age_of_person).to eq(19)   #expect var to equal value
 
 SHELL ***************************************************************
 commands    see https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html
