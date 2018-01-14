@@ -40,12 +40,14 @@ VARIABLES   variables   words or characters that hold values
                   ex "hello".upcase
   pass-by-reference. changes to a variable would alter what is stored in the actual location it refers to.
                 After the process was complete the variable would be holding a new and different value.
-                ex x=5
+                ex x=5                
+  range       see RUBY->TYPES
   type        the type of the value a var holds. Ruby is what is known as a dynamically typed language. 
                 means the value of a variable can change its type and does not need to be explicitly/permanently defined. 
 
 TYPES
   Array
+  range       see below  
   .sort
   .reverse
 
@@ -61,7 +63,14 @@ TYPES
   .ceil     7.5.ceil  => 8
   .floor    7.5.floor   => this method will round the float down to the nearest fixnum. Here it will return 7
   .next     10.next => 11
+  
+  Range     a set of values with a beginning and an end. A range can contain strings or integers.
+            A range of strings: ("a", "b", "c", "d") A range of integers: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+            A range can be constructed using this notation: (100..200) Or this notation: (100...200)
+            .. ("double-dot") includes the second number (200) in the range, while using a ... ("triple-dot") excludes it.
+            Ranges can be helpful when you are generating arrays which we will be learning more about soon.
 
+  
   Strings
   .class      get class of any item.    "hello".class
   .reverse    "hello".reverse    => "olleh"
