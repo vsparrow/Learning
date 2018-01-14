@@ -13,17 +13,23 @@ github pull request(web)            Submitting a pull request is how you submit 
 
 
 RUBY *****************************************************************
-constant    variable that begins with an uppercase letter is known as a constant and has some different behavior.
-variables   words or characters that hold values
-            cannot start with a number, be a Ruby reserved word, or have punctuation or space characters.
-type        the type of the value a var holds. Ruby is what is known as a dynamically typed language. 
-              That means the value of a variable can change its type and does not need to be explicitly/permanently defined. 
-pass-by-value  A variable makes a copy of the value it holds and passes the copy over to something else that 
-                alters or changes it.   
-                ex "hello".upcase
-pass-by-reference. changes to a variable would alter what is stored in the actual location it refers to.
+VARIABLES   variables   words or characters that hold values
+  constant    written in UPPERCASE or Capitalized. They have a global scope when defined globally, 
+                and local scope when defined within classes and modules. 
+                Constants cannot be defined within methods. When constants are initialized, they should not be reassigned.               
+                cannot start with a number, be a Ruby reserved word, or have punctuation or space characters.
+  Global variables  "global scope". accessed anywhere in a program and are declared with a dollar sign in front   
+                      $global_variable
+  Local variables   "local scope", meaning that their definitions remain where they are declared.
+                      If we define a variable within a method definition, only the method knows about that variable                
+  pass-by-value  A variable makes a copy of the value it holds and passes the copy over to something else that 
+                  alters or changes it.   
+                  ex "hello".upcase
+  pass-by-reference. changes to a variable would alter what is stored in the actual location it refers to.
                 After the process was complete the variable would be holding a new and different value.
                 ex x=5
+  type        the type of the value a var holds. Ruby is what is known as a dynamically typed language. 
+                means the value of a variable can change its type and does not need to be explicitly/permanently defined. 
 
 Array
 .sort
