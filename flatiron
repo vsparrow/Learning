@@ -52,6 +52,9 @@ TYPES
   .sort
   .reverse
 
+  Bool        0 1   true false
+    truthy    only nil and false are falsey.   0 is "truthy"!!
+
   Hash
         store objects differ from arrays in that they function like dictionaries. 
         hashes are composed of key/value pairs. Each key points to a specific value
