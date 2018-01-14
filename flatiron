@@ -43,6 +43,17 @@ Symbol
             If I make a symbol, :my_symbol, and then use that symbol later on in my code,
                 my program will refer to the same area of memory in both cases.
 
+
+RSPEC ***************************************************************
+
+ERROR TYPES
+  ARGUMENT ERRORS   occur when methods are passed either too few or too many arguments.
+  NAME ERRORS       NameErrors are caused when a given name is invalid or undefined
+  NO METHOD ERRORS  no method for something
+                      will often occur when you have a variable set to nil
+  Syntax errors     they're the result of incorrect syntax.
+  TYPEERRORS        When you try and do a mathematical operation on two objects of a different type,
+
 SHELL ***************************************************************
 commands    see https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html
 LS
