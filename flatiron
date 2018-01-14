@@ -14,9 +14,13 @@ github pull request(web)            Submitting a pull request is how you submit 
 
 RUBY *****************************************************************
 ARGUMENTS
-            calling methods with parentheses, e.g., greeting('Sophie'). 
-              But you can also omit the parentheses: greeting 'Sophie'.
+              calling methods with parentheses, e.g., greeting('Sophie'). 
+                But you can also omit the parentheses: greeting 'Sophie'.
+  default/optional    (name = "Ruby programmer"), we simply assign the argument name a default value of "Ruby programmer" 
+  required+optional   def greeting(name, language="Ruby") # required MUST come before optional
 
+  
+  
 VARIABLES   variables   words or characters that hold values
   constant    written in UPPERCASE or Capitalized. They have a global scope when defined globally, 
                 and local scope when defined within classes and modules. 
