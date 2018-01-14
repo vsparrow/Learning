@@ -48,6 +48,7 @@ VARIABLES   variables   words or characters that hold values
 TYPES
   Array
   range       see below  
+  .sample     get a random value from array
   .sort
   .reverse
 
@@ -62,6 +63,8 @@ TYPES
           Floats are decimal numbers, like 7.3.
   .ceil     7.5.ceil  => 8
   .floor    7.5.floor   => this method will round the float down to the nearest fixnum. Here it will return 7
+   MAth     http://ruby-doc.org/core-2.2.0/Math.html  
+              functions like sqrt
   .next     10.next => 11
   
   Range     a set of values with a beginning and an end. A range can contain strings or integers.
