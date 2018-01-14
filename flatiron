@@ -1,18 +1,47 @@
 GIT  ****************************************************************
 git cheet sheet                     https://www.git-tower.com/blog/content/posts/54-git-cheat-sheet/git-cheat-sheet-large01.png
-
-git reset --hard <commit id>        revert
+git add .                           to add your local changes to be committed.
 git clone                           to clone a repository to your local computer.
                                         To clone, make sure you've clicked on the SSH link (it starts with git@github.com:
-git status                          to see the status of your locally cloned git repository.
-git add .                           to add your local changes to be committed.
 git commit -am "Commit Message"     to commit changes that have been added with a message.
 git push                            to upload your local changes to GitHub.
+git reset --hard <commit id>        revert
+git status                          to see the status of your locally cloned git repository.
 
 GITHUB FORK                         Forking is the process of making a personal copy of the Learn lab on GitHub
 github pull request(web)            Submitting a pull request is how you submit your lab to be evaluated or graded 
 
 
+RUBY *****************************************************************
+
+Array
+.sort
+.reverse
+
+Hash
+        store objects differ from arrays in that they function like dictionaries. 
+        hashes are composed of key/value pairs. Each key points to a specific value
+          ––just like a word and a definition in a regular dictionary.
+          {"i'm a key" => "i'm a value!", "key2" => "value2"}
+
+Numbers   
+          Fixnums are whole numbers, like 7.
+          Floats are decimal numbers, like 7.3.
+.ceil     7.5.ceil  => 8
+.floor    7.5.floor   => this method will round the float down to the nearest fixnum. Here it will return 7
+.next     10.next => 11
+
+
+Strings
+.class      get class of any item.    "hello".class
+.reverse    "hello".reverse    => "olleh"
+.size       "hello".size    => 5
+.upcase     "hello".upcase  => "HELLO"
+
+Symbol
+            symbol is a representation of a piece of data. Symbols look like this :my_symbol. 
+            If I make a symbol, :my_symbol, and then use that symbol later on in my code,
+                my program will refer to the same area of memory in both cases.
 
 SHELL ***************************************************************
 commands    see https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html
