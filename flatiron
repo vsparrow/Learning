@@ -19,7 +19,12 @@ ARGUMENTS
   default/optional    (name = "Ruby programmer"), we simply assign the argument name a default value of "Ruby programmer" 
   required+optional   def greeting(name, language="Ruby") # required MUST come before optional
 
-  
+DEBUGGING
+  pry          gem install pry
+               require "pry" on top of code 
+               use the following line "binding.pry" anywhere in your code.
+                When the interpreter hits that line, your program will actually freeze and your terminal 
+                  will turn into a REPL(interpreter like irb)
   
 VARIABLES   variables   words or characters that hold values
   constant    written in UPPERCASE or Capitalized. They have a global scope when defined globally, 
@@ -39,31 +44,31 @@ VARIABLES   variables   words or characters that hold values
   type        the type of the value a var holds. Ruby is what is known as a dynamically typed language. 
                 means the value of a variable can change its type and does not need to be explicitly/permanently defined. 
 
-Array
-.sort
-.reverse
+TYPES
+  Array
+  .sort
+  .reverse
 
-Hash
+  Hash
         store objects differ from arrays in that they function like dictionaries. 
         hashes are composed of key/value pairs. Each key points to a specific value
           ––just like a word and a definition in a regular dictionary.
           {"i'm a key" => "i'm a value!", "key2" => "value2"}
 
-Numbers   
+  Numbers   
           Fixnums are whole numbers, like 7.
           Floats are decimal numbers, like 7.3.
-.ceil     7.5.ceil  => 8
-.floor    7.5.floor   => this method will round the float down to the nearest fixnum. Here it will return 7
-.next     10.next => 11
+  .ceil     7.5.ceil  => 8
+  .floor    7.5.floor   => this method will round the float down to the nearest fixnum. Here it will return 7
+  .next     10.next => 11
 
+  Strings
+  .class      get class of any item.    "hello".class
+  .reverse    "hello".reverse    => "olleh"
+  .size       "hello".size    => 5
+  .upcase     "hello".upcase  => "HELLO"
 
-Strings
-.class      get class of any item.    "hello".class
-.reverse    "hello".reverse    => "olleh"
-.size       "hello".size    => 5
-.upcase     "hello".upcase  => "HELLO"
-
-Symbol
+  Symbol
             symbol is a representation of a piece of data. Symbols look like this :my_symbol. 
             If I make a symbol, :my_symbol, and then use that symbol later on in my code,
                 my program will refer to the same area of memory in both cases.
