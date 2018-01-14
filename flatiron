@@ -53,7 +53,9 @@ TYPES
   .reverse
 
   Bool        0 1   true false
-    truthy    only nil and false are falsey.   0 is "truthy"!!
+    truthy    only nil and false are falsey.   0 is "truthy"
+    double-bang operator 
+              (!!) will return true or false based on whether a value is truthy or falsey to begin with.
 
   Hash
         store objects differ from arrays in that they function like dictionaries. 
