@@ -48,6 +48,8 @@ VARIABLES   variables   words or characters that hold values
 OPERATORS/OPERATIONS
 
 LOOPS
+  for         for counter in 1..40 do   /n    puts "The current number is #{counter}."  /nend
+              shoe_count = 1..32 /n for shoe in shoe_count /n  puts "I'm putting a pair of shoes away."  /n   end
   loop        simple example
                 counter = 0 # Start our counter at 0, we have never run the loop
                 loop do # Start our loop
@@ -56,7 +58,7 @@ LOOPS
                   if counter >= 10 # If our counter is 10 or more
                     break # Stop the loop
                   end
-                end
+                end                
   num.times    5.times do     /n    puts "Penguins like to jump off icebergs!" /n end                 
   while       while counter < 20   /n   puts "The current number is less than 20." /n  counter += 1 end
   until       until counter == 20 /n  puts "The current number is less than 20." /n  counter += 1 end
