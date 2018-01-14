@@ -63,6 +63,13 @@ LOOPS
   while       while counter < 20   /n   puts "The current number is less than 20." /n  counter += 1 end
   until       until counter == 20 /n  puts "The current number is less than 20." /n  counter += 1 end
   
+METHODS
+  helper           smaller methods, each of which is responsible for one discrete unit of the game. 
+  wrapper/runner  a boss method 
+                    ex To run our program, we need to call several  methods. 
+                    Instead of calling each of them in turn, we might place them inside a single method. 
+                    Then, to enact our program, we only have to invoke our one wrapper, or runner method
+
 TYPES
   Array
   range       see below  
@@ -132,6 +139,7 @@ Structure
       "" is only there to provide you, the programmer, with a description of what behavior we're currently testing.
       #what is inside the "it do end" block is what we actually test      
   expect(age_of_person).to eq(19)   #expect var to equal value
+  Stubbing        refers to the fake implementation of a method.
 
 SHELL ***************************************************************
 commands    see https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html
