@@ -1,3 +1,19 @@
+GIT  ****************************************************************
+git cheet sheet                     https://www.git-tower.com/blog/content/posts/54-git-cheat-sheet/git-cheat-sheet-large01.png
+
+git reset --hard <commit id>        revert
+git clone                           to clone a repository to your local computer.
+                                        To clone, make sure you've clicked on the SSH link (it starts with git@github.com:
+git status                          to see the status of your locally cloned git repository.
+git add .                           to add your local changes to be committed.
+git commit -am "Commit Message"     to commit changes that have been added with a message.
+git push                            to upload your local changes to GitHub.
+
+GITHUB FORK                         Forking is the process of making a personal copy of the Learn lab on GitHub
+github pull request(web)            Submitting a pull request is how you submit your lab to be evaluated or graded 
+
+
+
 SHELL ***************************************************************
 commands    see https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html
 LS
