@@ -45,6 +45,22 @@ VARIABLES   variables   words or characters that hold values
   type        the type of the value a var holds. Ruby is what is known as a dynamically typed language. 
                 means the value of a variable can change its type and does not need to be explicitly/permanently defined. 
 
+OPERATORS/OPERATIONS
+
+LOOPS
+  loop        simple example
+                counter = 0 # Start our counter at 0, we have never run the loop
+                loop do # Start our loop
+                  counter = counter + 1
+                  puts "Iteration #{counter} of the loop"
+                  if counter >= 10 # If our counter is 10 or more
+                    break # Stop the loop
+                  end
+                end
+  num.times    5.times do     /n    puts "Penguins like to jump off icebergs!" /n end                 
+  while       while counter < 20   /n   puts "The current number is less than 20." /n  counter += 1 end
+  until       until counter == 20 /n  puts "The current number is less than 20." /n  counter += 1 end
+  
 TYPES
   Array
   range       see below  
