@@ -60,7 +60,9 @@ METHODS
                     lambdas check for arguments ; procs just returns nil for the missing argument, but do not throw an error                    they return differently: lambdas return to the calling method and 
                       procs return immediately without going back to the caller—essentially,
                       lambdas behave more like method calls: you can think of them as anonymous functions
-                   
+                    flow control differences proc vs lambda : the return and break keyword  are treated is the difference 
+                      return from proc returns from wrapping method, lamnda woud just continue
+                        see https://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them/
   proc            is a block turned into an object by being assigned to an instance of the Proc class.
                     Procs are a type of closure , can be assigned to a local variable,
                     is executed by calling the call method on it,  more than one proc can be passed to a method. 
