@@ -147,6 +147,7 @@ TYPES
   .reverse    "hello".reverse    => "olleh"
   .size       "hello".size    => 5
   .split
+  .start_with?  
   .swapcase   "hELLO".swapcase  => "Hello"
   .upcase     "hello".upcase  => "HELLO"
 
