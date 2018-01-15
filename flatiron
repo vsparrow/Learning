@@ -54,9 +54,17 @@ OPERATORS/OPERATIONS
 
 TYPES
   Array
-  range       see below  
+  range       see below 
+  find        see .index()
+  .first
+  .INCLUDE?   does contain?
+  .index()    argument inside the parentheses will return the first index number of an element matching that argument.
+                famous_cats.index("Puss in Boots") => 1    # famous_cats = ["Cheshire Cat", "Puss in Boots", "Garfield"]
+  .inspect    returns a string containing a human-readable representation of an object.
+  .last
   .sample     get a random value from array
-  .sort
+  .size       like .length
+  .sort       return new array. use sort! to affect current arr
   .reverse
 
   Bool        0 1   true false
