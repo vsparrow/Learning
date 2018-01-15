@@ -28,6 +28,7 @@ DEBUGGING
   
 
 LOOPS
+  .each       see Types.Array.each
   for         for counter in 1..40 do   /n    puts "The current number is #{counter}."  /nend
               shoe_count = 1..32 /n for shoe in shoe_count /n  puts "I'm putting a pair of shoes away."  /n   end
   loop        simple example
@@ -55,17 +56,26 @@ OPERATORS/OPERATIONS
 TYPES
   Array
   range       see below 
+  .delete     Deletes items from self that are equal to obj. If any items are found, returns obj.
+  .delete_at  Deletes the element at the specified index, returning that element,  
+  .each       iterate over array
+  .each_with_index    interate with an index included
   find        see .index()
   .first
+  .flatten    Returns a new array that is a one-dimensional flattening of this array (recursively) [1,[2,3]] => [1,2,3]
   .INCLUDE?   does contain?
   .index()    argument inside the parentheses will return the first index number of an element matching that argument.
                 famous_cats.index("Puss in Boots") => 1    # famous_cats = ["Cheshire Cat", "Puss in Boots", "Garfield"]
+  .insert     letters.insert(-1, 'd')   #insert d into last position   
   .inspect    returns a string containing a human-readable representation of an object.
   .last
+  .pop(2)     can use pop to remove more than one item!!!!!!!!
   .sample     get a random value from array
+  .shift(2)   can shift more than one item!!!
   .size       like .length
   .sort       return new array. use sort! to affect current arr
   .reverse
+  .uniq       remove duplicate items
 
   Bool        0 1   true false
     truthy    only nil and false are falsey.   0 is "truthy"
@@ -92,12 +102,15 @@ TYPES
             A range can be constructed using this notation: (100..200) Or this notation: (100...200)
             .. ("double-dot") includes the second number (200) in the range, while using a ... ("triple-dot") excludes it.
             Ranges can be helpful when you are generating arrays which we will be learning more about soon.
-
+    .to_a   method, when called on a range, can convert a range of numbers to an array:
+              (1..10).to_a   => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   
   Strings
   .class      get class of any item.    "hello".class
+  .join
   .reverse    "hello".reverse    => "olleh"
   .size       "hello".size    => 5
+  .split
   .swapcase   "hELLO".swapcase  => "Hello"
   .upcase     "hello".upcase  => "HELLO"
 
