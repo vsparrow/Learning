@@ -45,12 +45,18 @@ LOOPS
   until       until counter == 20 /n  puts "The current number is less than 20." /n  counter += 1 end
   
 METHODS
+  block_given?     method to optionally take block           if block_given? X else Y end
   helper           smaller methods, each of which is responsible for one discrete unit of the game. 
   wrapper/runner  a boss method 
                     ex To run our program, we need to call several  methods. 
                     Instead of calling each of them in turn, we might place them inside a single method. 
                     Then, to enact our program, we only have to invoke our one wrapper, or runner method
-
+  yield           Stop executing the code in this method, and instead execute the code in this block. 
+                    Then, return to the code in the method."  
+                  if give it an argument, it will pass that argument to the block and 
+                    that data will become available to the code in the block.  
+                  https://learn.co/tracks/web-development-fundamentals/intro-to-ruby/enumerables/yield-and-blocks
+                  
 OPERATORS/OPERATIONS
 
 TYPES
