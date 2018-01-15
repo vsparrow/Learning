@@ -45,8 +45,27 @@ LOOPS
   until       until counter == 20 /n  puts "The current number is less than 20." /n  counter += 1 end
   
 METHODS
-  block_given?     method to optionally take block           if block_given? X else Y end
-  helper           smaller methods, each of which is responsible for one discrete unit of the game. 
+  block           a simple form of a closure in Ruby. Blocks are constructed with a do...end or with {}.
+  block_given?    method to optionally take block           if block_given? X else Y end
+  closure         block of functional code with variables that are bound to the environment that the closure is called in.
+                    it can be passed around like an object 
+                    can be defined in one scope and be called in a completely different scope,
+                    it remembers the variables within its scope at the time of creation; 
+                      when it's called, it can access those variables even if they might not be in that current scope
+  helper          smaller methods, each of which is responsible for one discrete unit of the game.
+  lambda          isn't that much different than a proc in functionality. The & before it turns it into a block,
+                   plus_one = lambda { |n| puts n + 1 }; array = [1, 2, 3] ; array.each(&plus_one)
+                   ALTERNATE decleration :: plus_one = ->(n) { puts n + 1 }
+                  Proc vs Lambda 
+                    lambdas check for arguments ; procs just returns nil for the missing argument, but do not throw an error                    they return differently: lambdas return to the calling method and 
+                      procs return immediately without going back to the caller—essentially,
+                      lambdas behave more like method calls: you can think of them as anonymous functions
+                   
+  proc            is a block turned into an object by being assigned to an instance of the Proc class.
+                    Procs are a type of closure , can be assigned to a local variable,
+                    is executed by calling the call method on it,  more than one proc can be passed to a method. 
+                    greeting = Proc.new { "Hello!" } ; greeting.call => "Hello!"
+                  see also lambda
   wrapper/runner  a boss method 
                     ex To run our program, we need to call several  methods. 
                     Instead of calling each of them in turn, we might place them inside a single method. 
