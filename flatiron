@@ -56,26 +56,35 @@ OPERATORS/OPERATIONS
 TYPES
   Array
   range       see below 
+  .any?       return true if the code in the block evaluates to true for any element in the collection. 
+  .collect    see .map
   .delete     Deletes items from self that are equal to obj. If any items are found, returns obj.
   .delete_at  Deletes the element at the specified index, returning that element,  
-  .each       iterate over array
+  .delete_if  delete from the collection any items that return true for a certain condition:
+  .each       iterate over array CHANGES ARRAY!  see .map for non change
   .each_with_index    interate with an index included
-  find        see .index()
+  find        see .index()    
   .first
   .flatten    Returns a new array that is a one-dimensional flattening of this array (recursively) [1,[2,3]] => [1,2,3]
   .INCLUDE?   does contain?
   .index()    argument inside the parentheses will return the first index number of an element matching that argument.
                 famous_cats.index("Puss in Boots") => 1    # famous_cats = ["Cheshire Cat", "Puss in Boots", "Garfield"]
+                see .select for ALL the elements
   .insert     letters.insert(-1, 'd')   #insert d into last position   
   .inspect    returns a string containing a human-readable representation of an object.
   .last
+  .map        similar to .each except a new array or hash object is returned, not the original one.
   .pop(2)     can use pop to remove more than one item!!!!!!!!
   .sample     get a random value from array
+  .select     returns a new collection containing of  elements in the submitted collection for which
+                the block's conditional is true
   .shift(2)   can shift more than one item!!!
   .size       like .length
   .sort       return new array. use sort! to affect current arr
   .reverse
   .uniq       remove duplicate items
+  other enumberables    http://ruby-doc.org/core-2.2.2/Enumerable.html
+  
 
   Bool        0 1   true false
     truthy    only nil and false are falsey.   0 is "truthy"
