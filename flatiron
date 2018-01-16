@@ -108,6 +108,8 @@ TYPES
   .shift(2)   can shift more than one item!!!
   .size       like .length
   .sort       return new array. use sort! to affect current arr
+                "spaceship operator" (<=>). The spaceship operator, also called the combined comparison operator
+                array.sort do |a, b| /n   a <=> b    /n end; a==b return 0; a<b return -1; a>b return 1
   .reverse
   .uniq       remove duplicate items
   other enumberables    http://ruby-doc.org/core-2.2.2/Enumerable.html
