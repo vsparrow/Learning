@@ -158,6 +158,8 @@ TYPES
 
 
 VARIABLES   variables   words or characters that hold values
+            don’t hold object values. str doesn’t contain “Hello”. Rather, str contains a reference to a string object. 
+              It’s the string object that has the characteristic of containing the letters that make up “Hello”.
   constant    written in UPPERCASE or Capitalized. They have a global scope when defined globally, 
                 and local scope when defined within classes and modules. 
                 Constants cannot be defined within methods. When constants are initialized, they should not be reassigned.               
@@ -169,9 +171,13 @@ VARIABLES   variables   words or characters that hold values
   pass-by-value  A variable makes a copy of the value it holds and passes the copy over to something else that 
                   alters or changes it.   
                   ex "hello".upcase
+                  Primitive data like integers, floats, fixnums, and symbols require a fixed, small amount of memory. 
+                    therefor pass by value                    
   pass-by-reference. changes to a variable would alter what is stored in the actual location it refers to.
                 After the process was complete the variable would be holding a new and different value.
                 ex x=5                
+                 Objects that can grow and change, like arrays and strings, are never a fixed size. 
+                  They are instead always accessed by a reference pointer
   range       see RUBY->TYPES
   type        the type of the value a var holds. Ruby is what is known as a dynamically typed language. 
                 means the value of a variable can change its type and does not need to be explicitly/permanently defined. 
