@@ -175,6 +175,7 @@ person["age"] #=> 36
               hash.each do |key, value| /n   puts "#{key}: #{value}" /n end
     .KEYS     returns an array containing all of the keys in the hash that .keys              
     .MIN      return the key/value pair that contains that lowest key, either alphabetically or numerically:
+    .to_s     method on a symbol to convert it into a string
     .VALUES   You can collect all of the values in a hash with the .values method:          
     RUBY DOCS http://ruby-doc.org/core-2.2.2/Hash.html
 
