@@ -165,12 +165,18 @@ person["age"] #=> 36
             symbol is a representation of a piece of data. Symbols look like this :my_symbol. 
             If I make a symbol, :my_symbol, and then use that symbol later on in my code,
                 my program will refer to the same area of memory in both cases.
-            two wats to write
+    two wats to write
               flatiron_school = {:instructor => "Isaac Newton"}
               flatiron_school = {instructor: "Isaac Newton"}   *****recommend ********
-            assign data
+    assign data
               flatiron_school = {   instructors: ["Avi", "Jeff", "Rose"]}  
               instructors = flatiron_school[:instructors]  # => ["Avi", "Jeff", "Rose"]  
+    iterate using each
+              hash.each do |key, value| /n   puts "#{key}: #{value}" /n end
+    .KEYS     returns an array containing all of the keys in the hash that .keys              
+    .MIN      return the key/value pair that contains that lowest key, either alphabetically or numerically:
+    .VALUES   You can collect all of the values in a hash with the .values method:          
+    RUBY DOCS http://ruby-doc.org/core-2.2.2/Hash.html
 
 VARIABLES   variables   words or characters that hold values
             don’t hold object values. str doesn’t contain “Hello”. Rather, str contains a reference to a string object. 
