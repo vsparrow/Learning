@@ -38,7 +38,14 @@ DEBUGGING
                use the following line "binding.pry" anywhere in your code.
                 When the interpreter hits that line, your program will actually freeze and your terminal 
                   will turn into a REPL(interpreter like irb)
-  
+  .to_stdout   method works by temporarily replacing the $stdout variable.                   
+
+FILES  
+  !           "shebang line" and it tells the shell which interpreter to use to execute the remainder of the file.
+                #!/usr/bin/env ruby  Any executable files we place in our bin directory need to begin with the line
+                you can execute your program by typing bin/< your file name > into the command line, 
+                  since the shebang line at the top of your executable file is already telling the shell to use Ruby 
+                  
 
 LOOPS
   .each       see Types.Array.each
@@ -145,8 +152,6 @@ TYPES
               person = { "name" => "Corinna",  "age" => 36} ; person["hometown"] = "Massena, NY"
 
 
-# We can read Corinna's age with:
-person["age"] #=> 36
   Numbers   
           Fixnums are whole numbers, like 7.
           Floats are decimal numbers, like 7.3.
