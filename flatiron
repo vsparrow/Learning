@@ -367,3 +367,49 @@ delete table  DROP TABLE cats;
 
 help  .help            
 quit  .quit
+
+
+
+
+YAML ********************************************************************************************
+YAML        is used because it is easier for humans to read and write than typing out entire arrays, hashes, etc.
+  ex
+  commands  require 'yaml' # STEP ONE, REQUIRE YAML!
+            # Parse a YAML string
+            YAML.load("--- foo") #=> "foo"
+
+            # Emit some YAML
+            YAML.dump("foo")     # => "--- foo\n...\n"
+            { :a => 'b'}.to_yaml  # => "---\n:a: b\n"
+  
+  ARRAY     All members of a list are lines beginning at the same indentation level starting with a "- " (a dash and a space):
+            # fruits.yml
+              - Apple
+              - Orange
+              - Strawberry
+              - Mango
+            # ruby file
+            require "yaml" 
+            fruits = YAML.load_file('fruits.yml')
+            fruits             # => ["Apple","Orange","Strawberry","Mango"]
+            
+            OPTIONAL:: inline format ->  # Shopping list  /n  [milk, pumpkin pie, eggs, juice]
+  HASH      # thisisahash.yml
+            garfield: Orange
+            tom: gray
+            #ruby file
+            require "yaml"
+            cat = YAML.load_file('thisisahash.yml')
+            cat # => # { "garfied" => "orange", "tom" => "gray"}
+            
+             --- # Indented Block
+               name: John Smith
+               age: 33
+             --- # Inline Block
+             {name: John Smith, age: 33}
+  STRINGS   two ways to write multi-line strings, 
+                one preserving newlines (using the | character) 
+                one that folds the newlines (using the > character), both followed by a newline character.
+  further reading     http://docs.ansible.com/ansible/latest/YAMLSyntax.html
+                      http://www.ruby-doc.org/stdlib-1.9.3/libdoc/yaml/rdoc/YAML.html
+  
