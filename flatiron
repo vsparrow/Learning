@@ -13,20 +13,34 @@ $PATH         a colon-separated list of paths. Each path is just the location of
 echo $PATH.   terminal should print the value of your $PATH variable. 
                 echo $PATH | tr ":" "\n"      
                   this looks like an indecipherable string of characters. So let's replace the colons with line breaks.
-  
+                  
+ps            get processes
+ps aux        a = show processes for all users u = display the process's user/owner x = also show processes not attached to a terminal
+                ps aux | grep ruby    find ruby in ps 
   
 GIT  ****************************************************************
 git cheet sheet                     https://www.git-tower.com/blog/content/posts/54-git-cheat-sheet/git-cheat-sheet-large01.png
+git branch                          to see all of the branches
+                                      see git checkout to get branches of a fork
+                                      git branch -D doc-brown to delete the doc-brown branch
 git add .                           to add your local changes to be committed.
+git checkout master                 get to master branch
+git checkout -t origin/doc-brown    This creates a new branch on your computer that matches thedoc-brown branches on GitHub.
 git clone                           to clone a repository to your local computer.
                                         To clone, make sure you've clicked on the SSH link (it starts with git@github.com:
 git commit -am "Commit Message"     to commit changes that have been added with a message.
+git delete                          see git branch
+GITHUB FORK                         Forking is the process of making a personal copy of the Learn lab on GitHub
+git merge doc-brown                 add the doc-brown branch to the master branch 
+                                    <<<<<<< HEAD - the beginning of the original branch (master)
+                                    ======= - the end of the original branch/the beginning of the branch being merged in (marty-mcfly)
+                                    >>>>>>> marty-mcfly - the end of the new branch ( marty-mcfly)
+github pull request(web)            Submitting a pull request is how you submit your lab to be evaluated or graded 
 git push                            to upload your local changes to GitHub.
+                                    git push origin master
 git reset --hard <commit id>        revert
 git status                          to see the status of your locally cloned git repository.
 
-GITHUB FORK                         Forking is the process of making a personal copy of the Learn lab on GitHub
-github pull request(web)            Submitting a pull request is how you submit your lab to be evaluated or graded 
 
 
 RUBY *****************************************************************
