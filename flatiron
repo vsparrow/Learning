@@ -20,6 +20,7 @@ ps aux        a = show processes for all users u = display the process's user/ow
                 
 HTML ****************************************************************  
 Ecosystem
+character sets        https://www.w3schools.com/html/html_charset.asp
 cheetsheet            http://www.simplehtmlguide.com/cheatsheet.php               see also element reference
 element reference     https://developer.mozilla.org/en-US/docs/Web/HTML/Element   see also cheetsheet
 folder structure    [site(parent folder) + .html] [subfolders: css/fonts/images/js] 
@@ -62,6 +63,8 @@ git push                            to upload your local changes to GitHub.
 git reset --hard <commit id>        revert
 git status                          to see the status of your locally cloned git repository.
 
+FILES:
+.gitignore                          
 
 
 RUBY *****************************************************************
