@@ -86,7 +86,10 @@ Language        See https://developer.mozilla.org/en-US/docs/Web/HTML/Element or
   <em>        <em>This text is emphasized</em>    italics
   form          get data ::   also lookup "input"   see also "select"
   form action   specify location where all the info gathered is sent to
+  for label     is a text label that relates to an input below it <label for="fullname">Name</label><input id="fullname"></input>
+                  so if click on text "Name" will move cursor to input fullname
   form method   get/post    how method is sent. in "get" method, info is used as part of URL as query string, &username=COOL+developer
+  form textarea for multi line items , block
   iframe       embed window inside page, for other websites, or pages. like a google maps on your restaurant homepage, or youtube vid
   input        input for forms, type="" have many types; name="" label for info sent to server  very important!,
                 palceholder="" stays unil user types, a reminder to user; required  means user must configure or else errr if blank
