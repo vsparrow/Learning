@@ -17,47 +17,6 @@ echo $PATH.   terminal should print the value of your $PATH variable.
 ps            get processes
 ps aux        a = show processes for all users u = display the process's user/owner x = also show processes not attached to a terminal
                 ps aux | grep ruby    find ruby in ps 
-                
-HTML ****************************************************************  
-
-CODE numeric
-  301 redirects     ensure that users and search engines are directed to the correct page. useful for website moves or multiple domains
-  404               error page, guide user back to a useful page
-
-
-Ecosystem
-  character sets        https://www.w3schools.com/html/html_charset.asp
-  cheetsheet            http://www.simplehtmlguide.com/cheatsheet.php               see also element reference
-  element reference     https://developer.mozilla.org/en-US/docs/Web/HTML/Element   see also cheetsheet
-  folder structure    [site(parent folder) + .html] [subfolders: css/fonts/images/js] 
-  wireframe   hand drawn or digital mockups of what the page should look like
-  Validator   http://validator.w3.org/
-
-GOOGLE
-  anchor rel=nofollow   tells google you don't vouch for these links. used often for comments pages. linking to spam affects your rep
-  anchor text   the text tells google what your are link to, have good text to help AI and users
-  img alt text  used as anchor text if image is a link
-  mobile        verify your sites show up in google mobile.
-                switch content based on user agent
-  robots.txt    tells engines if they can crawl your site 
-  SEO guide     www.google.com/en/us/webmasters/docs/search-engine-optimization-starter-guide.pdf
-  
-  Tools:         Google Website Optimizer / Google Webmaster Tools /Google Analytics
-
-Language        See https://developer.mozilla.org/en-US/docs/Web/HTML/Element or http://www.simplehtmlguide.com/cheatsheet.php
-  anchor      see also HTML:GOOGLE
-  anchor a    link tag. 
-  bold        see strong
-  Definition List   <dl>     <dt>First term</dt>     <dd>Definition</dd>     <dt>Next term</dt>     <dd>Definition</dd></dl>
-  description see metaname:description
-  <em>        <em>This text is emphasized</em>    italics
-  italics     see em
-  metaname  
-    description  gives search engine summary of what page is about. could be a scentance or 2. might become google description of page 
-  <pre>       <pre>This text is preformatted</pre>
-  <strong>    <strong>This text is strong</strong>  make the text bold
-  title       tells users/searchengines what topic of a page is.ideally uniqe to each page. becomes first line of serch results. few words
-
 
 
 GIT  ****************************************************************
@@ -80,11 +39,70 @@ git merge doc-brown                 add the doc-brown branch to the master branc
 github pull request(web)            Submitting a pull request is how you submit your lab to be evaluated or graded 
 git push                            to upload your local changes to GitHub.
                                     git push origin master
+git push -u branch-name             sets this information for the branch you're pushing.
+                                      important if created branch locally, then tells remote that you push to new branch
 git reset --hard <commit id>        revert
 git status                          to see the status of your locally cloned git repository.
 
 FILES:
 .gitignore                          
+
+
+
+HTML ****************************************************************  
+
+CODE numeric
+  301 redirects     ensure that users and search engines are directed to the correct page. useful for website moves or multiple domains
+  404               error page, guide user back to a useful page
+
+
+Ecosystem
+  character sets        https://www.w3schools.com/html/html_charset.asp
+  cheetsheet            http://www.simplehtmlguide.com/cheatsheet.php               see also element reference
+  element reference     https://developer.mozilla.org/en-US/docs/Web/HTML/Element   see also cheetsheet
+  folder structure    [site(parent folder) + .html] [subfolders: css/fonts/images/js] 
+  wireframe   hand drawn or digital mockups of what the page should look like
+  Validator   http://validator.w3.org/
+
+GOOGLE
+  anchor rel=nofollow   tells google you don't vouch for these links. used often for comments pages. linking to spam affects your rep
+  anchor text   the text tells google what your are link to, have good text to help AI and users
+  img alt text  used as anchor text if image is a link
+  maps          pres ||| on google map to share so that you can embed map
+  mobile        verify your sites show up in google mobile.
+                switch content based on user agent
+  robots.txt    tells engines if they can crawl your site 
+  SEO guide     www.google.com/en/us/webmasters/docs/search-engine-optimization-starter-guide.pdf
+  
+  Tools:         Google Website Optimizer / Google Webmaster Tools /Google Analytics
+
+Language        See https://developer.mozilla.org/en-US/docs/Web/HTML/Element or http://www.simplehtmlguide.com/cheatsheet.php
+  anchor      see also HTML:GOOGLE
+  anchor a    link tag. 
+  audio       embed audio. can have multiple <source> elements inside to have diffferent audio file types. similar to <video>
+  bold        see strong
+  Definition List   <dl>     <dt>First term</dt>     <dd>Definition</dd>     <dt>Next term</dt>     <dd>Definition</dd></dl>
+  description see metaname:description
+  <em>        <em>This text is emphasized</em>    italics
+  form          get data ::   also lookup "input"   see also "select"
+  form action   specify location where all the info gathered is sent to
+  form method   get/post    how method is sent. in "get" method, info is used as part of URL as query string, &username=COOL+developer
+  iframe       embed window inside page, for other websites, or pages. like a google maps on your restaurant homepage, or youtube vid
+  input        input for forms, type="" have many types; name="" label for info sent to server  very important!,
+                palceholder="" stays unil user types, a reminder to user; required  means user must configure or else errr if blank
+                see "forms"
+  italics     see em
+  metaname  
+    description  gives search engine summary of what page is about. could be a scentance or 2. might become google description of page 
+  <pre>       <pre>This text is preformatted</pre>
+  select      used inside of a form, creates drop downs. see "forms" above. 
+  <strong>    <strong>This text is strong</strong>  make the text bold
+  title       tells users/searchengines what topic of a page is.ideally uniqe to each page. becomes first line of serch results. few words
+  <video>     embed video, see <audio> also
+
+ Tools
+  
+  Modernizr   JS library that detects HTML5 and CSS3 features of user's browser    
 
 
 RUBY *****************************************************************
