@@ -19,24 +19,44 @@ ps aux        a = show processes for all users u = display the process's user/ow
                 ps aux | grep ruby    find ruby in ps 
                 
 HTML ****************************************************************  
-Ecosystem
-character sets        https://www.w3schools.com/html/html_charset.asp
-cheetsheet            http://www.simplehtmlguide.com/cheatsheet.php               see also element reference
-element reference     https://developer.mozilla.org/en-US/docs/Web/HTML/Element   see also cheetsheet
-folder structure    [site(parent folder) + .html] [subfolders: css/fonts/images/js] 
-wireframe   hand drawn or digital mockups of what the page should look like
-Validator   http://validator.w3.org/
 
+CODE numeric
+  301 redirects     ensure that users and search engines are directed to the correct page. useful for website moves or multiple domains
+  404               error page, guide user back to a useful page
+
+
+Ecosystem
+  character sets        https://www.w3schools.com/html/html_charset.asp
+  cheetsheet            http://www.simplehtmlguide.com/cheatsheet.php               see also element reference
+  element reference     https://developer.mozilla.org/en-US/docs/Web/HTML/Element   see also cheetsheet
+  folder structure    [site(parent folder) + .html] [subfolders: css/fonts/images/js] 
+  wireframe   hand drawn or digital mockups of what the page should look like
+  Validator   http://validator.w3.org/
+
+GOOGLE
+  anchor rel=nofollow   tells google you don't vouch for these links. used often for comments pages. linking to spam affects your rep
+  anchor text   the text tells google what your are link to, have good text to help AI and users
+  img alt text  used as anchor text if image is a link
+  mobile        verify your sites show up in google mobile.
+                switch content based on user agent
+  robots.txt    tells engines if they can crawl your site 
+  SEO guide     www.google.com/en/us/webmasters/docs/search-engine-optimization-starter-guide.pdf
+  
+  Tools:         Google Website Optimizer / Google Webmaster Tools /Google Analytics
 
 Language        See https://developer.mozilla.org/en-US/docs/Web/HTML/Element or http://www.simplehtmlguide.com/cheatsheet.php
-bold        see strong
-Definition List   <dl>     <dt>First term</dt>     <dd>Definition</dd>     <dt>Next term</dt>     <dd>Definition</dd></dl>
-<em>        <em>This text is emphasized</em>    italics
-italics     see em
-<pre>       <pre>This text is preformatted</pre>
-<strong>    <strong>This text is strong</strong>  make the text bold
-
-
+  anchor      see also HTML:GOOGLE
+  anchor a    link tag. 
+  bold        see strong
+  Definition List   <dl>     <dt>First term</dt>     <dd>Definition</dd>     <dt>Next term</dt>     <dd>Definition</dd></dl>
+  description see metaname:description
+  <em>        <em>This text is emphasized</em>    italics
+  italics     see em
+  metaname  
+    description  gives search engine summary of what page is about. could be a scentance or 2. might become google description of page 
+  <pre>       <pre>This text is preformatted</pre>
+  <strong>    <strong>This text is strong</strong>  make the text bold
+  title       tells users/searchengines what topic of a page is.ideally uniqe to each page. becomes first line of serch results. few words
 
 
 
