@@ -28,6 +28,18 @@ CSS  ****************************************************************
                 see https://css-tricks.com/yay-for-hsla/
                 
  Selectors
+  A[attribute]    Select all elements that have a specific attribute  (can just be [for]) to select <plate for="luke"> 
+                    a[href] selects all a elements that have a href="anything" attribute.
+  Attribute Ends With 
+                  [attribute$="value"]   Select all elements with an attribute value that ends with specific characters                
+  Attribute Starts With               [for^="Sa"]   for SaranWrap and Sardines
+                  [attribute^="value"]  Select all elements with an attribute value that starts with specific characters
+
+  [attribute="value"]   Select all elements that have a specific attribute value         
+  Attribute Wildcard 
+                  attribute*="value"] Select all elements with an attribute value that contains specific characters anywhere
+                  mg[src*="/thumbnails/"] selects all image elements that show images from the "thumbnails" folder.
+                  [class*="heading"] selects all elements with "heading" in their class, like class="main-heading" class="sub-heading"
   Child           A > B Select direct children of an element
   Child (First)   orange:first-child  Select a first child element inside of another element
   Child none      see :empty
@@ -40,6 +52,7 @@ CSS  ****************************************************************
   Combinator (Comma)  plate, bento  select element plate and element bento
   Combinator Universal      p *     selects every element inside all p elements. but NOT the p element
   :empty              Selects elements that don't have any other elements inside of them.
+  :not(X)             Select all elements that don't match the negation selector
   Sibling (Adjacent)     p + .intro    selects every element with class="intro" that directly follows a p  (all into next to p)
   Sibling (General)   A ~ B         selects all B that follow a A       B A BB P B   -> this would get the middle two B 
   Type first-of-type          pickle:first-of-type Selects the first element of that type within another element.
