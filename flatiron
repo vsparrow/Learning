@@ -17,7 +17,8 @@ echo $PATH.   terminal should print the value of your $PATH variable.
 ps            get processes
 ps aux        a = show processes for all users u = display the process's user/owner x = also show processes not attached to a terminal
                 ps aux | grep ruby    find ruby in ps 
-
+CSS  ****************************************************************
+ reference     https://developer.mozilla.org/en-US/docs/Web/CSS/Reference     
 
 GIT  ****************************************************************
 git cheet sheet                     https://www.git-tower.com/blog/content/posts/54-git-cheat-sheet/git-cheat-sheet-large01.png
@@ -32,13 +33,14 @@ git clone                           to clone a repository to your local computer
 git commit -am "Commit Message"     to commit changes that have been added with a message.
 git delete                          see git branch
 GITHUB FORK                         Forking is the process of making a personal copy of the Learn lab on GitHub
-git merge doc-brown                 add the doc-brown branch to the master branch 
+git merge doc-brown                 add the doc-brown branch to the master branch #irst do git co master to make sure we are on master!
                                     <<<<<<< HEAD - the beginning of the original branch (master)
                                     ======= - the end of the original branch/the beginning of the branch being merged in (marty-mcfly)
                                     >>>>>>> marty-mcfly - the end of the new branch ( marty-mcfly)
 github pull request(web)            Submitting a pull request is how you submit your lab to be evaluated or graded 
 git push                            to upload your local changes to GitHub.
                                     git push origin master
+                                      git push prigin contact-page   #if pushing to branch other than master 
 git push -u branch-name             sets this information for the branch you're pushing.
                                       important if created branch locally, then tells remote that you push to new branch
 git reset --hard <commit id>        revert
@@ -67,6 +69,7 @@ Ecosystem
 GOOGLE
   anchor rel=nofollow   tells google you don't vouch for these links. used often for comments pages. linking to spam affects your rep
   anchor text   the text tells google what your are link to, have good text to help AI and users
+  copywrite     symbol  &copy;
   img alt text  used as anchor text if image is a link
   maps          pres ||| on google map to share so that you can embed map
   mobile        verify your sites show up in google mobile.
@@ -84,6 +87,8 @@ Language        See https://developer.mozilla.org/en-US/docs/Web/HTML/Element or
   Definition List   <dl>     <dt>First term</dt>     <dd>Definition</dd>     <dt>Next term</dt>     <dd>Definition</dd></dl>
   description see metaname:description
   <em>        <em>This text is emphasized</em>    italics
+  figure      <figure>
+    figcaption  inside figure  info that appears under image, often whome photo is by, or things related to image/figure above 
   form          get data ::   also lookup "input"   see also "select"
   form action   specify location where all the info gathered is sent to
   for label     is a text label that relates to an input below it <label for="fullname">Name</label><input id="fullname"></input>
@@ -98,10 +103,12 @@ Language        See https://developer.mozilla.org/en-US/docs/Web/HTML/Element or
   metaname  
     description  gives search engine summary of what page is about. could be a scentance or 2. might become google description of page 
   <pre>       <pre>This text is preformatted</pre>
+  section     section off some area
   select      used inside of a form, creates drop downs. see "forms" above. 
   <strong>    <strong>This text is strong</strong>  make the text bold
   title       tells users/searchengines what topic of a page is.ideally uniqe to each page. becomes first line of serch results. few words
   <video>     embed video, see <audio> also
+    <video controls>  so controls always visible
 
  Tools
   
