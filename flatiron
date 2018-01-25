@@ -28,17 +28,30 @@ CSS  ****************************************************************
                 see https://css-tricks.com/yay-for-hsla/
                 
  Selectors
-  Combine the Class Selector
-    orange.small  <orange class="small">; <orange> ; <apple class="small">  # only choose element orange with class small
-  Comma Combinator
-    plate, bento  select element plate and element bento
-  Universal selector combined
-    p *           selects every element inside all p elements. but NOT the p element
-  Adjacent Sibling Selector
-    p + .intro    selects every element with class="intro" that directly follows a p  (all into next to p)
-  General Sibling Selector
-    A ~ B         selects all B that follow a A       B A BB P B   -> this would get the middle two B 
-
+  Child           A > B Select direct children of an element
+  Child (First)   orange:first-child  Select a first child element inside of another element
+  Child none      see :empty
+  Child (Last)    pickle :last-child Select the last element inside of another element
+  Child (Nth)     Select an element by its order in another element      div p:nth-child(2) selects the second p every div
+  Child (Nth Last Child)  This is like nth-child, but counting from the back!
+  Child (only)    :only-child  Select an element that are the only element inside of another one.
+                    ul li:only-child selects the only li element that are in a ul
+  Class Combine   orange.small  <orange class="small">; <orange> ; <apple class="small">  # only choose element orange with class small
+  Combinator (Comma)  plate, bento  select element plate and element bento
+  Combinator Universal      p *     selects every element inside all p elements. but NOT the p element
+  :empty              Selects elements that don't have any other elements inside of them.
+  Sibling (Adjacent)     p + .intro    selects every element with class="intro" that directly follows a p  (all into next to p)
+  Sibling (General)   A ~ B         selects all B that follow a A       B A BB P B   -> this would get the middle two B 
+  Type first-of-type          pickle:first-of-type Selects the first element of that type within another element.
+  Type :last-of-type          Selects each last element of that type within another element. Remember type refers the kind of tag,
+                                  so p and span are different types. 
+  Type :nth-of-type(A)        Selects a specific element based on its type and order in another element 
+                                .example:nth-of-type(odd); selects all odd instances of a the example class.
+                                div:nth-of-type(2) selects the second instance of a div.
+  Type: Nth-of-type with Formula  selects every nth element, starting the count at a specific instance of that element.
+                    span:nth-of-type(6n+2) selects every 6th instance of a span, starting from (and including) the second instance.
+  Type :only-of-type    Selects the only element of its type within another element.                  
+  
  Tools
   adobe color scheme tool     https://color.adobe.com/create/color-wheel/
 
