@@ -40,6 +40,7 @@ CSS  ****************************************************************
   : 	            pseudo selector 	selects elements in certain conditions 	0 0 1 0
   A[attribute]    Select all elements that have a specific attribute  (can just be [for]) to select <plate for="luke"> 
                     a[href] selects all a elements that have a href="anything" attribute.
+  Attribute Dash seperated    select and attrib that is dash seperated p[class!="dog"]  <p class="new-dog-school">                    
   Attribute Ends With 
                   [attribute$="value"]   Select all elements with an attribute value that ends with specific characters                
   Attribute Starts With               [for^="Sa"]   for SaranWrap and Sardines
