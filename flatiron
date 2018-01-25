@@ -36,6 +36,8 @@ CSS  ****************************************************************
                 see https://css-tricks.com/yay-for-hsla/
                 
  Selectors
+  :: 	            pseudo element 	selects some actual content 	0 0 0 1
+  : 	            pseudo selector 	selects elements in certain conditions 	0 0 1 0
   A[attribute]    Select all elements that have a specific attribute  (can just be [for]) to select <plate for="luke"> 
                     a[href] selects all a elements that have a href="anything" attribute.
   Attribute Ends With 
@@ -61,8 +63,37 @@ CSS  ****************************************************************
   Combinator Universal      p *     selects every element inside all p elements. but NOT the p element
   :empty              Selects elements that don't have any other elements inside of them.
   :not(X)             Select all elements that don't match the negation selector
+  :focus              will select links that are the current focus of the keyboard. can be used for input as well
+  Content related
+    ::before        add content before a certain element. ex: adding an opening quote before a blockquote 
+                      or perhaps an preceding image to set apart a particular paragraph.
+    ::after         add content after a certain element. For example, a closing quote to a blockquote. 
+                       Also used commonly for the clearfix, where an empty space is added after the element which clears the float 
+                       without any need for extra HTML markup.
+  Input
+    :checked        Selects checkboxes that are, wait for it, checked.
+    :enabled        Selects inputs that are in the default state of enabled and ready to be used.
+    :disabled       Selects inputs that have the disabled attribute. 
+    :indeterminate  Selects radio buttons that are in the purgatory state of neither chosen or unchosen 
+        
+  Link              see also :focus
+    :active         Selects the link while it is being activated (being clicked on or otherwise activated). 
+                      example, for the "pressed" state of a button-style link or to make all links feel more button-like.
+    :hover          When the mouse cursor rolls over a link, that link is in it's hover state and this will select it.
+    :link           Aren't all <a> links? Well not if they don't have an href attribute. This selects only those that do
+    :target         used in conjunction with IDs, and match when the hash tag in the current URL matches that ID. 
+                    if at URL www.yoursite.com/#home then the selector #home:target will match. 
+                    That can be extremely powerful. For example, you can create a tabbed area where the tabs link to hash tags 
+                    and then the panels "activate" by matching :target selectors and (for example) using z-index to move to the top.                  
+    :visited        Selects links that have already been visited by the current browser.
+
+  :root             Selects the element that is at the root of the document. Almost certainly will select the <html> element
   Sibling (Adjacent)     p + .intro    selects every element with class="intro" that directly follows a p  (all into next to p)
   Sibling (General)   A ~ B         selects all B that follow a A       B A BB P B   -> this would get the middle two B 
+  Text
+    ::first-letter  Selects the first letter of the text in the element. Typical use: dropcaps.
+    ::first-line    Selects the first line of text in the element. Typical use: setting the first sentence in small-caps as a typographical eye-catcher / lead-in.
+    
   Type first-of-type          pickle:first-of-type Selects the first element of that type within another element.
   Type :last-of-type          Selects each last element of that type within another element. Remember type refers the kind of tag,
                                   so p and span are different types. 
