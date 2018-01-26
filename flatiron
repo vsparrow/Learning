@@ -34,8 +34,15 @@ CSS  ****************************************************************
                 The real appeal of HSLa is that it makes more intuitive sense what changing the values will do to the color.
                 That makes creating your own color variations on the fly way easier.
                 see https://css-tricks.com/yay-for-hsla/
+  Pseudo-classes                  
+              special classes used to add special effects to some selectors, which are applied automatically in certain states.  
+                :visited in    a:visited { text-decoration: underline; }
+  Pseudo-elements 
+              is a specific/unique part of an element that can be used to generate content “on the fly”, automatic numbering and lists. 
+                :first-line or :after in  p:first-line { font-variant: small-caps; }  a:link:after { content: " (" attr(href) ")"; }
+  
                 
- Selectors
+ Selectors        (see also Specificity)
   :: 	            pseudo element 	selects some actual content 	0 0 0 1
   : 	            pseudo selector 	selects elements in certain conditions 	0 0 1 0
   A[attribute]    Select all elements that have a specific attribute  (can just be [for]) to select <plate for="luke"> 
@@ -103,12 +110,25 @@ CSS  ****************************************************************
                                 div:nth-of-type(2) selects the second instance of a div.
   Type: Nth-of-type with Formula  selects every nth element, starting the count at a specific instance of that element.
                     span:nth-of-type(6n+2) selects every 6th instance of a span, starting from (and including) the second instance.
-  Type :only-of-type    Selects the only element of its type within another element.                  
+  Type :only-of-type    Selects the only element of its type within another element.       
+  
+  
+ Specificity
+  calculator                  see CSS:Tools
+  Equal specificity           the latest rule is the one that counts
+  !important                  declaration overrides normal declarations, but avoid it
+  link styling                To ensure that you see your various link styles, put your styles in the order 
+                                “link-visited-hover-active”, or “LVHA” for short.”
+  measure specificity         1000 for inline style , 100 for each ID, add 10 for each attribute, class or pseudo-class, 
+                                add 1 for each element name or pseudo-element.
+                                ex: body #content .data img:hover  specificity value would be 122 (0,1,2,2 or 0122): 
+                                      100 for #content, 10 for .data, 10 for :hover, 1 for body and 1 for img. 
   
  Tools
   adobe color scheme tool     https://color.adobe.com/create/color-wheel/
   architecture layout         https://learn.shayhowe.com/advanced-html-css/performance-organization/
-  reference                   https://developer.mozilla.org/en-US/docs/Web/CSS/Reference     
+  reference                   https://developer.mozilla.org/en-US/docs/Web/CSS/Reference   
+  specificity calculator      https://specificity.keegan.st/
   validator                   http://jigsaw.w3.org/css-validator/
 
 
