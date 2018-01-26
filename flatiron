@@ -111,6 +111,18 @@ CSS  ****************************************************************
   reference                   https://developer.mozilla.org/en-US/docs/Web/CSS/Reference     
   validator                   http://jigsaw.w3.org/css-validator/
 
+
+ Examples:  
+  Rainbow:                      div {  /*https://github.com/learn-co-students/my-little-rainbow-cb-000*/
+                                border: 20px solid #000; /* this is short hand for setting the border's width, its type, and color */
+                                display: inline-block; /* a way of positioning elements */
+                                min-width: 20em; /* the two min styles make the shape */
+                                min-height: 25em; /* of the divs oblong*/
+                                border-radius: 50%; /* this makes the normally square div round */
+                                border-left-color: transparent; /* these remove the color from the left side */
+                                border-right-color: transparent; /* the right side */
+                                border-bottom-color: transparent; /* and the bottom of the circle */ }
+
 GIT  ****************************************************************
 git cheet sheet                     https://www.git-tower.com/blog/content/posts/54-git-cheat-sheet/git-cheat-sheet-large01.png
 git branch                          to see all of the branches
