@@ -27,6 +27,18 @@ CSS  ****************************************************************
               theme category may be added which could include styles based around the skin, or look and feel, of different modules.
   selectors   Keep Selectors Short  for performance
               Favor Classes  
+  
+ Box Model    Dictates how browser sizes elements. determines actual true size and how much space taken up in layout.
+                Every element can be seen as a box. has Wdith, height, padding, margin, border
+              IE vs W3C   two different box models:: ie: width specifies content+padding+border   w3c: width specifies content only  
+  border      outside element
+  box-sizing: property to choose between models # ie is border-box # w3c is content-box  div {box-sizing : border-box }
+  content     the element
+  IE          to calc "true content space" subtract padding+border from width  
+  margin      spacing between element and other elm  
+  padding     spacing inside element               
+  W3C         "true width" is calculated via adding width(content) padding boder. in IE model, width is true width 
+    
 
  Language
   hsla        Hue Saturation Lightness and Alpha it's a way of declaring color in CSS.    background-color: hsla(170, 50%, 45%, 1);
