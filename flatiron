@@ -46,17 +46,27 @@ CSS  ****************************************************************
  Layout 
   Box Model    Dictates how browser sizes elements. determines actual true size and how much space taken up in layout.
                 Every element can be seen as a box. has Wdith, height, padding, margin, border
-              IE vs W3C   two different box models:: ie: width specifies content+padding+border   w3c: width specifies content only  
+              IE vs W3C   two different box models:: ie: width specifies content+padding+ border   w3c: width specifies content only  
+    IE          to calc "true content space" subtract padding+border from width  
+    W3C         "true width" is calculated via adding width(content) padding boder. in IE model, width is true width 
   border      outside element
   box-sizing: property to choose between models # ie is border-box # w3c is content-box  div {box-sizing : border-box }
+  clear       see Floating
   content     the element
+  display                 csome elements by nature are block like div, others are inline like span. override using display
+  display block           appears side by side. not take width or top/bottom margin. 
+                            margins dont overlap. width 10px each for 2 spans. get 20px
+  display inline          display one above another take whole line. allows width or top/bottom margin
+                            margins overlap. so 2 divs with margin 10px each does not make 20px margin, just 10px.
+  display inline-block    appears side by side, allows width or top/bottom margin
+  display table-cell      elements act liek they are the cells of a table. 
+  Floating:   pull elements left or right. affects rlements that come after it but not before
+    clear     clear : left, clear anything to the left # clear:right clear anything to right # both: clear both
   Height:      body always 100% wide, but only as high as content inside. 
                 so if want element to scale 100% browser height, set body and html to 100% also  body,html{height: 100%;min-height: 100%}
-  IE          to calc "true content space" subtract padding+border from width  
   margin      spacing between element and other elm  
   overflow    content overflow: visible( content overflows), hidden (content hidden) , scroll, auto (detect and create scroll if need)
   padding     spacing inside element               
-  W3C         "true width" is calculated via adding width(content) padding boder. in IE model, width is true width 
  
  
  
