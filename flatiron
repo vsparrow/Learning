@@ -27,18 +27,7 @@ CSS  ****************************************************************
               theme category may be added which could include styles based around the skin, or look and feel, of different modules.
   selectors   Keep Selectors Short  for performance
               Favor Classes  
-  
- Box Model    Dictates how browser sizes elements. determines actual true size and how much space taken up in layout.
-                Every element can be seen as a box. has Wdith, height, padding, margin, border
-              IE vs W3C   two different box models:: ie: width specifies content+padding+border   w3c: width specifies content only  
-  border      outside element
-  box-sizing: property to choose between models # ie is border-box # w3c is content-box  div {box-sizing : border-box }
-  content     the element
-  IE          to calc "true content space" subtract padding+border from width  
-  margin      spacing between element and other elm  
-  padding     spacing inside element               
-  W3C         "true width" is calculated via adding width(content) padding boder. in IE model, width is true width 
-    
+   
 
  Language
   hsla        Hue Saturation Lightness and Alpha it's a way of declaring color in CSS.    background-color: hsla(170, 50%, 45%, 1);
@@ -52,6 +41,34 @@ CSS  ****************************************************************
   Pseudo-elements 
               is a specific/unique part of an element that can be used to generate content “on the fly”, automatic numbering and lists. 
                 :first-line or :after in  p:first-line { font-variant: small-caps; }  a:link:after { content: " (" attr(href) ")"; }
+ 
+ 
+ Layout 
+  Box Model    Dictates how browser sizes elements. determines actual true size and how much space taken up in layout.
+                Every element can be seen as a box. has Wdith, height, padding, margin, border
+              IE vs W3C   two different box models:: ie: width specifies content+padding+border   w3c: width specifies content only  
+  border      outside element
+  box-sizing: property to choose between models # ie is border-box # w3c is content-box  div {box-sizing : border-box }
+  content     the element
+  Height:      body always 100% wide, but only as high as content inside. 
+                so if want element to scale 100% browser height, set body and html to 100% also  body,html{height: 100%;min-height: 100%}
+  IE          to calc "true content space" subtract padding+border from width  
+  margin      spacing between element and other elm  
+  overflow    content overflow: visible( content overflows), hidden (content hidden) , scroll, auto (detect and create scroll if need)
+  padding     spacing inside element               
+  W3C         "true width" is calculated via adding width(content) padding boder. in IE model, width is true width 
+ 
+ 
+ 
+ Scaling:
+  Elastic     em  in proportion to text size changing up and down:  Pro: containers stay in proporation to text 
+                Cons: lots of testing as parent containers may start bumping into each other     
+                16px = 1em ; if you want box to be ~200px  formula  is 200px/16px = 12.5em    desiredsize/em = neededEM
+                so when text gets larger, container will get larger. if body is 2x, 12.5em will size out to 400px
+  Fixed       px  Pro: same for all screens  Con:  much whitespace for large screen, small screen might need scrolling
+  Fluid       %   based on percentage of space withing parent container Pro: use full screen, eliminate horizontal scroll bar 
+                Cons: less control over what user sees 
+  Min/Max     set thresholds  for width and hieght 
   
                 
  Selectors        (see also Specificity)
@@ -135,7 +152,10 @@ CSS  ****************************************************************
                                 add 1 for each element name or pseudo-element.
                                 ex: body #content .data img:hover  specificity value would be 122 (0,1,2,2 or 0122): 
                                       100 for #content, 10 for .data, 10 for :hover, 1 for body and 1 for img. 
-  
+ 
+ Text
+  em                          see Layout: Elastic             
+ 
  Tools
   adobe color scheme tool     https://color.adobe.com/create/color-wheel/
   architecture layout         https://learn.shayhowe.com/advanced-html-css/performance-organization/
