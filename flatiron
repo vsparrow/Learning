@@ -51,6 +51,7 @@ CSS  ****************************************************************
     W3C         "true width" is calculated via adding width(content) padding boder. in IE model, width is true width 
   border      outside element
   box-sizing: property to choose between models # ie is border-box # w3c is content-box  div {box-sizing : border-box }
+  center elm  set margin to auto
   clear       see Floating
   content     the element
   display                 csome elements by nature are block like div, others are inline like span. override using display
@@ -62,13 +63,23 @@ CSS  ****************************************************************
   display table-cell      elements act liek they are the cells of a table. 
   Floating:   pull elements left or right. affects rlements that come after it but not before
     clear     clear : left, clear anything to the left # clear:right clear anything to right # both: clear both
+    clear-fix gives parent elemet that collapses a reference forr how tall to be. take space to surround children
+                .clearfix:after {} . it goes in after children and adds a period symbol. tells period to display block
+                then clear both to clear floating children above it. then sets the period invisible and hieght and wdith of period to 0
   Height:      body always 100% wide, but only as high as content inside. 
                 so if want element to scale 100% browser height, set body and html to 100% also  body,html{height: 100%;min-height: 100%}
+  layers      see Z-index below
   margin      spacing between element and other elm  
+                if you add margin, remember it doesnt calculaate into box-model(ie) or w3c sizing so must do math to get sizing right
   overflow    content overflow: visible( content overflows), hidden (content hidden) , scroll, auto (detect and create scroll if need)
   padding     spacing inside element               
- 
- 
+  positioning
+              relative  take element relative to where it WAS positioned. top:25px push down 25px from top; left:300px push left 200px
+              absolute  refer to position relative to relativly possitioned parent or entire browser window.
+              fixed     element will stay in palce when browser window scrolls. similar to absolute except for parent clause
+  z-index     layer elements on top of each other. by default everything zindex of 0. setting negative means go behind everything
+                the higher the number the closer to screen 
+  exmaples::  https://learn.co/tracks/web-development-fundamentals/intro-to-html-css/front-end-css-page-layout/css-layout                
  
  Scaling:
   Elastic     em  in proportion to text size changing up and down:  Pro: containers stay in proporation to text 
