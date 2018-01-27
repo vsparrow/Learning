@@ -68,6 +68,7 @@ CSS  ****************************************************************
                 then clear both to clear floating children above it. then sets the period invisible and hieght and wdith of period to 0
   Height:      body always 100% wide, but only as high as content inside. 
                 so if want element to scale 100% browser height, set body and html to 100% also  body,html{height: 100%;min-height: 100%}
+  HolyGrail   http://alistapart.com/article/holygrail (at least pre boxmodel/bootstrap
   layers      see Z-index below
   margin      spacing between element and other elm  
                 if you add margin, remember it doesnt calculaate into box-model(ie) or w3c sizing so must do math to get sizing right
@@ -279,6 +280,7 @@ Language        See https://developer.mozilla.org/en-US/docs/Web/HTML/Element or
                   so if click on text "Name" will move cursor to input fullname
   form method   get/post    how method is sent. in "get" method, info is used as part of URL as query string, &username=COOL+developer
   form textarea for multi line items , block
+  footer       https://css-tricks.com/snippets/css/sticky-footer/
   iframe       embed window inside page, for other websites, or pages. like a google maps on your restaurant homepage, or youtube vid
   input        input for forms, type="" have many types; name="" label for info sent to server  very important!,
                 palceholder="" stays unil user types, a reminder to user; required  means user must configure or else errr if blank
