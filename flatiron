@@ -225,7 +225,14 @@ git status                          to see the status of your locally cloned git
 FILES:
 .gitignore                          
 
-
+CheetSheet
+                                    git checkout -b columns
+                                    git add . 
+                                    git commit -m "add columns and fixed header and social bar" 
+                                    git push -u origin columns 
+                                    git checkout master 
+                                    git merge columns 
+                                    git push origin master 
 
 HTML ****************************************************************  
 
