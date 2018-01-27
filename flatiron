@@ -77,6 +77,7 @@ CSS  ****************************************************************
               relative  take element relative to where it WAS positioned. top:25px push down 25px from top; left:300px push left 200px
               absolute  refer to position relative to relativly possitioned parent or entire browser window.
               fixed     element will stay in palce when browser window scrolls. similar to absolute except for parent clause
+              static    no positioning, override any previous positions
   z-index     layer elements on top of each other. by default everything zindex of 0. setting negative means go behind everything
                 the higher the number the closer to screen 
   exmaples::  https://learn.co/tracks/web-development-fundamentals/intro-to-html-css/front-end-css-page-layout/css-layout                
