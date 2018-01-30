@@ -203,10 +203,14 @@ git cheet sheet                     https://www.git-tower.com/blog/content/posts
 git branch                          to see all of the branches
                                       see git checkout to get branches of a fork
                                       git branch -D doc-brown to delete the doc-brown branch
+git branch -u o/master foo          set remote tracking on a branch, set the foo branch to track o/master. see also git co -b                                      
 git add .                           to add your local changes to be committed.
 git checkout head^                  go to head's parent (the caret operator says parent)
 git checkout head~4                 move up 4 commits from head
 git checkout master                 get to master branch
+git checkout -b totallyNotMaster o/master . 
+                                    Creates a new branch named totallyNotMaster and sets it to track o/master.
+                                    see also git branch -u
 git checkout -t origin/doc-brown    This creates a new branch on your computer that matches thedoc-brown branches on GitHub.
 git cherry-pick <Commit1> <Commit2> <...>
                                     you would like to copy a series of commits below your current location (HEAD).
@@ -216,6 +220,20 @@ git clone                           to clone a repository to your local computer
                                         To clone, make sure you've clicked on the SSH link (it starts with git@github.com:
 git commit -am "Commit Message"     to commit changes that have been added with a message.
 git delete                          see git branch
+git describe                        describe where you are relative to the closest "anchor" (aka tag). see git tag
+                                      git describe <ref>  Where <ref> is anything git can resolve into a commit. 
+                                      If you don't specify a ref, git just uses where you're checked out right now (HEAD).
+                                      
+                                      output of the command looks like:  <tag>_<numCommits>_g<hash>
+                                      Where tag is the closest ancestor tag in history, numCommits is how many commits away 
+                                      that tag is, and <hash> is the hash of the commit being described.
+git fetch                           fetch data from a remote repository           
+                                      downloads the commits that the remote has but are missing from our local repository,
+                                      updates where our remote branches point (for instance, o/master)
+                                      brings localinto synchronization with remote repository looks like
+                                        ***does not change anything about your local state. not update your master branch or 
+                                              change anything about how your file system looks right now. just a download step
+                                              see also git pull
 force                               git branch -f master HEAD~3 #directly reassign a branch to a commit with the -f option.
                                       moves (by force) the master branch to three parents behind HEAAD                                   
 GITHUB FORK                         Forking is the process of making a personal copy of the Learn lab on GitHub
@@ -225,24 +243,41 @@ git merge doc-brown                 add the doc-brown branch to the master branc
                                       === - the end of original branch/beginning of the branch being merged in (marty-mcfly)
                                       >>> marty-mcfly - the end of the new branch ( marty-mcfly)
 git mv file_from file_to            move files
+move head                           git co branchname; git reset CommitNameorID;  ie: git co side; git reset C3'
 github pull request(web)            Submitting a pull request is how you submit your lab to be evaluated or graded 
-git push                              to upload your local changes to GitHub.
-                                    git push origin master
+                                      shorthand for a git fetch followed by a merge of whatever branch was just fetched.
+                                      it pull --rebase is shorthand for a fetch and a rebase!
+git push                            to upload your local changes to GitHub.
+                                      git push origin master
                                       git push prigin contact-page   #if pushing to branch other than master 
 git push -u branch-name             sets this information for the branch you're pushing.
                                       important if created branch locally, then tells remote that you push to new branch
 git rebase master                   move head of one branch into another -> look into this deeper
+                                      see alsos git pull # it pull --rebase is shorthand for a fetch and a rebase!
 git rebase -i NAME                  interactive rebase means is using the rebase command with the -i option.
                                       git will open up a UI to show you which commits are about to be copied below the target
                                       of the rebase. It also shows their commit hashes and messages
+                                      
 relative reference                  see git checkout head~4
                                       takes in a trailing number that specifies the number of parents you would like to ascend.
 git reset --hard <commit id>        will move a branch backwards as if the commit had never been made in the first place.
                                       git reset HEAD~1 . (moves head up 1).   Does not work for remote branch, use revert.
 git revert                          reverse changes and share those reversed changes with others,
-                                    a new commit below the commit we wanted to reverse. 
-                                    new commit C2' introduces changes that exactly reverses the commit of C2.
+                                      a new commit below the commit we wanted to reverse. 
+                                      new commit C2' introduces changes that exactly reverses the commit of C2.
 git status                          to see the status of your locally cloned git repository.
+git tag                             (somewhat) permanently mark certain commits as "milestones" that you can reference 
+                                      like a branch. More importantly though, they never move as more commits are created.
+                                      You can't "check out" a tag and then complete work on that tag -- tags exist as anchors
+                                      in the commit tree that designate certain spots.
+                                      git tag v1 C1 # a tag at C1 which is our version 1 prototype
+                                      see also git describe
+^ modifier                          Like the ~ modifier, the ^ modifier also accepts an optional number after it.
+                                      the modifier on ^ specifies which parent reference to follow from a merge commit.
+                                      Remember that merge commits have multiple parents, so the path to choose is ambiguous.
+                                      Git will normally follow the "first" parent upwards from a merge commit, 
+                                      but specifying a number with ^ changes this default behavior.
+
 
 FILES:
 .gitignore                          
