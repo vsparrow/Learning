@@ -35,6 +35,8 @@ CSS  ****************************************************************
                 The real appeal of HSLa is that it makes more intuitive sense what changing the values will do to the color.
                 That makes creating your own color variations on the fly way easier.
                 see https://css-tricks.com/yay-for-hsla/
+  @import url() 
+              allows you to import other css files into your css file. example used to import fonts
   Pseudo-classes                  
               special classes used to add special effects to some selectors, which are applied automatically in certain states.  
                 :visited in    a:visited { text-decoration: underline; }
@@ -229,6 +231,10 @@ git describe                        describe where you are relative to the close
                                       output of the command looks like:  <tag>_<numCommits>_g<hash>
                                       Where tag is the closest ancestor tag in history, numCommits is how many commits away 
                                       that tag is, and <hash> is the hash of the commit being described.
+git diff                            by itself doesn’t show all changes made since your last commit — only changes that are 
+                                      still unstaged. If you’ve staged all of your changes, git diff will give you no output
+git diff --staged                   If you want to see what you’ve staged that will go into your next commit   
+                                      --staged and --cached are synonyms):
 git fetch                           fetch data from a remote repository           
                                       downloads the commits that the remote has but are missing from our local repository,
                                       updates where our remote branches point (for instance, o/master)
@@ -245,6 +251,15 @@ force                               git branch -f master HEAD~3 #directly reassi
                                       moves (by force) the master branch to three parents behind HEAAD                                   
 GITHUB FORK                         Forking is the process of making a personal copy of the Learn lab on GitHub
 Interactive Rebase                  see git rebase -i
+git log                             
+                                      --stat    see abbreviated stats for each commit
+                                      -p or --patch, shows the difference (the patch output) introduced in each commit. 
+                                      --pretty=oneline    see on one line
+                                      --pretty=format:"%h - %an, %ar : %s" #format, allows specify your own log output format.
+                                      --since=2.weeks   lookup limiting log output
+                                      -S option (Git’s “pickaxe” option), takes a string and shows only those commits 
+                                        that changed the number of occurrences of that string.
+
 git merge abort                     when you merge and want to go back. see also "reset head^"
 git merge doc-brown                 add the doc-brown branch to the master branch #irst do git co master to make sure we are on master!
                                       <<<HEAD - the beginning of the original branch (master)
@@ -284,6 +299,7 @@ git reset --hard <commit id>        will move a branch backwards as if the commi
 git revert                          reverse changes and share those reversed changes with others,
                                       a new commit below the commit we wanted to reverse. 
                                       new commit C2' introduces changes that exactly reverses the commit of C2.
+git rm                              remove file : remvoe from git  and remove from working directory so its not untracked
 git status                          to see the status of your locally cloned git repository.
 git tag                             (somewhat) permanently mark certain commits as "milestones" that you can reference 
                                       like a branch. More importantly though, they never move as more commits are created.
