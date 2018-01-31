@@ -199,6 +199,7 @@ CSS  ****************************************************************
                                 border-bottom-color: transparent; /* and the bottom of the circle */ }
 
 GIT  ****************************************************************
+abort                               see git merge abort
 git cheet sheet                     https://www.git-tower.com/blog/content/posts/54-git-cheat-sheet/git-cheat-sheet-large01.png
 git branch                          to see all of the branches
                                       see git checkout to get branches of a fork
@@ -244,6 +245,7 @@ force                               git branch -f master HEAD~3 #directly reassi
                                       moves (by force) the master branch to three parents behind HEAAD                                   
 GITHUB FORK                         Forking is the process of making a personal copy of the Learn lab on GitHub
 Interactive Rebase                  see git rebase -i
+git merge abort                     when you merge and want to go back. see also "reset head^"
 git merge doc-brown                 add the doc-brown branch to the master branch #irst do git co master to make sure we are on master!
                                       <<<HEAD - the beginning of the original branch (master)
                                       === - the end of original branch/beginning of the branch being merged in (marty-mcfly)
