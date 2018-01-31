@@ -248,6 +248,8 @@ git merge doc-brown                 add the doc-brown branch to the master branc
                                       <<<HEAD - the beginning of the original branch (master)
                                       === - the end of original branch/beginning of the branch being merged in (marty-mcfly)
                                       >>> marty-mcfly - the end of the new branch ( marty-mcfly)
+merge without forwarding branch    
+                                    https://stackoverflow.com/questions/5601931/best-and-safest-way-to-merge-a-git-branch-into-master  
 git mv file_from file_to            move files
 move head                           git co branchname; git reset CommitNameorID;  ie: git co side; git reset C3'
 github pull request(web)            Submitting a pull request is how you submit your lab to be evaluated or graded 
