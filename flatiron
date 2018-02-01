@@ -294,6 +294,12 @@ git rebase -i NAME                  interactive rebase means is using the rebase
                                       
 relative reference                  see git checkout head~4
                                       takes in a trailing number that specifies the number of parents you would like to ascend.
+git remote                          lists the shortnames of each remote handle you’ve specified
+                                       -v, shows URLs that Git has stored for the shortname to be used when reading and 
+                                        writing to that remote:
+git remote add <shortname> <url>    add a new remote Git repository as a shortname you can reference easily
+git remote show <remote>            see more information about a particular remote   (git remote show origin) 
+git remote rename                   change a remote’s shortname. ex rename pb to paul,  git remote rename pb paul
 git reset --hard <commit id>        will move a branch backwards as if the commit had never been made in the first place.
                                       git reset HEAD~1 . (moves head up 1).   Does not work for remote branch, use revert.
 git revert                          reverse changes and share those reversed changes with others,
