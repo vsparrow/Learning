@@ -401,8 +401,10 @@ MARKDOWN *************************************************************
 
  Github Markdwon
   basic formatting      https://help.github.com/articles/basic-writing-and-formatting-syntax
+  daring vs github      GitHub Flavored Markdown is a superior variant.
+                          https://daringfireball.net/linked/2009/10/23/github-flavored-markdown
   
- Language
+ Language (github markdown)
   bold                  **This is bold text**	
   bold AND italic       **This text is _extremely_ important** .   #extremly will be italic and bold
   headings              The number of # you use will determine the size of the heading.
@@ -421,6 +423,7 @@ MARKDOWN *************************************************************
                             clones of your repository - we recommend using relative links to refer to other files 
                             within your repository.
     section links         https://help.github.com/articles/basic-writing-and-formatting-syntax/#section-links
+    short link            https://help.github.com/articles/autolinked-references-and-urls/
   lists                 You can make an unordered list by preceding one or more lines of text with - or *.
     nested lists        Type space characters in front of your nested list item, until the list marker character (- or *) 
                           lies directly below the first character of the text in the item above it.
@@ -438,6 +441,13 @@ MARKDOWN *************************************************************
                           git add
                           git commit
                           ```
+    code with syntax highlight
+                        add an optional language identifier to enable syntax highlighting in your fenced code block.
+                          ```ruby
+                          require 'redcarpet'
+                          markdown = Redcarpet.new("Hello World!")
+                          puts markdown.to_html
+                          ```             #would highlight the ruby syntac
   striketrhough         ~~This was mistaken text~~	
 
 
