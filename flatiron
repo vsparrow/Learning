@@ -397,6 +397,52 @@ Language        See https://developer.mozilla.org/en-US/docs/Web/HTML/Element or
   Modernizr   JS library that detects HTML5 and CSS3 features of user's browser    
 
 
+MARKDOWN *************************************************************
+
+ Github Markdwon
+  basic formatting      https://help.github.com/articles/basic-writing-and-formatting-syntax
+  
+ Language
+  bold                  **This is bold text**	
+  bold AND italic       **This text is _extremely_ important** .   #extremly will be italic and bold
+  headings              The number of # you use will determine the size of the heading.
+                          # The largest heading
+                          ## The second largest heading
+                          ###### The smallest heading
+  ignore markdown       tell GitHub to ignore (or escape) Markdown formatting by using \ before the Markdown character.
+                          Let's rename \*our-new-project\* to \*our-old-project\*.
+  italic                *This text is italicized*	      #see also "bold AND italic"
+  links                 This site was built using [GitHub Pages](https://pages.github.com/).
+    reference issues/pull requests
+                          You can bring up a list of suggested issues and pull requests within the repository by typing #.
+                            https://help.github.com/articles/basic-writing-and-formatting-syntax/#referencing-issues-and-pull-requests
+    relative links        [Contribution guidelines for this project](docs/CONTRIBUTING.md)
+                            Relative links are easier for users who clone your repository. Absolute links may not work in 
+                            clones of your repository - we recommend using relative links to refer to other files 
+                            within your repository.
+    section links         https://help.github.com/articles/basic-writing-and-formatting-syntax/#section-links
+  lists                 You can make an unordered list by preceding one or more lines of text with - or *.
+    nested lists        Type space characters in front of your nested list item, until the list marker character (- or *) 
+                          lies directly below the first character of the text in the item above it.
+                          1. First list item #https://help.github.com/articles/basic-writing-and-formatting-syntax/#nested-lists
+                             - First nested list item
+                               - Second nested list item . 
+    task lists            To create a task list, preface list items with [ ]. To mark a task as complete, use [x].    
+                            Ifitem description begins with a parenthesis, you'll need to escape it with \:
+                            - [ ] \(Optional) Open a followup issue
+  mention               mention a person or team on GitHub by typing @ plus their username or team name.
+  quote                 > Pardon my French
+  quote code            
+    within a line       Use `git status` to list all new or modified files    #see the single tick
+    code block            ```
+                          git add
+                          git commit
+                          ```
+  striketrhough         ~~This was mistaken text~~	
+
+
+
+
 RUBY *****************************************************************
 ARGUMENTS
               calling methods with parentheses, e.g., greeting('Sophie'). 
