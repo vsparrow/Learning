@@ -713,37 +713,34 @@ ps aux  get all processes
 pwd   print working dir , get current dir
 ~     go home dir  , tilda
 
-    
-
-
-
-
 
 SQL *****************************************************************
- SQL statements     terminated with a ";"
- open db            sqlite3 test_sqlite.db
- columns:           are lower case and snake case . this_is_example
- datatypes:         TEXT INTEGER REAL(is float/decimal) BLOB
+ Basics
+  SQL statements     terminated with a ";"
+  open db            sqlite3 test_sqlite.db
+  columns:           are lower case and snake case . this_is_example
+  datatypes:         TEXT INTEGER REAL(is float/decimal) BLOB
 
+ Commands 
+    help            .help            
+    quit            .quit
 
- COMMANDS:
+ Language
                           
   create
-    create db       create a database table called "Test Table" create table test_table(id);    
-    create from file   
-                    sqlite3 pets_database.db < 01_create_cats_table.sql
-    create table    CREATE TABLE table_name;  
-                      ex:           CREATE TABLE cats (
-                                    id INTEGER PRIMARY KEY,
-                                            name TEXT, 
-                                            age INTEGER
-                                        );
+    create db               create a database table called "Test Table" create table test_table(id);    
+    create from file        sqlite3 pets_database.db < 01_create_cats_table.sql
+    create table            CREATE TABLE table_name;  
+                              ex:           CREATE TABLE cats (id INTEGER PRIMARY KEY, name TEXT, age INTEGER);
   change
     change data (table)     INSERT INTO cats (name, age, breed) VALUES ('Maru', 3, 'Scottish Fold');
                               don't need specify the id column values when we insert data. 
                               Primary Key columns are auto-incrementing. 
     change data from file   sqlite3 pets_database.db < 01_insert_cats_into_cats_table.sql                          
     change table(schema)    ALTER TABLE cats ADD COLUMN breed TEXT;  
+  null                      add data with missing values using the NULL keyword.
+                              INSERT INTO cats (name, age, breed) VALUES (NULL, NULL, "Tabby");
+                              SELECT * FROM cats WHERE name IS NULL;
   output
     alias                   alias or AS #ex: differentt col name ->   SELECT AVG(net_worth) AS average_net_worth FROM cats;
     between                 SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value1 AND value2;
@@ -763,6 +760,7 @@ SQL *****************************************************************
                               SELECT * FROM cats ORDER BY age;
   schema            
   select                    see also output to manilpulate what you get
+    select aggregate        see subsection of select below
     select data             SELECT [names of columns we are going to select] FROM [table we are selecting from];
                               SELECT id, name, age, breed FROM cats;
                               SELECT * FROM cats;
@@ -772,52 +770,30 @@ SQL *****************************************************************
                               SELECT * FROM cats WHERE age < 2;
                               SELECT COUNT(*) FROM cats WHERE net_worth > 1000000;
     select data unique      SELECT DISTINCT name FROM cats;
+    select different tables
+                            select from 2 tables in db
+                              SELECT cats.name, dogs.name FROM cats, dogs; must use tablename infront of column name
+
+    aggregate functions     functions perform a calculation on specified values, queried from a database table.                        
+      select count          the number of records that meet certain condition      
+                             "SELECT COUNT([column name]) FROM [table name] WHERE [column name] = [value]"
+                              SELECT COUNT(owner_id) FROM cats WHERE owner_id = 1;
+      select avverage       SELECT AVG(column_name) FROM table_name;
+                              SELECT AVG(net_worth) FROM cats;
+      select sum            SELECT SUM(column_name) FROM table_name;
+                              SELECT SUM(net_worth) FROM cats;
+      select minmax         SELECT MIN(column_name) FROM table_name;
+                              SELECT MAX(column_name) FROM table_name;
+                  
   show
-    show scema      .schema 
-    show tables     see tables
+    show scema              .schema 
+    show tables             see tables
   tables
-    create          see create table
-    show tables    .tables
-
-  
-
-  aggregate functions   functions perform a calculation on specified values, queried from a database table.                        
-    select count        the number of records that meet certain condition      
-                         "SELECT COUNT([column name]) FROM [table name] WHERE [column name] = [value]"
-                          SELECT COUNT(owner_id) FROM cats WHERE owner_id = 1;
-    select avverage     SELECT AVG(column_name) FROM table_name;
-                        SELECT AVG(net_worth) FROM cats;
-    select sum          SELECT SUM(column_name) FROM table_name;
-                        SELECT SUM(net_worth) FROM cats;
-    select minmax       SELECT MIN(column_name) FROM table_name;
-                        SELECT MAX(column_name) FROM table_name;
-                      
-  select from 2 tables in db
-                        SELECT cats.name, dogs.name FROM cats, dogs; must use tablename infront of column name
-
-
-  see also "format output" section                        
-update data           UPDATE [table name] SET [column name] = [new value] WHERE [column name] = [value];
-                        UPDATE cats SET name = "Hana" WHERE name = "Hannah";
-  null                add data with missing values using the NULL keyword.
-                        INSERT INTO cats (name, age, breed) VALUES (NULL, NULL, "Tabby");
-                        SELECT * FROM cats WHERE name IS NULL;
-
-
-                          
-
-
-
-                      
-
-                        
-
-
-delete table  DROP TABLE cats;
-
-help  .help            
-quit  .quit
-
+    create                  see create table
+    delete table            DROP TABLE cats;
+    show tables             .tables
+  update data               UPDATE [table name] SET [column name] = [new value] WHERE [column name] = [value];
+                              UPDATE cats SET name = "Hana" WHERE name = "Hannah";
 
 
 
