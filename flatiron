@@ -720,9 +720,13 @@ SQL *****************************************************************
   open db            sqlite3 test_sqlite.db
   columns:           are lower case and snake case . this_is_example
   datatypes:         TEXT INTEGER REAL(is float/decimal) BLOB
-
+  files              .sql for sql # .db for database
+  
+  
  Commands 
-    help            .help            
+    help            .help 
+    tables see      .tables
+    scehma see      .schema
     quit            .quit
 
  Language
@@ -778,7 +782,8 @@ SQL *****************************************************************
       select count          the number of records that meet certain condition      
                              "SELECT COUNT([column name]) FROM [table name] WHERE [column name] = [value]"
                               SELECT COUNT(owner_id) FROM cats WHERE owner_id = 1;
-      select avverage       SELECT AVG(column_name) FROM table_name;
+                              SELECT COUNT(*) FROM cats WHERE net_worth > 1000000; #get count of cats with > $1,000,000
+      select average       SELECT AVG(column_name) FROM table_name;
                               SELECT AVG(net_worth) FROM cats;
       select sum            SELECT SUM(column_name) FROM table_name;
                               SELECT SUM(net_worth) FROM cats;
