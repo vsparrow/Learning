@@ -742,6 +742,7 @@ SQL *****************************************************************
                               Primary Key columns are auto-incrementing. 
     change data from file   sqlite3 pets_database.db < 01_insert_cats_into_cats_table.sql                          
     change table(schema)    see Table:alter
+  Joins                     see: SQL:relationships:joins below  
   null                      add data with missing values using the NULL keyword.
                               INSERT INTO cats (name, age, breed) VALUES (NULL, NULL, "Tabby");
                               SELECT * FROM cats WHERE name IS NULL;
@@ -801,7 +802,32 @@ SQL *****************************************************************
   update data               UPDATE [table name] SET [column name] = [new value] WHERE [column name] = [value];
                               UPDATE cats SET name = "Hana" WHERE name = "Hannah";
 
-
+ Relationships - Table relations
+  child                     The thing that "belongs to" we'll call the child.  #see also parent
+  foriegn key               child gets foreign key column, the value of which is the primary key of that data's/row's parent.
+  JOIN                      way to combine rows from two or more tables, based on a common column between them.
+    FULL JOIN	              Returns all rows when there is a match in ONE of the tables 
+                               SQLite doesn't currently support RIGHT OUTER JOINs or FULL OUTER JOINs #postgress does
+                                combine the result of both a LEFT and RIGHT OUTER JOIN. In other words, they will return 
+                                  all the data from both the first and second tables.
+                              SELECT column_name(s) FROM first_table
+                                FULL OUTER JOIN second_table ON first_table.column_name = second_table.column_name;      
+    INNER JOIN	            Returns all rows when there is at least one match in BOTH tables
+                              SELECT column_name(s) FROM first_table 
+                                INNER JOIN second_table ON first_table.column_name = second_table.column_name;
+    LEFT JOIN	              Returns all rows from the left table, and the matched rows from the right table
+                              meaning returns all rows from the left, or first, table, regardless of whether or not they met 
+                                the JOIN condition. The query will also return the matched data from the right, or second,
+                                table.
+                              SELECT column_name(s) FROM first_table LEFT JOIN second_table
+                                ON first_table.column_name=second_table.column_name;
+    RIGHT JOIN	            Returns all rows from the right table, and the matched rows from the left table
+                               SQLite doesn't currently support RIGHT OUTER JOINs or FULL OUTER JOINs #postgress does
+                                return all data from the right, or second, table and the matched data from the left/first table.
+                                SELECT column_name(s) FROM first_table
+                                  RIGHT JOIN second_table ON first_table.column_name = second_table.column_name;
+                               
+  parent                    The thing that "has many" is considered to be the parent.  #see also child
 
 YAML ********************************************************************************************
 YAML        is used because it is easier for humans to read and write than typing out entire arrays, hashes, etc.
