@@ -757,12 +757,21 @@ SQL *****************************************************************
                               .width auto       # adjusts and normalizes column width
                               .width NUM1, NUM2 # customize column width
     group_by                aggregate function GROUP BY . #   SELECT breed, COUNT(breed) FROM cats GROUP BY breed;
-      multiple column       SELECT breed, owner_id, COUNT(breed) FROM cats GROUP BY breed, owner_id;                        
+                              formula:  SELECT column_name, aggregate_function(column_name)
+                                          FROM table_name WHERE column_name operator value GROUP BY column_name;
+                              The GROUP BY() keyword is very similar to ORDER BY(). The only difference is that 
+                                ORDER BY() sorts the resulting data set of basic queries while 
+                                GROUP BY() sorts the result sets of aggregate functions.
+                                group by examples:: https://learn.co/tracks/full-stack-community-bootcamp/sql-structured-query-language/table-relations/grouping-and-sorting-data
+     multiple column        SELECT breed, owner_id, COUNT(breed) FROM cats GROUP BY breed, owner_id;
+      
     limit                   LIMIT is used to determine the number of records you want to return from a dataset
                               SELECT * FROM cats ORDER BY age DESC LIMIT 1; returns just the first, i.e. oldest, cat on list.
     order_by                his modifier allows us to order the table rows returned by a certain SELECT statement.
                               SELECT column_name FROM table_name ORDER BY column_name ASC|DESC;
+      multiple column         SELECT col_name, col_name FROM table_name ORDER BY col_name ASC|DESC, col_name ASC|DESC;
                               SELECT * FROM cats ORDER BY age;
+                              see also GROUP_BY above
   schema                    structure of our database (i.e. the tables and their columns + column data types)
   select                    see also output to manilpulate what you get
     select aggregate        see subsection of select below
@@ -790,7 +799,8 @@ SQL *****************************************************************
                               SELECT SUM(net_worth) FROM cats;
       select minmax         SELECT MIN(column_name) FROM table_name;
                               SELECT MAX(column_name) FROM table_name;
-                  
+      having                having is the aggegate equivalent of WHERE. WHERE will not work with aggregates.
+                              SELECT employee, SUM(bonus) FROM employee_bonus GROUP BY employee HAVING SUM(bonus) > 1000;
   show
     show scema              .schema 
     show tables             see tables
