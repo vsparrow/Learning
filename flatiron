@@ -806,6 +806,14 @@ SQL *****************************************************************
   child                     The thing that "belongs to" we'll call the child.  #see also parent
   foriegn key               child gets foreign key column, the value of which is the primary key of that data's/row's parent.
   JOIN                      way to combine rows from two or more tables, based on a common column between them.
+                              DIAGRAMs of Joins: https://learn.co/tracks/full-stack-community-bootcamp/sql-structured-query-language/table-relations/sql-complex-joins
+                                advanced example:
+                                  SELECT column(s)
+                                  FROM table_one
+                                  INNER JOIN table_two
+                                  ON table_one.column_name = table_two.column_name
+                                  WHERE table_two.column_name = condition;
+    Complex Join            refers to outer joins (right outer join and left outer join and full outer join)                            
     FULL JOIN	              Returns all rows when there is a match in ONE of the tables 
                                SQLite doesn't currently support RIGHT OUTER JOINs or FULL OUTER JOINs #postgress does
                                 combine the result of both a LEFT and RIGHT OUTER JOIN. In other words, they will return 
