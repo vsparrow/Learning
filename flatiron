@@ -492,6 +492,24 @@ ORM  *****************************************************************
                                   Cat.save(cat.name, cat.breed, cat.age, database_connection)
                                 end
 
+                                def self.find(id,db)
+                                  name = db.execute("SELECT name FROM pokemon WHERE id=#{id}")
+                                  type = db.execute("SELECT type FROM pokemon WHERE id=#{id}")
+                                  pokemon=self.new(id,name[0][0],type[0][0])  
+                                  #not sure why need 2d array but returns coming in as [["Pikachu"]]
+                                end #find
+                                
+                                find column if exists and save (PRAGA returns all columns)
+                                def self.save(name,type,db)
+                                  pokemon_save= db.execute("INSERT INTO pokemon (name,type) VALUES (?,?)",name, type)
+                                  hp_found=nil
+                                  pragma=db.execute('PRAGMA table_info(pokemon)');
+                                  pragma.each  {|hp| hp_found = true if hp[1]=="hp"}
+                                  db.execute("UPDATE pokemon SET  hp = 60 WHERE name = '#{name}';") if hp_found == true;
+                                  pokemon_save
+                                end #save
+
+                                
 RUBY *****************************************************************
 ARGUMENTS
               calling methods with parentheses, e.g., greeting('Sophie'). 
