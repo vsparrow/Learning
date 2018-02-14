@@ -451,7 +451,46 @@ MARKDOWN *************************************************************
   striketrhough         ~~This was mistaken text~~	
 
 
+ORM  *****************************************************************
 
+  Object Relational Mapping   the technique of accessing a relational database using an object-oriented programming language. 
+                                a way for our Ruby programs to manage database data by "mapping" database tables to classes and 
+                                instances of classes to rows in those tables.
+                              An ORM is really just a concept. When "mapping" our program to a database, we equate classes 
+                                with database tables and instances of those classes with table rows.
+  Example                     connect DB: database_connection = SQLite3::Database.new('db/pets.db')
+                              create an owners table : database_connection.execute("CREATE TABLE IF NOT EXISTS cats(
+                                id INTEGER PRIMARY KEY, name TEXT, breed TEXT, age INTEGER)")
+                              create a cats table: database_connection.execute("CREATE TABLE IF NOT EXISTS owners(
+                                id INTEGER PRIMARY KEY, name TEXT)")
+                              insert new cats in tables : database_connection.execute("INSERT INTO cats (name, breed, age) 
+                                VALUES ('Maru', 'scottish fold', 3)")
+                              insert new owners into tables: database_connection.execute("INSERT INTO cats (name, breed, age) 
+                                VALUES ('Hana', 'tortoiseshell', 1)")
+                              Notice that in the lines of code above, there is a lot of repetition.
+                              INSTEAD CAN USE BELOW!
+                                class Cat
+                                  @@all = []
+                                  def initialize(name, breed, age)
+                                    @name = name
+                                    @breed = breed
+                                    @age = age
+                                    @@all << self
+                                  end
+                                  def self.all
+                                    @@all
+                                  end
+                                  def self.save(name, breed, age, database_connection)
+                                    database_connection.execute("INSERT INTO cats (name, breed, age) VALUES (?, ?, ?)",name, breed, age)
+                                  end
+                                end
+
+                                database_connection = SQLite3::Database.new('db/pets.db') 
+                                Cat.new("Maru", "scottish fold", 3)
+                                Cat.new("Hana", "tortoiseshell", 1)
+                                Cat.all.each do |cat|
+                                  Cat.save(cat.name, cat.breed, cat.age, database_connection)
+                                end
 
 RUBY *****************************************************************
 ARGUMENTS
