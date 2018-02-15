@@ -458,6 +458,51 @@ ORM  *****************************************************************
                                 instances of classes to rows in those tables.
                               An ORM is really just a concept. When "mapping" our program to a database, we equate classes 
                                 with database tables and instances of those classes with table rows.
+    class to table            convention : pluralize name of class to create name of table. 
+                                Therefore, the Song class equals the "songs" table.
+    database
+      database create         who responsible? class responsible for table, so program asa whole responsible for db
+                                in config/environment.db
+                                  require 'sqlite3'
+                                  require_relative '../lib/song.rb'
+                                  DB = {:conn => SQLite3::Database.new("db/music.db")}
+                                 In lib/song.rb file, we access the DB constant and db connection it holds like this: DB[:conn]
+      class create table
+                                class Song
+                                  attr_accessor :name, :album, :id
+                                  def initialize(name, album, id=nil)
+                                    @id = id,@name = name,@album = album    end
+                                  def self.create_table
+                                    sql =  <<-SQL       #this is called a heredoc, read more about it in RUBY:strings 
+                                      CREATE TABLE IF NOT EXISTS songs (
+                                        id INTEGER PRIMARY KEY, 
+                                        name TEXT, 
+                                        album TEXT
+                                        )
+                                        SQL
+                                    DB[:conn].execute(sql) 
+                                  end
+                                end
+       class new vs save       #new method creates a new instance of the song class, a new Ruby object. 
+                                The #save method takes the attributes that characterize a given song and saves them in 
+                                  a new row of the songs table in our database.                         
+       class save to table     we are not saving Ruby objects in our database. We are going to take the 
+                                   individual attributes of a given instance, and save those to table
+                                      def save
+                                        sql = <<-SQL
+                                          INSERT INTO songs (name, album) 
+                                          VALUES (?, ?)
+                                        SQL
+                                        DB[:conn].execute(sql, self.name, self.album)
+                                        @id = DB[:conn].execute("SELECT last_insert_rowid() FROM songs")[0][0]
+                                          #above sets @id after saving to db, can be left out if @id not need to be filled 
+                                      end    
+        class create method         how we call below:: Song.create(name: "Hello", album: "25")
+                                  def self.create(name:, album:)
+                                    song = Song.new(name, album)
+                                    song.save
+                                    song
+                                  end
   Example                     connect DB: database_connection = SQLite3::Database.new('db/pets.db')
                               create an owners table : database_connection.execute("CREATE TABLE IF NOT EXISTS cats(
                                 id INTEGER PRIMARY KEY, name TEXT, breed TEXT, age INTEGER)")
@@ -670,6 +715,9 @@ TYPES
   Strings
    array      a = *"Hello"  #=> ["Hello"]  # see RUBY ARGUMENTS SPLAT for more   
   .class      get class of any item.    "hello".class
+   heredoc    create a string that runs on to multiple lines. To create a heredoc, we use:
+                <<- + name of language contained in our multiline statement + the string, on multiple lines + name of language.
+                You don't have to use a heredoc, it's just a helpful tool for crafting long strings  
   .join
   .reverse    "hello".reverse    => "olleh"
   .size       "hello".size    => 5
