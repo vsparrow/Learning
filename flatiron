@@ -466,6 +466,8 @@ ORM  *****************************************************************
                                   require 'sqlite3'
                                   require_relative '../lib/song.rb'
                                   DB = {:conn => SQLite3::Database.new("db/music.db")}
+                                  
+                                  see also https://learn.co/lessons/orm-mapping-db-to-ruby-object for some methods
                                  In lib/song.rb file, we access the DB constant and db connection it holds like this: DB[:conn]
       class create table
                                 class Song
@@ -489,20 +491,28 @@ ORM  *****************************************************************
        class save to table     we are not saving Ruby objects in our database. We are going to take the 
                                    individual attributes of a given instance, and save those to table
                                       def save
-                                        sql = <<-SQL
-                                          INSERT INTO songs (name, album) 
-                                          VALUES (?, ?)
-                                        SQL
-                                        DB[:conn].execute(sql, self.name, self.album)
-                                        @id = DB[:conn].execute("SELECT last_insert_rowid() FROM songs")[0][0]
-                                          #above sets @id after saving to db, can be left out if @id not need to be filled 
-                                      end    
+                                        if self.id    #if item already exists (because we have an id#
+                                          self.update #update instead
+                                        else          #else actually save to db
+                                         sql = <<-SQL
+                                            INSERT INTO songs (name, album) 
+                                            VALUES (?, ?)
+                                          SQL
+                                          DB[:conn].execute(sql, self.name, self.album)
+                                          @id = DB[:conn].execute("SELECT last_insert_rowid() FROM songs")[0][0]
+                                            #above sets @id after saving to db, can be left out if @id not need to be filled 
+                                        end #if
+                                      end  #save  
         class create method         how we call below:: Song.create(name: "Hello", album: "25")
                                   def self.create(name:, album:)
                                     song = Song.new(name, album)
                                     song.save
                                     song
                                   end
+        database return map       sql = "SELECT * FROM songs"
+                                    DB[:conn].execute(sql).map do |row| self.new_from_db(row)    end
+                                    what happens here is that get all items from db, which comes in as [[1]]
+                                    map it to flatten it to a single array. then you can do @name=row[0], etc.
   Example                     connect DB: database_connection = SQLite3::Database.new('db/pets.db')
                               create an owners table : database_connection.execute("CREATE TABLE IF NOT EXISTS cats(
                                 id INTEGER PRIMARY KEY, name TEXT, breed TEXT, age INTEGER)")
