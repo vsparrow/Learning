@@ -559,7 +559,16 @@ RUBY *****************************************************************
 ARGUMENTS
               calling methods with parentheses, e.g., greeting('Sophie'). 
                 But you can also omit the parentheses: greeting 'Sophie'.
+                see also "Hash arguments"
   default/optional    (name = "Ruby programmer"), we simply assign the argument name a default value of "Ruby programmer" 
+  hash arguments      aka keyword arguments
+                      WHY USE? 
+                      If a required keyword argument is missing, Ruby will raise a useful ArgumentError 
+                        that tells us which required argument we must include. Dont need read code body
+                              #Student.create("Sally","10th")
+                              def self.create(name:, grade:)
+                                puts "************#{name} #{grade}"   #get .************Sally 10th
+                              end #create
   required+optional   def greeting(name, language="Ruby") # required MUST come before optional
   SPLAT       
     splat   *, can be used to convert an array into a list of arguments
