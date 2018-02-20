@@ -458,6 +458,8 @@ ORM  *****************************************************************
                                 instances of classes to rows in those tables.
                               An ORM is really just a concept. When "mapping" our program to a database, we equate classes 
                                 with database tables and instances of those classes with table rows.
+    Goal                      the goal of our dynamic ORM is to define a series of methods that can be shared by any class.
+                                So, we need to avoid explicitly referencing table and column names.
     class to table            convention : pluralize name of class to create name of table. 
                                 Therefore, the Song class equals the "songs" table.
     database
@@ -466,9 +468,15 @@ ORM  *****************************************************************
                                   require 'sqlite3'
                                   require_relative '../lib/song.rb'
                                   DB = {:conn => SQLite3::Database.new("db/music.db")}
+
                                   
                                   see also https://learn.co/lessons/orm-mapping-db-to-ruby-object for some methods
                                  In lib/song.rb file, we access the DB constant and db connection it holds like this: DB[:conn]
+      database use hash       DB[:conn].results_as_hash = true
+                                  when SELECT statement don't return row as an array, return it as a hash 
+                                    with the column names as keys.      
+                                  DB[:conn].execute("SELECT * FROM songs LIMIT 1") .  Before:[[1, "Hello", "25"]]
+                                    after: {"id"=>1, "name"=>"Hello", "album"=>"25", 0 => 1, 1 => "Hello", 2 => "25"}
       class create table
                                 class Song
                                   attr_accessor :name, :album, :id
@@ -513,6 +521,32 @@ ORM  *****************************************************************
                                     DB[:conn].execute(sql).map do |row| self.new_from_db(row)    end
                                     what happens here is that get all items from db, which comes in as [[1]]
                                     map it to flatten it to a single array. then you can do @name=row[0], etc.
+                                    
+        dynamic methods           table_name : create table name from class name
+                                    def self.table_name  /n  self.to_s.downcase.pluralize    /n end
+                                      #pluralize method is by active_support/inflector library,required at top of lib/song.rb.
+                                  column_names:create colum names dynamically
+                                    def self.column_names
+                                      DB[:conn].results_as_hash = true #set hash results from select rather than array
+                                      sql = "PRAGMA table_info('#{table_name}')" #get column names from table
+                                      table_info = DB[:conn].execute(sql)         
+                                      column_names = []                           #blank list of names
+                                      table_info.each do |column|
+                                        column_names << column["name"]
+                                      end
+                                      column_names.compact                        #compact gets rid of all nil if we find any
+                                    end
+                                    #column_names: we can use this collection to create the attr_accessors of our Song class.
+                                      self.column_names.each do |col_name|
+                                        attr_accessor col_name.to_sym
+                                      end
+                                    #initialize that is dynamic
+                                      def initialize(options={})
+                                        options.each do |property, value|
+                                          self.send("#{property}=", value)
+                                        end
+                                      end
+                                    
   Example                     connect DB: database_connection = SQLite3::Database.new('db/pets.db')
                               create an owners table : database_connection.execute("CREATE TABLE IF NOT EXISTS cats(
                                 id INTEGER PRIMARY KEY, name TEXT, breed TEXT, age INTEGER)")
