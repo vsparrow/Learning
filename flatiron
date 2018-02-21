@@ -546,6 +546,41 @@ ORM  *****************************************************************
                                           self.send("#{property}=", value)
                                         end
                                       end
+          class name to tablename   # class.table_name is a method that 
+                                        Guesses the table name (in forced lower-case) based on the name of the class i
+                                      def table_name_for_insert /n self.class.table_name /n end
+          attr_accessor to column names
+                                    # method for grabbing the column names of the table associated with a given class:
+                                     def col_names_for_insert
+                                        self.class.column_names.delete_if {|col| col == "id"}.join(", ")
+                                     end .                                  #returns   "name, album"
+                                        without the join , this will return:  ["name", "album"]
+                                          and we dont want to create the id columns, the db will
+                                            if no delete_if . then we would get ["id", "name", "album"]
+                                     #lexible ways to grab each of the constituent parts of the SQL statement to save a record 
+                                      see Abstracting the Values to Insert in https://learn.co/lessons/dynamic-orms-readme
+                                     def values_for_insert
+                                        values = []
+                                        self.class.column_names.each do |col_name|
+                                          #use #send method with each colname to invoke the method by that same name and 
+                                            #capture the return value:
+                                          values << "'#{send(col_name)}'" unless send(col_name).nil?
+                                        end
+                                        values.join(", ") . #join array into string
+                                      end
+          save
+                                      def save
+                                        sql = "INSERT INTO #{table_name_for_insert} (#{col_names_for_insert}) VALUES (#{values_for_insert})"
+                                        DB[:conn].execute(sql)
+                                        @id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{table_name_for_insert}")[0][0]
+                                      end
+          FIND_BY_NAME              
+                                      def self.find_by_name(name)
+                                        sql = "SELECT * FROM #{self.table_name} WHERE name = #{name}"
+                                        DB[:conn].execute(sql)
+                                      end
+
+          inflector                   pluralize an item. see sldo ORM:dynamic methods above 
                                     
   Example                     connect DB: database_connection = SQLite3::Database.new('db/pets.db')
                               create an owners table : database_connection.execute("CREATE TABLE IF NOT EXISTS cats(
