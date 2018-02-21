@@ -749,6 +749,7 @@ TYPES
   .delete     Deletes items from self that are equal to obj. If any items are found, returns obj.
   .delete_at  Deletes the element at the specified index, returning that element,  
   .delete_if  delete from the collection any items that return true for a certain condition:
+  .detect     similar to .find except Detect returns the first item in the list for which the block returns TRUE 
   .each       iterate over array CHANGES ARRAY!  see .map for non change
   .each_with_index    interate with an index included
   find        see .index()    
