@@ -672,7 +672,13 @@ ARGUMENTS
             a = *(1..3)   #=> [1, 2, 3]
             a = *[1,2,3]  #=> [1, 2, 3]  
 
-
+CLASS
+  class variable  @@all     accessible to all in class              
+  constant        ALL= [] normally unchanging or rarely
+  Constructor     instantiate and save. (so the method def self.create /n song=self.new /n song.save end is a constructor
+                    good for things like Artist.new_from_url who call constructor to create and save .
+  instantiate     make new instance of
+  
 DEBUGGING
   pry          gem install pry
                require "pry" on top of code 
