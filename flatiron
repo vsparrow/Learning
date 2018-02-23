@@ -679,6 +679,14 @@ CLASS
                     good for things like Artist.new_from_url who call constructor to create and save .
   instantiate     make new instance of
   
+  Class MODULES     it is not inheritence , ie: using < because we jsut give access to methods, doesnt ean type of something
+                    Bmw < Car, bmw is a type of car # . Bmw::SpeedStuff means Bmw gives methods access without saying
+                      bme is type of speedtuff
+                        class Dancer
+                          extend FancyDance::ClassMethods             extend classs methods
+                          include FancyDance::InstanceMethods         include instance methods
+                        end
+  
 DEBUGGING
   pry          gem install pry
                require "pry" on top of code 
