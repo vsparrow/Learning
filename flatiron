@@ -463,6 +463,10 @@ ORM  *****************************************************************
     class to table            convention : pluralize name of class to create name of table. 
                                 Therefore, the Song class equals the "songs" table.
     database
+      AR mechanics            ActiveRecordMechanics   see https://learn.co/lessons/active-record-mechanics-crud
+                                use this to add SQL access methods that AR has into your class, example class Car
+      database connect AR     connection = ActiveRecord::Base.establish_connection( #this is using ActiveRecord
+                                :adapter => "sqlite3",:database => "db/students.sqlite") #see also db create
       database create         who responsible? class responsible for table, so program asa whole responsible for db
                                 in config/environment.db
                                   require 'sqlite3'
@@ -493,6 +497,7 @@ ORM  *****************************************************************
                                     DB[:conn].execute(sql) 
                                   end
                                 end
+                                
        class new vs save       #new method creates a new instance of the song class, a new Ruby object. 
                                 The #save method takes the attributes that characterize a given song and saves them in 
                                   a new row of the songs table in our database.                         
@@ -517,6 +522,9 @@ ORM  *****************************************************************
                                     song.save
                                     song
                                   end
+        create table AR           sql = <<-SQL CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY,name TEXT)SQL
+                                    ActiveRecord::Base.connection.execute(sql)     
+                                    then add AR to class-> .   class Student < ActiveRecord::Base end
         database return map       sql = "SELECT * FROM songs"
                                     DB[:conn].execute(sql).map do |row| self.new_from_db(row)    end
                                     what happens here is that get all items from db, which comes in as [[1]]
@@ -691,7 +699,18 @@ CLASS
                         module Memorable  module ClassMethods  def count  /n self.all.count /n end#count  end#ClassMethods  end#Memorable 
                         class Artist   extend Memorable::ClassMethods  end #artist.  now you can call self.count even though its called count
                             because it is a class method 
-    instance methods  we "include" instance methods.  same as above without hte self needed to call count.                
+    initialize        place it in instance method below.
+                        what if there is extra things a particular class needs it's initialie to do? see Super
+    instance methods  we "include" instance methods.  same as above without hte self needed to call count. 
+    <ClassName>.all     for DRY instance methods use <ClassName>.all to replace specifc items like @@all from init
+                        example: def init <ClassName>.all =[] end 
+                          we can call self.class.all inside .initialize and it will be just as if we called Song.all or Artist.all
+    Super             A method that includes the super keyword will execute any code placed inside the super class' method 
+                        of the same name, and then execute any code inside the child class' method.
+                          def initialize /n super /n @songs = [] /n end .  in Artists class
+                          def initialize /n self.class.all << self /n end . in module
+                        
+                        
 CONFIGURATION   config/environment.rb in run files require only this , instead of each and every file from the lib directory. 
                   As we start to build larger and more complex programs, handle all of our requirements in one place.
 
