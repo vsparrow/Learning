@@ -651,7 +651,72 @@ ORM  *****************************************************************
                                   end
                                   song
                                 end           
-                                
+RAKE *****************************************************************
+rake                    like bash for ruby. does presetup or maintenntece work like setup db, reset files etc
+rake console
+                          desc 'drop into the Pry console'
+                          task :console => :environment do
+                            Pry.start 
+                          end
+rake db:migrate         if Student class has a #create_table method, we use that method to build out our own migrate
+                          namespace task under the db heading.  it will contain a few common database-related tasks.
+                          call task migrate, convention to say we  "migrating" db by applying SQL statements 
+                            that alter that database.
+                              namespace :db do
+                                desc 'migrate changes to your database'
+                                task :migrate => :environment do        #creates a task dependency. see task :environment below
+                                  Student.create_table
+                                end
+                              end
+                          Student.create_table code  require access to the config/environment.rb file 
+                          (which is where the student class and database are loaded), we need to give our task access 
+                          to this file. In order to do that, we need to define yet another 
+                          Rake task that we can tell to run before the migrate task is run. 
+                              task :environment do                      #add this for successfull db migratiion  
+                                require_relative './config/environment'
+                              end
+rake db:seed            run rake db:migrate first!!!!
+                        responsible for "seeding" our database with some dummy data.  have a file in the db directory,
+                          db/seeds.rb, that contains some code to create instances of your class.  
+                            require_relative "../lib/student.rb"
+                            Student.create(name: "Melissa", grade: "10th")
+                            Student.create(name: "April", grade: "10th")
+                            Student.create(name: "Luke", grade: "9th")
+                            Student.create(name: "Devon", grade: "11th")
+                            Student.create(name: "Sarah", grade: "10th")
+                          place in db namespace. see db:migrate for more on db:namespace
+                            desc 'seed the database with some dummy data'
+                            task :seed do 
+                              require_relative './db/seeds.rb'
+                            end                          
+rake file setup
+                        desc 'outputs hello to the terminal'  # what is output when you do rake -t
+                        task :hello do                        # call rake hello  to get the output
+                          puts "hello from Rake!"
+                        end
+rake -T                lists commands available from rakefile
+rake namespace         namespace just a way to group or contain something, in this case our Rake tasks.
+                          namespace :greeting do 
+                            desc 'outputs hello to the terminal'
+                            task :hello do 
+                              puts "hello from Rake!"
+                            end
+                            desc 'outputs hola to the terminal'
+                            task :hola do 
+                              puts "hola de Rake!"
+                            end
+                          end #namespace
+                        how to call : rake greeting:hello . ## what you get back :: hello from Rake!
+                        how to call : rake greeting:hola. ## what you get back :: hola de Rake!
+
+Now, to use either of our Rake tasks, we use the following syntax:
+
+rake greeting:hello
+hello from Rake!
+
+rake greeting:hola
+hola de Rake!
+
 RUBY *****************************************************************
 ARGUMENTS
               calling methods with parentheses, e.g., greeting('Sophie'). 
