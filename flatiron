@@ -452,6 +452,55 @@ MARKDOWN *************************************************************
 
 
 ORM  *****************************************************************
+  ActiveRecord:       way of doing orm through ruby using only gem. see below
+                      ./db/migration/01_create_artists.rb
+                                class CreateArtists < ActiveRecord::Migration
+                                  def up      #code to execute when the migration is run          #like do
+                                  end
+                                  def down    #code to execute when the migration is rolled back. #like undo
+                                  end
+                                  # AR table methods:   remove_table, rename_table, remove_column, add_column see for more: http://guides.rubyonrails.org/migrations.html#writing-a-migration
+                                  def change  #more common for basic migrations. works for the majority of cases, where Active Record knows how to reverse the migration automatically
+                                    create_table :artists do |t|  #create artists table without ORM sql statements and DB.execute
+                                      t.string :name              #left is data type we'd cast the column as, and on the right is the name we'd like to give the column.
+                                      t.string :genre             #primary key automatically made by AR, no need to include
+                                      t.integer :age
+                                      t.string :hometown
+                                    end #create_table
+                                  end#change
+                                end #class
+                      ./Rakefile
+                                require_relative './config/environment'
+                                require 'sinatra/activerecord/rake'   #the list of gems we need
+                      ./config/environment.rb         This file is requiring the gems in our Gemfile and giving our program access to them.
+                                require 'bundler/setup'
+                                Bundler.require
+                                # method from AR to connect to our artists database, which will be created in the migration via SQLite3 (the adapter).
+                                ActiveRecord::Base.establish_connection( # put the code to connect to the database here
+                                  :adapter => "sqlite3",
+                                  :database => "db/artists.sqlite"
+                                )                             
+                      ./artist.rb 
+                                class Artist < ActiveRecord::Base end
+                      bundle exec rake db:migration     #create table
+                      bundle exec rake console #to get into console  
+                      in console:
+                                Artist                       Check that the class exists
+                                Artist.column_names         View the columns in its corresponding table in the database:
+                                a = Artist.new(name: 'Jon') #instantiate a new Artist named Jon,  
+                                a.age = 30                   #set his age to 30,
+                                a.save                        #and save him to the database: (hes in memory but not written to file)
+                                Artist.create(name: 'Kelly')  # create a new instance and save it all in one go, we can use .create.
+                                Artist.all                    #Return an array of all Artists from the database:
+                                Artist.find_by(name: 'Jon')   #Find an Artist by name:
+                                OTHER METHODS CRUD            http://guides.rubyonrails.org/active_record_basics.html#crud-reading-and-writing-data
+                      ./db/migrate/02_add_favorite_food_to_artist.rb #incremental named se we can roll forward when replaying db
+                                class AddFavoriteFoodToArtists < ActiveRecord::Migration
+                                  def change          #tell AR to add column to artists
+                                    add_column :artists, :favorite_food, :string
+                                  end
+                                end
+                       rake db:rollback       #rollback add fooood
 
   Object Relational Mapping   the technique of accessing a relational database using an object-oriented programming language. 
                                 a way for our Ruby programs to manage database data by "mapping" database tables to classes and 
