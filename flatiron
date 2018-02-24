@@ -453,6 +453,16 @@ MARKDOWN *************************************************************
 
 ORM  *****************************************************************
   ActiveRecord:       way of doing orm through ruby using only gem. see below
+  ActiveRecord       it does build out a bunch of methods for you.
+                      create a database that interacts with your class with only a few lines of code.
+                        creates a model, which resides in the app/models folder, model inherits from ActiveRecord::Base
+                        creates a migration, which resides in the db/migrate folder.  migration inherits from ActiveRecord::Migration
+                          for rails mau need to spec version: ex ActiveRecord::Migration[5.1]
+  migration           creates the table
+                      class names in the migration files must match their file names. 
+                        ex a class in the migration file called 20141013204115_create_candies.rb must be named CreateCandies
+  model               creates objects from table 
+  
                       ./db/migration/01_create_artists.rb
                                 class CreateArtists < ActiveRecord::Migration
                                   def up      #code to execute when the migration is run          #like do
