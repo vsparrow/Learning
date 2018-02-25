@@ -458,6 +458,30 @@ ORM  *****************************************************************
                         creates a model, which resides in the app/models folder, model inherits from ActiveRecord::Base
                         creates a migration, which resides in the db/migrate folder.  migration inherits from ActiveRecord::Migration
                           for rails mau need to spec version: ex ActiveRecord::Migration[5.1]
+  AR Association models
+                      app/models/artist.rb
+                        class Artist < ActiveRecord::Base
+                          has_many :songs
+                          has_many :genres, through: :songs
+                        end
+                      app/model/song.rb
+                        class Song < ActiveRecord::Base
+                          belongs_to :artist
+                          belongs_to :genre 
+                        end
+
+                        The macros we implemented in our classes allow us to associate a song object directly to an artist object:
+                          pry: hello.artist = adele
+                        If you tell the parent that a certain child object has been added to its collection, 
+                        both the parent and the child will know about the association. But not in reverse
+                          rolling_in_the_deep = Song.new(name: "Rolling in the Deep")
+                          adele.songs << rolling_in_the_deep
+                          rolling_in_the_deep.artist #get adele
+                          pop = Genre.create(name: "pop")
+                          pop.songs << rolling_in_the_deep
+                          pop.songs #rolling in deep 
+                          rolling_in_the_deep.genre  #pop
+                          pop.artist #adele (even though we didnt explicitly mention this                        
   migration           creates the table
                       class names in the migration files must match their file names. 
                         ex a class in the migration file called 20141013204115_create_candies.rb must be named CreateCandies
