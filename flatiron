@@ -1296,7 +1296,21 @@ ps aux  get all processes
 pwd   print working dir , get current dir
 ~     go home dir  , tilda
 
+SINATRA *****************************************************************
 
+  sinatra                get access to methods like: get and post
+  install                First, make sure Sinatra is installed by running gem install sinatra in your terminal.
+  
+  file setup and startup
+                          app/app.rb
+                            require 'sinatra'
+                            class App < Sinatra::Base
+                              get '/' do
+                                "Hello, World!"
+                              end
+                            end
+                          start this web application by running rackup app.rb.   
+                
 SQL *****************************************************************
  Basics
   SQL statements     terminated with a ";"
