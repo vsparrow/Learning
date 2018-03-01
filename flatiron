@@ -1310,6 +1310,21 @@ SINATRA *****************************************************************
                               end
                             end
                           start this web application by running rackup app.rb.   
+                          ******** 
+                          ./config.ru
+                          require 'sinatra'
+                          require_relative './app.rb'
+                          run Application
+                            The class name we defined in our application controller (app.rb) is just a normal Ruby class. 
+                            We could have named it MyToDoApp rather than Application  
+                            If this was our class name, we would need to change config.ru to run the appropriate class: run MyToDoApp
+
+  Modular Sinatra Pattern 
+                          Sinatra is more commonly used through the MSP (over the classical, single file app.rb pattern).
+  Shotgun                 small Ruby gem that makes it easier to develop and test Rack-based Ruby web applications locally
+                            by starting Rack with automatic code reloading.
+                            When start app with shotgun, all of your app code will be reloaded upon every browser connection
+    install               gem install shotgun
                 
 SQL *****************************************************************
  Basics
