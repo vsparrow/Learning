@@ -876,7 +876,24 @@ ORM  *****************************************************************
                                   sql = "SELECT * FROM #{self.table_name_for_insert} where name = #{name}"
                                   DB[:conn].execute(sql)
                                 end
+RACK *****************************************************************
+  Rack                  the foundation to rails       
+  start rack            rackup config.ru .  in bash
   
+  file examples
+                        # app/application.rb
+                          class Application
+                            def call(env)
+                              resp = Rack::Response.new                 #start of call
+                              resp.write "something to display to page" #like puts
+                              resp.finish                               #need at end of call
+                            end
+                          end
+                        #config/environement.rb
+                          require_relative '../app/application'
+                        #./config.ru
+                          require_relative "./config/environment.rb"
+                          run Application.new
 RAKE *****************************************************************
 rake                    like bash for ruby. does presetup or maintenntece work like setup db, reset files etc
 rake console
