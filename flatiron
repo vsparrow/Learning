@@ -885,6 +885,7 @@ RACK *****************************************************************
                           class Application
                             def call(env)
                               resp = Rack::Response.new                 #start of call
+                              req = Rack::Request.new(env)              #
                               resp.write "something to display to page" #like puts
                               resp.finish                               #need at end of call
                             end
@@ -894,6 +895,35 @@ RACK *****************************************************************
                         #./config.ru
                           require_relative "./config/environment.rb"
                           run Application.new
+  parameters
+    parse GET params      return them to us in a standard Hash ex: search_term = req.params["q"]                          
+    SEARCH:               The section after the ? is called the GET parameters. They come in key/value pairs
+                            https://github.com/search?q=apples   q=apples is search and the value is apples                      
+  path      
+    dynamic paths                                     
+                        if req.path.match(/songs/)                        #match the path 
+                          song_title = req.path.split("/songs/").last     #turn /songs/Sorry into Sorry
+                          song = @@songs.find{|s| s.title == song_title}  #having to do with objects not rack
+                          resp.write song.artist                          #writes what it got from song. without having to do if else 
+                        end
+   status codes
+                        Status codes tell something to the client via 3-digit integer 
+                        first digit is class of the response, and the remaining two digits represent a specific status. 
+                          Status Number 	Code/Description
+                          1 	1xx: Informational (request received and continuing process)
+                          2 	2xx: Success (request successfully received, understood, and accepted)
+                          3 	3xx: Redirection (further action must be taken to complete request)
+                          4 	4xx: Client Error (request contains bad syntax and can't be completed)
+                          5 	5xx: Server Error (server couldn't complete request)
+                          set the response's status code by just setting the status_code attribute. By default, Rack sets a status code of 200
+                            ex:
+                            if req.path=="/songs"
+                              resp.write "You requested the songs"
+                            else
+                              resp.write "Route not found"
+                              resp.status = 404
+                            end
+ 
 RAKE *****************************************************************
 rake                    like bash for ruby. does presetup or maintenntece work like setup db, reset files etc
 rake console
