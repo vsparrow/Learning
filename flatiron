@@ -1053,6 +1053,7 @@ CONFIGURATION   config/environment.rb in run files require only this , instead o
                   As we start to build larger and more complex programs, handle all of our requirements in one place.
 
 DEBUGGING
+  errors       see ERRORS below
   pry          gem install pry
                require "pry" on top of code 
                use the following line "binding.pry" anywhere in your code.
@@ -1060,6 +1061,28 @@ DEBUGGING
                   will turn into a REPL(interpreter like irb)
   .to_stdout   method works by temporarily replacing the $stdout variable.                   
 
+
+ERRORS
+  custom errors           To build a custom error, we define an error class that inherits from the Exception class. 
+                            usually inherit from StandardError. Lookup "error class inheritance" for more 
+                            ex: class SomeClassName < StandardError end
+                                if person.class != Person raise PartnerError 
+                            on error: custom_errors.rb:11:in `get_married': Person::PartnerError (Person::PartnerError)
+                            with above example: program WONT continue to run. see RESCUE to continue program
+  custom messages         use custom errors above, but place message in class for customer message
+                            class PartnerError < StandardError
+                              def message 
+                                "you must give the get_married method an argument of an instance of the person class!"
+                              end
+                            end  
+  rescue program          custom error causes program to stop. use above custom message and rescue to continue program
+                              begin
+                                raise PartnerError
+                              rescue PartnerError => error
+                                  puts error.message
+                              end
+
+  
 FILES  
   !           "shebang line" and it tells the shell which interpreter to use to execute the remainder of the file.
                 #!/usr/bin/env ruby  Any executable files we place in our bin directory need to begin with the line
