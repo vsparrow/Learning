@@ -200,6 +200,39 @@ CSS  ****************************************************************
                                 border-right-color: transparent; /* the right side */
                                 border-bottom-color: transparent; /* and the bottom of the circle */ }
 
+
+ERB  ****************************************************************
+Embedded Ruby         ERB and other templating engines allow us to modify the content and structure of our HTML code.
+  Substituion tag     <%= and closes with %>. Inside of these tags, you can write any valid Ruby code that you want.
+  Scripting tags      <% and close with %>. They evaluate –– but do not actually display –– Ruby code.
+
+  EXAMPLES
+                      <% if 1 == 2 %>
+                        <p>1 equals 2.</p>
+                      <% else %>
+                        <p>1 does not equal 2.</p>
+                      <% end %>
+
+                      <% if logged_in? %>
+                        <a href="/logout">Click here to Log Out</a>
+                      <% else %>
+                        <a href="/login">Click here to Log In</a>
+                      <% end %>
+                      
+                      Iteration EACH example
+                        <ul>
+                          <% squares = [1, 4, 9, 16] %>
+                          <% squares.each do |square| %>
+                            <li><%= square %></li>
+                          <% end %>
+                        </ul>
+                      EACH example
+                        <ul>
+                          <% wall_posts.each do |post| %>
+                            <li><%= post %></li>
+                          <% end %>
+                        </ul>
+
 GIT  ****************************************************************
 abort                               see git merge abort
 git cheet sheet                     https://www.git-tower.com/blog/content/posts/54-git-cheat-sheet/git-cheat-sheet-large01.png
