@@ -6,8 +6,7 @@ ACTIVERECORD ****************************************************************
                         student.name          #=> 'Jon' 
                         student.name = 'Steve'
                         student.name          #=> 'Steve'
-    .COLUMN_NAMES     Retrieve a list of all the columns in the table:  Student.column_names  #=> [:id, :name]
-    .CREATE           Create a new Student entry in the database:       Student.create(name: 'Jon') # INSERT INTO students (name) VALUES ('Jon')
+    change column       change_column(table_name, column_name, type)   (see update table below for file structure)                   
     CREATE A TABLE
                       sql = <<-SQL  CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY, name TEXT) SQL 
                       ActiveRecord::Base.connection.execute(sql)
@@ -15,17 +14,28 @@ ACTIVERECORD ****************************************************************
                       connection = ActiveRecord::Base.establish_connection(
                         :adapter => "sqlite3",
                         :database => "db/students.sqlite"  )
-    .FIND             Retrieve a Student from the database by id:       Student.find(1)
-    .FIND_BY          Find by any attribute, such as name:              Student.find_by(name: 'Jon') # SELECT * FROM students WHERE (name = 'Jon') LIMIT 1
     inherit           from ActiveRecord::Base         class Student < ActiveRecord::Base
-    .SAVE             And then save those changes to the database:
+    update object     And then save those changes to the database:
                         student = Student.find_by(name: 'Jon')
                         student.name = 'Steve'
                         student.save
                         Note that our Student class doesn't have any methods defined for #name either. 
                         Nor does it make use of Ruby's built-in attr_accessor method.
+    update table      we need a new migration
+                        make new file in migrate. incrrementnumber_ChangeType_ColumnName_to_Classname.rb# 
+                          ex: db/migrate/02_add_favorite_food_to_artists.rb
+                        in file: 
+                            class AddFavoriteFoodToArtists < ActiveRecord::Migration
+                              def change
+                                add_column :artists, :favorite_food, :string       #rake db:migrate after to run migration
                         
-  File structure
+  Console             see TESTING                      
+                        
+  File structure      every file should require config/environemnt.rb
+                      ./CLASSNAME.rb
+                        define class. inherit from AR. ex . class Artist < ActiveRecord::Base
+                      ./Rakefile
+                        require 'sinatra/activerecord/rake' to auto add commands like rake db:migrate, etc                   
                       config/environment.rb
                         create connection to be,create table. run connection.execute(sql db. 
                          also put your require files, and gems like rake here
@@ -38,8 +48,30 @@ ACTIVERECORD ****************************************************************
     change method     like up and down combined. more common for basic migrations. AR does automatic changes with change
     down method       define the code to execute when the migration is rolled back. Think of it like "undo."
 
+  TESTING
+    rake console      use this rather than irb. it knows the environemnt that is setup
+    
+  Useage                    CRUD methods for use with AR . see also http://guides.rubyonrails.org/active_record_basics.html#crud-reading-and-writing-data
+    Artist                  call the class # => Artist (call 'Artist.connection' to establish a connection)
+    A.all                   return array of class items from db  
+    A.create(name: 'Kelly') new instance and save
+    A.column = value        set a column to a value # a.age = 30
+    A.find                  retrieve  from the database by id:       Student.find(1)
+    A.find_by(name: 'Jon')  find by name
+    A.column_names          list columns
+    Artist.new(name: 'Jon') new instance
+    a.save                  update/save changes
 
-                      
+
+SORT THIS:::
+code go to creating a model, which resides in the app/models folder, and a migration, which resides in the db/migrate folder.
+The model inherits from ActiveRecord::Base while the migration inherits from ActiveRecord::Migration
+naming conventions: while the migrations are plural, the models are singular.
+class names in the migration files must match their file names. For instance, a class in the migration file called 
+  20141013204115_create_candies.rb must be named CreateCandies while 
+  a class in a migration file called 20130915204319_add_addresses_to_houses.rb must be called AddAddressesToHouses.
+Migrations usually have a method called change. In change, you can create a table with the create_table method. 
+QURSTION::  model is the class (class Dog < ActiveRecord::Base) while migration creates the table,changes,updates                    
 
 
 BASH ****************************************************************
