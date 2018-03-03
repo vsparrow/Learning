@@ -1,29 +1,41 @@
 ACTIVERECORD ****************************************************************
+  See also ORM:ActiveRecord for more
+  CLASS METHODS    
+    ATTR_ACCESSORS    get or set attributes of an instance once you've retrieved it:
+                        student = Student.find_by(name: 'Jon')
+                        student.name          #=> 'Jon' 
+                        student.name = 'Steve'
+                        student.name          #=> 'Steve'
+    .COLUMN_NAMES     Retrieve a list of all the columns in the table:  Student.column_names  #=> [:id, :name]
+    .CREATE           Create a new Student entry in the database:       Student.create(name: 'Jon') # INSERT INTO students (name) VALUES ('Jon')
+    CREATE A TABLE
+                      sql = <<-SQL  CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY, name TEXT) SQL 
+                      ActiveRecord::Base.connection.execute(sql)
+    CONNECT TO DB
+                      connection = ActiveRecord::Base.establish_connection(
+                        :adapter => "sqlite3",
+                        :database => "db/students.sqlite"  )
+    .FIND             Retrieve a Student from the database by id:       Student.find(1)
+    .FIND_BY          Find by any attribute, such as name:              Student.find_by(name: 'Jon') # SELECT * FROM students WHERE (name = 'Jon') LIMIT 1
+    inherit           from ActiveRecord::Base         class Student < ActiveRecord::Base
+    .SAVE             And then save those changes to the database:
+                        student = Student.find_by(name: 'Jon')
+                        student.name = 'Steve'
+                        student.save
+                        Note that our Student class doesn't have any methods defined for #name either. 
+                        Nor does it make use of Ruby's built-in attr_accessor method.
+                        
+  File structure
+                      db/migrate/01_create_CLASSNAME.rb  #first file of migrations. numbered so AR knows how to create/reverse
+                        def CreateClassName< < ActiveRecord::Migration /n def change /n  CREATE TABLE 
+                        
+  Migration Methods   used to start a migration. (do search def change to see implementation in ORM)
+    up method         define the code to execute when the migration is run          Think of it like "do"
+    change method     like up and down combined. more common for basic migrations. AR does automatic changes with change
+    down method       define the code to execute when the migration is rolled back. Think of it like "undo."
 
-  ATTR_ACCESSORS    get or set attributes of an instance once you've retrieved it:
-                      student = Student.find_by(name: 'Jon')
-                      student.name          #=> 'Jon' 
-                      student.name = 'Steve'
-                      student.name          #=> 'Steve'
-  .COLUMN_NAMES     Retrieve a list of all the columns in the table:  Student.column_names  #=> [:id, :name]
-  .CREATE           Create a new Student entry in the database:       Student.create(name: 'Jon') # INSERT INTO students (name) VALUES ('Jon')
-  CREATE A TABLE
-                    sql = <<-SQL  CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY, name TEXT) SQL 
-                    ActiveRecord::Base.connection.execute(sql)
-  CONNECT TO DB
-                    connection = ActiveRecord::Base.establish_connection(
-                      :adapter => "sqlite3",
-                      :database => "db/students.sqlite"  )
-  .FIND             Retrieve a Student from the database by id:       Student.find(1)
-  .FIND_BY          Find by any attribute, such as name:              Student.find_by(name: 'Jon') # SELECT * FROM students WHERE (name = 'Jon') LIMIT 1
-  inherit           from ActiveRecord::Base         class Student < ActiveRecord::Base
-  .SAVE             And then save those changes to the database:
-                      student = Student.find_by(name: 'Jon')
-                      student.name = 'Steve'
-                      student.save
-                      Note that our Student class doesn't have any methods defined for #name either. 
-                      Nor does it make use of Ruby's built-in attr_accessor method.
 
+                      
 
 
 BASH ****************************************************************
