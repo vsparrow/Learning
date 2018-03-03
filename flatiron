@@ -26,8 +26,12 @@ ACTIVERECORD ****************************************************************
                         Nor does it make use of Ruby's built-in attr_accessor method.
                         
   File structure
+                      config/environment.rb
+                        create connection to be,create table. run connection.execute(sql db. 
+                         also put your require files, and gems like rake here
                       db/migrate/01_create_CLASSNAME.rb  #first file of migrations. numbered so AR knows how to create/reverse
                         def CreateClassName< < ActiveRecord::Migration /n def change /n  CREATE TABLE 
+                        
                         
   Migration Methods   used to start a migration. (do search def change to see implementation in ORM)
     up method         define the code to execute when the migration is run          Think of it like "do"
