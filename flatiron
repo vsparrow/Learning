@@ -98,6 +98,68 @@ echo $PATH.   terminal should print the value of your $PATH variable.
 ps            get processes
 ps aux        a = show processes for all users u = display the process's user/owner x = also show processes not attached to a terminal
                 ps aux | grep ruby    find ruby in ps 
+CAPYBARA****************************************************************  
+  Capybara    gem for Integration Testing for MVC
+              allows us to write code that simulates how a user interacts with our app. 
+  Examples
+              In our spec/spec_helper.rb file, we add the following code:
+              ##########################
+              # Load RSpec and Capybara
+              require 'rspec'
+              require 'capybara/rspec'
+              require 'capybara/dsl'
+
+              # Configure RSpec
+              RSpec.configure do |config|
+                # Mixin the Capybara functionality into Rspec
+                config.include Capybara::DSL
+                config.order = 'default'
+              end
+
+              # Define the application we're testing
+              def app
+                # Load the application defined in config.ru
+                Rack::Builder.parse_file('config.ru').first
+              end
+
+              # Configure Capybara to test against the application above.
+              Capybara.app = app
+              #   we explicitly tell Capybara that the app we're testing against is 
+              #   defined in config.ru
+              ########################
+              example Integration Test 
+              spec/application_integration_spec.rb
+
+              require 'spec_helper'
+
+              describe "GET '/' - Greeting Form" do
+                it 'welcomes the user' do
+                  visit '/' #equivalent to a user typing a URL 
+                  expect(page.body).to include("Welcome!")
+                end
+                # New test
+                it 'has a greeting form with a user_name field' do
+                  visit '/'
+
+                  expect(page).to have_selector("form")
+                  expect(page).to have_field(:user_name)
+                end
+              end #describe
+
+              describe "POST '/greet' - User Greeting" do
+                it 'greets the user personally based on their user_name in the form' do
+                  visit '/'
+                  fill_in(:user_name, :with => "Avi")
+                  click_button "Submit"
+                  expect(page).to have_text("Hi Avi, nice to meet you!")
+                end
+              end
+
+              #Capybara provides two new methods, visit and page.
+              #page responds to a lot of methods that represent actions a 
+              # user could take on a page, such as click_link, fill_in, and body
+              ############################
+
 CSS  ****************************************************************
  Architecture CSS promotes breaking up styles into five core categories, Base,Layout,Module,State,Theme see tools for link
               base category includes core element styles, covering the general defaults. 
@@ -564,6 +626,28 @@ MARKDOWN *************************************************************
                           ```             #would highlight the ruby syntac
   striketrhough         ~~This was mistaken text~~	
 
+MVC  *****************************************************************
+Model View Controller
+  Model         Our models do the job of interacting with the database 
+  Views         Views present information to the user. 
+                  Any code that is responsible for presenting data or output to the user
+                    from methods that use a bunch of puts, to HTML, to ERB templates 
+  Controllers   Controllers provide the main interface and application logic. 
+                  What data should I show a user in response to certain input from that user"
+                  represented by classes
+
+  MVC Flow      user -> view ->controller -> model -> DB -> controller ->view ->user
+
+  Tests
+    Unit tests          test the models in our application and how they interact with our database. 
+
+    Controller tests    test that the code responsible for delivering the appropriate data to a user is working properly. 
+                         In  web app,  make sure HTTP request returns the expected HTTP RESPONSE. not HTML or forms  
+
+   Integration tests    are the highest-level test 
+                          closest to describing how a user will actually interact with app. 
+                          Commonly referred to as 'End-to-End' 
+                          flex your entire application stack (i.e., all of the MVC components)(done with Capybara)
 
 ORM  *****************************************************************
   AR                  SEE ALSO UPDATED AR SECTION AT TOP
