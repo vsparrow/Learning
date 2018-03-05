@@ -71,8 +71,13 @@ class names in the migration files must match their file names. For instance, a 
   20141013204115_create_candies.rb must be named CreateCandies while 
   a class in a migration file called 20130915204319_add_addresses_to_houses.rb must be called AddAddressesToHouses.
 Migrations usually have a method called change. In change, you can create a table with the create_table method. 
-QURSTION::  model is the class (class Dog < ActiveRecord::Base) while migration creates the table,changes,updates                    
+QURSTION::  model is the class (class Dog < ActiveRecord::Base) while migration creates the table,changes,updates     
 
+create your migration file.       rake db:create_migration NAME=create_movies #Once you have a migration file add columns 
+migrate your table                rake db:migrate # After your migration is ready run   
+migrate a test database           rake db:migrate SINATRA_ENV=test
+
+ActiveRecordQueryMethods          http://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html#method-i-where
 
 BASH ****************************************************************
 variable      is characterized by a dollar sign followed by a variable name.    
