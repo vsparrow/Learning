@@ -1565,7 +1565,20 @@ SINATRA *****************************************************************
                             The class name we defined in our application controller (app.rb) is just a normal Ruby class. 
                             We could have named it MyToDoApp rather than Application  
                             If this was our class name, we would need to change config.ru to run the appropriate class: run MyToDoApp
-
+  
+  forms
+                          to connect the form to our application, give it explicit directions on where and how 
+                            to send the data from the user. Both of these pieces of data are attributes that we give  <form>                            
+                          <form method="POST" action="/food">
+                            method  tells the form what kind of request should be fired to the server
+                            action  tells the form what specific route the post request should be 
+                          The name attribute of an <input> defines how our app  identify each <input> data.
+                          we'll set up a post route: in app.rb
+                            post '/food' do
+                              # params.to_s #get{"name"=>"Sam", "favorite_food"=>"Green Eggs and Ham"}
+                              "My name is #{params[:name]}, and I love #{params[:favorite_food]}"
+                            end  
+  
   Modular Sinatra Pattern 
                           Sinatra is more commonly used through the MSP (over the classical, single file app.rb pattern).
   Shotgun                 small Ruby gem that makes it easier to develop and test Rack-based Ruby web applications locally
