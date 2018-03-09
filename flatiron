@@ -1579,6 +1579,20 @@ SINATRA *****************************************************************
                               "My name is #{params[:name]}, and I love #{params[:favorite_food]}"
                             end  
   
+  variables
+   EVLUATE VARIABLES      <%= %> . what ever in here is display to user:  <% %> this is used to evaluate but not display
+                             example: <% @friends.each do |friend|%>  <h2><%= friend %></h2> <% end%> 
+                             each evaluates friendS but is not display. but frienD is displayed to user 
+   InStance Variables     Instance variables are ONLY passed from the controller method where they are created to the view 
+                            that is rendered, not between controller methods.
+                            post '/reverse' do
+                              original_string = params["string"]
+                              @reversed_string = original_string.reverse
+                              erb :reversed
+                            end
+                            We can now access the contents of @reversed_string inside of our view, reversed.erb.
+                            in reversed.erb USE:  <h2><%= @reversed_string %></h2> 
+  
   Modular Sinatra Pattern 
                           Sinatra is more commonly used through the MSP (over the classical, single file app.rb pattern).
   Shotgun                 small Ruby gem that makes it easier to develop and test Rack-based Ruby web applications locally
