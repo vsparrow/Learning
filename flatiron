@@ -1592,6 +1592,15 @@ SINATRA *****************************************************************
                             end
                             We can now access the contents of @reversed_string inside of our view, reversed.erb.
                             in reversed.erb USE:  <h2><%= @reversed_string %></h2> 
+  yeild
+                            In layout.erb, add a yield wherever we want the other page to be loaded:
+                              Let's say we have a controller action:
+                                get '/' do 
+                                  erb :index 
+                                end
+                              When the controller action is triggered and erb method is called, it looks to see if there is a 
+                              view titled layout.erb. If that file exists, it loads that content around the desired erb file, 
+                              in this case index.erb. review: https://github.com/learn-co-students/sinatra-yield-readme-v-000
   
   Modular Sinatra Pattern 
                           Sinatra is more commonly used through the MSP (over the classical, single file app.rb pattern).
