@@ -80,6 +80,7 @@ migrate a test database           rake db:migrate SINATRA_ENV=test
 ActiveRecordQueryMethods          http://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html#method-i-where
 
 BASH ****************************************************************
+SEE ALSO SHELL
 variable      is characterized by a dollar sign followed by a variable name.    
                 Conventionally, environment variable names consist of all uppercase letters. One example of this is $PATH.                more info   http://blog.seldomatt.com/blog/2012/10/08/bash-and-the-one-true-path/
 
@@ -98,7 +99,42 @@ echo $PATH.   terminal should print the value of your $PATH variable.
 ps            get processes
 ps aux        a = show processes for all users u = display the process's user/owner x = also show processes not attached to a terminal
                 ps aux | grep ruby    find ruby in ps 
+                
+BLOGGING****************************************************************                  
+
+  Blogs
+                    can be about what you're learning, 
+                    a technical challenge you overcome, 
+                    a walkthrough of something you were initially confused by, 
+                    a side project you may be working on, 
+                    any cool tips you've learned about anything technical,
+                    A bug you ran into
+                    A new package, feature, or update
+                    How-to guides
+                    How-I-made-this
+                    Deep dives on topics you’re currently studying
+
+  Blog Confidence
+                    Don't assume that, because you are a beginner, you have nothing to contribute. 
+                    Your perspective as a beginner is immensely valuable, especially to other beginners.
+                    as a new developer, blogging allows you to reflect on what you have learned.
+
+  Blog Examples
+  http://www.korenlc.com/
+  http://talum.github.io/ Tracy Lum maintained a technical blog while she was a student and TA at Flatiron.  
+  https://medium.com/@LindaHaviv/the-beginner-s-guide-scraping-in-ruby-cheat-sheet-c4f9c26d1b8c#.kkwe918o4
+  https://medium.com/@sherriously/switching-from-standard-bcrypt-rails-authentication-to-devise-1fd0e910bdda#.fj8ckgksq
+
+  Blog How to
+                    Spelling and grammar check!
+                    Test your code in console before publishing
+                    Cite your sources
+                    Include quotes
+                    Include code snippets
+                    Include gifs
+
 CAPYBARA****************************************************************  
+
   Capybara    gem for Integration Testing for MVC
               allows us to write code that simulates how a user interacts with our app. 
   Examples
