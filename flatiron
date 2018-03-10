@@ -1131,7 +1131,14 @@ RACK *****************************************************************
                           require_relative "./config/environment.rb"
                           run Application.new
   parameters
-    parse GET params      return them to us in a standard Hash ex: search_term = req.params["q"]                          
+    parse GET params      return them to us in a standard Hash ex: search_term = req.params["q"]
+    Rack::Request         provides interface to a Rack environment. stateless, the env passed to the constructor 
+                            will be directly modified
+                          Rack::Request instance has a ton of useful methods.  Do a lookup
+                          EX  req = Rack::Request.new(env)
+                              req.post?
+                              req.params["data"]  #see also SEARCH below. can use search_term = req.params["q"]
+                              req.path            #path wanted by user
     SEARCH:               The section after the ? is called the GET parameters. They come in key/value pairs
                             https://github.com/search?q=apples   q=apples is search and the value is apples                      
   path      
