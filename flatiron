@@ -385,6 +385,41 @@ Embedded Ruby         ERB and other templating engines allow us to modify the co
   Substituion tag     <%= and closes with %>. Inside of these tags, you can write any valid Ruby code that you want.
   Scripting tags      <% and close with %>. They evaluate –– but do not actually display –– Ruby code.
 
+hashes
+                      ERB assumes the name of top-level hash is the first key,
+                      so code to call value associated with the nested "name" key would be student["name"].
+                          params = { #MULTIPLE COURSES
+                            "student" => {
+                              "name" => "Vic",
+                              "grade" => "12",
+                              "courses" => [  # <- ARRAY
+                                {
+                                  "name" => "AP US History",
+                                  "topic" => "History"
+                                },
+                                {
+                                  "name" => "AP Human Geography",
+                                  "topic" => "History"
+                                }
+                              ]  # <- end ARRAY
+                            }
+                          }
+
+  Hashes
+    forms
+                        Instead of manually indexing each entry, we can use an empty array ([]) in our form view,
+                         and ERB will automagically index the array for us,
+                         turning my_hash["student"]["courses"][0]["name"] into student[courses][][name]    
+                              <form action="/student" method="post">
+                                Student Name: <input type="text" name="student[name]">
+                                Student Grade: <input type="text" name="student[grade]">
+                          #we dont need to add value in erb, we would in RUBY erb assumes value by placement
+                                Course Name: <input type="text" name="student[courses][][name]">  
+                                Course Topic: <input type="text" name="student[courses][][topic]"> 
+                                Course Name: <input type="text" name="student[courses][][name]">
+                                Course Topic: <input type="text" name="student[courses][][topic]">
+                                <input type="submit">
+                              </form>  
   EXAMPLES
                       <% if 1 == 2 %>
                         <p>1 equals 2.</p>
@@ -411,6 +446,8 @@ Embedded Ruby         ERB and other templating engines allow us to modify the co
                             <li><%= post %></li>
                           <% end %>
                         </ul>
+                        
+                        
 
 GIT  ****************************************************************
 abort                               see git merge abort
@@ -1609,7 +1646,7 @@ SINATRA *****************************************************************
                             We could have named it MyToDoApp rather than Application  
                             If this was our class name, we would need to change config.ru to run the appropriate class: run MyToDoApp
   
-  forms
+  forms                   #SEE ALSO ERB:HASHES:FORMS
                           to connect the form to our application, give it explicit directions on where and how 
                             to send the data from the user. Both of these pieces of data are attributes that we give  <form>                            
                           <form method="POST" action="/food">
