@@ -735,9 +735,23 @@ Model View Controller
   Controllers   Controllers provide the main interface and application logic. 
                   What data should I show a user in response to certain input from that user"
                   represented by classes
-
+  
   MVC Flow      user -> view ->controller -> model -> DB -> controller ->view ->user
-
+  MVC Location  
+    APP DIRECTORY       holds our MVC directories - models, views, and controllers. 
+                          We spend most of our time coding in this directory.
+    CONTROLLERS DIR     where the app configs, routes, and controller actions are implemented. There is typically a class,
+                          in this case we will call ApplicationController, that represents an instance of your application
+                          when the server is up and running. 
+                          Controllers represent the application logic, generally; the interface and flow of our application.
+    MODELS DIRECTORY    holds the logic behind our application. represent either a component of your application, 
+                          such as a User, Post, or Comment, or a unit of work. 
+                          Each file in models typically contains a different class.  
+    VIEWS DIRECTORY     holds the code that will be displayed in the browser.
+                          In Sinatra use .erb files instead of .html files because .erb allow us to include HTML tags 
+                          AND special erb tags which contain Ruby code.
+                          
+                          
   Tests
     Unit tests          test the models in our application and how they interact with our database. 
 
@@ -1674,7 +1688,7 @@ SINATRA *****************************************************************
                             The class name we defined in our application controller (app.rb) is just a normal Ruby class. 
                             We could have named it MyToDoApp rather than Application  
                             If this was our class name, we would need to change config.ru to run the appropriate class: run MyToDoApp
-  
+    file structure mvc    see https://learn.co/tracks/web-development-immersive-2-0-module-two/sinatra/mvc/sinatra-mvc-file-structure
   forms                   #SEE ALSO ERB:HASHES:FORMS
                           to connect the form to our application, give it explicit directions on where and how 
                             to send the data from the user. Both of these pieces of data are attributes that we give  <form>                            
