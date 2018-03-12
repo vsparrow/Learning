@@ -1671,6 +1671,53 @@ SINATRA *****************************************************************
   cookies                see session below
   install                First, make sure Sinatra is installed by running gem install sinatra in your terminal.
   
+  Sinatra CRUD  
+                          Create: Model.create
+                          Read: Model.all/Model.find(id_number)
+                          Update: Model.update
+                          Delete: Model.destroy
+     create                "create" implemented by building a route/controller action, to render the form for creating 
+                            a new instance of your model.
+                            get '/model/new' -> new.erb -> form sends a POST request to controller action, post '/models'
+                            extracts form data from params and uses it to create a new instance of your model class, 
+                            something along the lines of Model.create(some_attribute: params[:some_attribute]).
+      read                two ways which we can read data.  all of the instances of a class, or a specific instance of a class.
+                            '/models' controller instance variable: @models = Model.all. then renders the index.erb view page
+                             index.erb view page will use erb to render all of the instances stored in the @models instance variable.
+                             OR
+                             get '/models/:id' controller  example, user types in www.yourwebsite.com/models/2, 
+                             this route will catch that request and get the id number, in this case 2, from the params. 
+                             then find the instance of the model with that id number/set it equal to an instance variable:
+                             @model = Model.find(params[:id]). Finally, it will render the show.erb view page.
+                             The show.erb view page will use erb to render the @model object.
+      update              controller action that renders an update form, and we need a controller action to catch the post 
+                            request sent by that form.
+                            get 'models/:id/edit' controller action will render the edit.erb view page.
+                            edit.erb contain form for editing a given instance of a model. form will send a PATCH request 
+                              to patch '/models/:id'.
+                            patch '/models/:id' controller action will find the instance of the model to update, using the id
+                              from params, update and save that instance.
+      update(config.ru)
+                            in file config.ru:   use Rack::MethodOverride /n run ApplicationController
+                             add a line to your form.
+                             <form action="/models/<%= @model.id %>" method="post">
+                                <input id="hidden" type="hidden" name="_method" value="patch">
+                                <input type="text" ...>
+                            </form>
+                            MethodOverride middleware will intercept every request sent and received by our application. 
+                              If it finds a request with name="_method", it will set the request type based on what is set 
+                              in the value attribute, which in this case is patch.
+      delete                doesn't get its own view page but is implemented via a "delete button" on the show page of a 
+                              given instance. his "delete button", however, isn't really a button; it's a form! 
+                              The form should send a DELETE request to delete '/models/:id/delete' 
+                              contain only a "submit" button with a value of "delete". That way, appear as only a button
+                              <form method="post" action="/models/<%= @model.id %>/delete">
+                                <input id="hidden" type="hidden" name="_method" value="DELETE">
+                                <input type="submit" value="delete">
+                              </form> . #The hidden input field is important to note here. 
+
+
+        
   file setup and startup
                           app/app.rb
                             require 'sinatra'
