@@ -1,4 +1,5 @@
 ACTIVERECORD ****************************************************************
+  AAAA <-ignore used to quick jump to top
   See also ORM:ActiveRecord for more
   CLASS METHODS    
     ATTR_ACCESSORS    get or set attributes of an instance once you've retrieved it:
@@ -1662,6 +1663,11 @@ SINATRA *****************************************************************
   
   session                 a hash that stores data on the server and passes that data to the client as a cookie. 
     access                access the data stored in the session in the same way you would any hash in Ruby.
+    clear                 session.clear in a controller call this to clear the hash. ex: 
+                            get '/logout' do 
+                              session.clear 
+                              "Session has now been cleared. session content: #{session.inspect}"
+                            end
     enable                enable sessions within the controller (e.g., app.rb) by adding two lines in the configure block:
                             configure do
                               enable :sessions
