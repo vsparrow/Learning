@@ -80,6 +80,32 @@ migrate a test database           rake db:migrate SINATRA_ENV=test
 
 ActiveRecordQueryMethods          http://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html#method-i-where
 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  Sinatra and Active record steps
+    GEMFILE
+    add gems      three gems to allow us to use ActiveRecord: activerecord version 4.2.5, sinatra-activerecord, and rake.
+                    Make sure those three gems are in your Gemfile:
+                  Into development group, we'll add two other gems: sqlite3 and tux.                        
+                        gem 'sinatra'  #Gemfile
+                        gem 'activerecord', '4.2.5'
+                        gem 'sinatra-activerecord'
+                        gem 'thin'
+                        gem 'require_all'
+                        group :development do
+                          gem 'shotgun'
+                          gem 'pry'
+                          gem 'tux'
+                          gem 'sqlite3'
+                        end                        # end Gemfile
+    setup db      Addfollowing code to your environment.rb file (underneath Bundler.require(:default, ENV['SINATRA_ENV'])). 
+                      configure :development do
+                        set :database, 'sqlite3:db/database.db' #or change to 'sqlite3:db/dogs.db' # for a dogs database
+                      end #This sets up a connection to a sqlite3 database named "database.db", located in folder called "db.
+    Rakefile      require our config/environment.rb file to load up our environment, as well as the gems we need
+                          require './config/environment'
+                          require 'sinatra/activerecord/rake' #this will give you tasks that come from Rake -T
+    migration:    rake db:create_migration NAME=create_dogs  #now do AR stuff like add def change and create_table
+                  rake db:migrate                          
 BASH ****************************************************************
 SEE ALSO SHELL
 variable      is characterized by a dollar sign followed by a variable name.    
@@ -1627,6 +1653,7 @@ pwd   print working dir , get current dir
 SINATRA *****************************************************************
 
  sinatra                 get access to methods like: get and post
+  ActiveRecord           see ActiveRecord for sinatra and active record
   cookies                see session below
   install                First, make sure Sinatra is installed by running gem install sinatra in your terminal.
   
