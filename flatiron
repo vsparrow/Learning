@@ -1670,6 +1670,13 @@ SINATRA *****************************************************************
   ActiveRecord           see ActiveRecord for sinatra and active record
   cookies                see session below
   install                First, make sure Sinatra is installed by running gem install sinatra in your terminal.
+  controllers 
+    multiple             to use multiple you need the following lines in config.ru
+                          require 'sinatra'
+                          require_relative 'app/controllers/products_controller'  #controller 1
+                          require_relative 'app/controllers/orders_controller'    #controller 2
+                          use ProductsController  #Only one class can be specified to be run
+                          run OrdersController    #The other class must be loaded as Middleware. simply use instead of run.
   
   Sinatra CRUD  
                           Create: Model.create
