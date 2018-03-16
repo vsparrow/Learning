@@ -1245,7 +1245,13 @@ RACK *****************************************************************
                             end
 
 RAILS *****************************************************************
-    naming conventions      for Rails app names. use all lower case letters, separated by '-', as shown in our blog-flash
+  naming conventions      for Rails app names. use all lower case letters, separated by '-', as shown in our blog-flash
+  
+  Error and Logging
+                          def update  raise params.inspect end
+                            The raise method will cause the application to pause and print out the params on an error page. 
+                            You could also see the params if you called puts params.inspect; using puts would simply 
+                            require you to track down the data in the Rails server log.
  
   File Structure
     file and dirs    
@@ -1266,6 +1272,23 @@ RAILS *****************************************************************
                               Side note: We always use RSpec, which means this directory will actually be called spec.
       tmp                   this is where the temporary items are stored and is rarely accessed by developers.
       vendor                utilized for varying purposes in the past. In Rails 4+, integrating client-side MVC frameworks
+      
+   FORM TAGS                https://apidock.com/rails/ActionView/Helpers/FormTagHelper/text_field_tag
+     in new.html.erb 
+                             <%= form_tag coupons_path do%>
+                              <label for="">Coupon Code</label> <%= text_field_tag :'coupon_code'%><br>
+                              <label for="">Store</label> <%= text_field_tag :'store'%>
+                              <%= submit_tag "Submit Coupon"%>
+                            <%end%>
+     in controller          controller def create
+                              def create
+                                @coupon = Coupon.new
+                                @coupon.coupon_code = params["coupon_code"] 
+                                @coupon.store = params["store"] 
+                                @coupon.save
+                                redirect_to coupon_path(@coupon)
+                              end
+   
    QuickStart
                             In semi order:
                               rails new blog-flash (creates app and dirs)
@@ -1276,6 +1299,7 @@ RAILS *****************************************************************
    Routing
     "only" option           selecting which of the seven RESTful routes we care about
                               resources :posts, only: :show   |same as| get 'posts/:id', to: 'posts#show'
+                              resources :posts, only: [:index, :show, :new, :create] . #for multiple
     rake routes             See routing order  priority is based upon order of creation: first created -> highest priority.
     RESTful                 RESTful routes and their rails equivalents
                               Rails   RestMethod	Action	Description
@@ -1287,6 +1311,11 @@ RAILS *****************************************************************
                               update  PATCH	  /newsletters/:id	Update a newsletter
                               destroy DELETE	/newsletters/:id	Delete a newsletter
                                 see http://guides.rubyonrails.org/routing.html  
+
+
+    views mapping
+      Explicit rendering    Rails lets you dictate which view file you want to have the controller action mapped to.
+      Implicit rendering    follows convention automatically look for view file with same name as the controller action.
 
     Example                 Static
                               adding route ::  in config/routes.rb draw block
@@ -1303,6 +1332,7 @@ RAILS *****************************************************************
                               WANT to get to /posts/:id . 222 is passed in app should render data for the post ID of 222
                               ROUTE  # in config/routes.rb draw
                                 resources :posts, only: :show . || same as || get 'posts/:id', to: 'posts#show'
+                                 see also routing/only above for multiple 
                               CONTROLLER # app/controllers/posts_controller.rb 
                                 class PostsController < ApplicationController
                                   def show
@@ -1312,15 +1342,38 @@ RAILS *****************************************************************
                               VIEW ./app/views/posts/show.html.erb  
                                 <% # app/views/posts/show.html.erb %> #not needed but nice to know a comment
                                 <h1><%= @post.title %></h1>
-                                <p><%= @post.description %></p>                              
-    views mapping
-      Explicit rendering    Rails lets you dictate which view file you want to have the controller action mapped to.
-      Implicit rendering    follows convention automatically look for view file with same name as the controller action.
+                                <p><%= @post.description %></p>    
+                             
+                             CREATE and redirect
+                             class PostsController < ApplicationController
+                              def create
+                                @post = Post.new
+                                @post.title = params[:title]
+                                @post.description = params[:description]
+                                @post.save
+                                redirect_to post_path(@post) # for student it would be redirect_to student_path(@student) 
+                              end end
 
-
-
-
-
+                             EDIT
+                              config routes    
+                                get 'posts/:id/edit', to 'posts#edit', as: :edit_post  #
+                                put 'posts/:id', to: 'posts#update' #route handle updateAction # not creating new so shouldn't be POST
+                              controller  
+                                def edit /n    @post = Post.find(params[:id]) . /n end
+                                def update
+                                  @post = Post.find(params[:id])
+                                  @post.update(title: params[:title], description: params[:description])
+                                  redirect_to post_path(@post)
+                                end
+                              view
+                                app/views/posts/edit.html.erb
+                                <%= form_tag post_path(@post), method: "put" do %>
+                                  <label>Post title:</label><br>
+                                  <%= text_field_tag :title, @post.title %><br>
+                                  <label>Post Description</label><br>
+                                  <%= text_area_tag :description, @post.description %><br>
+                                  <%= submit_tag "Submit Post" %>
+                                <% end %>
 
 RAKE *****************************************************************
 rake                    like bash for ruby. does presetup or maintenntece work like setup db, reset files etc
