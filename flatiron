@@ -1304,6 +1304,28 @@ RAILS *****************************************************************
                             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                             form_tag method also automatically generates the necessary authenticity token, so we can remove the now-redundant hidden_field_tag. 
    
+    ISSUES WITH USING FORM_TAG and vs FORM_FOR
+                            Our form must be manually passed to the route where the form parameters will be submitted
+                            You're forced to have duplicate code throughout the form; it's hard to adhere to DRY principles
+                              when utilizing the form_tag
+
+                            form_for
+                            form_for method accepts the instance of the model as an argument, is able to make a bunch of assumptions for you.
+                            form_for yields an object of class FormBuilder #havent learned this yet
+                            form_for auto knows route (it follows RESTful conventions) for form data as opposed to having to manually declare it
+                            option to dynamically change  submit button text (this comes in very handy when you're using a form partial and the new and edit pages will share the same form
+
+                            When use form_for and form_tag
+                            form_for when your form is directly connected to a model. ex profile edit form that connects to the profile database table
+                            form_tag when you simply need an HTML form generated. Examples of this would be: a search form field or a contact form
+
+                            form_for is bound directly with the Post model, we need to pass the model name into the Active Record update method in the controller. 
+                            change @post.update(title: params[:title], description: params[:description]) to:
+                            @post.update(params.require(:post))
+                            why do we need to require the post model? params look like this:
+                            BEFORE: {"title": "My Title",  "description": "My description"}
+                            NOW:    { "post": { "title": "My Title","description": "My description"}}   
+   
    QuickStart
                             In semi order:
                               rails new blog-flash (creates app and dirs)
@@ -1423,6 +1445,30 @@ RAILS *****************************************************************
                               <!-- </form>  before form_tag via ActionView-->
                               <%end%>                             
                              
+                             
+                             FORM_FOR version of update / edit
+                                routes.rb
+                                patch 'posts/:id', to: 'posts#update' #could also add 'update' to above array
+
+                                post_controller.rb
+                                def edit  @post = Post.find(params[:id]) end
+
+                                def update
+                                  @post = Post.find(params[:id])
+                                  @post.update(params.require(:post))#@post.update(title: params[:title], description: params[:description])
+                                  redirect_to post_path(@post)
+                                end
+
+                                edit.html.rb
+                                <h3>Post Form</h3>
+                                <%= form_for(@post) do |f| %>
+                                  <label>Post title:</label><br>
+                                  <%= f.text_field :title %><br>
+                                  <label>Post description</label><br>
+                                  <%= f.text_area :description %><br>
+                                  <%= f.submit %>
+                                <% end %>
+
 RAKE *****************************************************************
 rake                    like bash for ruby. does presetup or maintenntece work like setup db, reset files etc
 rake console
