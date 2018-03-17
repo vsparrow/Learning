@@ -1457,7 +1457,15 @@ RAILS *****************************************************************
                                 <input type="submit"  value="Submit Post">
                               <!-- </form>  before form_tag via ActionView-->
                               <%end%>                             
-                             
+                              
+                              FORM_TAG with label also made via for_for
+                                  <%= form_tag("/cats") do %>
+                                    <%= label_tag('cat[name]', "Name") %>
+                                    <%= text_field_tag('cat[name]') %>
+                                    <%= label_tag('cat[color]', "Color") %>
+                                    <%= text_field_tag('cat[color]') %>
+                                    <%= submit_tag "Create Cat" %>
+                                  <% end %>                              
                              
                              FORM_FOR version of update / edit
                                 routes.rb
@@ -1481,7 +1489,16 @@ RAILS *****************************************************************
                                   <%= f.text_area :description %><br>
                                   <%= f.submit %>
                                 <% end %>
-
+                                
+                              FORM_FOR with cats
+                                <%= form_for(@cat) do |f| %>
+                                  <%= f.label :name %>
+                                  <%= f.text_field :name %>
+                                  <%= f.label :color %>
+                                  <%= f.text_field :color %>
+                                  <%= f.submit %>
+                                <% end %>                              
+                              
                               Strong Params + Create and update 
                                     #DRYest version where you can use a splat to change the permit
                                     def create
