@@ -1301,6 +1301,16 @@ RAILS *****************************************************************
                               resources :posts, only: :show   |same as| get 'posts/:id', to: 'posts#show'
                               resources :posts, only: [:index, :show, :new, :create] . #for multiple
     rake routes             See routing order  priority is based upon order of creation: first created -> highest priority.
+                              return of rake routes
+                              posts   GET  /posts(.:format)       posts#index       #all posts
+                              post    GET  /posts/:id(.:format)   posts#show        #single post
+                                Column 1 - This column gives the prefix for the route helper methods ex: posts_path
+                                Column 2 - This is the HTTP verb.
+                                Column 3 - what the path for the route will be and what parameters need to be passed to 
+                                  the route. ex post_path(@post) #you pass in instance varialbe and rails knows how get id
+                                    should also just be able to pass post_path(3) for id 3
+                                    ignore the (.:format) text for now.
+                                Column 4 - This column shows the controller and action with a syntax of controller#action                             
     RESTful                 RESTful routes and their rails equivalents
                               Rails   RestMethod	Action	Description
                               index   GET	    /newsletters	Show all newsletters
@@ -1311,7 +1321,10 @@ RAILS *****************************************************************
                               update  PATCH	  /newsletters/:id	Update a newsletter
                               destroy DELETE	/newsletters/:id	Delete a newsletter
                                 see http://guides.rubyonrails.org/routing.html  
-
+    route helpers             Route helpers are more dynamic since they are methods and not simply strings. 
+                                use with view and controller (not model)
+      change name             get '/register', to: 'users#new', as: 'register' #disaply /users/new  as /register                                                    
+      helper vs hardcode      post_path(post, opt_in: true) is more readable than "posts/<%= post.id %>?opt_in=true"   
 
     views mapping
       Explicit rendering    Rails lets you dictate which view file you want to have the controller action mapped to.
@@ -1374,7 +1387,10 @@ RAILS *****************************************************************
                                   <%= text_area_tag :description, @post.description %><br>
                                   <%= submit_tag "Submit Post" %>
                                 <% end %>
-
+                             LINKS . use link_to
+                             <% @posts.each do |post| %>    ###post_path(post) same as post_path(post.id)
+                                <div><%= link_to post.title, post_path(post) %></div> 
+                             <% end %>
 RAKE *****************************************************************
 rake                    like bash for ruby. does presetup or maintenntece work like setup db, reset files etc
 rake console
