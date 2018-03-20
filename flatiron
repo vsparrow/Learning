@@ -7,6 +7,26 @@ ACTIVERECORD ****************************************************************
                         student.name          #=> 'Jon' 
                         student.name = 'Steve'
                         student.name          #=> 'Steve'
+    Callbacks         #similar to how you use has_many or validates#They are at the top of your model files.
+      before_save       called after validation occurs #non model attribute , then use before_save.
+      before_validation Whenever you are modifying an attribute of the model, use before_validation
+      before_create.    like before_save but only gets called when a model is created for the first time. 
+                          This means not every time the object is persisted, just when it is new.
+      Example:
+                          before_validation we want to run this whenever someone tries to save to the database. This is where the before_save
+                          before_save whenever you save to the database, let's send an email to the Author alerting them that the post was just saved!
+                          class Post < ActiveRecord::Base
+                            belongs_to :author
+                            validate :is_title_case
+                            before_validation :make_title_case  ########### New Code!! #could be before_save
+                            before_save :email_author_about_post
+                            private
+                            def is_title_case
+                              if title.split.any?{|w|w[0].upcase != w[0]} errors.add(:title, "Title must be in title case") end
+                            end
+                            def make_title_case  self.title = self.title.titlecase end
+                          end
+                        
     change column       change_column(table_name, column_name, type)   (see update table below for file structure)                   
     CREATE A TABLE
                       sql = <<-SQL  CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY, name TEXT) SQL 
