@@ -1276,6 +1276,33 @@ RAILS *****************************************************************
    FILTERING
                             see https://learn.co/tracks/web-development-immersive-2-0-module-two/bonus-material/refactoring-with-helpers-and-model-methods/model-class-methods   
    FORMS   
+    ERROR in FORMS
+      Displaying errors
+                              <%= form_tag("/people") do %>
+                                <% if @person.errors.any? %>
+                                  <div id="error_explanation">
+                                    <h2>There were some errors:</h2>
+                                    <ul>
+                                      <% @person.errors.full_messages.each do |message| %>
+                                        <li><%= message %></li>
+                                      <% end %>
+                                    </ul>
+                                  </div>
+                                <% end %>
+                                <div class="field<%= ' field_with_errors' if @person.errors[:name].any? %>">
+                                  <%= label_tag "name", "Name" %>
+                                  <%= text_field_tag "name", @person.name %>
+                                </div>
+                                <div class="field<%= ' field_with_errors' if @person.errors[:email].any? %>">
+                                  <%= label_tag "email", "Email" %>
+                                  <%= text_field_tag "email", @person.email %>
+                                </div>
+                                <%= submit_tag "Create" %>
+                              <% end %>
+                            ActiveModel::Errors can be used as a hash
+                            @person.errors[:name] #=> ["does not allow numbers"]
+                            @person.errors[:email] #=> []
+   
     FORM TAGS                https://apidock.com/rails/ActionView/Helpers/FormTagHelper/text_field_tag
      in new.html.erb         #see also examples at bottom for detailed deifferenes with html form and form tag 
                              <%= form_tag coupons_path do%>
