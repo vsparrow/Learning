@@ -1938,46 +1938,50 @@ EXAMPLE Setting a category name for post
                                    HTML value="1" name="post[category_ids][]" id="post_category_ids_1"
                                    strong params require :category_ids
 
-        NESTED ATTRIBUTES ##############text field for new category
-                                  ##### problem. We're creating a new category each time, regardless of whether or not it exists
-                                  ###GOOD FOR NEW EVERYTIME
-                                   ###three people type in "Super Cute!" and we get three different categorie
-                                   ### see fix below
+          ###Has Many Through in Forms
 
-                                   <%= f.fields_for :categories, post.categories.build do |categories_fields| %>
-                                    <%= categories_fields.text_field :name %>
+                                # app/controllers/post_controller.rb
+                                class PostsController < ApplicationController
+                                  private
+                                  def post_params
+                                    params.require(:post).permit(:title, :content, category_ids:[], categories_attributes: [:name])
+                                  end
+                                end
+
+                                # app/views/posts/_form.html.erb
+                                <%= form_for post do |f| %>
+                                  <%= f.label "Title" %>
+                                  <%= f.text_field :title %>
+                                  <%= f.label "Content" %>
+                                  <%= f.text_area :content %>
+                                    #For collection_check_boxes
+                                    #HTML generated is: <input type="checkbox" value="1" name="post[category_ids][]" id="post_category_ids_1">
+                                    #Params returned: {"title"=>"New Post", "content"=>"Some great content!!", "category_ids"=>["2", "3", ""]}
+                                  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %> #associate categories with our posts
+                                    # use the fields_for helper: so new category value of name will be nested under our post_params
+                                    #HTML generated is: input type="text" name="post[categories_attributes][0][name]" id="post_categories_attributes_0_name">
+                                  <%= f.fields_for :categories, post.categories.build do |categories_fields| %>
+                                    <%= categories_fields.text_field :name %> # creating new categories
                                   <% end %>
-
-                                  strong params require ,"categories_attributes: [:name]",
-
-                                  HTML name="post[categories_attributes][0][name]" id="post_categories_attributes_0_name
-
-                                  when we do mass assignment, our Post model will call a method called
-                                    categories_attributes=. Let's add that method to our model
-                                    using the accepts_nested_attributes_for macro.
-                                    #######
-                                        class Post < ActiveRecord::Base
-                                          has_many :post_categories
-                                          has_many :categories, through: :post_categories
-                                          accepts_nested_attributes_for :categories  #<----------------
-                                        end
-
-      ###fix for multiple category Nested Attributes
-                                #creating our own categories_attributes= method.
-                                #Now, we're only creating a new category if it doesn't already exist with the current name.
-                                      class Post < ActiveRecord::Base
-                                        has_many :post_categories
-                                        has_many :categories, through: :post_categories
-                                        accepts_nested_attributes_for :categories
-
-                                        def categories_attributes=(category_attributes)
-                                          category_attributes.values.each do |category_attribute|
-                                            category = Category.find_or_create_by(category_attribute)
-                                            self.categories << category
-                                          end
-                                        end
-                                      end
+                                  <%= f.submit %>
+                                <% end %>
+                                #NOTES ON fields_for
+                                takes two arguments: 1) the associated model that we're creating 2) an object to wrap around.
+                                  example above: 1) we've passed in the :categories association 2)built an empty category associated with the post
                                   
+                                # app/models/post.rb
+                                class Post < ActiveRecord::Base
+                                  has_many :post_categories
+                                  has_many :categories, through: :post_categories
+                                  #accepts_nested_attributes_for :categories #may not need if have below def
+                                  #macro "accepts..." above good if we need new everytime, below betteer for find or create
+                                  def categories_attributes=(category_attributes)
+                                    category_attributes.values.each do |category_attribute|
+                                      category = Category.find_or_create_by(category_attribute)
+                                      self.categories << category
+                                    end  end end
+          ###END Has Many Through in Forms
+                                   
                             
 RAKE *****************************************************************
 rake                    like bash for ruby. does presetup or maintenntece work like setup db, reset files etc
