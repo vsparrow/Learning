@@ -1266,7 +1266,7 @@ RACK *****************************************************************
 
 RAILS *****************************************************************
   naming conventions      for Rails app names. use all lower case letters, separated by '-', as shown in our blog-flash
-  
+  Cookies                 see "Sessions" in this section. 
   Error and Logging
                           def update  raise params.inspect end
                             The raise method will cause the application to pause and print out the params on an error page. 
@@ -1579,7 +1579,43 @@ RAILS *****************************************************************
       helper vs hardcode      post_path(post, opt_in: true) is more readable than "posts/<%= post.id %>?opt_in=true"   
 
 
-    SESSIONS
+    SESSIONS-------------------------------
+      Controller Sessions
+        OVERVIEW
+                              siimplest possible login system 
+                                The user GETs /login
+                                The user enters their username. There is no password.
+                                The user submits the form, POSTing to /login.
+                                In the create action of the SessionsController we set a cookie on the user's browser 
+                                  by writing their username into the session hash.
+                                Thereafter, the user is logged in. session[:username] will hold their username.
+
+                              SessionsController to handle  routes.
+                               two actions, new and create, which we'll map in routes.rb to get and post on /login.
+                               Our sessions controller is just going to trust that you are who you say you are.  
+          ex controller setup 
+                             class SessionsController < ApplicationController
+                                def new
+                                    # nothing to do here!
+                                end 
+                                def create
+                                    session[:username] = params[:username]
+                                    redirect_to '/'
+                                end
+                                def destroy   #logout
+                                  session.delete :username
+                                end
+                                #The most common way to route this action is to post '/logout'
+                                #don't attach this to a get route. HTTP specifies that get routes don't change anything
+                              end#class
+          ex form setup
+                            We'll make a very small login form for new.html.erb, #Ordinarily, we would use form_for @user,
+                              but in this example, we don't have a user model at all!
+                            form method='post'>
+                              <input name='username'>
+                              <input type='submit' value='login'>
+                            </form>        
+      
       Cookies                 server ask browser to store data for it, and then get that data back from the browser later.
         session
                               session method is available anywhere in the Rails response cycle, and it behaves like a hash:
@@ -1621,6 +1657,7 @@ RAILS *****************************************************************
                                     end
                                   end
     
+    SESSIONS END -------------------------------
 
     TESTING:                  SEE TESTING SECTION, outside RAILS sections
       
