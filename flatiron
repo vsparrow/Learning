@@ -1514,6 +1514,32 @@ RAILS *****************************************************************
                                         <%= yield %>    <------------
                                     </body></html>    
    
+   Partials
+                              View files. helps remove repeated pieces of HTML
+                              an underscore is prefixed to the filename to indicate that this file is a partial
+    different folder
+                              referencing a partial from a different folder   ex: <%= render 'posts/form' %>
+    naming                    *We could have named the partial whatever we wanted to. just start with underscore
+    what to include           *even though the last line of the form (the <% end %> tag) is duplicated code, 
+                                we didn't move it into the partial.
+    ex
+                                  <!-- app/views/posts/_form.html.erb-->
+                                  <label>Post title:</label><br>
+                                  <%= text_field_tag :title %><br>
+                                  <label>Post Description</label><br>
+                                  <%= text_area_tag :description %><br>
+                                  <%= submit_tag "Submit Post" %>
+
+                                  <!-- app/views/posts/edit.html.erb-->
+                                  <h3>Post Form</h3>
+                                  <%= form_tag post_path(@post), method: "put" do %>
+                                  <%= render 'form' %> #<- where the magic happens to pull in partial
+                                  <% end %>
+
+                                  <!-- app/views/posts/new.html.erb-->
+                                  %= form_tag posts_path do %>
+                                  <%= render 'form' %> #<- where the magic happens to pull in partial
+                                  <% end %>
    
    QuickStart
                             In semi order:
