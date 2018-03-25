@@ -1579,6 +1579,49 @@ RAILS *****************************************************************
       helper vs hardcode      post_path(post, opt_in: true) is more readable than "posts/<%= post.id %>?opt_in=true"   
 
 
+    SESSIONS
+      Cookies                 server ask browser to store data for it, and then get that data back from the browser later.
+        session
+                              session method is available anywhere in the Rails response cycle, and it behaves like a hash:
+                              # set cart_id
+                              session[:cart_id] = @cart.id
+                              # load the cart referenced in the session
+                              @cart = session[:cart_id]
+          session key
+                              <--config/secrets.yml-->
+                              development:
+                                secret_key_base: kaleisgreat  # probably not the most secure key ever
+
+                              Somewhere else, Rails has a method, let's call it sign, which takes a message and a key and
+                                returns a signature, which is just a string:
+                                # sign(message: string, key: string) -> signature: string
+                                def sign(message, key):
+                                  # cryptographic magic here
+                                  return signature
+                                end #It's guaranteed that given the same message and key, sign will produce the same output
+
+        view cookie:          chrome : Resources > Cookies # try Inspect:Application:Cookies
+        Why use ?             HTTP servers are typically stateless. They receive requests, process them, return data,
+                                then forget about them.
+
+        ex                    #This way, we can use current_cart in our views and layouts too
+                                  items_controller.rb
+                                  # Routed from POST /items/:id/add_to_cart
+                                  def add_to_cart #which is called when the user adds something to their cart.
+                                    # Get the item from the path
+                                    @item = Item.find(params[:id])
+                                    # Load the cart from the session, or create a new empty cart.
+                                    current_cart << @item.id
+                                  end
+
+                                  class ApplicationController < ActionController::Base
+                                    helper_method :current_cart
+                                    def current_cart
+                                      session[:cart] ||= []
+                                    end
+                                  end
+    
+
     TESTING:                  SEE TESTING SECTION, outside RAILS sections
       
       
