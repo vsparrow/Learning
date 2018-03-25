@@ -1474,6 +1474,46 @@ RAILS *****************************************************************
                                     <title><%= yield :title %></title>
                                   </head>
                                   see more content_for in http://guides.rubyonrails.org/layouts_and_rendering.html#using-the-content-for-method
+   Layouts
+    default                 default layout template:        <!-- app/views/layouts/application.html.erb -->
+
+    which layout?
+      convention
+                            if controller called ProductsController, it'll look for a layout at  layouts/products.html.erb
+                            if controller called AdminController, it'll look for a layout at layouts/admin.html.erb
+                            can't find a layout specific to controller, it'll use the default layout at 
+                              app/views/layouts/application.html.erb.
+                            *With the exception of the admin section of a site, most applications use the 
+                              default layout for everything, so there's no need to have a layout for each controller. 
+
+      convention override
+        for whole controller
+                            if controller ShoppingCartController and want to use layout at layouts/products.html.erb
+                              (ie: use the products layout for every action:)
+                                    class ShoppingCartController < ApplicationController
+                                      layout "products"
+                                    end
+        for single action
+                            want to use the products layout only for a particular action : use render
+                                  class ShoppingCartController < ApplicationController
+                                   def list
+                                     render :layout => "static"
+                                   end end #other actions use standard defined layout
+        no layout for action     want no layout 
+                                    class ShoppingCartController < ApplicationController
+                                    def list
+                                      render :layout => false
+                                    end   end 
+
+    example:
+      example layout template
+                                    <!-- app/views/layouts/application.html.erb -->
+                                    <!DOCTYPE html><html><head>  <title>Flatiron Store</title></head>
+                                    <body>
+                                        <h1>Welcome To The Flatiron Store!</h1>
+                                        <%= yield %>    <------------
+                                    </body></html>    
+   
    
    QuickStart
                             In semi order:
