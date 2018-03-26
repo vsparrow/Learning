@@ -1514,6 +1514,8 @@ RAILS *****************************************************************
                                         <%= yield %>    <------------
                                     </body></html>    
    
+   LOGIN                      see Sessions:login below
+   
    Partials
                               View files. helps remove repeated pieces of HTML
                               an underscore is prefixed to the filename to indicate that this file is a partial
@@ -1656,7 +1658,40 @@ RAILS *****************************************************************
                                       session[:cart] ||= []
                                     end
                                   end
-    
+      Login
+        Login Required            documents should only be shown to users when they're logged in
+        Login required for action       if a user isn't logged in, we return 403 Forbidden.
+          example DRY SOLUTION
+                                  class DocumentsController < ApplicationController
+                                    before_action :require_login    
+                                      #before_action registers a filter. 
+                                    skip_before_action :require_login, only: [:index] 
+                                      #skip require_login for actions we want everyone to see
+                                      # A filter is a method which runs before, after, or around, a controller's action.  
+                                    def show
+                                      @document = Document.find(params[:id])
+                                    end
+                                    def index
+                                    end
+                                    def create
+                                      @document = Document.create(author_id: user_id)
+                                    end
+                                    private
+                                    def require_login
+                                      return head(:forbidden) unless session.include? :user_id    
+                                    end
+                                  end  
+          example for single
+                                 def show #, 
+                                   return head(:forbidden) unless session.include? :user_id
+                                   @document = Document.find(params[:id])
+                                 end  
+        
+        What happens at login?    what does it actually mean for a user to log in
+                                    when a user logs in all we are doing is using cookies to add their 
+                                      :user_id to their session
+      
+      
     SESSIONS END -------------------------------
 
     TESTING:                  SEE TESTING SECTION, outside RAILS sections
