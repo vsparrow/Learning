@@ -695,21 +695,87 @@ Language        See https://developer.mozilla.org/en-US/docs/Web/HTML/Element or
 
 JAVASCRIPT ***********************************************************
 
-ARGUMENTS
+ARGUMENTS + Variables
   const                 var that cannot be reassigned
+  identifier            when we declare a variable or a function, we provide a name that allows us to refer back to it:
+                         We call those names identifiers because they allow us to identify the variable or function we're 
+                          referring to.
+  hoisting              jsengine moving declarations to top virtuall in memory
+                         hoisting only applies to variable declarations; not variable assignments
   interpolation         `${}`  must be between tick not quote
+  keywordless variables   Variables created without a const, let, or var keyword are always globally-scoped, 
+                            regardless of where they sit inyour code.
+                              if (true) {  lastName = 'Lovelace';}
+                              lastName;// => "Lovelace"
   let                   new var in js6, use when variable change
+  lexical x             lexical scoping, and lexical environment is a synonym for scope 
+                          what counts is where we, the programmer, typed out the function declaration within our code.
   var                   classic way to declare a variable. 
 
-  let/const vs var      throw an error if you try to declare the same variable a second time, var wont error will let you do 
+  let/const vs var      throw an error if you try to declare the same variable a second time, var wont error will let you do
+
+CONDITIONALS
+  if                    if {}
+  else                  if (age >= 18) {isAdult = true;} else {isAdult = false;}
+  else if               if (age >= 21) { } else if (age >= 18) {} else if (age >= 16) {} . else not required!!!
+  switch                switch (expression) { case value1: // Statements break; default: // Statements break;}
+  
 
 CLASS
+
+
 DEBUGGING
+  console.error         method is for printing out an error to the console, like console.log but prints red
+  console.warn          method is for printing out an warning to the console, like console.log but prints yellow
+  Testing
+  End to End Test       Think of end-to-end testing like the things we'd do in the browser ourselves: 
+                          'When I click this button, the card should appear in
+  Integration Test      how do all the units in our program work together
+  Unit testing          is testing the smallest unit possible of our program. These small units are usually single functions.
+  
+  
 ERRORS
+  hoisting errors       how to avoid
+                          Declare all of your functions at the top of their scope. If the functions are declared in 
+                            the global scope, simply put them at the top of the JavaScript file. 
+                            If they're declared inside another function, put the declaration at the top of the function body.
+                          Only use const and let. Never use var.
 
 METHODS
   ++                     ++counter the variable's value is incremented first and then returned:                        
                           counter++, the variable's value is returned first and then incremented  
+  ArrayMethods
+    ....                 The spread operator allows us to spread out the contents of an existing array into a new array, 
+                          adding new elements but preserving the original 
+                            const allCities = ['Los Angeles', ...coolCities]; #// => ["Los Angeles", "New York", "San Fran"]
+                            const allCats = [...coolCats, 'Garfield']; #// => ["Hobbes", "Felix", "Tom", "Garfield"]
+                          See also splice for trick  
+    .slice                see also String.slice  #nondestructive
+                            two arguments the index where the slice should begin and the index before which it should end: 
+                            const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+                              days.slice(2, 5);// => ["Wed", "Thu", "Fri"]
+                              days.slice(5);// => ["Sat", "Sun"]
+                              days.slice(0, days.length - 1);// => ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+                              days.slice(-3); // => ["Fri", "Sat", "Sun"]
+    .splice               performs destructive actions.  remove or add elements
+                            const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+                            days.splice(2);// => ["Wed", "Thu", "Fri", "Sat", "Sun"]       days;// => ["Mon", "Tue"]
+                            days.splice(-2);// => ["Sat", "Sun"] days;// => ["Mon", "Tue", "Wed", "Thu", "Fri"]  
+                            days.splice(2, 3);// => ["Wed", "Thu", "Fri"]
+      add elements        After the first two, every additional argument passed to .splice() will be inserted into the array 
+                            at the position indicated by the first argument.
+                            const cards = ['Ace of Spades','Jack of Clubs','Nine of Clubs','Nine of Diamonds','Three of Hearts'];
+                             cards.splice(2, 1, 'Ace of Clubs');// => ["Nine of Clubs"]
+                              cards;// => ["Ace of Spades", "Jack of Clubs", ****"Ace of Clubs"****, "Nine of Diamonds", "Three of Hearts"]
+      add elements without remove
+                          books.splice(2, 0, 'Great Expectations', 'Oliver Twist'); //remove 0 elements.
+      splice with spread  replace elements nondestructively, leaving the original array unharmed:
+                            const menu = ['Jalapeno Poppers', 'Cheeseburger', 'Fish and Chips', 'French Fries', 'Onion Rings'];
+                             const newMenu = [...menu.slice(0, 1), 'Veggie Burger', 'House Salad', 'Teriyaki Tofu', ...menu.slice(3)];
+                             menu;// => ["Jalapeno Poppers", "Cheeseburger", "Fish and Chips", "French Fries", "Onion Rings"]
+                             newMenu;// => ["Jalapeno Poppers", "Veggie Burger", "House Salad", "Teriyaki Tofu", "French Fries", "Onion Rings"]      
+      
+      
   NumberMethods
     Math                 see also Number
       ceil                  Math.ceil(0.5);//=> 1 
@@ -740,6 +806,8 @@ METHODS
  
   typeof                operator to give us an idea of what data types we're dealing with. 
 
+Testing                 see Debugging
+  
 Types
                         Everything ,except object, is a primitive, it accepts a single value
   NaN                   esentially JS going I dont know what happened                       
