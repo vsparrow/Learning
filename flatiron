@@ -806,6 +806,32 @@ METHODS
  
   typeof                operator to give us an idea of what data types we're dealing with. 
 
+Objects
+  delete
+    keys                delete wednesdayMenu.salad;
+  Object.assign()       which allows us to combine properties from multiple objects into a single object
+                          first argument is initial object in which all of the properties are merged. 
+                          Every additional argument is an object whose properties we want to merge into the first object: 
+                          Object.assign({ eggs: 3 }, { flour: '1 cup' });// => { eggs: 3, flour: "1 cup" }
+                          Object.assign({ eggs: 3 }, { chocolateChips: '1 cup', **flour**: '2 cups'}, {**flour**: '1/2 cup'});
+                              // { eggs: 3, chocolateChips: "1 cup", ****flour: "1/2 cup"**** }   
+  Object.keys()         the return value is an array containing all of the keys at the top level of the object:  
+    delete key          see delete
+  properties
+    set properties      const circle = {}; circle.radius = 5; circle['diameter'] = 10; 
+                          circle.circumference = circle.diameter * Math.PI;// => 31.41592653589793 
+                          circle['area'] = Math.PI * circle.radius ** 2;// => 78.53981633974483
+                          circle;// => { radius: 5, diameter: 10, circumference: 31.41592653589793, area: 78.53981633974483 }    
+    set properties dynamic
+                        const morningMeal = 'breakfast'; //
+                          const meals = {  [morningMeal]: 'French toast'} // meals; // => { breakfast: "French toast"}
+    update property nondestructive
+                        function nondestructivelyUpdateObject(obj, key, value) {
+                          const newObj = { ...obj };  newObj[key] = value; return newObj;}    
+                        OR
+                        function nondestructivelyUpdateObject(obj, key, value) {
+                          return Object.assign({}, obj, { [key]: value });   }
+
 Testing                 see Debugging
   
 Types
@@ -816,7 +842,7 @@ Types
                           but...everything as a double-precision floating-point number, or float                          
   Objects               collection of properties bounded by curly braces { }, similar to a hash in Ruby. 
                           The properties can point to values of any data type — even other objects:
-                          typeof {} //=> "object"
+                          typeof {} //=> "object" // {key:value} //
     null                typeof null //=> "object"                        
   Strings               'single quotes', "double quotes", or `backticks`
      
