@@ -706,23 +706,52 @@ ARGUMENTS
 CLASS
 DEBUGGING
 ERRORS
+
 METHODS
-  typeof                operator to give us an idea of what data types we're dealing with. 
-Types
-                        Everything ,except object, is a primitive, it accepts a single value
-  Numbers               No floats, everything is a number, so is -Infinity, that is a number
-  Objects               collection of properties bounded by curly braces { }, similar to a hash in Ruby. 
-                          The properties can point to values of any data type — even other objects:
-                          typeof {} //=> "object"
-    null                typeof null //=> "object"                        
-  Strings               'single quotes', "double quotes", or `backticks`
+  ++                     ++counter the variable's value is incremented first and then returned:                        
+                          counter++, the variable's value is returned first and then incremented  
+  NumberMethods
+    Math                 see also Number
+      ceil                  Math.ceil(0.5);//=> 1 
+      floor                 Math.floor(0.5);//=> 0 
+      round                 Math.round(0.5);//=> 1 Math.round(0.49);//=> 0
+      max                   Math.max(1, 2, 3, 4, 5);//=> 5 
+      min                   Math.min(1, 2, 3, 4, 5);//=> 1
+      random                Math.random();  This method generates a random number between 0 (inclusive) and 1 (exclusive):
+                              //=> 0.4495507082209371                        
+    Number               see also Math
+    isInteger             Number.isInteger(42);//=> true  Number.isInteger(0.42);//=> false
+    isFinite              Number.isFinite(9001);//=> true Number.isFinite(Infinity);//=> false
+    isNaN                 Number.isNaN(10);//=> false
+    parseInt              NUMBER.PARSEINT() Accepts a string as its first argument and parses it as an integer. 
+                            The second argument is the base   Number.parseInt('100', 10);//=> 100 Number.parseInt('100', 2)
+                              ;//=> 4
+    parseFloat            Number.parseFloat() only accepts a single argument, the string that should be parsed into a 
+                            floating-point number:  
+
+    
+  StringMethods
     chatAt              'Edsger Dijkstra'.charAt(0); //=> "E"  like 'Edsger Dijkstra'[0]; //=> "E"
     slice               two arguments, the indexes at which the extraction should begin and before which it should end.
                           if omiited get whoel thing returned
                           'Edsger Dijkstra'.slice(7); //=> "Dijkstra"  'Edsger Dijkstra'.slice(0, 3);//=> "Eds"
     .toLowerCase()
     .toUpperCase()  
-  
+ 
+  typeof                operator to give us an idea of what data types we're dealing with. 
+
+Types
+                        Everything ,except object, is a primitive, it accepts a single value
+  NaN                   esentially JS going I dont know what happened                       
+                        
+  Numbers               No call floats, everything is a number, so is -Infinity, that is a number
+                          but...everything as a double-precision floating-point number, or float                          
+  Objects               collection of properties bounded by curly braces { }, similar to a hash in Ruby. 
+                          The properties can point to values of any data type — even other objects:
+                          typeof {} //=> "object"
+    null                typeof null //=> "object"                        
+  Strings               'single quotes', "double quotes", or `backticks`
+     
   Undefined             the variable was declared but not assigned prior to the reference.
   
   
