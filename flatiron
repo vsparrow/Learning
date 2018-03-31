@@ -727,11 +727,14 @@ CLASS
 DEBUGGING
   console.error         method is for printing out an error to the console, like console.log but prints red
   console.warn          method is for printing out an warning to the console, like console.log but prints yellow
+  debugger              built-in debugging solution, and it allows us to stop our code mid-execution and poke around a bit. 
+                          when at debug, we'll see this yellow banner pop up in the main browser window:
+                            function something(){ debugger;}
   Testing
-  End to End Test       Think of end-to-end testing like the things we'd do in the browser ourselves: 
+    End to End Test       Think of end-to-end testing like the things we'd do in the browser ourselves: 
                           'When I click this button, the card should appear in
-  Integration Test      how do all the units in our program work together
-  Unit testing          is testing the smallest unit possible of our program. These small units are usually single functions.
+    Integration Test      how do all the units in our program work together
+    Unit testing          is testing the smallest unit possible of our program. These small units are usually single functions.
   
   
 ERRORS
@@ -740,6 +743,40 @@ ERRORS
                             the global scope, simply put them at the top of the JavaScript file. 
                             If they're declared inside another function, put the declaration at the top of the function body.
                           Only use const and let. Never use var.
+
+FUNCTION
+  callbacks             the function isn't invoked immediately — instead it's called back, or invoked at a later point.
+                          function main (cb) {  console.log(cb());}
+                           main(function () { return "After I get passed to the main() function as the only argument, 
+                                  I'm stored in the local 'cb' variable!"});
+                              // LOG: After I get passed to the main() function as the only argument, I'm stored in the
+                                  local 'cb' variable!
+                        Because a callback function is invoked inside another function, we can forward to it any 
+                          arguments passed to the outer function.
+                          see examples below
+LOOPS/ITERATION
+  for..of               const myArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+    array                 for (const element of myArray) {  console.log(element);}
+    string                for (const char of 'Hello, world!') {  console.log(char);}
+  for..in
+    array                 don't use for...in with arrays.  can iterate but order will be different
+    object                for (const <KEY> in <OBJECT>) {} // for (const key in address) {console.log(key);}
+                            //addreess is the obj
+    object nested
+                          function deepIterator (target) {
+                            if (typeof target === 'object') {
+                              for (const key in target) {
+                                deepIterator(target[key]);
+                              }
+                            } else {
+                              console.log(target);
+                            }
+                          }
+                          Keep track of nested levels (how deep goes?)
+                          let counter = 0;
+                            function deepIterator (target) {counter++; //then same as above};  counter //this will have nest
+                           
+
 
 METHODS
   ++                     ++counter the variable's value is incremented first and then returned:                        
@@ -750,6 +787,7 @@ METHODS
                             const allCities = ['Los Angeles', ...coolCities]; #// => ["Los Angeles", "New York", "San Fran"]
                             const allCats = [...coolCats, 'Garfield']; #// => ["Hobbes", "Felix", "Tom", "Garfield"]
                           See also splice for trick  
+    .filter               [1, 2, 3, 4, 5].filter(function (num) { return num > 3; });   // => [4, 5]                      
     .slice                see also String.slice  #nondestructive
                             two arguments the index where the slice should begin and the index before which it should end: 
                             const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -850,6 +888,68 @@ Types
   
   
   
+  
+  EXAMPLES
+    FILTER FUNCTION
+                        ////////////////////////////    
+                        function filter (collection, attribute, value) {
+                          for (const user of collection) {
+                            if (user[attribute] === value) {
+                              console.log(user.firstName);
+                            }
+                          }
+                        }
+
+                        filter(users, 'favoriteAnimal', 'Jaguar');    
+                        ////////////////////////////    
+    callbacks
+                        function greet (name, cb) {
+                          return cb(name);
+                        }
+
+                        greet('Ada Lovelace', function (name) { return 'Hello there, ' + name; });
+                        // => "Hello there, Ada Lovelace"
+
+                        function doMath (num1, num2, cb) {
+                          return cb(num1, num2);
+                        }
+
+                        doMath(42, 8, function (num1, num2) { return num1 * num2; });
+                        // => 336    
+                        ////////////////////////////    
+                        const users = [
+                          { firstName: 'Niky',   lastName: 'Morgan',    favoriteColor: 'Blue',   favoriteAnimal: 'Jaguar' },
+                          { firstName: 'Tracy',  lastName: 'Lum',       favoriteColor: 'Yellow', favoriteAnimal: 'Penguin' },
+                          { firstName: 'Josh',   lastName: 'Rowley',    favoriteColor: 'Blue',   favoriteAnimal: 'Penguin' },
+                          { firstName: 'Kate',   lastName: 'Travers',   favoriteColor: 'Red',    favoriteAnimal: 'Jaguar' },
+                          { firstName: 'Avidor', lastName: 'Turkewitz', favoriteColor: 'Blue',   favoriteAnimal: 'Penguin' },
+                          { firstName: 'Drew',   lastName: 'Price',     favoriteColor: 'Yellow', favoriteAnimal: 'Elephant' }
+                        ];
+
+                        function filter (collection, cb) {
+                          const newCollection = [];
+
+                          for (const user of collection) {
+                            if (cb(user)) {
+                              newCollection.push(user);
+                            }
+                          }
+
+                          return newCollection;
+                        }
+
+                        const bluePenguinUsers = filter(users, function (user) { return user.favoriteColor === 'Blue' && user.favoriteAnimal === 'Penguin'; });
+
+                        bluePenguinUsers;
+                        // => [{ firstName: "Josh", lastName: "Rowley", favoriteColor: "Blue", favoriteAnimal: "Penguin" }, { firstName: "Avidor", lastName: "Turkewitz", favoriteColor: "Blue", favoriteAnimal: "Penguin" }]
+
+                        const yellowUsers = filter(users, function (user) { return user.favoriteColor === 'Yellow'; });
+
+                        yellowUsers;
+                        // => [{ firstName: "Tracy", lastName: "Lum", favoriteColor: "Yellow", favoriteAnimal: "Penguin" }, { firstName: "Drew", lastName: "Price", favoriteColor: "Yellow", favoriteAnimal: "Elephant" }]
+
+                        users.length;
+                        // => 6  
 MARKDOWN *************************************************************
 
  Github Markdwon
