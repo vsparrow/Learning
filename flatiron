@@ -693,6 +693,40 @@ Language        See https://developer.mozilla.org/en-US/docs/Web/HTML/Element or
   Modernizr   JS library that detects HTML5 and CSS3 features of user's browser    
 
 
+JAVASCRIPT ***********************************************************
+
+ARGUMENTS
+  const                 var that cannot be reassigned
+  interpolation         `${}`  must be between tick not quote
+  let                   new var in js6, use when variable change
+  var                   classic way to declare a variable. 
+
+  let/const vs var      throw an error if you try to declare the same variable a second time, var wont error will let you do 
+
+CLASS
+DEBUGGING
+ERRORS
+METHODS
+  typeof                operator to give us an idea of what data types we're dealing with. 
+Types
+                        Everything ,except object, is a primitive, it accepts a single value
+  Numbers               No floats, everything is a number, so is -Infinity, that is a number
+  Objects               collection of properties bounded by curly braces { }, similar to a hash in Ruby. 
+                          The properties can point to values of any data type — even other objects:
+                          typeof {} //=> "object"
+    null                typeof null //=> "object"                        
+  Strings               'single quotes', "double quotes", or `backticks`
+    chatAt              'Edsger Dijkstra'.charAt(0); //=> "E"  like 'Edsger Dijkstra'[0]; //=> "E"
+    slice               two arguments, the indexes at which the extraction should begin and before which it should end.
+                          if omiited get whoel thing returned
+                          'Edsger Dijkstra'.slice(7); //=> "Dijkstra"  'Edsger Dijkstra'.slice(0, 3);//=> "Eds"
+    .toLowerCase()
+    .toUpperCase()  
+  
+  Undefined             the variable was declared but not assigned prior to the reference.
+  
+  
+  
 MARKDOWN *************************************************************
 
  Github Markdwon
