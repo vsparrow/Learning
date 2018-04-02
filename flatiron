@@ -787,6 +787,7 @@ FUNCTION
     
                        
 LOOPS/ITERATION
+  forEach               another iteration function 
   for..of               const myArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
     array                 for (const element of myArray) {  console.log(element);}
     string                for (const char of 'Hello, world!') {  console.log(char);}
@@ -807,8 +808,14 @@ LOOPS/ITERATION
                           Keep track of nested levels (how deep goes?)
                           let counter = 0;
                             function deepIterator (target) {counter++; //then same as above};  counter //this will have nest
-                           
-
+   reduce               two arguments, a callback function that will reduce each array element into a single, ultimate value
+                          and the initial value that the reduction should start from
+                        The callback function accepts four arguments:
+                          The reduced total as it currently stands (or the initial value if nothing's been reduced yet).
+                          The current element that's to be reduced.
+                          The index of the current element within the array.
+                          The entire array.           
+                        see examples section
 
 METHODS
   ++                     ++counter the variable's value is incremented first and then returned:                        
@@ -868,6 +875,12 @@ METHODS
     
   StringMethods
     chatAt              'Edsger Dijkstra'.charAt(0); //=> "E"  like 'Edsger Dijkstra'[0]; //=> "E"
+    localeCompare       method returns a number indicating whether a reference string comes before or after or is the same 
+                          as the given string in sort order. 
+                           //const guestList = ["jan", "Jonas", "kaitlin", "Kate", "Lisa"];
+                            guestList.sort(function (a, b) {
+                              return a.localeCompare(b);     });
+                            // => ["jan", "Jonas", "kaitlin", "Kate", "Lisa"]
     slice               two arguments, the indexes at which the extraction should begin and before which it should end.
                           if omiited get whoel thing returned
                           'Edsger Dijkstra'.slice(7); //=> "Dijkstra"  'Edsger Dijkstra'.slice(0, 3);//=> "Eds"
@@ -1060,7 +1073,58 @@ Types
                           console.log(`Hi, I'm ${name}, I was born in ${year}, and I ${claimToFame}!`);
                         })('Grace Hopper', 1906, 'invented one of the first compilers');
                         // LOG: Hi, I'm Grace Hopper, and I invented one of the first compilers!
+                        ////////////////////////////                           
+  reduce with function
+                        const stringify = function (agg, el, i, arr) {
+                          let stringifiedElement = el.name + ' is $' + el.price + '. ';
+                          if (i === arr.length - 1) {
+                            stringifiedElement += 'The total price is $' + (agg.totalPrice + el.price) + '.';
+
+                            return agg.string + stringifiedElement;
+                          }
+                          return {
+                            string: agg.string + stringifiedElement,
+                            totalPrice: agg.totalPrice + el.price
+                          };
+                        };
+
+                        products.reduce(stringify, { string: '', totalPrice: 0 });
+                        // => "Head & Shoulders Shampoo is $4.99. Twinkies is $7.99. Oreos is $6.49. 
+                          Jasmine-scented bath pearls is $13.99. The total price is $33.46."
+                        ////////////////////////////   
                         
+  functions with returns using closures 
+                      const newTaxFunction = function (countryName, taxRate, ...exemptItems) {
+                        return function (item, priceInCents) {
+                          const formattedPrice = '$' + (priceInCents / 100).toFixed(2);
+                          const exempt = exemptItems.indexOf(item) > -1;
+                          const taxDue = exempt ? 0 : priceInCents * taxRate / 100;
+                          const formattedTaxDue = '$' + taxDue.toFixed(2);
+
+                          console.log(`In ${countryName}, ${item} costs ${formattedPrice}.`);
+                          console.log('That item', exempt ? 'is' : 'is not', 'exempt from taxation.');
+                          console.log(`The total tax due is: ${formattedTaxDue}.`);
+                        };
+                      };
+                      const franceTax = newTaxFunction('France', 0.15, 'wine', 'macaron', 'baguette', 'croissant');
+                      const canadaTax = newTaxFunction('Canada', 0.125, 'maple syrup', 'poutine', 'kindness');
+                      const mexicoTax = newTaxFunction('Mexico', 0.05, 'queso', 'futbol', 'tequila', 'avocado');
+                      canadaTax('poutine', 599);
+                      // LOG: In Canada, poutine costs $5.99.
+                      // LOG: That item is exempt from taxation.
+                      // LOG: The total tax due is: $0.00.
+                      canadaTax('futbol', 1999);
+                      // LOG: In Canada, futbol costs $19.99.
+                      // LOG: That item is not exempt from taxation.
+                      // LOG: The total tax due is: $2.50.
+                      mexicoTax('Big Mac', 199);
+                      // LOG: In Mexico, Big Mac costs $1.99.
+                      // LOG: That item is not exempt from taxation.
+                      // LOG: The total tax due is: $0.10.
+                      franceTax('macaron', 149);
+                      // LOG: In France, macaron costs $1.49.
+                      // LOG: That item is exempt from taxation.
+                      // LOG: The total tax due is: $0.00.  
                         
 MARKDOWN *************************************************************
 
