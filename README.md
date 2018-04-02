@@ -1,6 +1,11 @@
 # Learning
 Repository of resources I am using for learning.
 
+CryptoZombies
+cryptozombies.io
+Started April 2, 2018
+Started for FSP talk with Grayson. A nice interactive game to learn Solarity.
+
 
 Intro to Git - Iam Schoonover  
 http://udemy.com
