@@ -755,6 +755,11 @@ ERRORS
 
 FUNCTION
                         see also examples at end of JS
+  arrow functions       arrow functions are anonymous, All arrow functions are anonymous. 
+                          This is unlike regular functions, which take their names from their identifiers.
+    implicit returns 
+                          ()=>{} //if no {}, gives implicit return like ruby
+                          ()=>(3*3)// returns 9 || ()=>{3*3} //return is undefined   
   callbacks             the function isn't invoked immediately — instead it's called back, or invoked at a later point.
                           function main (cb) {  console.log(cb());}
                            main(function () { return "After I get passed to the main() function as the only argument, 
