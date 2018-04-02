@@ -695,6 +695,15 @@ Language        See https://developer.mozilla.org/en-US/docs/Web/HTML/Element or
 
 JAVASCRIPT ***********************************************************
 
+ A statement is a unit of code that accomplishes something but does not produce a value.
+ An expression is a unit of code that produces a value.
+   Variable declarations: const, let, var
+   Iteration: for, for...in, for...of, while
+   Control flow: if...else, switch, break
+   Debugging: debugger
+   All of those keywords are extremely useful, but none of them generate a value on their own
+
+
 ARGUMENTS + Variables
   const                 var that cannot be reassigned
   identifier            when we declare a variable or a function, we provide a name that allows us to refer back to it:
@@ -745,6 +754,7 @@ ERRORS
                           Only use const and let. Never use var.
 
 FUNCTION
+                        see also examples at end of JS
   callbacks             the function isn't invoked immediately — instead it's called back, or invoked at a later point.
                           function main (cb) {  console.log(cb());}
                            main(function () { return "After I get passed to the main() function as the only argument, 
@@ -754,6 +764,28 @@ FUNCTION
                         Because a callback function is invoked inside another function, we can forward to it any 
                           arguments passed to the outer function.
                           see examples below
+   function expression  a function needs a name, but a function expression does not need one, but can have one
+                          function expressions are not hoisted. 
+                            sayHello();   
+                            const sayHello = function () {
+                              console.log('Hello');
+                            };
+                            // ERROR: Uncaught ReferenceError: sayHello is not defined
+    methods
+      add               function is just a special object, we can add properties to functions and then access them:
+                         const myFunc = function () {return 6 + 9;   };
+                         myFunc.favoriteNumber = 42;   // => 42
+                         console.log("myFunc()'s favorite number is", myFunc.favoriteNumber);
+                         // LOG: myFunc()'s favorite number is 42
+    pass by reference   Like all JavaScript objects, functions are passed by reference
+                          When a new function is created, it's stored at a specific location in memory. 
+                          When we assign a function expression to a variable, we're not actually storing the entire function 
+                          in that variable — we're simply storing a reference to the location in memory where the function
+                          lives If we assign the value of that first variable to a new variable, the new variable also points
+                          at the same location in memory:
+
+    
+                       
 LOOPS/ITERATION
   for..of               const myArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
     array                 for (const element of myArray) {  console.log(element);}
@@ -950,6 +982,86 @@ Types
 
                         users.length;
                         // => 6  
+                        ////////////////////////////                           
+  store functions as elements in an array:
+                         const arrayOfFunctions = [
+                           function () { console.log('Functions'); },
+                           function () { console.log('are'); },
+                           function () { console.log('so'); },
+                           function () { console.log('cool!'); }
+                         ];
+                         for (const fn of arrayOfFunctions) {
+                          fn();
+                        }
+                        ////////////////////////////                           
+                        
+  return function from function
+                       const createDivisibleFunction = function (divisor) {
+                        return function (num) {
+                          return num % divisor === 0;
+                        };
+                      };
+                      Then let's store the returned functions in variables so that we can reference and invoke them:
+                        const divisibleBy3 = createDivisibleFunction(3);
+                        const divisibleBy5 = createDivisibleFunction(5);
+                        divisibleBy3;
+                        // => ƒ (num) { return num % divisor === 0; }
+                        divisibleBy5;
+                        // => ƒ (num) { return num % divisor === 0; }
+                        divisibleBy3(9);
+                        // => true
+                        divisibleBy3(10);
+                        // => false
+                        divisibleBy5(9);
+                        // => false
+                        divisibleBy5(10);
+                        // => true
+                        ////////////////////////////                           
+
+  functions can be passed into other functions as arguments. 
+                        function hid (fn) {
+                          console.log('Inside hid()');
+                          return fn;
+                        }       
+                        const den = function (fn) {
+                          console.log('Inside den()');
+                          return fn;
+                        };       
+                        function mess (cb) {
+                          console.log('Inside mess()');       
+                          cb();
+                        }       
+                        const age = function () {
+                          console.log('Inside age()');
+                        };       
+                        hid(den)(mess)(age);
+                        // LOG: Inside hid()
+                        // LOG: Inside den()
+                        // LOG: Inside mess()
+                        // LOG: Inside age()       
+                        ////////////////////////////                           
+
+   invoke functions immediatly
+
+                        (function () { console.log("Help, I've been invoked!") });
+                        // => ƒ () { console.log("Help, I've been invoked!") }
+                        What can we do with that returned function object? We can invoke it... immediately:
+
+                        (function () { console.log("Help, I've been invoked!") })();
+                        // LOG: Help, I've been invoked!
+                        We can pass arguments into the invocation operator just like any old function:
+
+                        (function (name, year, claimToFame) {
+                          console.log(`Hi, I'm ${name}, I was born in ${year}, and I ${claimToFame}!`);
+                        })('Ada Lovelace', 1815, 'was the first computer programmer');
+                        // LOG: Hi, I'm Ada Lovelace, and I was the first computer programmer!
+
+                        (function (name, year, claimToFame) {
+                          console.log(`Hi, I'm ${name}, I was born in ${year}, and I ${claimToFame}!`);
+                        })('Grace Hopper', 1906, 'invented one of the first compilers');
+                        // LOG: Hi, I'm Grace Hopper, and I invented one of the first compilers!
+                        
+                        
 MARKDOWN *************************************************************
 
  Github Markdwon
