@@ -1125,7 +1125,58 @@ Types
                       // LOG: In France, macaron costs $1.49.
                       // LOG: That item is exempt from taxation.
                       // LOG: The total tax due is: $0.00.  
-                        
+                      ////////////////////////////   
+  Sort numbers       Sort numbers what if we're sorting an array of numbers instead of strings? 
+                      The default comparison algorithm won't work:
+                      const primes = [13, 7, 17, 2, 5, 3];
+                      primes.sort();                  // => [13, 17, 2, 3, 5, 7]
+                      const numberSorter = function (num1, num2) {
+                        return num1 - num2;
+                      };
+                      primes.sort(numberSorter);         // => [2, 3, 5, 7, 13, 17] 
+                      ////////////////////////////   
+  closures              
+                      class Item {
+                        constructor(name, manufacturePrice){
+                          this.name = name
+                          this.manufacturePrice = manufacturePrice
+                        }
+                        retailPrice(marketMultiplier){
+                          return marketMultiplier * this.manufacturePrice;
+                        }
+                      }
+                      let tennisShoe = new Item('tennis shoe', 30)  // {name:  'tennis shoe', manufacturePrice: 30}
+                      tennisShoe.retailPrice(1.5)   // 45
+                      let tshirt = new Item('tshirt', 10)   // {name:  'tshirt', manufacturePrice: 10}
+                      tshirt.retailPrice(1)   // 10
+
+                      ////////////////////////////   
+  closures better since more private   
+
+                        function createItem(){
+                          let ItemId = 0
+                          // return the class
+                          return class {
+                            constructor(manufacturePrice){
+                              this.name = name
+                              this.manufacturePrice = manufacturePrice
+                              this.id = ++ItemId;
+                            }
+
+                            retailPrice(marketType){
+                              return marketMultiplier * manufacturePrice;
+                            }
+                          }
+                        }
+                        const Item = createItem()
+                        // Execute createItem and assign the returned class to equal Item.
+                        // We only need to call createItem() one time in our codebase.
+                        let tennisShoe = new Item('tennis shoe', 15)
+                        // {id: 1, name: 'tennis shoe', manufacturePrice: 15}
+                        let tshirt = new Item('t shirt', 8)
+                        // {id: 2, name: 't shirt', manufacturePrice: 8}
+                      
+                      
 MARKDOWN *************************************************************
 
  Github Markdwon
