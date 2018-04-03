@@ -731,6 +731,30 @@ CONDITIONALS
   
 
 CLASS
+  CONSTRUCTOR 
+    example
+                            function User (name, email){      //see also prototype for adding functions from outside constructor
+                              this.name = name;
+                              this.email = email;
+                              this.sayHello = function(){
+                                console.log("Hello everybody!");
+                              }
+                            }
+                            let susan = new User('susan', 'susan@gmail.com')
+                            susan.sayHello()  // "Hello everybody!"
+
+  Prototype
+                        every new user instance made from the User constructor function has reference to attributes
+                          defined on User function's prototype object
+    example
+                           function User(name, email) {     //<---This is a constructor
+                             this.name = name;
+                             this.email = email;
+                           }
+                           User.prototype.sayHello = function() {  //<----- this is a prototype
+                             console.log(`Hello everybody, my name is ${this.name}`);
+                           }
+                           let sarah = new User('sarah', 'sarah@gmail.com')
 
 
 DEBUGGING
