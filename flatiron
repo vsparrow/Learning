@@ -731,6 +731,22 @@ CONDITIONALS
   
 
 CLASS
+  why classes?          problem is that our constructor and use of prototypes are separated from one another.
+                          way to encase both the attributes and functionality produced from a constructor in one spot.
+                          Instead of our User constructor function, we now have a class User.
+                          Within the body of the class, we can define a special function named constructor
+                          In the end, we still instantiate a new User the same way.
+  class example         better than constructor alone!
+                               class User {
+                               constructor(name, email) {
+                                 this.name = name;
+                                 this.email = email;
+                               }
+                               sayHello() { console.log(`Hello, my name is ${this.name}`);   }  //<- notice no function
+                             }
+                             var sarah = new User('sarah', 'sarah@gmail.com');
+                             sarah.sayHello();
+
   CONSTRUCTOR 
     example
                             function User (name, email){      //see also prototype for adding functions from outside constructor
@@ -742,7 +758,33 @@ CLASS
                             }
                             let susan = new User('susan', 'susan@gmail.com')
                             susan.sayHello()  // "Hello everybody!"
+                            
+  Inheritence
+    class inheritence
+                            //objects initialized from the Teacher class will inherit the same methods declared on 
+                              //the User class.
+                            class Teacher extends User {
+                              teachMath(){          //<-----teach has this method that User does not
+                                return `My name is ${this.name} and 1 + 1 is 2.`
+                              }
+                            }
+    inheritied methods extend with super
+                                  sayHello(){
+                                    super.sayHello()  //<-- saying parent classes hello
+                                    console.log('hello')
+                                  }
+    inheritence override
+                            override an inherited method simply by defining another method with the same name.
+   
+  
+  Methods
+    see also prototype
+    see also Class:inheritence override
+    see also . Class: extends with super
+    verify method of class    verify method/prototype defined in class/constructor
+                              verify that sayHello is defined on the User prototype by examining User.prototype
 
+    
   Prototype
                         every new user instance made from the User constructor function has reference to attributes
                           defined on User function's prototype object
@@ -755,7 +797,7 @@ CLASS
                              console.log(`Hello everybody, my name is ${this.name}`);
                            }
                            let sarah = new User('sarah', 'sarah@gmail.com')
-
+  Super                  see inheritience:super  
 
 DEBUGGING
   console.error         method is for printing out an error to the console, like console.log but prints red
