@@ -798,6 +798,29 @@ CLASS
                            }
                            let sarah = new User('sarah', 'sarah@gmail.com')
   Super                  see inheritience:super  
+  
+  THIS
+                                  when an objects function returns "this", the object is returned
+                                https://learn.co/tracks/web-development-immersive-2-0-module-three/new-stuff/object-oriented-js/this
+                                example:
+                                let person = {
+                                  greet: function(){
+                                    return this     }}
+                                typeof person.greet       // 'function'
+                                person.greet() == person  // true
+                                ******note*****
+                                let greetFn = person.greet  //this will not point to function rather, invoking the function, 
+                                                            //    in the context of the window
+                                greetFn() == person    // false
+                                greetFn()             // window
+                                *******note2*******
+                                let person = {
+                                  greet: function greeting(){
+                                   function otherFunction(){
+                                     return this   }
+                                   return otherFunction()  }}
+                                person.greet()   // window      <---- also ends up in windows 
+  
 
 DEBUGGING
   console.error         method is for printing out an error to the console, like console.log but prints red
