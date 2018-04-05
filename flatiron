@@ -694,7 +694,7 @@ Language        See https://developer.mozilla.org/en-US/docs/Web/HTML/Element or
 
 
 JAVASCRIPT ***********************************************************
-
+ ***DOCUMENT MANIPULATION  go to end ******
  A statement is a unit of code that accomplishes something but does not produce a value.
  An expression is a unit of code that produces a value.
    Variable declarations: const, let, var
@@ -705,6 +705,9 @@ JAVASCRIPT ***********************************************************
 
 
 ARGUMENTS + Variables
+  arguments object      The arguments object doesn't have a slice method, because it isn't an array,
+                          so we have to go through Array.prototype to get to the slice function
+                          const customers = Array.prototype.slice.call(arguments);  
   const                 var that cannot be reassigned
   identifier            when we declare a variable or a function, we provide a name that allows us to refer back to it:
                          We call those names identifiers because they allow us to identify the variable or function we're 
@@ -865,12 +868,38 @@ FUNCTION
                               console.log('Hello');
                             };
                             // ERROR: Uncaught ReferenceError: sayHello is not defined
+   functional borrowing   Function borrowing
+                            a great way to use the functions of another object without having to explicitly 
+                            write them into your object.
+                                https://learn.co/tracks/web-development-immersive-2-0-module-three/new-stuff/
+                                object-oriented-js/this-bind-call-apply-code-along
+                        
     methods
       add               function is just a special object, we can add properties to functions and then access them:
                          const myFunc = function () {return 6 + 9;   };
                          myFunc.favoriteNumber = 42;   // => 42
                          console.log("myFunc()'s favorite number is", myFunc.favoriteNumber);
                          // LOG: myFunc()'s favorite number is 42
+      apply             see call
+      bind()            we need to be able to hold on to the function,add this, delay calling it until later.   
+                          see for example https://repl.it/@vsparrow/Js-Object-Oriented-Bind-Call-Apply-Readme
+                                  class User {
+                                    constructor(name, favoriteBand){
+                                      this.name = name
+                                      this.favoriteBand = favoriteBand
+                                    }
+                                    favoriteBandMatches(bands){
+                                      // here this is the User instance
+                                      bands.filter(function(band){
+                                        // here, this is global
+                                        return band == this.favoriteBand
+                                      }.bind(this))
+                                    }
+                                  }                          
+      call              call vs apply:  only difference between call and apply is the way you pass arguments to the 
+                          target function.
+                              call(objectWithThis,val1,val2,etc)
+                              apply(objectWithThis,[val1,val2,etc])
     pass by reference   Like all JavaScript objects, functions are passed by reference
                           When a new function is created, it's stored at a specific location in memory. 
                           When we assign a function expression to a variable, we're not actually storing the entire function 
@@ -1024,8 +1053,6 @@ Types
   Strings               'single quotes', "double quotes", or `backticks`
      
   Undefined             the variable was declared but not assigned prior to the reference.
-  
-  
   
   
   EXAMPLES
@@ -1269,7 +1296,105 @@ Types
                         // {id: 1, name: 'tennis shoe', manufacturePrice: 15}
                         let tshirt = new Item('t shirt', 8)
                         // {id: 2, name: 't shirt', manufacturePrice: 8}
+  //Example of CALL with THIS:
+                        function Sandwich (bread, ingredients, name) {
+                          this.bread = bread;   this.ingredients = ingredients;   this.name = name;}
+                        function serve () {  console.log(`Here's your ${this.name}. Enjoy!`);}
+                        const gc = new Sandwich('White', ['Cheese'], 'Grilled Cheese');
+                        const pbj = new Sandwich('Wheat', ['Peanut Butter', 'Raspberry Jam'], 'Peanut Butter & Jelly');
+                        serve.call(gc);     //Instead of invoking the serve() function directly, we're invoking the call()
+                                            //method of the serve function.
+                        serve.call(pbj);
+                        
+  //the object store
+                        Object store
+                        let store = {items: [
+                          {id: 1, price: 2, name: 'red socks', userId: 1},
+                          {id: 2, price: 7, name: 'blue shirt', userId: 1},
+                          {id: 3, price: 4, name: 'black tshirt', userId: 2}
+                          ],
+                        users: [
+                          {id: 1, name: 'Cindy'},
+                          {id: 2, name: 'Billy'},
+                          {id: 3, name: 'Bobby'}
+                        ]}
+                        the store object has two keys each of which points to an array:
+                         one to represent the collection of items and one to represent the collection of users.
+                         let itemId = 0
+                         class Item {
+                           constructor(price, name, user){
+                             this.id = ++itemId
+                             this.name = name
+                             this.price = price
+                             if(user){
+                               this.userId = user.id     }
+                             // insert in the item to the store
+                             store.items.push(this)   }
+                           setUser(user){
+                             this.userId = user.id   } }
+                         let bobby = new User("bobby")
+                         let trousers = new Item(24, 'trousers', bobby)
+                         store // {users: [{id: 1, name: 'Bobby'}], items: [{id: 1, name: 'trousers', price: 24, userId: 1}]}
+  
+  
+                        
                       
+  **************DOCUMENT *************************
+  Document manipulation
+    document.all;                               // returns all the nodes inside the document object
+    element.appendChild(ul)                     //You can add elements with functions like appendChild.
+    element.attributes                          //gives you access to its attributes.
+    document.contentType;                       // returns the type of content contained. Most web pages should return "text/html"
+    document.createElement('div')
+    addEventListener                            //You can add a listener directly using addEventListener.
+    document.getElementById('theIdYouTookNoteOf')
+    document.getElementsByClassName('banner')
+    document.getElementsByTagName("p")          ;//returns all p tags on a page //document.getElementsByTagName('div')
+    element.innerHTML = 'Hello, DOM!'
+    document.querySelector('body').remove()     //remove content
+    document.querySelector('div')               // the method would return the first div
+    document.querySelectorAll('p');             //return node list
+    ul.remove()                                 //You can remove elements
+    removeAttribute                             //You can remove attributes with removeAttribute.
+    ul.removeChild(ul.querySelector('li:nth-child(2)'))
+    element.style.backgroundColor = '#f9f9f9';
+    element.style.textAlign = 'center';
+    document.URL;                               // returns the URL of the document object  
+  ************** DOCUMENT EXAMPLES*************************
+
+  //example dom manipulation:
+                                      const main = document.getElementsByTagName('main')[0]
+                                      const div = main.children[1]
+                                      const p = div.getElementsByTagName('p')[0]
+                                      p.textContent = "Goodbye!"
+
+  //change the .innerHTML of these lis like so:
+                                    const lis = document.getElementById('app').querySelectorAll('ul.ranked-list li')
+                                    for (let i = 0; i < lis.length; i++) {    lis[i].innerHTML = (i + 1).toString()  }
+                                    Now our lis, even though they're children of two separate uls, will count up from 1 to 4.
+
+  //create ul and lis
+                                    var element = document.createElement('div')
+                                    element.innerHTML = 'Hello, DOM!'
+                                    element.style.backgroundColor = '#f9f9f9';
+                                    document.body.appendChild(element)
+                                    element.style.textAlign = 'center';
+                                    var ul = document.createElement('ul')
+                                    for (let i = 0; i < 3; i++) {
+                                      let li = document.createElement('li')
+                                      li.innerHTML = (i + 1).toString()
+                                      ul.appendChild(li)
+                                    }
+                                    element.appendChild(ul)
+                                    Hm, that looks a bit ugly. Let's fix it
+                                    ul.style.textAlign = 'left'
+                                    ul.removeChild(ul.querySelector('li:nth-child(2)'))
+                                    ul.remove()
+  
+  
+  
+  
+  
                       
 MARKDOWN *************************************************************
 
