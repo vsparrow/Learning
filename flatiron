@@ -661,6 +661,20 @@ Language        See https://developer.mozilla.org/en-US/docs/Web/HTML/Element or
   anchor a    link tag. 
   audio       embed audio. can have multiple <source> elements inside to have diffferent audio file types. similar to <video>
   bold        see strong
+  data attribute
+              store some extra information that doesn’t have any visual representation, in the HTML
+                 <article
+                   id="electriccars"
+                   data-columns="3"
+                   data-index-number="12314"
+                   data-parent="cars">
+                 ...
+                 </article>
+                read by JS
+                  var article = document.getElementById('electriccars');
+                  article.dataset.columns // "3"
+                  article.dataset.indexNumber // "12314"
+                  article.dataset.parent // "cars              
   Definition List   <dl>     <dt>First term</dt>     <dd>Definition</dd>     <dt>Next term</dt>     <dd>Definition</dd></dl>
   description see metaname:description
   <em>        <em>This text is emphasized</em>    italics
@@ -703,6 +717,7 @@ JAVASCRIPT ***********************************************************
    Debugging: debugger
    All of those keywords are extremely useful, but none of them generate a value on their own
 
+API                     see DataRetrieval
 
 ARGUMENTS + Variables
   arguments object      The arguments object doesn't have a slice method, because it isn't an array,
@@ -824,7 +839,30 @@ CLASS
                                    return otherFunction()  }}
                                 person.greet()   // window      <---- also ends up in windows 
   
+DATARETRIEVAL           
+  fetch                 modern way of gtting data overtaking XHR
+                        fetch('https://api.github.com/repos/jquery/jquery/commits').then(res => res.json()).then(json => console.log(json)); 
+                           //calling res.json() in our fetch is just a nice shorthand for saying 
+                           //"give me the body of the response parsed as JSON".
+  fetch with oauth      const token = 'YOUR_TOKEN_HERE'
+                        fetch('https://api.github.com/user/repos', {
+                          headers: {
+                            Authorization: `token ${token}`
+                          }
+                        }).then(res => res.json()).then(json => console.log(json));
+  XHR                   XHR (XMLHttpRequest object,)fetches data from remote resources can be used with any type of data, 
+                          including JSON. helps us write dynamic programs by allowing us to fetch data from a server based on
+                          user events, and update parts of pages without requiring a full-page refresh
+                          //outdated
+                                let xhr = new XMLHttpRequest();
+                                xhr.open('GET', 'https://api.github.com/repos/jquery/jquery/commits');
+                                xhr.responseType = 'json';
+                                xhr.onload = function() {   console.log(xhr.response); };
+                                xhr.onerror = function() {   console.log('Booo'); };
+                                xhr.send();
 
+  
+  
 DEBUGGING
   console.error         method is for printing out an error to the console, like console.log but prints red
   console.warn          method is for printing out an warning to the console, like console.log but prints yellow
@@ -906,8 +944,11 @@ FUNCTION
                           in that variable — we're simply storing a reference to the location in memory where the function
                           lives If we assign the value of that first variable to a new variable, the new variable also points
                           at the same location in memory:
-
-    
+    promise             an object, represents a value that may not be available yet, but will be resolved at some point 
+                          in the future. All promises implement a then function that is called when the promise is fulfilled,
+                          or completed successfully.  So this is very similar to the idea of a callback on success
+                          example: the then are promises
+                            fetch('https://someapi.api.com').then(res => res.json()).then(json => console.log(json)); 
                        
 LOOPS/ITERATION
   forEach               another iteration function 
@@ -1360,6 +1401,7 @@ Types
     element.style.backgroundColor = '#f9f9f9';
     element.style.textAlign = 'center';
     document.URL;                               // returns the URL of the document object  
+    
   ************** DOCUMENT EXAMPLES*************************
 
   //example dom manipulation:
@@ -1391,9 +1433,28 @@ Types
                                     ul.removeChild(ul.querySelector('li:nth-child(2)'))
                                     ul.remove()
   
-  
-  
-  
+  //convert "array-like" node to array
+                                    allPs = document.querySelectorAll('p')
+                                      Array.from(allPs)
+                                      [...allPs]
+  //see where event coming from
+                                      console.log(event) //hows the event in console //if you expand and look at target 
+                                        you can see where event coming from
+                                      
+  //add event to array of elements
+                                      allPs.forEach( p => p.addEventListener('mouseover',(event)=>{
+                                        event.target.style.color = "green"
+                                      }))
+  //prevent submit on form
+                                    //to make form not submit
+                                    function dontSubmit(event){
+                                      event.preventDefault();
+                                      console.log("event prevented")
+                                    }
+                                    searchFor.addEventListener('submit',dontSubmit) //<- not using () because its a callback
+                                      //e arent invoking it now
+                                    //if need send arguments thing do the following:
+                                    searchFor.addEventListener('submit',(event)=>(dontSubmit(event)))
   
                       
 MARKDOWN *************************************************************
