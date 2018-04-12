@@ -1507,7 +1507,10 @@ Types
                                     let listContainer = document.createElement('div')       //<div></div>
                                     listContainer.className='lists'                         //<div class='lists'></div>  same as below
                                     listContainer.setAttribute('class','lists') (key,value) //<div class='lists'></div>  same as above  
-                      
+  //use data-ANYTHING to store data in html to access for JS
+                                    ( `<li class="note" data-id=${note.id}>${title}</a></li>`)
+                                    note the data-id: we assigned the object id to data-id instead of the html id
+                                    could store in data-whatever, data-powerade, data- is for the dev
 MARKDOWN *************************************************************
 
  Github Markdwon
