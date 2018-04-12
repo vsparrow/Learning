@@ -840,7 +840,8 @@ CLASS
                                 person.greet()   // window      <---- also ends up in windows 
   
 DATARETRIEVAL           
-  fetch                 modern way of gtting data overtaking XHR
+  fetch                 see "fetch examples" below in examples
+                        modern way of gtting data overtaking XHR
                         fetch('https://api.github.com/repos/jquery/jquery/commits').then(res => res.json()).then(json => console.log(json)); 
                            //calling res.json() in our fetch is just a nice shorthand for saying 
                            //"give me the body of the response parsed as JSON".
@@ -1376,7 +1377,53 @@ Types
                          let bobby = new User("bobby")
                          let trousers = new Item(24, 'trousers', bobby)
                          store // {users: [{id: 1, name: 'Bobby'}], items: [{id: 1, name: 'trousers', price: 24, userId: 1}]}
-  
+    //fetch examples
+                        HOW TO DELETE:
+                        fetch("https://ancient-brushlands-67790.herokuapp.com/api/v1/notes/6",
+                        {method: "DELETE"
+                        })
+                        ********
+                        HOW TO PATCH:
+                        fetch("https://ancient-brushlands-67790.herokuapp.com/api/v1/notes/6",
+                        {method: "PATCH",
+                        headers: {'Content-type' : 'application/json'},
+                        body: JSON.stringify({name:"MK", body:"MORE UPDATED COMMENT! "})
+                        })
+
+                        ****************************
+                        HOW TO POST:
+                        fetch("https://ancient-brushlands-67790.herokuapp.com/api/v1/notes",
+                        {method: "POST",
+                        headers: {'Content-type' : 'application/json'},
+                        body: JSON.stringify({name:"MK", body:"HERE IS OFFICE HOURS! THANKS"})
+                        })
+                        *****
+                        WEIRD FETCH
+                        function fetchData(){ //no parenthisis! but will log something!
+                                var data = fetch('https://randomuser.me/api/')
+                                  .then( res => res.json() )
+                                  .then( console.log )// <----no parenthisis! but will log something!
+                        }
+                        fetchData()
+                        ******************
+                        AUTHENTICATION
+                        const token = 'YOUR_TOKEN_HERE';
+                        const postData = {  body: 'Great stuff'};
+                        fetch('https://api.github.com/repos/:your_ghname/:your_repo/commits/:sha/comments', {
+                          method: 'POST',
+                          body: JSON.stringify(postData),
+                          headers: {    Authorization: `token ${token}`  }
+                        }).then(res => console.log(res));
+    //generate random person with api
+                        function getnewperson(){
+                          fetch('https://randomuser.me/api/')
+                          .then( res => res.json() )
+                          // .then(json => {content=json;console.log(json);})
+                          // .then(console.log(content))
+                          .then(json=>waiting(json)) //if we wanted to send the json to another function, 
+                        }                             //use it outside of promise
+    
+    
   
                         
                       
@@ -1455,7 +1502,11 @@ Types
                                       //e arent invoking it now
                                     //if need send arguments thing do the following:
                                     searchFor.addEventListener('submit',(event)=>(dontSubmit(event)))
-  
+  //wait for dom to load            document.addEventListener('DOMContentLoaded', function(){}) //wait for dom to load
+  //generate html via JS w/o strings
+                                    let listContainer = document.createElement('div')       //<div></div>
+                                    listContainer.className='lists'                         //<div class='lists'></div>  same as below
+                                    listContainer.setAttribute('class','lists') (key,value) //<div class='lists'></div>  same as above  
                       
 MARKDOWN *************************************************************
 
@@ -2926,7 +2977,15 @@ EXAMPLE Setting a category name for post
                                       self.categories << category
                                     end  end end
           ###END Has Many Through in Forms
-                                   
+          
+          ##build rails api
+                                 Building rails api (not rails app)
+                                rails new --api   //no view, returns JSON               
+                                active model serializer:  a ruby gem to format json?
+                                  rack-cors gem : to allow server side cors bypass.  
+                                  (server says these domains are allowed to run)
+                                  only matters if api hit by browser, not by node or rails,etc(some non-browser)
+
                             
 RAKE *****************************************************************
 rake                    like bash for ruby. does presetup or maintenntece work like setup db, reset files etc
