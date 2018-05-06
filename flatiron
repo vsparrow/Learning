@@ -3084,6 +3084,7 @@ REACT ****************************************************************
                                 registerserviceworker : for progressive web apps: not for us.
                                 error jsx not defined   you didnt import react into file
     events:
+      event attribute         event.target.getAttribute("data-sortorder") //or any attribute that you added to the html jsx
       event.target            get the target of an event
       event.preventDefault()  prevent a default action
       persist event pool      store the data you need in a variable (e.g. const target = event.target),
