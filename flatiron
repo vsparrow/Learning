@@ -3792,6 +3792,110 @@ REACT ****************************************************************
     /////////////////
 
 
+    REDUX
+          forms with redux
+
+                                          ////////////////////  src/index.js
+                                          import React from 'react';
+                                          import ReactDOM from 'react-dom';
+                                          import App from './App';
+                                          import createStore from './createStore'
+                                          import manageBand from './reducers/manageBand'
+                                          const store = createStore(manageBand)
+                                          const render = () => {
+                                            ReactDOM.render(
+                                              <App store={store} />,
+                                              document.getElementById('root')
+                                            );
+                                          };
+                                          // not directly exporting the render function
+                                          // because need to stub it out in tests.
+                                          export const renderer = { render };
+                                          store.dispatch({ type: '@@init' });
+                                          ////////////////////./src/createStore.js
+                                          import { renderer } from './index.js';
+                                          export default function createStore(reducer){
+                                            let state;
+                                            function dispatch(action) {
+                                              state = reducer(state, action);
+                                              if (process.env.NODE_ENV !== 'test') {
+                                                console.log(`the action is`);
+                                                console.log(action);
+                                                console.log(`the state is`);
+                                                console.log(state);
+                                              }
+                                              renderer.render()
+                                            };
+                                            function getState(){    return state;  };
+                                            return {    dispatch,     getState  };};
+                                          ////////////////////  src/reducers/manageBand.js
+                                            export default function manageBand(state = {
+                                              bands: [],
+                                            }, action) {
+                                              switch (action.type) {
+                                                case 'ADD_BAND':
+                                                  return Object.assign({}, state, { bands: state.bands.concat(action.band) });
+                                                default:
+                                                  return state;
+                                              }
+                                            };
+                                          ////////////////////  src/App.js
+                                          import React, { Component } from 'react';
+                                          import BandInput from './components/BandInput';
+                                          import Bands from './components/Bands';
+                                          class App extends Component {
+                                            render() {
+                                              return (
+                                                <div className="App">
+                                                  <BandInput store={this.props.store} />
+                                                  <Bands store={this.props.store}/>
+                                                </div>
+                                              );  }};export default App;
+                                          ////////////////////  src/components/BandInput.js
+                                          import React, { Component } from 'react';
+                                          class BandInput extends Component {
+                                            state = {       text: ''    };
+                                            handleOnChange(event) {
+                                              this.setState({
+                                                text: event.target.value,
+                                              });  }
+                                            handleOnSubmit(event) {
+                                              event.preventDefault();
+                                              this.props.store.dispatch({
+                                                type: 'ADD_BAND',
+                                                band: this.state.text
+                                              });
+                                              this.setState({  text: ''    });    }
+                                            render() {
+                                              return (
+                                                <div>
+                                                  <form onSubmit={(event) => this.handleOnSubmit(event)}>
+                                                    <input
+                                                      type="text"
+                                                      value={this.state.text}
+                                                      onChange={(event) => this.handleOnChange(event)} />
+                                                    <input type="submit" />
+                                                  </form>
+                                                </div>    );  }};
+                                          export default BandInput;
+                                          ////////////////////  src/components/Bands.js
+                                          import React, { Component } from 'react';
+                                          class Bands extends Component {
+                                            render() {
+                                              const bands = this.props.store.getState().bands.map((band, index) => {
+                                                return <li key={index}>{band}</li>;
+                                              });
+                                              return (
+                                                <div>   {bands}      </div>
+                                              );  }};
+                                          export default Bands;
+
+          END forms with redux
+
+
+
+
+
 RUBY *****************************************************************
 ARGUMENTS
               calling methods with parentheses, e.g., greeting('Sophie'). 
