@@ -3891,7 +3891,121 @@ REACT ****************************************************************
                                           export default Bands;
 
           END forms with redux
+          forms with delete redux
 
+                                          //////////////  src/index.js
+                                          import React from 'react';
+                                          import ReactDOM from 'react-dom';
+                                          import App from './App';
+                                          import manageTodo from './reducers/manageTodo'
+                                          import createStore from './createStore'
+                                          let store = createStore(manageTodo)
+                                          export function render(){
+                                            ReactDOM.render(
+                                              <App store={store} />,
+                                              document.getElementById('root')  );}
+                                          store.dispatch({type: '@@INIT'})
+                                          //////////////  src/createStore.js
+                                          import { render } from './index.js';
+                                          export default function createStore(reducer) {
+                                            let state;
+                                            function dispatch(action) {
+                                              state = reducer(state, action);
+                                              console.log(`the action is`);
+                                              console.log(action);
+                                              console.log(`the state is`);
+                                              console.log(state);
+                                              render();  }
+                                            function getState() {
+                                              return state;  }
+                                            return {
+                                              dispatch,
+                                              getState
+                                            };}
+                                          //////////////  src/reducers/manageTodo.js
+                                          let id = 0;
+                                          export default function manageTodo(state = {
+                                            todos: []
+                                          }, action) {
+                                            switch (action.type) {
+                                              case 'ADD_TODO':
+                                                id++;
+                                                const todo = Object.assign({}, action.todo, { id: id });
+                                                return { todos: state.todos.concat(todo) };
+                                              case 'DELETE_TODO':
+                                                const todos = state.todos.filter(todo => todo.id !== action.id)
+                                                return {todos}
+                                              default:
+                                                return state;
+                                            }
+                                          };
+                                          //////////////  src/App.js
+                                          import React, { Component } from 'react';
+                                          import CreateTodo from './components/todos/CreateTodo'
+                                          import Todos from './components/todos/Todos'
+                                          class App extends Component {
+                                            render() {
+                                              return (
+                                                <div className="App">
+                                                  <CreateTodo store={this.props.store} />
+                                                  <Todos store={this.props.store} />
+                                                </div>    );  }}
+                                          export default App;
+                                          //////////////  src/components/todos/CreateTodo.js
+                                          import React, { Component } from 'react';
+                                          class CreateTodo extends Component {
+                                            constructor(props) {
+                                              super(props);
+                                              this.state = {      text: '',    };  }
+                                            handleOnChange(event) {
+                                              this.setState({      text: event.target.value,    });  }
+                                            handleOnSubmit(event) {
+                                              event.preventDefault();
+                                              this.props.store.dispatch({      type: 'ADD_TODO',       todo: this.state,    });
+                                              this.setState({      text: '',    });  }
+                                            render() {
+                                              return(
+                                                <div>
+                                                  <form onSubmit={(event) => this.handleOnSubmit(event)}>
+                                                    <p>
+                                                      <label>add todo</label>
+                                                      <input
+                                                        type="text"
+                                                        value={this.state.text}
+                                                        onChange={(event) => this.handleOnChange(event)}/>
+                                                    </p>
+                                                    <input type="submit" />
+                                                  </form>
+                                                </div>    );  }};
+                                          export default CreateTodo;
+                                          //////////////  src/components/todos/Todos.js
+                                          import React, { Component } from 'react'
+                                          import Todo from './Todo'
+                                          class Todos extends Component {
+                                            render() {
+                                              const todos = this.props.store.getState().todos.map((todo, index) => {
+                                                return <Todo text={todo.text} id={todo.id} key={index} store={this.props.store}/>
+                                              });
+                                              return(
+                                                <ul>
+                                                  {todos}
+                                                </ul>
+                                              );  }};
+                                          export default Todos;
+                                          ///////// src/components/todos/Todo.js
+                                          import React, { Component } from 'react';
+                                          class Todo extends Component {
+                                            handleOnClick = ()=>{    this.props.store.dispatch({type: 'DELETE_TODO', id:this.props.id})  }
+                                            render() {
+                                              return (
+                                                <li>
+                                                  {this.props.text}
+                                                  <button onClick={this.handleOnClick}>DELETE</button>
+                                                </li>
+                                              );  }};
+                                          export default Todo
+
+          END forms with delete redux
 
 
 
